@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Advanced Contract Law Part 2" type="course">
+			<name lang="und">Advanced Contract Law Part 2</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5aUZQHbEz0e" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5i6Cc7QQKzi" type="module">
+			<name lang="und">Can Offers be Withdrawn?</name>
+			<description lang="und">Can Offers be Withdrawn?</description>
+		</activity>
+		<activity id="5fIDRlnroAf" type="module">
+			<name lang="und">Definition: Withdrawal</name>
+			<description lang="und">Definition: Withdrawal</description>
+		</activity>
+		<activity id="6TqfoGws2xl" type="module">
+			<name lang="und">Counter Offer</name>
+			<description lang="und">Counter Offer</description>
+		</activity>
+		<activity id="65mSa1kYRwC" type="module">
+			<name lang="und">Definition: Counter Offer</name>
+			<description lang="und">Definition: Counter Offer</description>
+		</activity>
+		<activity id="5iz6KIsRXhL" type="module">
+			<name lang="und">Constructing Counter Offers</name>
+			<description lang="und">Constructing Counter Offers</description>
+		</activity>
+		<activity id="5h60pephrUG" type="module">
+			<name lang="und">Constructing Counter Offers</name>
+			<description lang="und">Constructing Counter Offers</description>
+		</activity>
+		<activity id="6Y6AfEumcon" type="module">
+			<name lang="und">Constructing Counter Offers</name>
+			<description lang="und">Constructing Counter Offers</description>
+		</activity>
+		<activity id="5ywG1rOHh5B" type="module">
+			<name lang="und">Complex Counter Offer Language</name>
+			<description lang="und">Complex Counter Offer Language</description>
+		</activity>
+		<activity id="5qk0dmYEiuW" type="module">
+			<name lang="und">Exhibit B</name>
+			<description lang="und">Exhibit B</description>
+		</activity>
+		<activity id="66BPir2zPgl" type="module">
+			<name lang="und">Constructing Addendum</name>
+			<description lang="und">Constructing Addendum</description>
+		</activity>
+		<activity id="6VE0YuhoQTq" type="module">
+			<name lang="und">Who does what, by when?</name>
+			<description lang="und">Who does what, by when?</description>
+		</activity>
+		<activity id="6cvZQHFCVeY" type="module">
+			<name lang="und">FHA</name>
+			<description lang="und">FHA</description>
+		</activity>
+		<activity id="5wteMLJ0Ca9" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="5wteMLJ0Ca9.6ECHl5SZwfb" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6etRDGI2zoY</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5VBinMGfRQA</id>
+					<description lang="und">This can happen to an offer any time prior to its acceptance. To do this, the buyer or seller should instruct their agent to write a written notice of cancellation.</description>
+				</component>
+				<component>
+					<id>choice_6etRDGI2zoY</id>
+					<description lang="und">A response to an offer wherein the offeree changes one or more of the terms of the contract, becomes the offeror, and sends the offer back to the original offeror.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6VycuLvyyrX" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="6VycuLvyyrX.6XNBdU8jEwQ" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_62nVzK9Joi1</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_62nVzK9Joi1</id>
+					<description lang="und">This can happen to an offer any time prior to its acceptance. To do this, the buyer or seller should instruct their agent to write a written notice of cancellation.</description>
+				</component>
+				<component>
+					<id>choice_68ZkGdwSHeP</id>
+					<description lang="und">A response to an offer wherein the offeree changes one or more of the terms of the contract, becomes the offeror, and sends the offer back to the original offeror.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6KoYvQTWZhh" type="module">
+			<name lang="und">Move on to the next part</name>
+			<description lang="und">Move on to the next part</description>
+		</activity>
+	</activities>
+</tincan>

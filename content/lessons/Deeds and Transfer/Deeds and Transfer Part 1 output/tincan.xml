@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Deeds and Transfer Part 1" type="course">
+			<name lang="und">Deeds and Transfer Part 1</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="60l6koaxGZK" type="objective">
+			<name lang="und">Results</name>
+			<description lang="und">Results</description>
+		</activity>
+		<activity id="5XzTQ5O0M7H" type="module">
+			<name lang="und">Deeds and Transfer</name>
+			<description lang="und">Deeds and Transfer</description>
+		</activity>
+		<activity id="6daEPtlF3Ta" type="module">
+			<name lang="und">Deeds</name>
+			<description lang="und">Deeds</description>
+		</activity>
+		<activity id="6obNqr9ohlX" type="module">
+			<name lang="und">Deeds</name>
+			<description lang="und">Deeds</description>
+		</activity>
+		<activity id="68E9cU6D207" type="module">
+			<name lang="und">Corporeal vs. Incorporeal</name>
+			<description lang="und">Corporeal vs. Incorporeal</description>
+		</activity>
+		<activity id="6fv8LAlG1nq" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5sO3erVBya8" type="module">
+			<name lang="und">Drag and Drop</name>
+			<description lang="und">Drag and Drop</description>
+		</activity>
+		<activity id="5sO3erVBya8.5e70eK8wAU5" type="cmi.interaction">
+			<name lang="und">Drag and Drop</name>
+			<description lang="und">Drag and Drop</description>
+			<interactionType>matching</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>statement_6jKuiyGaUBT[.]choice_6jScXKdUK4g</correctResponsePattern>
+			</correctResponsePatterns>
+			<source>
+				<component>
+					<id>statement_6jKuiyGaUBT</id>
+					<description lang="und">Folded Corner 2 - Folded Corner 2</description>
+				</component>
+			</source>
+			<target>
+				<component>
+					<id>choice_6jScXKdUK4g</id>
+					<description lang="und">Group 1 - Shape 1</description>
+				</component>
+			</target>
+		</activity>
+		<activity id="671vTlHMUSF" type="module">
+			<name lang="und">'or's and 'ee's</name>
+			<description lang="und">'or's and 'ee's</description>
+		</activity>
+		<activity id="5ri6wcgpQ5n" type="module">
+			<name lang="und">It depends</name>
+			<description lang="und">It depends</description>
+		</activity>
+		<activity id="63u4hhRfc4Q" type="module">
+			<name lang="und">Quiz Question 1</name>
+			<description lang="und">Quiz Question 1</description>
+		</activity>
+		<activity id="63u4hhRfc4Q.6quBeFZTc3m" type="cmi.interaction">
+			<name lang="und">Title to real property is a tangible piece of paper, much like the title to your car.</name>
+			<description lang="und">Title to real property is a tangible piece of paper, much like the title to your car.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6QuBlrQLhsf</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5mmXc1J0Rcm</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6QuBlrQLhsf</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6i4PhrOeu07" type="module">
+			<name lang="und">Essential Elements</name>
+			<description lang="und">Essential Elements</description>
+		</activity>
+		<activity id="5WOmzzLha0p" type="module">
+			<name lang="und">Intent</name>
+			<description lang="und">Intent</description>
+		</activity>
+		<activity id="6fUQ2jotlyC" type="module">
+			<name lang="und">Signature of the Grantor</name>
+			<description lang="und">Signature of the Grantor</description>
+		</activity>
+		<activity id="5u9YZnS8TXy" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5u9YZnS8TXy.6Po40ZPAqKk" type="cmi.interaction">
+			<name lang="und">The Law requires that the signature of the grantor be notarized in order for the deed to be valid.</name>
+			<description lang="und">The Law requires that the signature of the grantor be notarized in order for the deed to be valid.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5iLMgtPaD0G</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6ZWhc1k1Tc5</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5iLMgtPaD0G</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6ND5fnyWLvE" type="module">
+			<name lang="und">Granting Clause</name>
+			<description lang="und">Granting Clause</description>
+		</activity>
+		<activity id="6oZrHkZDdvq" type="module">
+			<name lang="und">Description of Property</name>
+			<description lang="und">Description of Property</description>
+		</activity>
+		<activity id="5aeRpu23I4m" type="module">
+			<name lang="und">Description of Property</name>
+			<description lang="und">Description of Property</description>
+		</activity>
+		<activity id="5yWsq8zcCPJ" type="module">
+			<name lang="und">Yes or No</name>
+			<description lang="und">Yes or No</description>
+		</activity>
+		<activity id="5yWsq8zcCPJ.5a68LHgABbt" type="cmi.interaction">
+			<name lang="und">Does a deed have to be written on a certain type of paper?</name>
+			<description lang="und">Does a deed have to be written on a certain type of paper?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_63NohXCJete</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6nbLcNR08OQ</id>
+					<description lang="und">Yes</description>
+				</component>
+				<component>
+					<id>choice_63NohXCJete</id>
+					<description lang="und">No</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6aHD8l96vRl" type="module">
+			<name lang="und">Consideration</name>
+			<description lang="und">Consideration</description>
+		</activity>
+		<activity id="5uEUyraWH3U" type="module">
+			<name lang="und">In Writing</name>
+			<description lang="und">In Writing</description>
+		</activity>
+		<activity id="5m1MrA7jf4T" type="module">
+			<name lang="und">Delivery</name>
+			<description lang="und">Delivery</description>
+		</activity>
+		<activity id="5ky1QsTQT1q" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5ky1QsTQT1q.5zSAaN6qp9q" type="cmi.interaction">
+			<name lang="und">To determine if a deed is valid, check to make sure it has been...</name>
+			<description lang="und">To determine if a deed is valid, check to make sure it has been...</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5aZSiSIodPj</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5aZSiSIodPj</id>
+					<description lang="und">Delivered</description>
+				</component>
+				<component>
+					<id>choice_6XxYjzutfof</id>
+					<description lang="und">Written on Letterhead</description>
+				</component>
+				<component>
+					<id>choice_5YsKynmyYVS</id>
+					<description lang="und">Signed &amp; Notarized</description>
+				</component>
+				<component>
+					<id>choice_66k0GrZ6kIo</id>
+					<description lang="und">Laminated</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6GuZSDaovko" type="module">
+			<name lang="und">Forms of Delivery</name>
+			<description lang="und">Forms of Delivery</description>
+		</activity>
+		<activity id="6S7tPuadWeC" type="module">
+			<name lang="und">Actual delivery</name>
+			<description lang="und">Actual delivery</description>
+		</activity>
+		<activity id="5pw1Gm1KAId" type="module">
+			<name lang="und">Constructive Delivery</name>
+			<description lang="und">Constructive Delivery</description>
+		</activity>
+		<activity id="600bLFpoyPn" type="module">
+			<name lang="und">Third Party Delivery</name>
+			<description lang="und">Third Party Delivery</description>
+		</activity>
+		<activity id="5xP3Gzkss0C" type="module">
+			<name lang="und">Deed in Escrow</name>
+			<description lang="und">Deed in Escrow</description>
+		</activity>
+		<activity id="5dDIA0O8ee3" type="module">
+			<name lang="und">Question 1</name>
+			<description lang="und">Question 1</description>
+		</activity>
+		<activity id="5dDIA0O8ee3.63V7ExiasoV" type="cmi.interaction">
+			<name lang="und">How many Essential Elements are there to a Deed?</name>
+			<description lang="und">How many Essential Elements are there to a Deed?</description>
+			<interactionType>numeric</interactionType>
+		</activity>
+		<activity id="6TkIkRwlYtE" type="module">
+			<name lang="und">Question 2</name>
+			<description lang="und">Question 2</description>
+		</activity>
+		<activity id="6TkIkRwlYtE.5iwQ4EY9bLn" type="cmi.interaction">
+			<name lang="und">All contracts for Real Estate sales must be in writing to be enforceable.</name>
+			<description lang="und">All contracts for Real Estate sales must be in writing to be enforceable.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6BK6ucpUiEG</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6BK6ucpUiEG</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6lyF3B3W781</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6N3vQIRL7kt" type="module">
+			<name lang="und">Question 3</name>
+			<description lang="und">Question 3</description>
+		</activity>
+		<activity id="6N3vQIRL7kt.6TqrfHPfWlM" type="cmi.interaction">
+			<name lang="und">What action triggers the actual transfer of ownership of real property?</name>
+			<description lang="und">What action triggers the actual transfer of ownership of real property?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6Ki39kRL46i</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6Ki39kRL46i</id>
+					<description lang="und">The deed has been delivered</description>
+				</component>
+				<component>
+					<id>choice_5gcTiXw9KE1</id>
+					<description lang="und">The sellers have signed all documents</description>
+				</component>
+				<component>
+					<id>choice_66CCOzzdchA</id>
+					<description lang="und">All money has been paid by the buyers</description>
+				</component>
+				<component>
+					<id>choice_64XuiyBsn9W</id>
+					<description lang="und">A verbal transfer agreement has been stated.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="64DpQQVUuHS" type="module">
+			<name lang="und">Question 4</name>
+			<description lang="und">Question 4</description>
+		</activity>
+		<activity id="64DpQQVUuHS.6iWCTUpbAwt" type="cmi.interaction">
+			<name lang="und">The requirement for a deed to be in writing comes from...</name>
+			<description lang="und">The requirement for a deed to be in writing comes from...</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6XuZ4EXkULd</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6qO5H3z9frS</id>
+					<description lang="und">The Habendum Law</description>
+				</component>
+				<component>
+					<id>choice_6XuZ4EXkULd</id>
+					<description lang="und">The Statue of Frauds</description>
+				</component>
+				<component>
+					<id>choice_6BnENvAGfXG</id>
+					<description lang="und">The Necessity for Acknowledgement</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5V689pf2x4y" type="module">
+			<name lang="und">Question 5</name>
+			<description lang="und">Question 5</description>
+		</activity>
+		<activity id="5V689pf2x4y.655tiRJfqvK" type="cmi.interaction">
+			<name lang="und">There are two requirements for recording a document. Select both from the choices below. (note: only two boxes should be selected)</name>
+			<description lang="und">There are two requirements for recording a document. Select both from the choices below. (note: only two boxes should be selected)</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6WU04pdzHjL</correctResponsePattern>
+				<correctResponsePattern>choice_63b7KJkn3il</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6WU04pdzHjL</id>
+					<description lang="und">Must be acknowledged</description>
+				</component>
+				<component>
+					<id>choice_63b7KJkn3il</id>
+					<description lang="und">Must be original</description>
+				</component>
+				<component>
+					<id>choice_5ykgJDup2Jj</id>
+					<description lang="und">Typed on letterhead</description>
+				</component>
+				<component>
+					<id>choice_5VaiiGPbzmB</id>
+					<description lang="und">Must be in English</description>
+				</component>
+				<component>
+					<id>choice_6CkCW7EKLTI</id>
+					<description lang="und">Three pages in length</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6LCIUwfm6EV" type="module">
+			<name lang="und">Question 6</name>
+			<description lang="und">Question 6</description>
+		</activity>
+		<activity id="6LCIUwfm6EV.5tsr2S5dl8P" type="cmi.interaction">
+			<name lang="und">There are three forms of delivery. They are: (check all three)</name>
+			<description lang="und">There are three forms of delivery. They are: (check all three)</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6mTT6PshyFw</correctResponsePattern>
+				<correctResponsePattern>choice_619MAsBGGk0</correctResponsePattern>
+				<correctResponsePattern>choice_6Ml8RAiVwOX</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6mTT6PshyFw</id>
+					<description lang="und">Constructive delivery</description>
+				</component>
+				<component>
+					<id>choice_619MAsBGGk0</id>
+					<description lang="und">Third Party delivery</description>
+				</component>
+				<component>
+					<id>choice_6Ml8RAiVwOX</id>
+					<description lang="und">Actual delivery</description>
+				</component>
+				<component>
+					<id>choice_6aYka8h6k0m</id>
+					<description lang="und">Establishment delivery</description>
+				</component>
+				<component>
+					<id>choice_6ZkqlCYdknE</id>
+					<description lang="und">Immediate delivery</description>
+				</component>
+				<component>
+					<id>choice_6JhqhxQ4xm8</id>
+					<description lang="und">Considerable delivery</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5y2c7DUNODZ" type="module">
+			<name lang="und">Question 7</name>
+			<description lang="und">Question 7</description>
+		</activity>
+		<activity id="5y2c7DUNODZ.6JXtA1J7n5S" type="cmi.interaction">
+			<name lang="und">The reason $10 is often listed as the purchase price on the deed is to keep the actual price confidential.</name>
+			<description lang="und">The reason $10 is often listed as the purchase price on the deed is to keep the actual price confidential.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6Nh1VystVnU</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6Nh1VystVnU</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5eVYNLCwO2K</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5dpJ5dg5WVS" type="module">
+			<name lang="und">Question 8</name>
+			<description lang="und">Question 8</description>
+		</activity>
+		<activity id="5dpJ5dg5WVS.5WGAcb13KFH" type="cmi.interaction">
+			<name lang="und">Which of the following is required to have a valid third party delivery of a deed?</name>
+			<description lang="und">Which of the following is required to have a valid third party delivery of a deed?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6X33mbq1IUJ</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6ZoBJhcK57b</id>
+					<description lang="und">The deed must be hand-delivered</description>
+				</component>
+				<component>
+					<id>choice_5q36AQuU0Pe</id>
+					<description lang="und">The grantor must sign the deed in the presence of the third party</description>
+				</component>
+				<component>
+					<id>choice_6X33mbq1IUJ</id>
+					<description lang="und">the third party must have written, notarized instructions from the grantor</description>
+				</component>
+				<component>
+					<id>choice_6jKFzszCshs</id>
+					<description lang="und">the signature on the deed must be notarized</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5ZlYenuxMuU" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+		<activity id="5YdrlQ5S1pL" type="module">
+			<name lang="und">End</name>
+			<description lang="und">End</description>
+		</activity>
+	</activities>
+</tincan>

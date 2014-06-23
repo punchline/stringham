@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Agency A Part 4" type="course">
+			<name lang="und">Agency A Part 4</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6DMrp7f3GAg" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6Am9bOc0GOQ" type="module">
+			<name lang="und">Creating Agency</name>
+			<description lang="und">Creating Agency</description>
+		</activity>
+		<activity id="65m8zSIDtrH" type="module">
+			<name lang="und">Express Agency</name>
+			<description lang="und">Express Agency</description>
+		</activity>
+		<activity id="6VOtlEBWJII" type="module">
+			<name lang="und">Definition: Express Agency</name>
+			<description lang="und">Definition: Express Agency</description>
+		</activity>
+		<activity id="5z6JGGskWyT" type="module">
+			<name lang="und">Implied Agency</name>
+			<description lang="und">Implied Agency</description>
+		</activity>
+		<activity id="6MhMCBGjfal" type="module">
+			<name lang="und">Definition: Implied Agency</name>
+			<description lang="und">Definition: Implied Agency</description>
+		</activity>
+		<activity id="6R56KqR5kj2" type="module">
+			<name lang="und">Agency by Ratification</name>
+			<description lang="und">Agency by Ratification</description>
+		</activity>
+		<activity id="6MEOT77C5Rx" type="module">
+			<name lang="und">Definition: Ratification</name>
+			<description lang="und">Definition: Ratification</description>
+		</activity>
+		<activity id="5gGg3dcKCgW" type="module">
+			<name lang="und">Summary</name>
+			<description lang="und">Summary</description>
+		</activity>
+		<activity id="6Xm85AfixSg" type="module">
+			<name lang="und">Agency by Statute</name>
+			<description lang="und">Agency by Statute</description>
+		</activity>
+		<activity id="6EYmhAInPNi" type="module">
+			<name lang="und">Definition: Statute</name>
+			<description lang="und">Definition: Statute</description>
+		</activity>
+		<activity id="6YkkcU2qwZR" type="module">
+			<name lang="und">Agency by Estoppel</name>
+			<description lang="und">Agency by Estoppel</description>
+		</activity>
+		<activity id="6pi7JQZlSFZ" type="module">
+			<name lang="und">Definition: Estoppel</name>
+			<description lang="und">Definition: Estoppel</description>
+		</activity>
+		<activity id="6CNx6HtBju4" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6CNx6HtBju4.6V2lZ7V4J5u" type="cmi.interaction">
+			<name lang="und">Which of the following ways could involve ratification?</name>
+			<description lang="und">Which of the following ways could involve ratification?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5dEFKBrJ11D</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5dEFKBrJ11D</id>
+					<description lang="und">Implied</description>
+				</component>
+				<component>
+					<id>choice_5uU3Kbq2EWC</id>
+					<description lang="und">Express</description>
+				</component>
+				<component>
+					<id>choice_5XQoYqOsws5</id>
+					<description lang="und">Statute</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6BQs8weQh9P" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6BQs8weQh9P.6Yu1FZHQkBv" type="cmi.interaction">
+			<name lang="und">Creating agency by actual appointment means:</name>
+			<description lang="und">Creating agency by actual appointment means:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5fT8BwrtQDG</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6bitWR9U9A3</id>
+					<description lang="und">An actual act of a judge creates the agency.</description>
+				</component>
+				<component>
+					<id>choice_5fT8BwrtQDG</id>
+					<description lang="und">The principal and agent create the agency agreement.</description>
+				</component>
+				<component>
+					<id>choice_5WTUcobEkWb</id>
+					<description lang="und">The agency is formed by a formal board of Trustees.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5yaBelMIlBi" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5yaBelMIlBi.5eOvdYuIMzZ" type="cmi.interaction">
+			<name lang="und">Which statement is true about express agency?</name>
+			<description lang="und">Which statement is true about express agency?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_67qFtFAls3q</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_67F2j4luOCp</id>
+					<description lang="und">It must always be expressed in writing.</description>
+				</component>
+				<component>
+					<id>choice_6ggIeOGEn1R</id>
+					<description lang="und">The agency agreement must be witnessed, documented and notarized.</description>
+				</component>
+				<component>
+					<id>choice_6QEsj7vcbF4</id>
+					<description lang="und">It must specify how much the agent will be paid.</description>
+				</component>
+				<component>
+					<id>choice_67qFtFAls3q</id>
+					<description lang="und">The agent agreement can be verbal.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6IggW2PFoSh" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6IggW2PFoSh.6mUdVrvGI8B" type="cmi.interaction">
+			<name lang="und">In agency by estoppel, the agency was actually created:</name>
+			<description lang="und">In agency by estoppel, the agency was actually created:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5uIdxouq5Jn</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5uIdxouq5Jn</id>
+					<description lang="und">By the decision of a judge.</description>
+				</component>
+				<component>
+					<id>choice_6IX0obQBHgy</id>
+					<description lang="und">When the parties first discussed the transaction.</description>
+				</component>
+				<component>
+					<id>choice_5Uk4sX1Hm34</id>
+					<description lang="und">By the principal paying a fee to the agent.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6FwZwndQRgE" type="module">
+			<name lang="und">Fill in the Blank</name>
+			<description lang="und">Fill in the Blank</description>
+		</activity>
+		<activity id="6FwZwndQRgE.6cmTh1jkiXu" type="cmi.interaction">
+			<name lang="und">A foreclosure sale when a mortgage was the security document for the loan is a good example of agency by _____________.</name>
+			<description lang="und">A foreclosure sale when a mortgage was the security document for the loan is a good example of agency by _____________.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5rq9Kr00VZC</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5gPgTAjimLE</id>
+					<description lang="und">Estoppel</description>
+				</component>
+				<component>
+					<id>choice_5rq9Kr00VZC</id>
+					<description lang="und">Statue</description>
+				</component>
+				<component>
+					<id>choice_6rQhXHvgZ2Z</id>
+					<description lang="und">Ratification</description>
+				</component>
+				<component>
+					<id>choice_5l8BZyiwKqS</id>
+					<description lang="und">Law</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="68zJKoK2bBw" type="module">
+			<name lang="und">Termination of Agency</name>
+			<description lang="und">Termination of Agency</description>
+		</activity>
+		<activity id="67PH6szna0j" type="module">
+			<name lang="und">Responsibilities of Principal to the Agent</name>
+			<description lang="und">Responsibilities of Principal to the Agent</description>
+		</activity>
+		<activity id="60dfyma3VXJ" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="60dfyma3VXJ.66FGko35dgl" type="cmi.interaction">
+			<name lang="und">A responsibility of the principal to the agent is to indemnify. This is a legal term that means:</name>
+			<description lang="und">A responsibility of the principal to the agent is to indemnify. This is a legal term that means:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5Z7D7fupBKC</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5jHzviDgo30</id>
+					<description lang="und">To agree to cooperate with the agent in showing the home.</description>
+				</component>
+				<component>
+					<id>choice_5YgjUNNNmdO</id>
+					<description lang="und">To make repairs suggested by the agent to make the home more marketable</description>
+				</component>
+				<component>
+					<id>choice_5Z7D7fupBKC</id>
+					<description lang="und">To hold the agent harmless if the seller lied about the leaky roof.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="64bps7Wud3R" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="64bps7Wud3R.6HcHLuwpGNp" type="cmi.interaction">
+			<name lang="und">After listing their home, everytime an agent would call to show the property the sellers had some reason it was not convenient. This would be a breach of the principal's duty to perform.</name>
+			<description lang="und">After listing their home, everytime an agent would call to show the property the sellers had some reason it was not convenient. This would be a breach of the principal's duty to perform.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5cOz96tVhOo</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5cOz96tVhOo</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6BxTTJSt2fB</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6nekeIFzeBC" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6nekeIFzeBC.6Pokt6CkV9X" type="cmi.interaction">
+			<name lang="und">Widower Henry listed his house with Broker Byron. Henry's children didn't want him to list the house. Henry died. What is true in this case?</name>
+			<description lang="und">Widower Henry listed his house with Broker Byron. Henry's children didn't want him to list the house. Henry died. What is true in this case?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6POLWywYHc2</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6POLWywYHc2</id>
+					<description lang="und">Since Henry died, the listing is terminated.</description>
+				</component>
+				<component>
+					<id>choice_5zDWWwhmNtL</id>
+					<description lang="und">The kids have to sell the house if Byron finds a ready, willing and able buyer.</description>
+				</component>
+				<component>
+					<id>choice_6W2f1TKRuZ3</id>
+					<description lang="und">Broker Byron still has the listing and can't seek a buyer.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6bHpZ0FopKO" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6bHpZ0FopKO.5tDB9Hycp1Y" type="cmi.interaction">
+			<name lang="und">Which of the following is NOT a way of terminating an agency relationship legally?</name>
+			<description lang="und">Which of the following is NOT a way of terminating an agency relationship legally?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5wqZx8yKQpU</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6mzZpsTl8NH</id>
+					<description lang="und">Heavy winds have blown the roof off the house.</description>
+				</component>
+				<component>
+					<id>choice_6rCYT7dboa1</id>
+					<description lang="und">The sale has closed on the listed property.</description>
+				</component>
+				<component>
+					<id>choice_6QYuOMfQZos</id>
+					<description lang="und">The principal and agent have agreed to terminate the agency.</description>
+				</component>
+				<component>
+					<id>choice_6f8oK1Kgna1</id>
+					<description lang="und">The seller in the listing has just been declared incompetent by the court.</description>
+				</component>
+				<component>
+					<id>choice_5wqZx8yKQpU</id>
+					<description lang="und">The sellers have changed their minds about selling.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6VwEfylSbFv" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="6VwEfylSbFv.6JwXWWF9KrY" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6GoJHAU2z10</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6GoJHAU2z10</id>
+					<description lang="und">an agency created through words, written or oral, between the principal and the agent, such as a listing agreement.</description>
+				</component>
+				<component>
+					<id>choice_5sDemr53nLY</id>
+					<description lang="und">an agency which is created through the actions of the parties, rather than through an express agreement.</description>
+				</component>
+				<component>
+					<id>choice_6RvT6N2Lcrj</id>
+					<description lang="und">when an agency is created by implication, or actions, and the principal approves it by agreeing after the agency service has been performed to compensate the agent.</description>
+				</component>
+				<component>
+					<id>choice_6G6K5NfewM1</id>
+					<description lang="und">when the law has given rise to the agency, such as a Sheriff appointed by the court to be the agent of the owner in the foreclosure sale.</description>
+				</component>
+				<component>
+					<id>choice_6Ewm3iiBwEo</id>
+					<description lang="und">when the principal seeks to deny an agency relationship, but the court stops him from denying the agency, and thereby confirms it.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="623yI5iaG45" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="623yI5iaG45.6XWwfCDjDc6" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5aWeNMWRtj4</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_69FctZuzTA9</id>
+					<description lang="und">an agency created through words, written or oral, between the principal and the agent, such as a listing agreement.</description>
+				</component>
+				<component>
+					<id>choice_5aWeNMWRtj4</id>
+					<description lang="und">an agency which is created through the actions of the parties, rather than through an express agreement.</description>
+				</component>
+				<component>
+					<id>choice_6kIy7LJnab6</id>
+					<description lang="und">when an agency is created by implication, or actions, and the principal approves it by agreeing after the agency service has been performed to compensate the agent.</description>
+				</component>
+				<component>
+					<id>choice_6q0uJh2Oq9s</id>
+					<description lang="und">when the law has given rise to the agency, such as a Sheriff appointed by the court to be the agent of the owner in the foreclosure sale.</description>
+				</component>
+				<component>
+					<id>choice_6oV58ZFAAog</id>
+					<description lang="und">when the principal seeks to deny an agency relationship, but the court stops him from denying the agency, and thereby confirms it.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6cMWqz3TP0r" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="6cMWqz3TP0r.6FvHy3yYHuC" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5XUR7xjdN5F</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5ZHU9RHfT2Q</id>
+					<description lang="und">an agency created through words, written or oral, between the principal and the agent, such as a listing agreement.</description>
+				</component>
+				<component>
+					<id>choice_64u37OBt4P0</id>
+					<description lang="und">an agency which is created through the actions of the parties, rather than through an express agreement.</description>
+				</component>
+				<component>
+					<id>choice_6XfKyay179A</id>
+					<description lang="und">when an agency is created by implication, or actions, and the principal approves it by agreeing after the agency service has been performed to compensate the agent.</description>
+				</component>
+				<component>
+					<id>choice_5XUR7xjdN5F</id>
+					<description lang="und">when the law has given rise to the agency, such as a Sheriff appointed by the court to be the agent of the owner in the foreclosure sale.</description>
+				</component>
+				<component>
+					<id>choice_6Ay95CnyOUe</id>
+					<description lang="und">when the principal seeks to deny an agency relationship, but the court stops him from denying the agency, and thereby confirms it.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6k7OfbeSiFG" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="6k7OfbeSiFG.6h4YEFaXCTN" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6Y4oRBm0uKK</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6Rdfdv63hKh</id>
+					<description lang="und">an agency created through words, written or oral, between the principal and the agent, such as a listing agreement.</description>
+				</component>
+				<component>
+					<id>choice_5gpi7lFzzEV</id>
+					<description lang="und">an agency which is created through the actions of the parties, rather than through an express agreement.</description>
+				</component>
+				<component>
+					<id>choice_6Y4oRBm0uKK</id>
+					<description lang="und">when an agency is created by implication, or actions, and the principal approves it by agreeing after the agency service has been performed to compensate the agent.</description>
+				</component>
+				<component>
+					<id>choice_5qEqimauAMo</id>
+					<description lang="und">when the law has given rise to the agency, such as a Sheriff appointed by the court to be the agent of the owner in the foreclosure sale.</description>
+				</component>
+				<component>
+					<id>choice_62NY6LVqNO3</id>
+					<description lang="und">when the principal seeks to deny an agency relationship, but the court stops him from denying the agency, and thereby confirms it.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5bULapDs1FC" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="5bULapDs1FC.5yjy1ThrEYZ" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6K0WH46AGef</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5uuvfdvtXHL</id>
+					<description lang="und">an agency created through words, written or oral, between the principal and the agent, such as a listing agreement.</description>
+				</component>
+				<component>
+					<id>choice_6FCZCE41Ftu</id>
+					<description lang="und">an agency which is created through the actions of the parties, rather than through an express agreement.</description>
+				</component>
+				<component>
+					<id>choice_6ajAU8Qrsmr</id>
+					<description lang="und">when an agency is created by implication, or actions, and the principal approves it by agreeing after the agency service has been performed to compensate the agent.</description>
+				</component>
+				<component>
+					<id>choice_5zzlX1C5lbe</id>
+					<description lang="und">when the law has given rise to the agency, such as a Sheriff appointed by the court to be the agent of the owner in the foreclosure sale.</description>
+				</component>
+				<component>
+					<id>choice_6K0WH46AGef</id>
+					<description lang="und">when the principal seeks to deny an agency relationship, but the court stops him from denying the agency, and thereby confirms it.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="66uwh0KjtQK" type="module">
+			<name lang="und">Good Work</name>
+			<description lang="und">Good Work</description>
+		</activity>
+	</activities>
+</tincan>

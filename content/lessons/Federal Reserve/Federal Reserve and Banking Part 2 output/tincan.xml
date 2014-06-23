@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Federal Reserve and Banking Part 2" type="course">
+			<name lang="und">Federal Reserve and Banking Part 2</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5bZ7aL9bWQI" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6Pp4jMZi3bH" type="module">
+			<name lang="und">Federal Reserve Structure</name>
+			<description lang="und">Federal Reserve Structure</description>
+		</activity>
+		<activity id="6WJujWpQpGB" type="module">
+			<name lang="und">Federal Reserve Structure</name>
+			<description lang="und">Federal Reserve Structure</description>
+		</activity>
+		<activity id="6BjX5eIzfwe" type="module">
+			<name lang="und">Board of Governors</name>
+			<description lang="und">Board of Governors</description>
+		</activity>
+		<activity id="5yV5XRpU4aR" type="module">
+			<name lang="und">Reserve Banks</name>
+			<description lang="und">Reserve Banks</description>
+		</activity>
+		<activity id="6lG2EfTUNAE" type="module">
+			<name lang="und">Federal Open Market Committee</name>
+			<description lang="und">Federal Open Market Committee</description>
+		</activity>
+		<activity id="6DD1tsQRMaG" type="module">
+			<name lang="und">Definition: Federal Open Market Committee</name>
+			<description lang="und">Definition: Federal Open Market Committee</description>
+		</activity>
+		<activity id="5pDNa3MDiez" type="module">
+			<name lang="und">Federal Reserve</name>
+			<description lang="und">Federal Reserve</description>
+		</activity>
+		<activity id="61QG28cFTLH" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="61QG28cFTLH.5bavJ4z5vbs" type="cmi.interaction">
+			<name lang="und">The Federal Reserve has ___ district locations.</name>
+			<description lang="und">The Federal Reserve has ___ district locations.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6gHypR18d1U</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6pF5CgIv68Y</id>
+					<description lang="und">6</description>
+				</component>
+				<component>
+					<id>choice_6gHypR18d1U</id>
+					<description lang="und">12</description>
+				</component>
+				<component>
+					<id>choice_69ZAu5b5VHP</id>
+					<description lang="und">10</description>
+				</component>
+				<component>
+					<id>choice_5f3MPpOgiHb</id>
+					<description lang="und">50</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6CE2QaqVrgN" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="6CE2QaqVrgN.5YYo1tL30BD" type="cmi.interaction">
+			<name lang="und">There are 7 members of the Board of Governors who are nominated by the President of the United States and confirmed by the Senate.</name>
+			<description lang="und">There are 7 members of the Board of Governors who are nominated by the President of the United States and confirmed by the Senate.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6cEhsVyfdjv</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6cEhsVyfdjv</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5nixrxXr39E</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="61EQ8hR9bjn" type="module">
+			<name lang="und">Services Provided</name>
+			<description lang="und">Services Provided</description>
+		</activity>
+		<activity id="5x8zKfiqLhk" type="module">
+			<name lang="und">Federal Reserve</name>
+			<description lang="und">Federal Reserve</description>
+		</activity>
+		<activity id="6h18Doq7wKh" type="module">
+			<name lang="und">Federal Reserve</name>
+			<description lang="und">Federal Reserve</description>
+		</activity>
+		<activity id="6oCNSnaLANt" type="module">
+			<name lang="und">Why are Banks Supervised?</name>
+			<description lang="und">Why are Banks Supervised?</description>
+		</activity>
+		<activity id="6iXGhXQ8bHX" type="module">
+			<name lang="und">Examination Evaluation Factors:</name>
+			<description lang="und">Examination Evaluation Factors:</description>
+		</activity>
+		<activity id="6gwUGXF3soT" type="module">
+			<name lang="und">FOMC</name>
+			<description lang="und">FOMC</description>
+		</activity>
+		<activity id="6aYDMmzUUdf" type="module">
+			<name lang="und">Federal Reserve Monetary Policy</name>
+			<description lang="und">Federal Reserve Monetary Policy</description>
+		</activity>
+		<activity id="6rayuj1wqXQ" type="module">
+			<name lang="und">Definition: Monetary Policy</name>
+			<description lang="und">Definition: Monetary Policy</description>
+		</activity>
+		<activity id="5rJhS1oQknf" type="module">
+			<name lang="und">Federal Reserve</name>
+			<description lang="und">Federal Reserve</description>
+		</activity>
+		<activity id="6iy6fYIgPw2" type="module">
+			<name lang="und">Fed Funds Rate</name>
+			<description lang="und">Fed Funds Rate</description>
+		</activity>
+		<activity id="6Zxl9RnYYTQ" type="module">
+			<name lang="und">Interest Rates</name>
+			<description lang="und">Interest Rates</description>
+		</activity>
+		<activity id="60YaRdFLbZs" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="60YaRdFLbZs.5ZxQmOYmRko" type="cmi.interaction">
+			<name lang="und">Setting the Fed Funds Rate is probably the most important action of the FOMC.</name>
+			<description lang="und">Setting the Fed Funds Rate is probably the most important action of the FOMC.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5t6ImnBkuIN</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5t6ImnBkuIN</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_64KQh87hNGc</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5sHuRv9fhXT" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5sHuRv9fhXT.62A8Rmlo1DV" type="cmi.interaction">
+			<name lang="und">The Fed Funds Rate impacts us on a daily basis.</name>
+			<description lang="und">The Fed Funds Rate impacts us on a daily basis.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5zTI7E37x9A</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5zTI7E37x9A</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_67q90eqCw7d</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6VlHuDJqKKw" type="module">
+			<name lang="und">Good Work!</name>
+			<description lang="und">Good Work!</description>
+		</activity>
+	</activities>
+</tincan>

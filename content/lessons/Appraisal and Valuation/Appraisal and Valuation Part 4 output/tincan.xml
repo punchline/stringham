@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Appraisal and Valuation Part 4" type="course">
+			<name lang="und">Appraisal and Valuation Part 4</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6JfvtkeS9K9" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6HkUZ45rwTU" type="module">
+			<name lang="und">Highest and Best Use</name>
+			<description lang="und">Highest and Best Use</description>
+		</activity>
+		<activity id="6K9c3VYVXaF" type="module">
+			<name lang="und">Highest and Best Use</name>
+			<description lang="und">Highest and Best Use</description>
+		</activity>
+		<activity id="5vrnv0R1NCc" type="module">
+			<name lang="und">Possible</name>
+			<description lang="und">Possible</description>
+		</activity>
+		<activity id="6MT2F4Uz9OJ" type="module">
+			<name lang="und">Substitution</name>
+			<description lang="und">Substitution</description>
+		</activity>
+		<activity id="5fY9hN4Gqze" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5fY9hN4Gqze.5eLQdMsC9Da" type="cmi.interaction">
+			<name lang="und">Overpriced listings don't get shown as much.</name>
+			<description lang="und">Overpriced listings don't get shown as much.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6rduaFZYMgq</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6Ve9MwfiGqQ</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6rduaFZYMgq</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6FMVTlt3Xj0" type="module">
+			<name lang="und">Conformity</name>
+			<description lang="und">Conformity</description>
+		</activity>
+		<activity id="5XurOlIRNr3" type="module">
+			<name lang="und">Regression</name>
+			<description lang="und">Regression</description>
+		</activity>
+		<activity id="6lJGyX0IhWt" type="module">
+			<name lang="und">Contribution</name>
+			<description lang="und">Contribution</description>
+		</activity>
+		<activity id="5e6DmSlC0Vt" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5e6DmSlC0Vt.5km9H6ktM8A" type="cmi.interaction">
+			<name lang="und">A new paint job inside a home will always add to its value.</name>
+			<description lang="und">A new paint job inside a home will always add to its value.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_60PuPrtGvMi</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6CAOazshrIi</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_60PuPrtGvMi</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5hgXlrzdORC" type="module">
+			<name lang="und">Add Value</name>
+			<description lang="und">Add Value</description>
+		</activity>
+		<activity id="6BMBMXu54C7" type="module">
+			<name lang="und">Change</name>
+			<description lang="und">Change</description>
+		</activity>
+		<activity id="5cqtP9mQ65K" type="module">
+			<name lang="und">Anticipation</name>
+			<description lang="und">Anticipation</description>
+		</activity>
+		<activity id="6TXmBJ5FYQJ" type="module">
+			<name lang="und">Competition</name>
+			<description lang="und">Competition</description>
+		</activity>
+		<activity id="6N6brIPuHwm" type="module">
+			<name lang="und">Balance</name>
+			<description lang="und">Balance</description>
+		</activity>
+		<activity id="5hKHOviMszY" type="module">
+			<name lang="und">Assemblage</name>
+			<description lang="und">Assemblage</description>
+		</activity>
+		<activity id="686MvbMfziP" type="module">
+			<name lang="und">Plottage</name>
+			<description lang="und">Plottage</description>
+		</activity>
+		<activity id="6jlH7ikKyGh" type="module">
+			<name lang="und">Direction of Growth</name>
+			<description lang="und">Direction of Growth</description>
+		</activity>
+		<activity id="6AtSg38r6sC" type="module">
+			<name lang="und">Building Envelope</name>
+			<description lang="und">Building Envelope</description>
+		</activity>
+		<activity id="6SrHqRHERCI" type="module">
+			<name lang="und">Building Envelope</name>
+			<description lang="und">Building Envelope</description>
+		</activity>
+		<activity id="6f3C3139I8L" type="module">
+			<name lang="und">Situs</name>
+			<description lang="und">Situs</description>
+		</activity>
+		<activity id="6oC3MifmkLx" type="module">
+			<name lang="und">The End</name>
+			<description lang="und">The End</description>
+		</activity>
+		<activity id="6JNN62Lq3dI" type="module">
+			<name lang="und">Good Work!</name>
+			<description lang="und">Good Work!</description>
+		</activity>
+	</activities>
+</tincan>

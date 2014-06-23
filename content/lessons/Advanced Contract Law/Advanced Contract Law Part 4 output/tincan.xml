@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Advanced Contract Law Part 4" type="course">
+			<name lang="und">Advanced Contract Law Part 4</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6BA5NHOKQe7" type="objective">
+			<name lang="und">Results</name>
+			<description lang="und">Results</description>
+		</activity>
+		<activity id="6RzPALBdDLU" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6MwwP7tA5Tk" type="module">
+			<name lang="und">Dealing with Multiple Offers</name>
+			<description lang="und">Dealing with Multiple Offers</description>
+		</activity>
+		<activity id="6HR6MwuUYIO" type="module">
+			<name lang="und">Keep Confidential</name>
+			<description lang="und">Keep Confidential</description>
+		</activity>
+		<activity id="5fYVrMiML99" type="module">
+			<name lang="und">Keep Confidential</name>
+			<description lang="und">Keep Confidential</description>
+		</activity>
+		<activity id="5WXePlxo0kB" type="module">
+			<name lang="und">Multiple Offer Disclosure</name>
+			<description lang="und">Multiple Offer Disclosure</description>
+		</activity>
+		<activity id="6njThzjindK" type="module">
+			<name lang="und">Addendum for Multiple Offers</name>
+			<description lang="und">Addendum for Multiple Offers</description>
+		</activity>
+		<activity id="6e2Xe3JMIgJ" type="module">
+			<name lang="und">Multiple Offer Disclosure</name>
+			<description lang="und">Multiple Offer Disclosure</description>
+		</activity>
+		<activity id="6KOqhJGx9Do" type="module">
+			<name lang="und">Definition: Multiple Offers</name>
+			<description lang="und">Definition: Multiple Offers</description>
+		</activity>
+		<activity id="6YiMYDyCok5" type="module">
+			<name lang="und">Definition: Multiple Offer Disclosure</name>
+			<description lang="und">Definition: Multiple Offer Disclosure</description>
+		</activity>
+		<activity id="6GygWNA0g3f" type="module">
+			<name lang="und">Seller’s Notice to Buyers</name>
+			<description lang="und">Seller’s Notice to Buyers</description>
+		</activity>
+		<activity id="6lgKWl06mJA" type="module">
+			<name lang="und">Options for Seller</name>
+			<description lang="und">Options for Seller</description>
+		</activity>
+		<activity id="6jMJ9nlWP7B" type="module">
+			<name lang="und">Back Up Offer Clause</name>
+			<description lang="und">Back Up Offer Clause</description>
+		</activity>
+		<activity id="5kXqAevORJL" type="module">
+			<name lang="und">Our Goal</name>
+			<description lang="und">Our Goal</description>
+		</activity>
+		<activity id="5jYJDseVAza" type="module">
+			<name lang="und">Reference</name>
+			<description lang="und">Reference</description>
+		</activity>
+		<activity id="6kj6DzV6nCD" type="module">
+			<name lang="und">Conclusion</name>
+			<description lang="und">Conclusion</description>
+		</activity>
+		<activity id="6e9n4lpPIEU" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6e9n4lpPIEU.62y5D2VjJa5" type="cmi.interaction">
+			<name lang="und">In a multiple offer situation, if a seller wishes to allow all buyers the opportunity to write a best offer, they should:</name>
+			<description lang="und">In a multiple offer situation, if a seller wishes to allow all buyers the opportunity to write a best offer, they should:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6cEfr5Q3oSx</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6cEfr5Q3oSx</id>
+					<description lang="und">Use the Seller's Notice to Buyer's of Multiple Offers.</description>
+				</component>
+				<component>
+					<id>choice_5qte8lrRkYo</id>
+					<description lang="und">Use the Multiple Disclosure.</description>
+				</component>
+				<component>
+					<id>choice_6hthJhkATt2</id>
+					<description lang="und">Use the Back-up Offer Addendum.</description>
+				</component>
+				<component>
+					<id>choice_6Xfhd7Bl8kR</id>
+					<description lang="und">The seller must respond to one offer at a time.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6eP6be11448" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6eP6be11448.6LyunwHFRvB" type="cmi.interaction">
+			<name lang="und">Which section of the Residential REPC requires notices to be in writing?</name>
+			<description lang="und">Which section of the Residential REPC requires notices to be in writing?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6HGFbh9dSYl</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6HGFbh9dSYl</id>
+					<description lang="und">18</description>
+				</component>
+				<component>
+					<id>choice_6gcIJjJyFpZ</id>
+					<description lang="und">19</description>
+				</component>
+				<component>
+					<id>choice_5W0X4qE2K49</id>
+					<description lang="und">20</description>
+				</component>
+				<component>
+					<id>choice_5fegFSQu6In</id>
+					<description lang="und">21</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5iR3RMvjzFv" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5iR3RMvjzFv.60MtlYEl4gr" type="cmi.interaction">
+			<name lang="und">What section of the Residential REPC would need to be countered or changed if the offer has lapsed and the parties wish to accept the offer?</name>
+			<description lang="und">What section of the Residential REPC would need to be countered or changed if the offer has lapsed and the parties wish to accept the offer?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5hRQnIOUVOQ</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5yQ8F2NXc2x</id>
+					<description lang="und">18</description>
+				</component>
+				<component>
+					<id>choice_5hRQnIOUVOQ</id>
+					<description lang="und">25</description>
+				</component>
+				<component>
+					<id>choice_5hV8DFuHhyf</id>
+					<description lang="und">24</description>
+				</component>
+				<component>
+					<id>choice_69CZ73D32dt</id>
+					<description lang="und">19</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6pR3rlxrYsa" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+		<activity id="5ibISMhJsid" type="module">
+			<name lang="und">Move on to the next part</name>
+			<description lang="und">Move on to the next part</description>
+		</activity>
+	</activities>
+</tincan>

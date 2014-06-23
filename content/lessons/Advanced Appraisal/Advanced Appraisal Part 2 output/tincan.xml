@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Advanced Appraisal Part 2" type="course">
+			<name lang="und">Advanced Appraisal Part 2</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6GGZEouJCXj" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5nlmsfBddTL" type="module">
+			<name lang="und">What Happened?</name>
+			<description lang="und">What Happened?</description>
+		</activity>
+		<activity id="6mySi5YaEQb" type="module">
+			<name lang="und">Subject Property</name>
+			<description lang="und">Subject Property</description>
+		</activity>
+		<activity id="6ZbNsnEeMIp" type="module">
+			<name lang="und">Subject Property</name>
+			<description lang="und">Subject Property</description>
+		</activity>
+		<activity id="6EvrSAztU3O" type="module">
+			<name lang="und">The "Subject"</name>
+			<description lang="und">The "Subject"</description>
+		</activity>
+		<activity id="6YCvUS6eMWU" type="module">
+			<name lang="und">The "Neighborhood"</name>
+			<description lang="und">The "Neighborhood"</description>
+		</activity>
+		<activity id="5q4ZewdXoil" type="module">
+			<name lang="und">The "Site"</name>
+			<description lang="und">The "Site"</description>
+		</activity>
+		<activity id="6miCAAKdvll" type="module">
+			<name lang="und">The "Description of Improvements"</name>
+			<description lang="und">The "Description of Improvements"</description>
+		</activity>
+		<activity id="5brelKzLyEZ" type="module">
+			<name lang="und">Floor Plan</name>
+			<description lang="und">Floor Plan</description>
+		</activity>
+		<activity id="6LP5bKUjCxX" type="module">
+			<name lang="und">The "Description of Improvements"</name>
+			<description lang="und">The "Description of Improvements"</description>
+		</activity>
+		<activity id="6dBk5UOop5Z" type="module">
+			<name lang="und">The Cost Approach</name>
+			<description lang="und">The Cost Approach</description>
+		</activity>
+		<activity id="5hh0jjKkoe3" type="module">
+			<name lang="und">Adjusting the Comparable</name>
+			<description lang="und">Adjusting the Comparable</description>
+		</activity>
+		<activity id="5mSOJHdFCbX" type="module">
+			<name lang="und">Final Adjustments to Comparables</name>
+			<description lang="und">Final Adjustments to Comparables</description>
+		</activity>
+		<activity id="6njSM4iTiFm" type="module">
+			<name lang="und">The "Description of Improvements"</name>
+			<description lang="und">The "Description of Improvements"</description>
+		</activity>
+		<activity id="5X8v8RsYvtg" type="module">
+			<name lang="und">Map of Comparables and Subject Properties</name>
+			<description lang="und">Map of Comparables and Subject Properties</description>
+		</activity>
+		<activity id="5UxRb7ziONO" type="module">
+			<name lang="und">Good Work!</name>
+			<description lang="und">Good Work!</description>
+		</activity>
+	</activities>
+</tincan>

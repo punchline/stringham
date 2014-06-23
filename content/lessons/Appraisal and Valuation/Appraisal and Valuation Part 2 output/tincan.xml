@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Appraisal and Valuation Part 2" type="course">
+			<name lang="und">Appraisal and Valuation Part 2</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6bpkTWRe7KI" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5x2taPDm8hp" type="module">
+			<name lang="und">The Appraisal Process</name>
+			<description lang="und">The Appraisal Process</description>
+		</activity>
+		<activity id="5Xj67EmRymr" type="module">
+			<name lang="und">Step 1</name>
+			<description lang="und">Step 1</description>
+		</activity>
+		<activity id="6Ua4Q04X4MM" type="module">
+			<name lang="und">Step 2</name>
+			<description lang="und">Step 2</description>
+		</activity>
+		<activity id="6TZ9pCDX9oP" type="module">
+			<name lang="und">Step 3</name>
+			<description lang="und">Step 3</description>
+		</activity>
+		<activity id="5cr7mWeFnyI" type="module">
+			<name lang="und">Step 4</name>
+			<description lang="und">Step 4</description>
+		</activity>
+		<activity id="6QFHxU0LYXm" type="module">
+			<name lang="und">Step 4</name>
+			<description lang="und">Step 4</description>
+		</activity>
+		<activity id="6P9pi5YtN2p" type="module">
+			<name lang="und">Step 4</name>
+			<description lang="und">Step 4</description>
+		</activity>
+		<activity id="5p5zWlzZchf" type="module">
+			<name lang="und">Step 5</name>
+			<description lang="und">Step 5</description>
+		</activity>
+		<activity id="5m91hdLZlHP" type="module">
+			<name lang="und">Step 6</name>
+			<description lang="und">Step 6</description>
+		</activity>
+		<activity id="6TqXPR2aQia" type="module">
+			<name lang="und">Narrative vs. Summary</name>
+			<description lang="und">Narrative vs. Summary</description>
+		</activity>
+		<activity id="6mxDmHSx4i2" type="module">
+			<name lang="und">Step 6</name>
+			<description lang="und">Step 6</description>
+		</activity>
+		<activity id="6MCEwkZTltE" type="module">
+			<name lang="und">Order the Steps</name>
+			<description lang="und">Order the Steps</description>
+		</activity>
+		<activity id="6MCEwkZTltE.6IzReIjZOol" type="cmi.interaction">
+			<name lang="und">Click and drag to arrange the appraisal steps in order from first to last.</name>
+			<description lang="und">Click and drag to arrange the appraisal steps in order from first to last.</description>
+			<interactionType>sequencing</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_64igAAcgeAj</correctResponsePattern>
+				<correctResponsePattern>choice_6OAAkxC82qx</correctResponsePattern>
+				<correctResponsePattern>choice_6fEsjsagdjo</correctResponsePattern>
+				<correctResponsePattern>choice_6hl4U4fV9ej</correctResponsePattern>
+				<correctResponsePattern>choice_5i1A1eyxZ7s</correctResponsePattern>
+				<correctResponsePattern>choice_5frYiSQ9baz</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_64igAAcgeAj</id>
+					<description lang="und">Define the Problem</description>
+				</component>
+				<component>
+					<id>choice_6OAAkxC82qx</id>
+					<description lang="und">Conduct a Preliminary Survey</description>
+				</component>
+				<component>
+					<id>choice_6fEsjsagdjo</id>
+					<description lang="und">Gather Data</description>
+				</component>
+				<component>
+					<id>choice_6hl4U4fV9ej</id>
+					<description lang="und">Classify Data</description>
+				</component>
+				<component>
+					<id>choice_5i1A1eyxZ7s</id>
+					<description lang="und">Reconcile or Correlate Data</description>
+				</component>
+				<component>
+					<id>choice_5frYiSQ9baz</id>
+					<description lang="und">Write Report</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5lDmqUYMLLa" type="module">
+			<name lang="und">Mark ALL that apply</name>
+			<description lang="und">Mark ALL that apply</description>
+		</activity>
+		<activity id="5lDmqUYMLLa.5XlxG3pW06M" type="cmi.interaction">
+			<name lang="und">What are the 4 parts of an appraisal letter? Mark ALL that apply.</name>
+			<description lang="und">What are the 4 parts of an appraisal letter? Mark ALL that apply.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6i6FjsIjGLt</correctResponsePattern>
+				<correctResponsePattern>choice_66L8FRM5Yrn</correctResponsePattern>
+				<correctResponsePattern>choice_6dOjW9exRYb</correctResponsePattern>
+				<correctResponsePattern>choice_5n2wSqciW5M</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6i6FjsIjGLt</id>
+					<description lang="und">Estimate</description>
+				</component>
+				<component>
+					<id>choice_66L8FRM5Yrn</id>
+					<description lang="und">Description of Property</description>
+				</component>
+				<component>
+					<id>choice_6dOjW9exRYb</id>
+					<description lang="und">Date</description>
+				</component>
+				<component>
+					<id>choice_5n2wSqciW5M</id>
+					<description lang="und">Signature</description>
+				</component>
+				<component>
+					<id>choice_5jm2i40mWAL</id>
+					<description lang="und">Notary</description>
+				</component>
+				<component>
+					<id>choice_6Tx9QLt7zXj</id>
+					<description lang="und">Photo of Property</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6as6MhLecct" type="module">
+			<name lang="und">Good Work!</name>
+			<description lang="und">Good Work!</description>
+		</activity>
+	</activities>
+</tincan>

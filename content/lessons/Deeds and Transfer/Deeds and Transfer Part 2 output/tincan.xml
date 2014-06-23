@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Deeds and Transfer Part 2" type="course">
+			<name lang="und">Deeds and Transfer Part 2</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="66Y4RiSwKdD" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5eYELRMdDXT" type="module">
+			<name lang="und">Recording a Document</name>
+			<description lang="und">Recording a Document</description>
+		</activity>
+		<activity id="6AxncbuMvZJ" type="module">
+			<name lang="und">Forms of Acknowledgement</name>
+			<description lang="und">Forms of Acknowledgement</description>
+		</activity>
+		<activity id="6OzPnv9aG6x" type="module">
+			<name lang="und">Date</name>
+			<description lang="und">Date</description>
+		</activity>
+		<activity id="6RndJdWkEAe" type="module">
+			<name lang="und">Effect of Failure to Record</name>
+			<description lang="und">Effect of Failure to Record</description>
+		</activity>
+		<activity id="61VCmVA96jp" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="61VCmVA96jp.643k8nYjKHt" type="cmi.interaction">
+			<name lang="und">The important factor in deciding which of two deeds to the same property is going to be legally recognized is which was recorded first, not which has the earlier date.</name>
+			<description lang="und">The important factor in deciding which of two deeds to the same property is going to be legally recognized is which was recorded first, not which has the earlier date.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6hS4EWCw4VK</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6hS4EWCw4VK</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_60G1cTNXIOd</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6715jutde7f" type="module">
+			<name lang="und">Effect of Failure to Record</name>
+			<description lang="und">Effect of Failure to Record</description>
+		</activity>
+		<activity id="5W2HGLt0m0b" type="module">
+			<name lang="und">Which takes precedence?</name>
+			<description lang="und">Which takes precedence?</description>
+		</activity>
+		<activity id="5W2HGLt0m0b.69ibRGCYH6B" type="cmi.interaction">
+			<name lang="und">From our example, which deed takes precedence?</name>
+			<description lang="und">From our example, which deed takes precedence?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6gF4gRvwFni</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6mp6OERY7z1</id>
+					<description lang="und">January 6th</description>
+				</component>
+				<component>
+					<id>choice_6gF4gRvwFni</id>
+					<description lang="und">June 26th</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6L9WkYzZ0Ux" type="module">
+			<name lang="und">The Habendum Clause</name>
+			<description lang="und">The Habendum Clause</description>
+		</activity>
+		<activity id="6Gc5kd9GSTx" type="module">
+			<name lang="und">Forms</name>
+			<description lang="und">Forms</description>
+		</activity>
+		<activity id="6D95BbTPg62" type="module">
+			<name lang="und">Types of Deeds</name>
+			<description lang="und">Types of Deeds</description>
+		</activity>
+		<activity id="64os9JYl2ul" type="module">
+			<name lang="und">Non-Warranty Deeds</name>
+			<description lang="und">Non-Warranty Deeds</description>
+		</activity>
+		<activity id="5bm98XjGRs1" type="module">
+			<name lang="und">Quit Claim Deed</name>
+			<description lang="und">Quit Claim Deed</description>
+		</activity>
+		<activity id="6Y46TX8dXUo" type="module">
+			<name lang="und">Characteristics</name>
+			<description lang="und">Characteristics</description>
+		</activity>
+		<activity id="5ya1llhKYgj" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5ya1llhKYgj.5al06xaTvF1" type="cmi.interaction">
+			<name lang="und">A Quit Claim Deed conveys ownership of the real property of the grantor.</name>
+			<description lang="und">A Quit Claim Deed conveys ownership of the real property of the grantor.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6HOAaMjEwn9</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6HOAaMjEwn9</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5cy8lB8OFqE</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6LXD2wSasUI" type="module">
+			<name lang="und">Warranty Deeds</name>
+			<description lang="und">Warranty Deeds</description>
+		</activity>
+		<activity id="6BBqN2DpDQX" type="module">
+			<name lang="und">Covenants of Warranty Deeds</name>
+			<description lang="und">Covenants of Warranty Deeds</description>
+		</activity>
+		<activity id="5qf8D5uao91" type="module">
+			<name lang="und">Covenants of Warranty Deeds</name>
+			<description lang="und">Covenants of Warranty Deeds</description>
+		</activity>
+		<activity id="5qSCe4EAmiR" type="module">
+			<name lang="und">Seizin</name>
+			<description lang="und">Seizin</description>
+		</activity>
+		<activity id="6CGHDPSEBj0" type="module">
+			<name lang="und">Encumbrances</name>
+			<description lang="und">Encumbrances</description>
+		</activity>
+		<activity id="5XNGG0F1PvH" type="module">
+			<name lang="und">Quiet Enjoyment</name>
+			<description lang="und">Quiet Enjoyment</description>
+		</activity>
+		<activity id="65CtMNl7J2g" type="module">
+			<name lang="und">Futher Assurance </name>
+			<description lang="und">Futher Assurance </description>
+		</activity>
+		<activity id="5bz2DJuPwbn" type="module">
+			<name lang="und">Warranty Forever</name>
+			<description lang="und">Warranty Forever</description>
+		</activity>
+		<activity id="5shzjrgjK8V" type="module">
+			<name lang="und">List in the order we discussed</name>
+			<description lang="und">List in the order we discussed</description>
+		</activity>
+		<activity id="5shzjrgjK8V.6VEisa2qJ9G" type="cmi.interaction">
+			<name lang="und">List the following covenants in the correct order as we covered them in the course.</name>
+			<description lang="und">List the following covenants in the correct order as we covered them in the course.</description>
+			<interactionType>sequencing</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6LceqS5y3X3</correctResponsePattern>
+				<correctResponsePattern>choice_6HeNWFXISsx</correctResponsePattern>
+				<correctResponsePattern>choice_60K8jfvUChm</correctResponsePattern>
+				<correctResponsePattern>choice_6LHFXJKfjbG</correctResponsePattern>
+				<correctResponsePattern>choice_6p6fUxO0YAy</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6LceqS5y3X3</id>
+					<description lang="und">Covenant of Seizin</description>
+				</component>
+				<component>
+					<id>choice_6HeNWFXISsx</id>
+					<description lang="und">Covenant Against Encumbrances</description>
+				</component>
+				<component>
+					<id>choice_60K8jfvUChm</id>
+					<description lang="und">Covenant of Quiet Enjoyment</description>
+				</component>
+				<component>
+					<id>choice_6LHFXJKfjbG</id>
+					<description lang="und">Covenant of Further Assurance</description>
+				</component>
+				<component>
+					<id>choice_6p6fUxO0YAy</id>
+					<description lang="und">Covenant of Warranty Forever</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6ixoz2SlpU0" type="module">
+			<name lang="und">End of Part 2</name>
+			<description lang="und">End of Part 2</description>
+		</activity>
+	</activities>
+</tincan>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Agency B Part 3" type="course">
+			<name lang="und">Agency B Part 3</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6GM3SeDJbTI" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5xsJ5zQ92PL" type="module">
+			<name lang="und">Agency Law</name>
+			<description lang="und">Agency Law</description>
+		</activity>
+		<activity id="6PkN7skqU8o" type="module">
+			<name lang="und">Buyer Brokerages</name>
+			<description lang="und">Buyer Brokerages</description>
+		</activity>
+		<activity id="6ZdsvGjNyRg" type="module">
+			<name lang="und">Intent of Agency Disclosure Laws</name>
+			<description lang="und">Intent of Agency Disclosure Laws</description>
+		</activity>
+		<activity id="5tNr6GNAxX5" type="module">
+			<name lang="und">Agency-Related Forms</name>
+			<description lang="und">Agency-Related Forms</description>
+		</activity>
+		<activity id="5cs5qQl5tKG" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5cs5qQl5tKG.5yhkgHlziZP" type="cmi.interaction">
+			<name lang="und">All agency-related forms are State Approved forms</name>
+			<description lang="und">All agency-related forms are State Approved forms</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5sMHMyhDVhV</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5aUc5TnnwDy</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5sMHMyhDVhV</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5gw7oNBCs6t" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5gw7oNBCs6t.6RlO84UphRF" type="cmi.interaction">
+			<name lang="und">Some brokerages have their own unique forms they use for listings and buyer brokerage agreements.</name>
+			<description lang="und">Some brokerages have their own unique forms they use for listings and buyer brokerage agreements.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6MNZCN8CQ5L</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6MNZCN8CQ5L</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5wNvxGbWURC</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5jdfaZaCIPk" type="module">
+			<name lang="und">Agency-Related Forms</name>
+			<description lang="und">Agency-Related Forms</description>
+		</activity>
+		<activity id="6C4arCOxoRf" type="module">
+			<name lang="und">Agency-Related Forms</name>
+			<description lang="und">Agency-Related Forms</description>
+		</activity>
+		<activity id="6FQUXEzBjvT" type="module">
+			<name lang="und">Doing great!</name>
+			<description lang="und">Doing great!</description>
+		</activity>
+	</activities>
+</tincan>

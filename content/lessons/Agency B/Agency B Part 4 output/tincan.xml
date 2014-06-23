@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Agency B Part 4" type="course">
+			<name lang="und">Agency B Part 4</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5wiqHsEWA4b" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6erdeGnzdIG" type="module">
+			<name lang="und">Agency-Related Forms</name>
+			<description lang="und">Agency-Related Forms</description>
+		</activity>
+		<activity id="6qIXRZMQuQJ" type="module">
+			<name lang="und">Agency-Related Forms</name>
+			<description lang="und">Agency-Related Forms</description>
+		</activity>
+		<activity id="5khmSN8SITt" type="module">
+			<name lang="und">Agency-Related Forms</name>
+			<description lang="und">Agency-Related Forms</description>
+		</activity>
+		<activity id="6lWuSRYsB8V" type="module">
+			<name lang="und">Park City Example</name>
+			<description lang="und">Park City Example</description>
+		</activity>
+		<activity id="66pczgtKpjO" type="module">
+			<name lang="und">Risk Reduction</name>
+			<description lang="und">Risk Reduction</description>
+		</activity>
+		<activity id="5ztwSKPYlL3" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5ztwSKPYlL3.6QcQfKUVoQ9" type="cmi.interaction">
+			<name lang="und">The Unrepresented Buyer Disclosure form would be used under what circumstances?</name>
+			<description lang="und">The Unrepresented Buyer Disclosure form would be used under what circumstances?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6Fb4GK3WFTC</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6Fb4GK3WFTC</id>
+					<description lang="und">You represent the seller only; the buyer has no other agent and doesn't want one.</description>
+				</component>
+				<component>
+					<id>choice_6TPnzDiEe7k</id>
+					<description lang="und">The buyers can't reach their agent and want you to show them your listing.</description>
+				</component>
+				<component>
+					<id>choice_686jyuN9gZA</id>
+					<description lang="und">The buyers are personal friends.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6GEQfn3uj9Y" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6GEQfn3uj9Y.6OPK9ieoxVr" type="cmi.interaction">
+			<name lang="und">In both the Listing Contract and the Buyer Agency Contract, paragraph 5 deals with what issue?</name>
+			<description lang="und">In both the Listing Contract and the Buyer Agency Contract, paragraph 5 deals with what issue?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6o1hBuapPbI</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6o1hBuapPbI</id>
+					<description lang="und">Agency</description>
+				</component>
+				<component>
+					<id>choice_5jntfpf7NnF</id>
+					<description lang="und">Default</description>
+				</component>
+				<component>
+					<id>choice_6l70xQKnVui</id>
+					<description lang="und">Disclosures</description>
+				</component>
+				<component>
+					<id>choice_6CNf5QOrPgU</id>
+					<description lang="und">Commission</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="65pZoBIZawa" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="65pZoBIZawa.6R6W3I7AdI8" type="cmi.interaction">
+			<name lang="und">In the Listing and the Buyer Broker form there are boxes for the parties to initial if they agree to limited agency. If they have entered their initials, nothing further is required if a limited agency situation arises at a later date.</name>
+			<description lang="und">In the Listing and the Buyer Broker form there are boxes for the parties to initial if they agree to limited agency. If they have entered their initials, nothing further is required if a limited agency situation arises at a later date.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_69OzJfP6jWl</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5yve92nlJka</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_69OzJfP6jWl</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5kBWJfG4C6C" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5kBWJfG4C6C.5rn8UjLCzYq" type="cmi.interaction">
+			<name lang="und">What is the purpose of the protection period in paragraph 3 of the Listing agreement?</name>
+			<description lang="und">What is the purpose of the protection period in paragraph 3 of the Listing agreement?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6ZJTFclRtTH</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6jH6pUivhDu</id>
+					<description lang="und">To make sure only the original brokerage will get the commission.</description>
+				</component>
+				<component>
+					<id>choice_6ZJTFclRtTH</id>
+					<description lang="und">To keep the seller from avoiding paying a commission</description>
+				</component>
+				<component>
+					<id>choice_5pMCeetQQx3</id>
+					<description lang="und">To make sure the original listing agent gets a commission.</description>
+				</component>
+				<component>
+					<id>choice_5gSACXTPneU</id>
+					<description lang="und">To protect you from getting audited by the IRS.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="679zCQNb6YG" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="679zCQNb6YG.5iVMWdZMzif" type="cmi.interaction">
+			<name lang="und">The For Sale By Owner document has two main purposes. One is to ensure the agent gets a commission. What is the other purpose?</name>
+			<description lang="und">The For Sale By Owner document has two main purposes. One is to ensure the agent gets a commission. What is the other purpose?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6B2SFjJCo1m</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6AFBUQI0T9l</id>
+					<description lang="und">Creating an agency relationship with the seller.</description>
+				</component>
+				<component>
+					<id>choice_6B2SFjJCo1m</id>
+					<description lang="und">Agency disclosure.</description>
+				</component>
+				<component>
+					<id>choice_6YN0zqJ7lt0</id>
+					<description lang="und">Educating the seller about the settlement process.</description>
+				</component>
+				<component>
+					<id>choice_5p7mioYDQmi</id>
+					<description lang="und">Making the process take longer.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5oG6Cm7qKOx" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5oG6Cm7qKOx.5pBouadSAPP" type="cmi.interaction">
+			<name lang="und">The Transaction Document Receipt tracks dates that then trigger other time frames (for response, for instance). What other major benefit has been shown from using this form?</name>
+			<description lang="und">The Transaction Document Receipt tracks dates that then trigger other time frames (for response, for instance). What other major benefit has been shown from using this form?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6KqEc6by2Ju</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_63lOupnTws2</id>
+					<description lang="und">Helps with filing things in chronological order.</description>
+				</component>
+				<component>
+					<id>choice_6SuwgDsMFTZ</id>
+					<description lang="und">Looks good on your resume under experience.</description>
+				</component>
+				<component>
+					<id>choice_6KqEc6by2Ju</id>
+					<description lang="und">A great defense in legal actions against you.</description>
+				</component>
+				<component>
+					<id>choice_5eYLOZrbaVR</id>
+					<description lang="und">Shows your client how on top of things you are.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6ozUv9k8E7O" type="module">
+			<name lang="und">End</name>
+			<description lang="und">End</description>
+		</activity>
+	</activities>
+</tincan>

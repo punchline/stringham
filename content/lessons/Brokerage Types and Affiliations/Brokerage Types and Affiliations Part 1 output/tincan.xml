@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Brokerage Types and Affiliations Part 1" type="course">
+			<name lang="und">Brokerage Types and Affiliations Part 1</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5YTC3OLo639" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6W5r0IspPpI" type="module">
+			<name lang="und">Real Estate Brands</name>
+			<description lang="und">Real Estate Brands</description>
+		</activity>
+		<activity id="6D9Nn3H89UQ" type="module">
+			<name lang="und">Training</name>
+			<description lang="und">Training</description>
+		</activity>
+		<activity id="6rHhkr5i1DX" type="module">
+			<name lang="und">Training- Market Conditions</name>
+			<description lang="und">Training- Market Conditions</description>
+		</activity>
+		<activity id="5UlH71fwM0D" type="module">
+			<name lang="und">Training- Designations</name>
+			<description lang="und">Training- Designations</description>
+		</activity>
+		<activity id="6JyDMo80Cvu" type="module">
+			<name lang="und">Brokerages Overview</name>
+			<description lang="und">Brokerages Overview</description>
+		</activity>
+		<activity id="6SN9nrXwydp" type="module">
+			<name lang="und">Compensation Plan</name>
+			<description lang="und">Compensation Plan</description>
+		</activity>
+		<activity id="6CJ38pDMAsF" type="module">
+			<name lang="und">Compensation Plan</name>
+			<description lang="und">Compensation Plan</description>
+		</activity>
+		<activity id="6i52sxk47pN" type="module">
+			<name lang="und">Independent Broker:</name>
+			<description lang="und">Independent Broker:</description>
+		</activity>
+		<activity id="5YUWLPaQiJs" type="module">
+			<name lang="und">Independent Broker</name>
+			<description lang="und">Independent Broker</description>
+		</activity>
+		<activity id="6KHPkghOlIY" type="module">
+			<name lang="und">Real Estate Franchises:</name>
+			<description lang="und">Real Estate Franchises:</description>
+		</activity>
+		<activity id="69DknRJKm9e" type="module">
+			<name lang="und">Definition: Franchise</name>
+			<description lang="und">Definition: Franchise</description>
+		</activity>
+		<activity id="6dmCS96i78Y" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="6dmCS96i78Y.6VpFh5veWEN" type="cmi.interaction">
+			<name lang="und">Brokers are responsible to insure that their agents record the necessary documents and file them accurately</name>
+			<description lang="und">Brokers are responsible to insure that their agents record the necessary documents and file them accurately</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5zQ74jFV2g2</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5zQ74jFV2g2</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_62mXmoDzIhI</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5z4afssSrxM" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5z4afssSrxM.6n6w3OQmImX" type="cmi.interaction">
+			<name lang="und">Brokerage policies and procedures have to be written according to the rules governed by the Utah Association of Realtors.</name>
+			<description lang="und">Brokerage policies and procedures have to be written according to the rules governed by the Utah Association of Realtors.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6dKVWbtl9vD</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5YHk9igf2rc</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6dKVWbtl9vD</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6Bi2be1dsf8" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="6Bi2be1dsf8.6Spunmvcg9N" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_66VWWYiRV5E</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5tdl8yi443B</id>
+					<description lang="und">A broker who chooses NOT to affiliate with any real estate franchise.</description>
+				</component>
+				<component>
+					<id>choice_66VWWYiRV5E</id>
+					<description lang="und">The private right to operate a business using a designated trade name and the operating procedures of a parent company.</description>
+				</component>
+				<component>
+					<id>choice_658WyLpMxbT</id>
+					<description lang="und">A broker who assists another broker in the sale of real property.</description>
+				</component>
+				<component>
+					<id>choice_641fMpuLnL2</id>
+					<description lang="und">A broker who represents the buyer in a fiduciary capacity.</description>
+				</component>
+				<component>
+					<id>choice_6VeN6w02w8m</id>
+					<description lang="und">A brokerage designed to house agents that do not wish to be a part of the local REALTOR® Board.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6CVin1r9zoc" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="6CVin1r9zoc.657cXB0UYRS" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5zB3B63en8F</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5zB3B63en8F</id>
+					<description lang="und">A broker who chooses NOT to affiliate with any real estate franchise.</description>
+				</component>
+				<component>
+					<id>choice_5qv29FUuLkc</id>
+					<description lang="und">The private right to operate a business using a designated trade name and the operating procedures of a parent company.</description>
+				</component>
+				<component>
+					<id>choice_6KVPYAdPILs</id>
+					<description lang="und">A broker who assists another broker in the sale of real property.</description>
+				</component>
+				<component>
+					<id>choice_6QoExXQ05Zk</id>
+					<description lang="und">A broker who represents the buyer in a fiduciary capacity.</description>
+				</component>
+				<component>
+					<id>choice_6Crt3U7F16g</id>
+					<description lang="und">A brokerage designed to house agents that do not wish to be a part of the local REALTOR® Board.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5vuvPKPa3lQ" type="module">
+			<name lang="und">Move on to the next part</name>
+			<description lang="und">Move on to the next part</description>
+		</activity>
+	</activities>
+</tincan>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Advanced Appraisal Part 3" type="course">
+			<name lang="und">Advanced Appraisal Part 3</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6aX7GqP6Qk4" type="objective">
+			<name lang="und">Results</name>
+			<description lang="und">Results</description>
+		</activity>
+		<activity id="6WHgCUtygSX" type="objective">
+			<name lang="und">Results1</name>
+			<description lang="und">Results1</description>
+		</activity>
+		<activity id="6NYixvvz1mS" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5nKCO1uGZzL" type="module">
+			<name lang="und">Cost Approach</name>
+			<description lang="und">Cost Approach</description>
+		</activity>
+		<activity id="6PZfDzn03le" type="module">
+			<name lang="und">Cost Approach</name>
+			<description lang="und">Cost Approach</description>
+		</activity>
+		<activity id="5zGObylIHTa" type="module">
+			<name lang="und">Formula</name>
+			<description lang="und">Formula</description>
+		</activity>
+		<activity id="5VEJJyifpJI" type="module">
+			<name lang="und">The Comparison Approach</name>
+			<description lang="und">The Comparison Approach</description>
+		</activity>
+		<activity id="5vQ9MTsj8fK" type="module">
+			<name lang="und">Value of Improvements</name>
+			<description lang="und">Value of Improvements</description>
+		</activity>
+		<activity id="6BqylrZVHre" type="module">
+			<name lang="und">Quantity Survey Formula</name>
+			<description lang="und">Quantity Survey Formula</description>
+		</activity>
+		<activity id="6Y2ef3fMK5A" type="module">
+			<name lang="und">Unit-in-Place Components</name>
+			<description lang="und">Unit-in-Place Components</description>
+		</activity>
+		<activity id="690oPFQT40p" type="module">
+			<name lang="und">Cubic / Square Foot Formula</name>
+			<description lang="und">Cubic / Square Foot Formula</description>
+		</activity>
+		<activity id="69Oyb6sqUIl" type="module">
+			<name lang="und">Depreciation</name>
+			<description lang="und">Depreciation</description>
+		</activity>
+		<activity id="69WGnEOy1kh" type="module">
+			<name lang="und">Physical </name>
+			<description lang="und">Physical </description>
+		</activity>
+		<activity id="5l8y4vwkZOu" type="module">
+			<name lang="und">Functional Obsolescence</name>
+			<description lang="und">Functional Obsolescence</description>
+		</activity>
+		<activity id="5ac2ORl3VCm" type="module">
+			<name lang="und">Economic Obsolescence</name>
+			<description lang="und">Economic Obsolescence</description>
+		</activity>
+		<activity id="69kTa2QTyiG" type="module">
+			<name lang="und">Depreciation </name>
+			<description lang="und">Depreciation </description>
+		</activity>
+		<activity id="6ksBNgNhYLa" type="module">
+			<name lang="und">Match up the Choices</name>
+			<description lang="und">Match up the Choices</description>
+		</activity>
+		<activity id="6ksBNgNhYLa.6DYpJsweRKk" type="cmi.interaction">
+			<name lang="und">Depreciation can be curable and incurable. Match up the choices below by dragging them to link correctly:</name>
+			<description lang="und">Depreciation can be curable and incurable. Match up the choices below by dragging them to link correctly:</description>
+			<interactionType>matching</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>statement_6CAT8gH9FFe[.]choice_6WiWMFfVag3</correctResponsePattern>
+				<correctResponsePattern>statement_5gZs1O8fPdP[.]choice_6px97ZhnHaa</correctResponsePattern>
+			</correctResponsePatterns>
+			<source>
+				<component>
+					<id>statement_6CAT8gH9FFe</id>
+					<description lang="und">Improvements of $60,000 only increase value $45,000.</description>
+				</component>
+				<component>
+					<id>statement_5gZs1O8fPdP</id>
+					<description lang="und">Improvements were only $500, but it increases $6,000 in value.</description>
+				</component>
+			</source>
+			<target>
+				<component>
+					<id>choice_6WiWMFfVag3</id>
+					<description lang="und">Incurable</description>
+				</component>
+				<component>
+					<id>choice_6px97ZhnHaa</id>
+					<description lang="und">Curable</description>
+				</component>
+			</target>
+		</activity>
+		<activity id="5k3FbMG6LsQ" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5k3FbMG6LsQ.5XHbd3vTx9G" type="cmi.interaction">
+			<name lang="und">The cost approach can be used on all types of property.</name>
+			<description lang="und">The cost approach can be used on all types of property.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6SlTJsIoGKB</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6FaivoTAB0a</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6SlTJsIoGKB</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="63YVCfYKnBf" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+		<activity id="65sW1eqmwM4" type="module">
+			<name lang="und">Income Approach</name>
+			<description lang="und">Income Approach</description>
+		</activity>
+		<activity id="64WKSL7F0zH" type="module">
+			<name lang="und">Rate of Return</name>
+			<description lang="und">Rate of Return</description>
+		</activity>
+		<activity id="5vtNACC1VCX" type="module">
+			<name lang="und">The “Cap” Rate</name>
+			<description lang="und">The “Cap” Rate</description>
+		</activity>
+		<activity id="6V6PR3QfKWW" type="module">
+			<name lang="und">The “Cap” Rate</name>
+			<description lang="und">The “Cap” Rate</description>
+		</activity>
+		<activity id="5m3A0NDt117" type="module">
+			<name lang="und">The “Cap” Rate</name>
+			<description lang="und">The “Cap” Rate</description>
+		</activity>
+		<activity id="66OFMrigLkw" type="module">
+			<name lang="und">The “Cap” Rate</name>
+			<description lang="und">The “Cap” Rate</description>
+		</activity>
+		<activity id="6djpJAaeqio" type="module">
+			<name lang="und">The “Cap” Rate</name>
+			<description lang="und">The “Cap” Rate</description>
+		</activity>
+		<activity id="6UGaFQL1Av0" type="module">
+			<name lang="und">The “Cap” Rate</name>
+			<description lang="und">The “Cap” Rate</description>
+		</activity>
+		<activity id="5dARO57P4aH" type="module">
+			<name lang="und">Net Operating Income (NOI)</name>
+			<description lang="und">Net Operating Income (NOI)</description>
+		</activity>
+		<activity id="6jSnrWoKb9E" type="module">
+			<name lang="und">Net Operating Income (NOI)</name>
+			<description lang="und">Net Operating Income (NOI)</description>
+		</activity>
+		<activity id="6ZTVZLF4IDL" type="module">
+			<name lang="und">Cap Rate Comparables</name>
+			<description lang="und">Cap Rate Comparables</description>
+		</activity>
+		<activity id="6A5IpyTxDoq" type="module">
+			<name lang="und">Down and Dirty</name>
+			<description lang="und">Down and Dirty</description>
+		</activity>
+		<activity id="5YzzyCKvcSk" type="module">
+			<name lang="und">Gross Rent Multiplier Comparables</name>
+			<description lang="und">Gross Rent Multiplier Comparables</description>
+		</activity>
+		<activity id="67WRmUlxih3" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="67WRmUlxih3.6i9PcpuVQCf" type="cmi.interaction">
+			<name lang="und">If the NOI increases and the value goes up, the cap rate will:</name>
+			<description lang="und">If the NOI increases and the value goes up, the cap rate will:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6Uch2SOflcu</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6Uch2SOflcu</id>
+					<description lang="und">Stay the same</description>
+				</component>
+				<component>
+					<id>choice_6TQKvcGyiZg</id>
+					<description lang="und">Go up</description>
+				</component>
+				<component>
+					<id>choice_5XTXsIeno3A</id>
+					<description lang="und">Go down</description>
+				</component>
+				<component>
+					<id>choice_5aygE0WYlsC</id>
+					<description lang="und">Disappear</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5vtybES9pCN" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5vtybES9pCN.6Lnr1ykp0kf" type="cmi.interaction">
+			<name lang="und">'Cap' rate is short for:</name>
+			<description lang="und">'Cap' rate is short for:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6llZebfW3AW</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5rUkBOq3WOX</id>
+					<description lang="und">Captain's rate</description>
+				</component>
+				<component>
+					<id>choice_60vDGHsrpiT</id>
+					<description lang="und">Cap-off rate</description>
+				</component>
+				<component>
+					<id>choice_6llZebfW3AW</id>
+					<description lang="und">Capitalization rate</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="60zKdV6R1AE" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="60zKdV6R1AE.5nYyQd6cJwg" type="cmi.interaction">
+			<name lang="und">Rate of return is expressed in a percentage.</name>
+			<description lang="und">Rate of return is expressed in a percentage.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6rhZl3X9Xop</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6rhZl3X9Xop</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6Bqf0ExqiGE</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="682yDAM8OrS" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+		<activity id="6kUjBrzcwHH" type="module">
+			<name lang="und">Good Work!</name>
+			<description lang="und">Good Work!</description>
+		</activity>
+	</activities>
+</tincan>

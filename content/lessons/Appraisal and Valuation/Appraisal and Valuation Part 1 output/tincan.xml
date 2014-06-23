@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Appraisal and Valuation Part 1" type="course">
+			<name lang="und">Appraisal and Valuation Part 1</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6MdxKRsv9Ac" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6NkTrZVNFZC" type="module">
+			<name lang="und">Intro</name>
+			<description lang="und">Intro</description>
+		</activity>
+		<activity id="6jp6fQjfQ48" type="module">
+			<name lang="und">San Diego Union Tribune </name>
+			<description lang="und">San Diego Union Tribune </description>
+		</activity>
+		<activity id="5bxl6olvh3E" type="module">
+			<name lang="und">Desoto, (Dallas area) Texas</name>
+			<description lang="und">Desoto, (Dallas area) Texas</description>
+		</activity>
+		<activity id="5gfWw2h1WtY" type="module">
+			<name lang="und">Desoto, Texas (cont’d.)</name>
+			<description lang="und">Desoto, Texas (cont’d.)</description>
+		</activity>
+		<activity id="6IJIlaNCUpi" type="module">
+			<name lang="und">Smithtown, New York</name>
+			<description lang="und">Smithtown, New York</description>
+		</activity>
+		<activity id="5jFWzOG9bGY" type="module">
+			<name lang="und">Smithtown, New York (Cont’d.)</name>
+			<description lang="und">Smithtown, New York (Cont’d.)</description>
+		</activity>
+		<activity id="6RL8NXRft0T" type="module">
+			<name lang="und">View of House</name>
+			<description lang="und">View of House</description>
+		</activity>
+		<activity id="6dHzZgoBaG9" type="module">
+			<name lang="und">View of House</name>
+			<description lang="und">View of House</description>
+		</activity>
+		<activity id="5nO8HUL7wXB" type="module">
+			<name lang="und">Appraiser Qualifications</name>
+			<description lang="und">Appraiser Qualifications</description>
+		</activity>
+		<activity id="5mAFBUrpE0I" type="module">
+			<name lang="und">Appraiser's Valuation</name>
+			<description lang="und">Appraiser's Valuation</description>
+		</activity>
+		<activity id="6Y6eTvwgheY" type="module">
+			<name lang="und">Appraiser's Classifications</name>
+			<description lang="und">Appraiser's Classifications</description>
+		</activity>
+		<activity id="6gzWHoJ7jIk" type="module">
+			<name lang="und">A Certified Residential Appraiser can appraise all types of Real Estate.</name>
+			<description lang="und">A Certified Residential Appraiser can appraise all types of Real Estate.</description>
+		</activity>
+		<activity id="6gzWHoJ7jIk.6UsNcch3Tss" type="cmi.interaction">
+			<name lang="und">A Certified Residential Appraiser can appraise all types of Real Estate.</name>
+			<description lang="und">A Certified Residential Appraiser can appraise all types of Real Estate.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_67P0W6e1KZw</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6ChIekU6NHr</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_67P0W6e1KZw</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6WsBAbfnlsM" type="module">
+			<name lang="und">Competitive Market Analysis</name>
+			<description lang="und">Competitive Market Analysis</description>
+		</activity>
+		<activity id="6G8blo8Vuux" type="module">
+			<name lang="und">Competitive Market Analysis</name>
+			<description lang="und">Competitive Market Analysis</description>
+		</activity>
+		<activity id="5sVEsREFuSk" type="module">
+			<name lang="und">Competitive Market Analysis</name>
+			<description lang="und">Competitive Market Analysis</description>
+		</activity>
+		<activity id="6d71HxZdSps" type="module">
+			<name lang="und">Competitive Market Analysis</name>
+			<description lang="und">Competitive Market Analysis</description>
+		</activity>
+		<activity id="6plsen05iwM" type="module">
+			<name lang="und">Definition of Appraisal</name>
+			<description lang="und">Definition of Appraisal</description>
+		</activity>
+		<activity id="6HEd8Srro77" type="module">
+			<name lang="und">4 parts of an Appraisal</name>
+			<description lang="und">4 parts of an Appraisal</description>
+		</activity>
+		<activity id="6MrEuaTZRy1" type="module">
+			<name lang="und">Example of 4 Parts</name>
+			<description lang="und">Example of 4 Parts</description>
+		</activity>
+		<activity id="6INycOxwg3L" type="module">
+			<name lang="und">Pick Many</name>
+			<description lang="und">Pick Many</description>
+		</activity>
+		<activity id="6INycOxwg3L.5c5kTsfyZ4g" type="cmi.interaction">
+			<name lang="und">Pick Many</name>
+			<description lang="und">Pick Many</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6l64l5qsjhw</correctResponsePattern>
+				<correctResponsePattern>choice_67EWNiSAWSs</correctResponsePattern>
+				<correctResponsePattern>choice_5iDNuiHoecc</correctResponsePattern>
+				<correctResponsePattern>choice_64wgYl62Y4Y</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6l64l5qsjhw</id>
+					<description lang="und">Date</description>
+				</component>
+				<component>
+					<id>choice_67EWNiSAWSs</id>
+					<description lang="und">Signature</description>
+				</component>
+				<component>
+					<id>choice_5iDNuiHoecc</id>
+					<description lang="und">Description</description>
+				</component>
+				<component>
+					<id>choice_64wgYl62Y4Y</id>
+					<description lang="und">Estimate</description>
+				</component>
+				<component>
+					<id>choice_5a6qEEc7Cr4</id>
+					<description lang="und">Photo</description>
+				</component>
+				<component>
+					<id>choice_5aC9YNrcRyw</id>
+					<description lang="und">Notarization</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5nPhHQJ6h6P" type="module">
+			<name lang="und">Good Work!</name>
+			<description lang="und">Good Work!</description>
+		</activity>
+	</activities>
+</tincan>

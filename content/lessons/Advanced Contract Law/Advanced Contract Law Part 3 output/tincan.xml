@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Advanced Contract Law Part 3" type="course">
+			<name lang="und">Advanced Contract Law Part 3</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5pgsBtpUAq0" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="67GuNYDSt8q" type="module">
+			<name lang="und">What if?</name>
+			<description lang="und">What if?</description>
+		</activity>
+		<activity id="5xLKx4Erbhb" type="module">
+			<name lang="und">Counter Offer</name>
+			<description lang="und">Counter Offer</description>
+		</activity>
+		<activity id="5wGifrXTT2n" type="module">
+			<name lang="und">Repairs to be made by Seller Addendum</name>
+			<description lang="und">Repairs to be made by Seller Addendum</description>
+		</activity>
+		<activity id="6XFYBdXkusI" type="module">
+			<name lang="und">Rejection</name>
+			<description lang="und">Rejection</description>
+		</activity>
+		<activity id="6gjDplf6t3q" type="module">
+			<name lang="und">Definition: Rejection</name>
+			<description lang="und">Definition: Rejection</description>
+		</activity>
+		<activity id="5eJFoxZ1CCj" type="module">
+			<name lang="und">Can rejected offers be made live again?</name>
+			<description lang="und">Can rejected offers be made live again?</description>
+		</activity>
+		<activity id="6QhX1hv9Nn8" type="module">
+			<name lang="und">Can the REPC be Assigned?</name>
+			<description lang="und">Can the REPC be Assigned?</description>
+		</activity>
+		<activity id="5j94yxxmwU2" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5j94yxxmwU2.6JLPhyIpUug" type="cmi.interaction">
+			<name lang="und">When changing or countering language or terms, how should you begin?</name>
+			<description lang="und">When changing or countering language or terms, how should you begin?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6RhsGoz5W1d</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6RhsGoz5W1d</id>
+					<description lang="und">In regards to section</description>
+				</component>
+				<component>
+					<id>choice_5yuWchZ8pvV</id>
+					<description lang="und">By winging it</description>
+				</component>
+				<component>
+					<id>choice_5dKYGPGXJLn</id>
+					<description lang="und">By simply mentioning it</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5wS6sW2x0DY" type="module">
+			<name lang="und">Move on to the next part</name>
+			<description lang="und">Move on to the next part</description>
+		</activity>
+	</activities>
+</tincan>

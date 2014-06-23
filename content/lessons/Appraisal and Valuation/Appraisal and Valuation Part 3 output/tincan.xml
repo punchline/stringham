@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Appraisal and Valuation Part 3" type="course">
+			<name lang="und">Appraisal and Valuation Part 3</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="68Wgqzqtypd" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6oBpaxGDhOi" type="module">
+			<name lang="und">DUST</name>
+			<description lang="und">DUST</description>
+		</activity>
+		<activity id="67C7K1jSzKf" type="module">
+			<name lang="und">Goes to Zero</name>
+			<description lang="und">Goes to Zero</description>
+		</activity>
+		<activity id="62ki2FBp4ub" type="module">
+			<name lang="und">Example: Air</name>
+			<description lang="und">Example: Air</description>
+		</activity>
+		<activity id="5tIXQpQu5rK" type="module">
+			<name lang="und">Four Words</name>
+			<description lang="und">Four Words</description>
+		</activity>
+		<activity id="6W7MIHO06GX" type="module">
+			<name lang="und">Zoning</name>
+			<description lang="und">Zoning</description>
+		</activity>
+		<activity id="6lbFssxLVaV" type="module">
+			<name lang="und">Select ALL that apply</name>
+			<description lang="und">Select ALL that apply</description>
+		</activity>
+		<activity id="6lbFssxLVaV.5XZEBw5CpzT" type="cmi.interaction">
+			<name lang="und">What are the 4 parts for determining Value? Select ALL that apply.</name>
+			<description lang="und">What are the 4 parts for determining Value? Select ALL that apply.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5cxniBARBgP</correctResponsePattern>
+				<correctResponsePattern>choice_6oAtIREqXuq</correctResponsePattern>
+				<correctResponsePattern>choice_6A3fnwvNtR7</correctResponsePattern>
+				<correctResponsePattern>choice_5gHZG80ceRM</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5cxniBARBgP</id>
+					<description lang="und">Scarcity</description>
+				</component>
+				<component>
+					<id>choice_6oAtIREqXuq</id>
+					<description lang="und">Transferability</description>
+				</component>
+				<component>
+					<id>choice_6A3fnwvNtR7</id>
+					<description lang="und">Use</description>
+				</component>
+				<component>
+					<id>choice_5gHZG80ceRM</id>
+					<description lang="und">Demand</description>
+				</component>
+				<component>
+					<id>choice_5XvqVJFeSYC</id>
+					<description lang="und">Cost</description>
+				</component>
+				<component>
+					<id>choice_6AMueNNZ4ve</id>
+					<description lang="und">Security</description>
+				</component>
+				<component>
+					<id>choice_6ZgPS3bDMNm</id>
+					<description lang="und">Time</description>
+				</component>
+				<component>
+					<id>choice_648CODDxrCA</id>
+					<description lang="und">Default</description>
+				</component>
+				<component>
+					<id>choice_6isJ7u5rJdU</id>
+					<description lang="und">Price</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6V9gSM030uR" type="module">
+			<name lang="und">Fair Market Value</name>
+			<description lang="und">Fair Market Value</description>
+		</activity>
+		<activity id="64vAWc1SwJx" type="module">
+			<name lang="und">Foreclosures and Short Sales</name>
+			<description lang="und">Foreclosures and Short Sales</description>
+		</activity>
+		<activity id="6CCdm8vfQeW" type="module">
+			<name lang="und">Cost/Price</name>
+			<description lang="und">Cost/Price</description>
+		</activity>
+		<activity id="6JcnnngYyDn" type="module">
+			<name lang="und">Select ALL that apply</name>
+			<description lang="und">Select ALL that apply</description>
+		</activity>
+		<activity id="6JcnnngYyDn.6brYHxScrau" type="cmi.interaction">
+			<name lang="und">In order to assign Fair Market Value, which 4 conditions must be met? Select ALL that apply.</name>
+			<description lang="und">In order to assign Fair Market Value, which 4 conditions must be met? Select ALL that apply.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5lpmdQSoVnm</correctResponsePattern>
+				<correctResponsePattern>choice_6bDUHVwwzuY</correctResponsePattern>
+				<correctResponsePattern>choice_6dUrHsRqCh5</correctResponsePattern>
+				<correctResponsePattern>choice_6TrqVQFAzYH</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5lpmdQSoVnm</id>
+					<description lang="und">Sufficient Market Time</description>
+				</component>
+				<component>
+					<id>choice_6bDUHVwwzuY</id>
+					<description lang="und">Willing Seller</description>
+				</component>
+				<component>
+					<id>choice_6dUrHsRqCh5</id>
+					<description lang="und">No Duress</description>
+				</component>
+				<component>
+					<id>choice_6TrqVQFAzYH</id>
+					<description lang="und">Willing Buyer</description>
+				</component>
+				<component>
+					<id>choice_6i5JHdQZK81</id>
+					<description lang="und">Ulterior Motives</description>
+				</component>
+				<component>
+					<id>choice_6lpxB0veBKF</id>
+					<description lang="und">Thriving Marketplace</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="663aGJeZy4O" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="663aGJeZy4O.5l306eIRmaU" type="cmi.interaction">
+			<name lang="und">DUST is a pneumonic device used to remember: Demand, Use, Scarcity, and Transferability. These are the 4 key terms to determine Value.</name>
+			<description lang="und">DUST is a pneumonic device used to remember: Demand, Use, Scarcity, and Transferability. These are the 4 key terms to determine Value.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6K7jGCkFzaE</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6K7jGCkFzaE</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5b4zdpRTSRI</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6k948QBwzlG" type="module">
+			<name lang="und">Good Work!</name>
+			<description lang="und">Good Work!</description>
+		</activity>
+	</activities>
+</tincan>

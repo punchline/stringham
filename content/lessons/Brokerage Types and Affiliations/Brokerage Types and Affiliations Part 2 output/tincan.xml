@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Brokerage Types and Affiliations Part 2" type="course">
+			<name lang="und">Brokerage Types and Affiliations Part 2</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5xqvxfQMPyg" type="objective">
+			<name lang="und">Results</name>
+			<description lang="und">Results</description>
+		</activity>
+		<activity id="5dhR9EtWyge" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5i9XCDORcV6" type="module">
+			<name lang="und">Cooperating Broker or MLS Affiliation:</name>
+			<description lang="und">Cooperating Broker or MLS Affiliation:</description>
+		</activity>
+		<activity id="65Qi7MUb4Be" type="module">
+			<name lang="und">Definition: Cooperating Broker</name>
+			<description lang="und">Definition: Cooperating Broker</description>
+		</activity>
+		<activity id="6EJTitlnrWO" type="module">
+			<name lang="und">Buyer Broker</name>
+			<description lang="und">Buyer Broker</description>
+		</activity>
+		<activity id="6egtUjeQ7Vu" type="module">
+			<name lang="und">Definition: Buyer Broker</name>
+			<description lang="und">Definition: Buyer Broker</description>
+		</activity>
+		<activity id="6IakiLcOeAf" type="module">
+			<name lang="und">Referral Companies</name>
+			<description lang="und">Referral Companies</description>
+		</activity>
+		<activity id="5VHFwS23rxB" type="module">
+			<name lang="und">Brokerage Firm with Sales Associates:</name>
+			<description lang="und">Brokerage Firm with Sales Associates:</description>
+		</activity>
+		<activity id="5byLA6azNhY" type="module">
+			<name lang="und">Referral Companies</name>
+			<description lang="und">Referral Companies</description>
+		</activity>
+		<activity id="6AJ1QHF87R2" type="module">
+			<name lang="und">Definition: Referral Companies</name>
+			<description lang="und">Definition: Referral Companies</description>
+		</activity>
+		<activity id="6KeOvByCIzS" type="module">
+			<name lang="und">Specialty Brokerages</name>
+			<description lang="und">Specialty Brokerages</description>
+		</activity>
+		<activity id="6bpOvPzyZQg" type="module">
+			<name lang="und">Specialty Brokerages</name>
+			<description lang="und">Specialty Brokerages</description>
+		</activity>
+		<activity id="6lIBItMFGTX" type="module">
+			<name lang="und">Move on to the next part</name>
+			<description lang="und">Move on to the next part</description>
+		</activity>
+		<activity id="66kpkTZysze" type="module">
+			<name lang="und">Specialty Brokerages could be all of the following EXCEPT:</name>
+			<description lang="und">Specialty Brokerages could be all of the following EXCEPT:</description>
+		</activity>
+		<activity id="66kpkTZysze.6CXX3Haatr5" type="cmi.interaction">
+			<name lang="und">Specialty Brokerages could be all of the following EXCEPT:</name>
+			<description lang="und">Specialty Brokerages could be all of the following EXCEPT:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_64MKWlZgGgQ</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6b2ic5VMvla</id>
+					<description lang="und">Property Management</description>
+				</component>
+				<component>
+					<id>choice_6RuruatI7uq</id>
+					<description lang="und">Land Development</description>
+				</component>
+				<component>
+					<id>choice_5zadTE94UZ2</id>
+					<description lang="und">Commercial or Residential Leasing</description>
+				</component>
+				<component>
+					<id>choice_64MKWlZgGgQ</id>
+					<description lang="und">Referral Company</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6aplL7T69DI" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6aplL7T69DI.6hKi1LNsEVe" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6kIkgXMGyUz</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6ho5aV5ToMv</id>
+					<description lang="und">A broker who chooses NOT to affiliate with any real estate franchise.</description>
+				</component>
+				<component>
+					<id>choice_66MHR4oE2Es</id>
+					<description lang="und">The private right to operate a business using a designated trade name and the operating procedures of a parent company.</description>
+				</component>
+				<component>
+					<id>choice_6kIkgXMGyUz</id>
+					<description lang="und">A broker who assists another broker in the sale of real property.</description>
+				</component>
+				<component>
+					<id>choice_6K3VTRhNqzO</id>
+					<description lang="und">A broker who represents the buyer in a fiduciary capacity.</description>
+				</component>
+				<component>
+					<id>choice_61Ji5VkjUy7</id>
+					<description lang="und">A brokerage designed to house agents that do not wish to be a part of the local REALTOR® Board.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6Sl01Mh2qBx" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6Sl01Mh2qBx.5rH8OOOMtwX" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6LHbSipQX2s</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6it0XeClPk5</id>
+					<description lang="und">A broker who chooses NOT to affiliate with any real estate franchise.</description>
+				</component>
+				<component>
+					<id>choice_5qaL3trCm8D</id>
+					<description lang="und">The private right to operate a business using a designated trade name and the operating procedures of a parent company.</description>
+				</component>
+				<component>
+					<id>choice_5j6xc5VkdUf</id>
+					<description lang="und">A broker who assists another broker in the sale of real property.</description>
+				</component>
+				<component>
+					<id>choice_6C8PM8tnkls</id>
+					<description lang="und">A broker who represents the buyer in a fiduciary capacity.</description>
+				</component>
+				<component>
+					<id>choice_6LHbSipQX2s</id>
+					<description lang="und">A brokerage designed to house agents that do not wish to be a part of the local REALTOR® Board.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6ordstMAIDi" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6ordstMAIDi.5p0Lfr2iG6y" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_64vDp9uWGqa</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5fru1qfy30C</id>
+					<description lang="und">A broker who chooses NOT to affiliate with any real estate franchise.</description>
+				</component>
+				<component>
+					<id>choice_6UkNXYC0IUT</id>
+					<description lang="und">The private right to operate a business using a designated trade name and the operating procedures of a parent company.</description>
+				</component>
+				<component>
+					<id>choice_67hvHT6o5Xw</id>
+					<description lang="und">A broker who assists another broker in the sale of real property.</description>
+				</component>
+				<component>
+					<id>choice_64vDp9uWGqa</id>
+					<description lang="und">A broker who represents the buyer in a fiduciary capacity.</description>
+				</component>
+				<component>
+					<id>choice_5WfE8CsjzXZ</id>
+					<description lang="und">A brokerage designed to house agents that do not wish to be a part of the local REALTOR® Board.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6k1gbyUemif" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+	</activities>
+</tincan>

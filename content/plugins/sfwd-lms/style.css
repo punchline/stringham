@@ -1,0 +1,34 @@
+.groups_user_table, .groups_table{
+	width: 100%;
+}
+
+.groupemailtext{
+max-width: 600px;
+}
+
+.group_email_sub{
+width:50%;
+}
+
+.nss_plugin_license_email {
+min-width:30%;
+}
+.button_delete_course_data{
+background-color: Red; color: white; padding: 10px 5px;
+}
+.cert_shortcode_parm_list{
+margin: 20px 50px;
+}
+
+.column-sno {width: 50px;}
+
+.groups_table .column-action {
+	width: 300px;
+}
+.groups_user_table .column-action  {
+	width: 100px;
+}
+#sfwd-quiz .inside {overflow: hidden;}
+#profile-page #ld_course_info_mycourses_list {
+    display: none;
+}

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Agency B Part 2" type="course">
+			<name lang="und">Agency B Part 2</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="64egIwXk7VW" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6RrY0VOJndx" type="module">
+			<name lang="und">Fiduciary Duties</name>
+			<description lang="und">Fiduciary Duties</description>
+		</activity>
+		<activity id="6djVDYfY5Lr" type="module">
+			<name lang="und">Agent Guidelines</name>
+			<description lang="und">Agent Guidelines</description>
+		</activity>
+		<activity id="5yJvQINvr5W" type="module">
+			<name lang="und">Agent Guidelines</name>
+			<description lang="und">Agent Guidelines</description>
+		</activity>
+		<activity id="6ooVuj1L73M" type="module">
+			<name lang="und">Agent Guidelines</name>
+			<description lang="und">Agent Guidelines</description>
+		</activity>
+		<activity id="5Y5Npyc4N0R" type="module">
+			<name lang="und">The Agent Must:</name>
+			<description lang="und">The Agent Must:</description>
+		</activity>
+		<activity id="6ZyPx68rJwI" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6ZyPx68rJwI.67pMHEingQC" type="cmi.interaction">
+			<name lang="und">Which of the following does NOT belong on the list of an agent's fiduciary duties?</name>
+			<description lang="und">Which of the following does NOT belong on the list of an agent's fiduciary duties?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6qTt5HqLdpc</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_68VAxbpXoTf</id>
+					<description lang="und">Confidentiality</description>
+				</component>
+				<component>
+					<id>choice_6qTt5HqLdpc</id>
+					<description lang="und">Honesty</description>
+				</component>
+				<component>
+					<id>choice_6UWzG84j9Yc</id>
+					<description lang="und">Loyalty</description>
+				</component>
+				<component>
+					<id>choice_681Yn1O4rT7</id>
+					<description lang="und">Obedience</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="63yZhl7Pk3U" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="63yZhl7Pk3U.5ydeAddFPJU" type="cmi.interaction">
+			<name lang="und">If you decide you'd like to buy a property you have listed, the correct way to handle the situation is to explain to the sellers you will still be representing them. However, you will also be representing yourself as the buyer, so you obtain informed consent and have them sign the Limited Agency Agreement.</name>
+			<description lang="und">If you decide you'd like to buy a property you have listed, the correct way to handle the situation is to explain to the sellers you will still be representing them. However, you will also be representing yourself as the buyer, so you obtain informed consent and have them sign the Limited Agency Agreement.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6Ts9qsa3QRp</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6GHP2CVzqqp</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6Ts9qsa3QRp</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5kzdb8TvlFi" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5kzdb8TvlFi.6S2WOyrgKeR" type="cmi.interaction">
+			<name lang="und">Which of the following should you disclose to your client about relationships?</name>
+			<description lang="und">Which of the following should you disclose to your client about relationships?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6NeFqvQrRzM</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6BRSwJDfVZE</id>
+					<description lang="und">You just found out their CPA is also your CPA.</description>
+				</component>
+				<component>
+					<id>choice_6NeFqvQrRzM</id>
+					<description lang="und">The buyers are your parents.</description>
+				</component>
+				<component>
+					<id>choice_6qRaYOzdj1r</id>
+					<description lang="und">You have a law degree.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6nZL6Sl0Yrf" type="module">
+			<name lang="und">Limited Agency</name>
+			<description lang="und">Limited Agency</description>
+		</activity>
+		<activity id="6grvy0nX8AZ" type="module">
+			<name lang="und">Limited Agency</name>
+			<description lang="und">Limited Agency</description>
+		</activity>
+		<activity id="5ahIYn1DNqj" type="module">
+			<name lang="und">Limited Agency</name>
+			<description lang="und">Limited Agency</description>
+		</activity>
+		<activity id="6GsMYc3gR8H" type="module">
+			<name lang="und">Limited Agency</name>
+			<description lang="und">Limited Agency</description>
+		</activity>
+		<activity id="5n1WNi4YYBm" type="module">
+			<name lang="und">Limited Agency</name>
+			<description lang="und">Limited Agency</description>
+		</activity>
+		<activity id="6ISkLxuTzGi" type="module">
+			<name lang="und">Definition: Limited Agent</name>
+			<description lang="und">Definition: Limited Agent</description>
+		</activity>
+		<activity id="6bFRWio2Uj5" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6bFRWio2Uj5.5tvITH8EH92" type="cmi.interaction">
+			<name lang="und">In obtaining informed consent to limited agency: you advise the principals that they will be giving up which of the following?</name>
+			<description lang="und">In obtaining informed consent to limited agency: you advise the principals that they will be giving up which of the following?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6cYJfvQYTCN</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6kYtUdhxbt1</id>
+					<description lang="und">Obedience</description>
+				</component>
+				<component>
+					<id>choice_5YM61miUhps</id>
+					<description lang="und">Reasonable care and diligence</description>
+				</component>
+				<component>
+					<id>choice_6cYJfvQYTCN</id>
+					<description lang="und">Undivided loyalty</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6NyteaSzpb2" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6NyteaSzpb2.6rPuuRcvHZc" type="cmi.interaction">
+			<name lang="und">As a limited agent, in your dealings with two parties, you must be:</name>
+			<description lang="und">As a limited agent, in your dealings with two parties, you must be:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5vPw0RepwtL</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6TKF9WWdjs1</id>
+					<description lang="und">One-sided</description>
+				</component>
+				<component>
+					<id>choice_5vPw0RepwtL</id>
+					<description lang="und">Neutral</description>
+				</component>
+				<component>
+					<id>choice_5uEIlwG7r0F</id>
+					<description lang="und">Mean</description>
+				</component>
+				<component>
+					<id>choice_61ZtVGN54Zt</id>
+					<description lang="und">Biased</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6NNIp7buLe9" type="module">
+			<name lang="und">Good Work</name>
+			<description lang="und">Good Work</description>
+		</activity>
+	</activities>
+</tincan>

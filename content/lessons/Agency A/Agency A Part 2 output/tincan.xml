@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Agency A Part 2" type="course">
+			<name lang="und">Agency A Part 2</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5al4kJlA1g6" type="objective">
+			<name lang="und">Results</name>
+			<description lang="und">Results</description>
+		</activity>
+		<activity id="67gNRoZipDd" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5VGpdSZycxe" type="module">
+			<name lang="und">Subagents</name>
+			<description lang="und">Subagents</description>
+		</activity>
+		<activity id="5lu4IxOp1TB" type="module">
+			<name lang="und">Helper Agents</name>
+			<description lang="und">Helper Agents</description>
+		</activity>
+		<activity id="6oYMtxaCIc1" type="module">
+			<name lang="und">FSBO</name>
+			<description lang="und">FSBO</description>
+		</activity>
+		<activity id="6Lr45MJbRjx" type="module">
+			<name lang="und">Customers</name>
+			<description lang="und">Customers</description>
+		</activity>
+		<activity id="67V4PFAqAa7" type="module">
+			<name lang="und">Definition: Caveat Emptor</name>
+			<description lang="und">Definition: Caveat Emptor</description>
+		</activity>
+		<activity id="6Gdplwpzaj1" type="module">
+			<name lang="und">Limited Agency</name>
+			<description lang="und">Limited Agency</description>
+		</activity>
+		<activity id="6aEo0JOW5GT" type="module">
+			<name lang="und">Definition: Dual Agent</name>
+			<description lang="und">Definition: Dual Agent</description>
+		</activity>
+		<activity id="5eqJKJ1Vz2i" type="module">
+			<name lang="und">Neutral Negotiator</name>
+			<description lang="und">Neutral Negotiator</description>
+		</activity>
+		<activity id="6mA4Qg2u0o2" type="module">
+			<name lang="und">Designated Agency</name>
+			<description lang="und">Designated Agency</description>
+		</activity>
+		<activity id="6imbZD0rrIQ" type="module">
+			<name lang="und">Definition: Designated Agency</name>
+			<description lang="und">Definition: Designated Agency</description>
+		</activity>
+		<activity id="60WcySCnNSM" type="module">
+			<name lang="und">Subagency</name>
+			<description lang="und">Subagency</description>
+		</activity>
+		<activity id="5un39VgRtP1" type="module">
+			<name lang="und">Definition: Subagent</name>
+			<description lang="und">Definition: Subagent</description>
+		</activity>
+		<activity id="5ufsgLrQ1ea" type="module">
+			<name lang="und">Designated Agency</name>
+			<description lang="und">Designated Agency</description>
+		</activity>
+		<activity id="5qpitiaCYt1" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5qpitiaCYt1.5dC5YQnq9js" type="cmi.interaction">
+			<name lang="und">Under the concept of the caveat emptor, which could the seller's agent legally do?</name>
+			<description lang="und">Under the concept of the caveat emptor, which could the seller's agent legally do?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6fcqy6edusI</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6EQxq9TpFh1</id>
+					<description lang="und">Answer a buyer's question with a lie.</description>
+				</component>
+				<component>
+					<id>choice_5XchADbCMyd</id>
+					<description lang="und">Not tell the buyer about the leaky roof.</description>
+				</component>
+				<component>
+					<id>choice_6jm4ofDA3H8</id>
+					<description lang="und">Treat the buyer unfairly if it was in the seller's best interest.</description>
+				</component>
+				<component>
+					<id>choice_6fcqy6edusI</id>
+					<description lang="und">Not give disclosure about the peeling wallpaper in the bathroom.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6lvV1BRH39t" type="module">
+			<name lang="und">Fill in the Blank</name>
+			<description lang="und">Fill in the Blank</description>
+		</activity>
+		<activity id="6lvV1BRH39t.6cXcyUbWCsy" type="cmi.interaction">
+			<name lang="und">A ___________ broker is not allowed in Utah.</name>
+			<description lang="und">A ___________ broker is not allowed in Utah.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6iVDEvNxcuf</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6iVDEvNxcuf</id>
+					<description lang="und">Transaction</description>
+				</component>
+				<component>
+					<id>choice_6bOF0ksGv2q</id>
+					<description lang="und">Limited</description>
+				</component>
+				<component>
+					<id>choice_5p6ryGHmVVS</id>
+					<description lang="und">Legal</description>
+				</component>
+				<component>
+					<id>choice_5qMyUeQakLK</id>
+					<description lang="und">Liability</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6ChcBQCieqR" type="module">
+			<name lang="und">Fill in the Blank</name>
+			<description lang="und">Fill in the Blank</description>
+		</activity>
+		<activity id="6ChcBQCieqR.6dozaPO9fGf" type="cmi.interaction">
+			<name lang="und">__________ agency offices need strict security policies.</name>
+			<description lang="und">__________ agency offices need strict security policies.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5X5WzBMAZRz</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5X5WzBMAZRz</id>
+					<description lang="und">Designated</description>
+				</component>
+				<component>
+					<id>choice_6bIi9d2j9Mz</id>
+					<description lang="und">Sub</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6qbCDX72Le0" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+		<activity id="5kcaesuAnKK" type="module">
+			<name lang="und">End of Part 2</name>
+			<description lang="und">End of Part 2</description>
+		</activity>
+	</activities>
+</tincan>

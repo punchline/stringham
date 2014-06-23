@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Agency A Part 1" type="course">
+			<name lang="und">Agency A Part 1</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5a8coyIh2BB" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6LA0DnuSvlD" type="module">
+			<name lang="und">Intro</name>
+			<description lang="und">Intro</description>
+		</activity>
+		<activity id="6g1vZxTd3BX" type="module">
+			<name lang="und">Definitions</name>
+			<description lang="und">Definitions</description>
+		</activity>
+		<activity id="6nI5vqVqi7Z" type="module">
+			<name lang="und">Players</name>
+			<description lang="und">Players</description>
+		</activity>
+		<activity id="5YmQnMDFkZQ" type="module">
+			<name lang="und">Real Estate Transactions</name>
+			<description lang="und">Real Estate Transactions</description>
+		</activity>
+		<activity id="63VK0oGk2hq" type="module">
+			<name lang="und">Written Agency Contract</name>
+			<description lang="und">Written Agency Contract</description>
+		</activity>
+		<activity id="62RCwzIp8ma" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="62RCwzIp8ma.6G2exd6OHJD" type="cmi.interaction">
+			<name lang="und">Which of the following is allowed by Utah law to become a real estate agent to a member of the public?</name>
+			<description lang="und">Which of the following is allowed by Utah law to become a real estate agent to a member of the public?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6PqHMbLh3Zo</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5pHWqTLxQW9</id>
+					<description lang="und">A principle or an associate broker</description>
+				</component>
+				<component>
+					<id>choice_6PqHMbLh3Zo</id>
+					<description lang="und">A principle broker</description>
+				</component>
+				<component>
+					<id>choice_6ZIOZbsknAM</id>
+					<description lang="und">Anyone who holds a real estate license</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="649V7eLMjkO" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="649V7eLMjkO.6ha4zPuY1PQ" type="cmi.interaction">
+			<name lang="und">If the buyer needs to give some sort of notice to the seller in the transaction, the buyer would deliver that notice to:</name>
+			<description lang="und">If the buyer needs to give some sort of notice to the seller in the transaction, the buyer would deliver that notice to:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5yabso9arP8</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5kGVZskYPhL</id>
+					<description lang="und">It must be delivered directly to the seller.</description>
+				</component>
+				<component>
+					<id>choice_5oyyhsn6uFn</id>
+					<description lang="und">The agent of the seller</description>
+				</component>
+				<component>
+					<id>choice_5yabso9arP8</id>
+					<description lang="und">Either the seller or the seller's agent</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5fef6gnelBG" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5fef6gnelBG.6CGCsW4P8Iq" type="cmi.interaction">
+			<name lang="und">Which best defines your customer in an agency relationship?</name>
+			<description lang="und">Which best defines your customer in an agency relationship?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5ivCOeH1s5d</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6VsVvAqEyYk</id>
+					<description lang="und">The person who signed the agency contract.</description>
+				</component>
+				<component>
+					<id>choice_6L0Mq1nIo33</id>
+					<description lang="und">The person who will be paying the commission.</description>
+				</component>
+				<component>
+					<id>choice_5ivCOeH1s5d</id>
+					<description lang="und">The person you do not represent.</description>
+				</component>
+				<component>
+					<id>choice_5bUzLutH4Nc</id>
+					<description lang="und">The person to whom you owe a fiduciary duty</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6c5pL7jjpEk" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6c5pL7jjpEk.5XeZ596CT6Z" type="cmi.interaction">
+			<name lang="und">Of all the following categories, mark all that could be potential sources of subagents to represent the interests of the broker's clients. (hint: 2)</name>
+			<description lang="und">Of all the following categories, mark all that could be potential sources of subagents to represent the interests of the broker's clients. (hint: 2)</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6eaHinjttGG</correctResponsePattern>
+				<correctResponsePattern>choice_5XRtt5VHHYJ</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6eaHinjttGG</id>
+					<description lang="und">Principle brokers who are members of the same MLS.</description>
+				</component>
+				<component>
+					<id>choice_5XRtt5VHHYJ</id>
+					<description lang="und">The sales agents licensed under that broker.</description>
+				</component>
+				<component>
+					<id>choice_5ohGXa568eT</id>
+					<description lang="und">All licensed real estate agents in the state.</description>
+				</component>
+				<component>
+					<id>choice_6SUIfCYBrg4</id>
+					<description lang="und">Sales agents in other offices in the same MLS.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="62xsLpANBNM" type="module">
+			<name lang="und">Good Work</name>
+			<description lang="und">Good Work</description>
+		</activity>
+	</activities>
+</tincan>

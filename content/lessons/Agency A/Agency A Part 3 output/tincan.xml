@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Agency A Part 3" type="course">
+			<name lang="und">Agency A Part 3</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6KTcA78CPKe" type="objective">
+			<name lang="und">Results</name>
+			<description lang="und">Results</description>
+		</activity>
+		<activity id="68x4cbLF3zv" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5zfRcwJdeYA" type="module">
+			<name lang="und">Special Agents</name>
+			<description lang="und">Special Agents</description>
+		</activity>
+		<activity id="5aGlEB2sAs6" type="module">
+			<name lang="und">Definition: Specific Agent</name>
+			<description lang="und">Definition: Specific Agent</description>
+		</activity>
+		<activity id="6Y3l9qPaSWZ" type="module">
+			<name lang="und">General Agent</name>
+			<description lang="und">General Agent</description>
+		</activity>
+		<activity id="69rplNpuLOW" type="module">
+			<name lang="und">Definition: General Agent</name>
+			<description lang="und">Definition: General Agent</description>
+		</activity>
+		<activity id="5kCtrhP4PUe" type="module">
+			<name lang="und">Universal Agents</name>
+			<description lang="und">Universal Agents</description>
+		</activity>
+		<activity id="5vjP7W9Yp54" type="module">
+			<name lang="und">Definition: Universal Agent</name>
+			<description lang="und">Definition: Universal Agent</description>
+		</activity>
+		<activity id="6QwbeuI6oOr" type="module">
+			<name lang="und">Match the Pairs</name>
+			<description lang="und">Match the Pairs</description>
+		</activity>
+		<activity id="6QwbeuI6oOr.5Y9L2UHh4Bz" type="cmi.interaction">
+			<name lang="und">Match the description with the appropriate agent.</name>
+			<description lang="und">Match the description with the appropriate agent.</description>
+			<interactionType>matching</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>statement_5WZtfcL0CsJ[.]choice_62lnsSdke4S</correctResponsePattern>
+				<correctResponsePattern>statement_5lm3vGt2o5o[.]choice_67mpCsa6wxw</correctResponsePattern>
+				<correctResponsePattern>statement_69aOuVLI0Xc[.]choice_68mmJil7bMJ</correctResponsePattern>
+			</correctResponsePatterns>
+			<source>
+				<component>
+					<id>statement_5WZtfcL0CsJ</id>
+					<description lang="und">Property management or Principle Broker hiring agents</description>
+				</component>
+				<component>
+					<id>statement_5lm3vGt2o5o</id>
+					<description lang="und">Listing Agreement or Buyer Agency Agreement</description>
+				</component>
+				<component>
+					<id>statement_69aOuVLI0Xc</id>
+					<description lang="und">Trustee for mentally incompetent person</description>
+				</component>
+			</source>
+			<target>
+				<component>
+					<id>choice_62lnsSdke4S</id>
+					<description lang="und">General Agent</description>
+				</component>
+				<component>
+					<id>choice_67mpCsa6wxw</id>
+					<description lang="und">Specific/Special Agent</description>
+				</component>
+				<component>
+					<id>choice_68mmJil7bMJ</id>
+					<description lang="und">Universal Agent</description>
+				</component>
+			</target>
+		</activity>
+		<activity id="6pNokML2573" type="module">
+			<name lang="und">Power of Attorney</name>
+			<description lang="und">Power of Attorney</description>
+		</activity>
+		<activity id="6h6qCWX2PcX" type="module">
+			<name lang="und">Definition: Attorney in Fact</name>
+			<description lang="und">Definition: Attorney in Fact</description>
+		</activity>
+		<activity id="5gxbo8AJh7R" type="module">
+			<name lang="und">Definition: Power of Attorney</name>
+			<description lang="und">Definition: Power of Attorney</description>
+		</activity>
+		<activity id="6MNLkMvsd5V" type="module">
+			<name lang="und">Attorney in Fact</name>
+			<description lang="und">Attorney in Fact</description>
+		</activity>
+		<activity id="5WQMatTy4NY" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5WQMatTy4NY.6m5estazAUX" type="cmi.interaction">
+			<name lang="und">Which statement is true about someone who is an Attorney in Fact?</name>
+			<description lang="und">Which statement is true about someone who is an Attorney in Fact?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6mKg7lp9ceX</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6nt9CHFVqlE</id>
+					<description lang="und">That person has graduated from law school.</description>
+				</component>
+				<component>
+					<id>choice_67ZzgvO6eGp</id>
+					<description lang="und">They are an intern for the District Attorney's office.</description>
+				</component>
+				<component>
+					<id>choice_6mKg7lp9ceX</id>
+					<description lang="und">They don't have a law degree but can legally sign for another.</description>
+				</component>
+				<component>
+					<id>choice_6VUqvxknvwH</id>
+					<description lang="und">They work in a law office at least 32 hours a week.</description>
+				</component>
+				<component>
+					<id>choice_6JtKr4E7Cu7</id>
+					<description lang="und">It is someone who has passed the bar exam.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5WFlP9snN8U" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5WFlP9snN8U.5sh53QGjVrB" type="cmi.interaction">
+			<name lang="und">Mary can legally sign all the settlement documents in the real estate transaction for her brother, Bill. Which of the following would make that legal?</name>
+			<description lang="und">Mary can legally sign all the settlement documents in the real estate transaction for her brother, Bill. Which of the following would make that legal?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6MpaUK8nUM3</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5XtkfQG9cMC</id>
+					<description lang="und">Bill signed an Attorney in Fact document.</description>
+				</component>
+				<component>
+					<id>choice_5vBheNRcAm7</id>
+					<description lang="und">Bill is Mary's brother.</description>
+				</component>
+				<component>
+					<id>choice_6MpaUK8nUM3</id>
+					<description lang="und">Bill signed a Power of Attorney.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6LqeB2PN0AX" type="module">
+			<name lang="und">Types of Principals</name>
+			<description lang="und">Types of Principals</description>
+		</activity>
+		<activity id="6DhBYc4EWOT" type="module">
+			<name lang="und">Determine the type of Principal</name>
+			<description lang="und">Determine the type of Principal</description>
+		</activity>
+		<activity id="66SACkuzIlk" type="module">
+			<name lang="und">Four Questions</name>
+			<description lang="und">Four Questions</description>
+		</activity>
+		<activity id="6IWaoFpbwr5" type="module">
+			<name lang="und">Fully Disclosed Principal</name>
+			<description lang="und">Fully Disclosed Principal</description>
+		</activity>
+		<activity id="6mL77BXRwWy" type="module">
+			<name lang="und">Definition: Fully Disclosed Principal</name>
+			<description lang="und">Definition: Fully Disclosed Principal</description>
+		</activity>
+		<activity id="67ejnMhcKsk" type="module">
+			<name lang="und">Partially Disclosed Principal</name>
+			<description lang="und">Partially Disclosed Principal</description>
+		</activity>
+		<activity id="6U5gZvupDVX" type="module">
+			<name lang="und">Definition: Partially Disclosed Principal</name>
+			<description lang="und">Definition: Partially Disclosed Principal</description>
+		</activity>
+		<activity id="5t9HiG2qnfE" type="module">
+			<name lang="und">Undisclosed Principal</name>
+			<description lang="und">Undisclosed Principal</description>
+		</activity>
+		<activity id="5UpxCsLr4i6" type="module">
+			<name lang="und">Definition: Undisclosed Principal</name>
+			<description lang="und">Definition: Undisclosed Principal</description>
+		</activity>
+		<activity id="675JgyPVNnD" type="module">
+			<name lang="und">Warning</name>
+			<description lang="und">Warning</description>
+		</activity>
+		<activity id="6NjTB9S4lnl" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6NjTB9S4lnl.6QYW2L0Q0C8" type="cmi.interaction">
+			<name lang="und">Which is true about a partially disclosed principal?</name>
+			<description lang="und">Which is true about a partially disclosed principal?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6oaEqg4rCZd</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5negjwaAdfP</id>
+					<description lang="und">The customer doesn't even know there is a principal.</description>
+				</component>
+				<component>
+					<id>choice_5Xnpb4szsVm</id>
+					<description lang="und">The customer doesn't want to have a principal.</description>
+				</component>
+				<component>
+					<id>choice_6oaEqg4rCZd</id>
+					<description lang="und">The customer knows the agent's name, but not the principal's.</description>
+				</component>
+				<component>
+					<id>choice_6dPJwigsAHF</id>
+					<description lang="und">The customer knows everything about the principal.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5dtUhoxzVE4" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5dtUhoxzVE4.5ZtQptNnL7O" type="cmi.interaction">
+			<name lang="und">In regards to an Undisclosed Principal: Under Utah license law, failing to disclose if the purchase is made for the agent, him or herself, or for a client of the agent, is grounds for revocation or suspension of his or her license.</name>
+			<description lang="und">In regards to an Undisclosed Principal: Under Utah license law, failing to disclose if the purchase is made for the agent, him or herself, or for a client of the agent, is grounds for revocation or suspension of his or her license.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5lnBge4Asbb</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5lnBge4Asbb</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5k38GfV7Eh4</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5ugxGtVTVVE" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="5ugxGtVTVVE.5bbGvnRZa5D" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5srS5039ngB</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5srS5039ngB</id>
+					<description lang="und">an agent hired by contract to carry out specifically stated activities.</description>
+				</component>
+				<component>
+					<id>choice_5jURI2Ph1Yu</id>
+					<description lang="und">an agent hired by contract to use the agent's expertise to fulfill the objectives of the principal.</description>
+				</component>
+				<component>
+					<id>choice_6MRoEiHxEo0</id>
+					<description lang="und">an agent hired to do all things for an in behalf of the principal.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5oLqgTWERdA" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="5oLqgTWERdA.5vhw5gsgcnO" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5raKhf3YpEv</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6R4r42tWqUs</id>
+					<description lang="und">an agent hired by contract to carry out specifically stated activities.</description>
+				</component>
+				<component>
+					<id>choice_5i19sNvWWCl</id>
+					<description lang="und">an agent hired by contract to use the agent's expertise to fulfill the objectives of the principal.</description>
+				</component>
+				<component>
+					<id>choice_5raKhf3YpEv</id>
+					<description lang="und">an agent hired to do all things for an in behalf of the principal.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6LTyoFBjHxd" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="6LTyoFBjHxd.6515wVv73x0" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5vMiUBZ6SMB</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5d8zEaV7slO</id>
+					<description lang="und">an agent hired by contract to carry out specifically stated activities.</description>
+				</component>
+				<component>
+					<id>choice_5vMiUBZ6SMB</id>
+					<description lang="und">an agent hired by contract to use the agent's expertise to fulfill the objectives of the principal.</description>
+				</component>
+				<component>
+					<id>choice_5XJCo3CyhhX</id>
+					<description lang="und">an agent hired to do all things for an in behalf of the principal.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5qBPPTnEQF8" type="module">
+			<name lang="und">Drag and Drop</name>
+			<description lang="und">Drag and Drop</description>
+		</activity>
+		<activity id="5qBPPTnEQF8.6HO9HP1AT2Z" type="cmi.interaction">
+			<name lang="und">Drag and Drop</name>
+			<description lang="und">Drag and Drop</description>
+			<interactionType>matching</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>statement_6Sn5nVnXknt[.]choice_6dCUStqqUdk</correctResponsePattern>
+				<correctResponsePattern>statement_5V7hztt0R17[.]choice_64wmqGrDusC</correctResponsePattern>
+			</correctResponsePatterns>
+			<source>
+				<component>
+					<id>statement_6Sn5nVnXknt</id>
+					<description lang="und">Rectangle 2 - Power of Attorney</description>
+				</component>
+				<component>
+					<id>statement_5V7hztt0R17</id>
+					<description lang="und">Rectangle 1 - Attorney in Fact</description>
+				</component>
+			</source>
+			<target>
+				<component>
+					<id>choice_6dCUStqqUdk</id>
+					<description lang="und">Folded Corner 1 - Folded Corner 1</description>
+				</component>
+				<component>
+					<id>choice_64wmqGrDusC</id>
+					<description lang="und">Character 1 - Male 7, Happy expression, Hands on hips</description>
+				</component>
+			</target>
+		</activity>
+		<activity id="60gqeCNNXLq" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="60gqeCNNXLq.6EsI5ZQpLe5" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5xwHQzG3S7a</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_683BrGjsOUU</id>
+					<description lang="und">when the "other party" knows there is a principal, knows who it is, and that there is an agent.</description>
+				</component>
+				<component>
+					<id>choice_5xwHQzG3S7a</id>
+					<description lang="und">when the "other party" knows who the agent is, knows there is a principal, but is not told who the principal is.</description>
+				</component>
+				<component>
+					<id>choice_6DaKXWMPNP2</id>
+					<description lang="und">when the "other party" thinks that the agent is the principal and sees no evidence of an agency relationship. It is usually illegal.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5b62qqP26s9" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="5b62qqP26s9.6PtO238i0Ff" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_68IvGFWrSMf</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_68IvGFWrSMf</id>
+					<description lang="und">when the "other party" knows there is a principal, knows who it is, and that there is an agent.</description>
+				</component>
+				<component>
+					<id>choice_6p3vItrTiUu</id>
+					<description lang="und">when the "other party" knows who the agent is, knows there is a principal, but is not told who the principal is.</description>
+				</component>
+				<component>
+					<id>choice_5s3KDirx1om</id>
+					<description lang="und">when the "other party" thinks that the agent is the principal and sees no evidence of an agency relationship. It is usually illegal.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6QiwnsslYdl" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="6QiwnsslYdl.6Pcy5HQS92N" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5mXydN3oHUc</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6ixXc5Tx9eX</id>
+					<description lang="und">when the "other party" knows there is a principal, knows who it is, and that there is an agent.</description>
+				</component>
+				<component>
+					<id>choice_6S3DXfIWGDX</id>
+					<description lang="und">when the "other party" knows who the agent is, knows there is a principal, but is not told who the principal is.</description>
+				</component>
+				<component>
+					<id>choice_5mXydN3oHUc</id>
+					<description lang="und">when the "other party" thinks that the agent is the principal and sees no evidence of an agency relationship. It is usually illegal.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5pH8GtdGSV5" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+		<activity id="5V9ccOsGf4y" type="module">
+			<name lang="und">Good Work</name>
+			<description lang="und">Good Work</description>
+		</activity>
+	</activities>
+</tincan>

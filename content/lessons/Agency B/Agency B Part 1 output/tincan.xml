@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Agency B Part 1" type="course">
+			<name lang="und">Agency B Part 1</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6VYXSgg4HDs" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5Y0q31MKZnQ" type="module">
+			<name lang="und">Agency B</name>
+			<description lang="und">Agency B</description>
+		</activity>
+		<activity id="6ZZlQTbG2cl" type="module">
+			<name lang="und">Fiduciary</name>
+			<description lang="und">Fiduciary</description>
+		</activity>
+		<activity id="6hka3QoisCQ" type="module">
+			<name lang="und">Fiduciary Duties</name>
+			<description lang="und">Fiduciary Duties</description>
+		</activity>
+		<activity id="5aWKEmT677P" type="module">
+			<name lang="und">Fiduciary Duties</name>
+			<description lang="und">Fiduciary Duties</description>
+		</activity>
+		<activity id="6nyZQwVSICx" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="6nyZQwVSICx.6d15mi6v5ou" type="cmi.interaction">
+			<name lang="und">The term, "fiduciary duty" is used by the law to describe the legal duty or responsibility the agent has to his/her client.</name>
+			<description lang="und">The term, "fiduciary duty" is used by the law to describe the legal duty or responsibility the agent has to his/her client.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6elcbtv91Q1</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6elcbtv91Q1</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5kNbXj9efkh</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6ZmzC96LkDd" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6ZmzC96LkDd.6GANVybA39o" type="cmi.interaction">
+			<name lang="und">When obtaining the listings for the house, the sellers gave specific instructions to the agent that no minority buyers should even be shown the property. The agent wasn't sure how to proceed as he remembered the fiduciary duty to obey the instructions of the principal. What should the agent do?</name>
+			<description lang="und">When obtaining the listings for the house, the sellers gave specific instructions to the agent that no minority buyers should even be shown the property. The agent wasn't sure how to proceed as he remembered the fiduciary duty to obey the instructions of the principal. What should the agent do?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_61pP9qtHG58</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5eSmfLrOzGn</id>
+					<description lang="und">Take the listing and show the house to anyone who is interested.</description>
+				</component>
+				<component>
+					<id>choice_61pP9qtHG58</id>
+					<description lang="und">Decline taking the listing.</description>
+				</component>
+				<component>
+					<id>choice_6TY83sq8hWi</id>
+					<description lang="und">Obey the instructions.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5rwzzOvDUvB" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5rwzzOvDUvB.6hVg3a8zkO6" type="cmi.interaction">
+			<name lang="und">Which of the following would be a material fact that an agent would have to disclose?</name>
+			<description lang="und">Which of the following would be a material fact that an agent would have to disclose?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5YFdOYIWdYl</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5qfAqoyq7P6</id>
+					<description lang="und">The deck is badly in need of resurfacing.</description>
+				</component>
+				<component>
+					<id>choice_5YFdOYIWdYl</id>
+					<description lang="und">In times of heavy rain, water sometimes seeps into the basement.</description>
+				</component>
+				<component>
+					<id>choice_5cBnxbs85FA</id>
+					<description lang="und">The downstairs bedroom doesn't have closet doors.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5oHVjhNZUdy" type="module">
+			<name lang="und">Material Fact</name>
+			<description lang="und">Material Fact</description>
+		</activity>
+		<activity id="5gZGL4wJBNo" type="module">
+			<name lang="und">Stigmatized Properties</name>
+			<description lang="und">Stigmatized Properties</description>
+		</activity>
+		<activity id="6MbIiJh160i" type="module">
+			<name lang="und">Fiduciary Duties</name>
+			<description lang="und">Fiduciary Duties</description>
+		</activity>
+		<activity id="6gSVqMQKVyt" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6gSVqMQKVyt.6pP4EJx71ov" type="cmi.interaction">
+			<name lang="und">You know for a fact that the property you have listed had a murder/suicide take place there about five years ago. What do you have to do in relation to that information?</name>
+			<description lang="und">You know for a fact that the property you have listed had a murder/suicide take place there about five years ago. What do you have to do in relation to that information?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6fhSXXuQyI5</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6fhSXXuQyI5</id>
+					<description lang="und">You do not have to disclose it to potential buyers.</description>
+				</component>
+				<component>
+					<id>choice_6pwaoamcoBp</id>
+					<description lang="und">You must not say anything about it because it would weaken your client's position.</description>
+				</component>
+				<component>
+					<id>choice_6Fy5u4g0Dra</id>
+					<description lang="und">You must disclose it in writing to everyone who sees the house.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="67LxMEWDEga" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="67LxMEWDEga.6AhrNQjgtg1" type="cmi.interaction">
+			<name lang="und">The sellers have received notice of foreclosure. They are very anxious to sell and not have that on their record. They've dropped the price markedly. What could you tell potential buyers about the situation to motivate them to write an offer?</name>
+			<description lang="und">The sellers have received notice of foreclosure. They are very anxious to sell and not have that on their record. They've dropped the price markedly. What could you tell potential buyers about the situation to motivate them to write an offer?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6WEtO4rECIa</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6WEtO4rECIa</id>
+					<description lang="und">Nothing without written permission from the sellers.</description>
+				</component>
+				<component>
+					<id>choice_5wkBFReug54</id>
+					<description lang="und">The sellers are facing foreclosure and are anxious to sell.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5kf03uoBBUA" type="module">
+			<name lang="und">Good Work</name>
+			<description lang="und">Good Work</description>
+		</activity>
+	</activities>
+</tincan>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Advance Appraisal Part 4" type="course">
+			<name lang="und">Advanced Appraisal Part 4</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6MkVfCEv9Pt" type="objective">
+			<name lang="und">Results</name>
+			<description lang="und">Results</description>
+		</activity>
+		<activity id="5uyzCm4rX0m" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="5b4CIaXb48L" type="module">
+			<name lang="und">Units</name>
+			<description lang="und">Units</description>
+		</activity>
+		<activity id="6VNLBLlYtDq" type="module">
+			<name lang="und">Three Types of Property</name>
+			<description lang="und">Three Types of Property</description>
+		</activity>
+		<activity id="6mYdL3n41Gz" type="module">
+			<name lang="und">Three Types of Property</name>
+			<description lang="und">Three Types of Property</description>
+		</activity>
+		<activity id="5d6cGHjZNnB" type="module">
+			<name lang="und">Three Types of Property</name>
+			<description lang="und">Three Types of Property</description>
+		</activity>
+		<activity id="6Y85tkh6r1J" type="module">
+			<name lang="und">Final Reconciliation</name>
+			<description lang="und">Final Reconciliation</description>
+		</activity>
+		<activity id="60dFbNwvhAh" type="module">
+			<name lang="und">Comparable 1</name>
+			<description lang="und">Comparable 1</description>
+		</activity>
+		<activity id="6Rsxyql5cQR" type="module">
+			<name lang="und">Comparable 2</name>
+			<description lang="und">Comparable 2</description>
+		</activity>
+		<activity id="5mMoBNGMjy2" type="module">
+			<name lang="und">Three Types of Property</name>
+			<description lang="und">Three Types of Property</description>
+		</activity>
+		<activity id="61UkaSIDDdm" type="module">
+			<name lang="und">Appraisal Approaches/Formulas</name>
+			<description lang="und">Appraisal Approaches/Formulas</description>
+		</activity>
+		<activity id="5zyrzhx6a5p" type="module">
+			<name lang="und">Instructions</name>
+			<description lang="und">Instructions</description>
+		</activity>
+		<activity id="6kOSbptWuCR" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6kOSbptWuCR.5t1PE8adQzn" type="cmi.interaction">
+			<name lang="und">The property of S.O. Smart was sold at a price based on a net operating income of $13,575 and a capitalization rate of 7%. What was the selling price?</name>
+			<description lang="und">The property of S.O. Smart was sold at a price based on a net operating income of $13,575 and a capitalization rate of 7%. What was the selling price?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6VapF7HTM0K</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5vFnkC873H1</id>
+					<description lang="und">$193,400.33</description>
+				</component>
+				<component>
+					<id>choice_6VapF7HTM0K</id>
+					<description lang="und">$193,928.57</description>
+				</component>
+				<component>
+					<id>choice_5aqPgHdbVZw</id>
+					<description lang="und">$194,602.40</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6EzedzxRoaN" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6EzedzxRoaN.69AW2dQpuzf" type="cmi.interaction">
+			<name lang="und">The Easy Seller property earned a net income of $150 per month. What is the value of the property if the cap rate is 5%?</name>
+			<description lang="und">The Easy Seller property earned a net income of $150 per month. What is the value of the property if the cap rate is 5%?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6KIKLMvYh7N</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6KIKLMvYh7N</id>
+					<description lang="und">$36,000</description>
+				</component>
+				<component>
+					<id>choice_5uKoJSZk7mY</id>
+					<description lang="und">$30,000</description>
+				</component>
+				<component>
+					<id>choice_670vfgJNNKs</id>
+					<description lang="und">$42,000</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6kvqEwlKqhR" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6kvqEwlKqhR.6ZMZREZjmNg" type="cmi.interaction">
+			<name lang="und">An income property improved with a building worth $80,000 showed a net income of $8,700. This represented a cap rate of 8%. What was the amount invested in the land?</name>
+			<description lang="und">An income property improved with a building worth $80,000 showed a net income of $8,700. This represented a cap rate of 8%. What was the amount invested in the land?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5a14s8ogaPA</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5a14s8ogaPA</id>
+					<description lang="und">$28,750</description>
+				</component>
+				<component>
+					<id>choice_6h8YUTdfEMd</id>
+					<description lang="und">$26,500</description>
+				</component>
+				<component>
+					<id>choice_6bbeybBV9Kn</id>
+					<description lang="und">$32,200</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6dzrQDykzIE" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6dzrQDykzIE.6UkT1s01inL" type="cmi.interaction">
+			<name lang="und">O.R Nottobee owns a property worth $320,000 that nets income equivalent to a 9% cap rate. What would investors pay if they capitalized the property at 11%?</name>
+			<description lang="und">O.R Nottobee owns a property worth $320,000 that nets income equivalent to a 9% cap rate. What would investors pay if they capitalized the property at 11%?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5rFkwwE4uIx</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5hG1ofIKCbZ</id>
+					<description lang="und">$126,818.19</description>
+				</component>
+				<component>
+					<id>choice_5rFkwwE4uIx</id>
+					<description lang="und">$261,818.18</description>
+				</component>
+				<component>
+					<id>choice_6NibB8FWRqh</id>
+					<description lang="und">$275,400.12</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6XCpdPJxCqH" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6XCpdPJxCqH.6QhlYgA214y" type="cmi.interaction">
+			<name lang="und">If property taxes increase $700 and the other expenses remain the same, how much value would the property lose with a cap rate of 9%?</name>
+			<description lang="und">If property taxes increase $700 and the other expenses remain the same, how much value would the property lose with a cap rate of 9%?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6SQA4zgVgip</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6SQA4zgVgip</id>
+					<description lang="und">$7,778</description>
+				</component>
+				<component>
+					<id>choice_5uiL4yJCbJK</id>
+					<description lang="und">$8,277</description>
+				</component>
+				<component>
+					<id>choice_6MTQGRiwWfb</id>
+					<description lang="und">$7,508</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5ul1OpPlRLZ" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+		<activity id="5XCq8KcLCbF" type="module">
+			<name lang="und">Good Work!</name>
+			<description lang="und">Good Work!</description>
+		</activity>
+	</activities>
+</tincan>

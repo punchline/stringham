@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Deeds and Transfer Part 3" type="course">
+			<name lang="und">Deeds and Transfer Part 3</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5wC0EmNKJn3" type="objective">
+			<name lang="und">Results</name>
+			<description lang="und">Results</description>
+		</activity>
+		<activity id="66DlvOD5Mkb" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6bsplITYZ7l" type="module">
+			<name lang="und">Which would you prefer?</name>
+			<description lang="und">Which would you prefer?</description>
+		</activity>
+		<activity id="6FHu4vwNqQr" type="module">
+			<name lang="und">General Warranty Deed</name>
+			<description lang="und">General Warranty Deed</description>
+		</activity>
+		<activity id="5im11wyguzy" type="module">
+			<name lang="und">Special Warranty Deed</name>
+			<description lang="und">Special Warranty Deed</description>
+		</activity>
+		<activity id="5tdm2Aii2WY" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5tdm2Aii2WY.5V5oKivodbM" type="cmi.interaction">
+			<name lang="und">A general warranty deed must have at least 4 of the 5 possible covenants and extend back in time to the patent.</name>
+			<description lang="und">A general warranty deed must have at least 4 of the 5 possible covenants and extend back in time to the patent.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5pkNZbP61rf</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6bknaL8bKSB</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5pkNZbP61rf</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5V7gvqeOrJa" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5V7gvqeOrJa.5sfToEVrAxv" type="cmi.interaction">
+			<name lang="und">Which correctly defines what is contained in a special warranty deed?</name>
+			<description lang="und">Which correctly defines what is contained in a special warranty deed?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5pWyG3CHSw2</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6MfHjhLpVGQ</id>
+					<description lang="und">It has 3 covenants and covers the grantor's ownership</description>
+				</component>
+				<component>
+					<id>choice_5pWyG3CHSw2</id>
+					<description lang="und">It has 2 covenants; Covenant of Seizin and Covenant against Encumbrances.</description>
+				</component>
+				<component>
+					<id>choice_5yujDkUC0nQ</id>
+					<description lang="und">It has 2 covenants and goes back to the patent deed</description>
+				</component>
+				<component>
+					<id>choice_6bjdQwLMcOr</id>
+					<description lang="und">It has all 5 covenants and only covers the grantor's ownership.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5cdiFGt5c32" type="module">
+			<name lang="und">Deeds associated with wills</name>
+			<description lang="und">Deeds associated with wills</description>
+		</activity>
+		<activity id="5vtuz5iJvxA" type="module">
+			<name lang="und">Forced Sale</name>
+			<description lang="und">Forced Sale</description>
+		</activity>
+		<activity id="5aanezOOqIm" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="5aanezOOqIm.5tBwYrhjgUX" type="cmi.interaction">
+			<name lang="und">A tax deed, trustee's deed, sheriff's deed, administer's deed or executor's deed would all probably be what kind of deed?</name>
+			<description lang="und">A tax deed, trustee's deed, sheriff's deed, administer's deed or executor's deed would all probably be what kind of deed?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_66HKUmNG99M</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5ok1ypYSZtf</id>
+					<description lang="und">General Deed</description>
+				</component>
+				<component>
+					<id>choice_609VR726TNe</id>
+					<description lang="und">Full Warranty Deed</description>
+				</component>
+				<component>
+					<id>choice_66HKUmNG99M</id>
+					<description lang="und">Special Warranty Deed</description>
+				</component>
+				<component>
+					<id>choice_6kbczZw19X7</id>
+					<description lang="und">Grant Deed</description>
+				</component>
+				<component>
+					<id>choice_6a7m3DJAZa8</id>
+					<description lang="und">Quit Claim Deed</description>
+				</component>
+				<component>
+					<id>choice_6BJnaxy9sDI</id>
+					<description lang="und">Bargain and Sale Deed</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5Z7tzx1e6GB" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5Z7tzx1e6GB.6kNJFQ82YvS" type="cmi.interaction">
+			<name lang="und">When the property is conveyed from the government to a private individual, it is called a patent.</name>
+			<description lang="und">When the property is conveyed from the government to a private individual, it is called a patent.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5WXoggx7PHJ</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5WXoggx7PHJ</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_65If9uBXUGs</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6jtjNxeXNWk" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="6jtjNxeXNWk.5dMtDEx3Fli" type="cmi.interaction">
+			<name lang="und">One can give a gift of real property to a relative, charity, friend, or anyone without any kind of restrictions whatsoever.</name>
+			<description lang="und">One can give a gift of real property to a relative, charity, friend, or anyone without any kind of restrictions whatsoever.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5nLbVMWdgij</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5nLbVMWdgij</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5iBiO0xo5Km</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="66qDcdcLjSG" type="module">
+			<name lang="und">Probate</name>
+			<description lang="und">Probate</description>
+		</activity>
+		<activity id="5qkKpw0EGVC" type="module">
+			<name lang="und">Testator</name>
+			<description lang="und">Testator</description>
+		</activity>
+		<activity id="6AmppNnQgEP" type="module">
+			<name lang="und">Intestate</name>
+			<description lang="und">Intestate</description>
+		</activity>
+		<activity id="6eOxE8KfQB9" type="module">
+			<name lang="und">Escheat</name>
+			<description lang="und">Escheat</description>
+		</activity>
+		<activity id="6ZMbRyItx4W" type="module">
+			<name lang="und">Bequest</name>
+			<description lang="und">Bequest</description>
+		</activity>
+		<activity id="69H8MiqTcVP" type="module">
+			<name lang="und">Devise</name>
+			<description lang="und">Devise</description>
+		</activity>
+		<activity id="5aSRN9Zrlmj" type="module">
+			<name lang="und">Executor</name>
+			<description lang="und">Executor</description>
+		</activity>
+		<activity id="6R2UsEFDzxy" type="module">
+			<name lang="und">Administrator</name>
+			<description lang="und">Administrator</description>
+		</activity>
+		<activity id="5fDCQ3MepIb" type="module">
+			<name lang="und">Match the Pairs</name>
+			<description lang="und">Match the Pairs</description>
+		</activity>
+		<activity id="5fDCQ3MepIb.5il7fqwGqoQ" type="cmi.interaction">
+			<name lang="und">Match the following terms together by dragging and dropping.</name>
+			<description lang="und">Match the following terms together by dragging and dropping.</description>
+			<interactionType>matching</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>statement_5p8f9YeyynI[.]choice_6euOd1tANhk</correctResponsePattern>
+				<correctResponsePattern>statement_5ocreh5b7Dp[.]choice_6l4rdpOCVVS</correctResponsePattern>
+				<correctResponsePattern>statement_6izIq1brZJN[.]choice_6nVchBhVJNl</correctResponsePattern>
+				<correctResponsePattern>statement_67Mw8U1TTS9[.]choice_64d8bsExGlz</correctResponsePattern>
+			</correctResponsePatterns>
+			<source>
+				<component>
+					<id>statement_5p8f9YeyynI</id>
+					<description lang="und">Devise</description>
+				</component>
+				<component>
+					<id>statement_5ocreh5b7Dp</id>
+					<description lang="und">Devisor</description>
+				</component>
+				<component>
+					<id>statement_6izIq1brZJN</id>
+					<description lang="und">Devisee</description>
+				</component>
+				<component>
+					<id>statement_67Mw8U1TTS9</id>
+					<description lang="und">Administrator</description>
+				</component>
+			</source>
+			<target>
+				<component>
+					<id>choice_6euOd1tANhk</id>
+					<description lang="und">Gift of real property given in a will.</description>
+				</component>
+				<component>
+					<id>choice_6l4rdpOCVVS</id>
+					<description lang="und">Gives the gift.</description>
+				</component>
+				<component>
+					<id>choice_6nVchBhVJNl</id>
+					<description lang="und">Receives the gift.</description>
+				</component>
+				<component>
+					<id>choice_64d8bsExGlz</id>
+					<description lang="und">appointed by courts to execute terms of will.</description>
+				</component>
+			</target>
+		</activity>
+		<activity id="6gVBIVaexpT" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="6gVBIVaexpT.6SjvKpcAmGV" type="cmi.interaction">
+			<name lang="und">If there is no will and no heirs, the estate of a deceased individual escheats to the state.</name>
+			<description lang="und">If there is no will and no heirs, the estate of a deceased individual escheats to the state.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5zmzhIj0RMl</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5zmzhIj0RMl</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6L98OzbH1lq</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="64hzX6sWSMz" type="module">
+			<name lang="und">Types of Wills</name>
+			<description lang="und">Types of Wills</description>
+		</activity>
+		<activity id="5Ug71Y70V96" type="module">
+			<name lang="und">Nuncupative Will</name>
+			<description lang="und">Nuncupative Will</description>
+		</activity>
+		<activity id="68EX9W9W7ln" type="module">
+			<name lang="und">Holographic Will</name>
+			<description lang="und">Holographic Will</description>
+		</activity>
+		<activity id="6Jdq2I8cE9P" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6Jdq2I8cE9P.6D4hxFwedDR" type="cmi.interaction">
+			<name lang="und">Which kind of will is written entirely in the handwriting of the testator?</name>
+			<description lang="und">Which kind of will is written entirely in the handwriting of the testator?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5tBwblFJWyw</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5tBwblFJWyw</id>
+					<description lang="und">Holographic will</description>
+				</component>
+				<component>
+					<id>choice_6XkXNbtwKKD</id>
+					<description lang="und">Nuncupative will</description>
+				</component>
+				<component>
+					<id>choice_5sAaVPoEhRl</id>
+					<description lang="und">A Formal Witnessed will</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6es9TxTiECs" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6es9TxTiECs.6L00UgQXV1s" type="cmi.interaction">
+			<name lang="und">Which kind of will can only convey personal property?</name>
+			<description lang="und">Which kind of will can only convey personal property?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_69CW2wZ8l6D</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_69CW2wZ8l6D</id>
+					<description lang="und">Nuncupative</description>
+				</component>
+				<component>
+					<id>choice_6YK5CQyrdAP</id>
+					<description lang="und">Formal</description>
+				</component>
+				<component>
+					<id>choice_6XOoGdsHp5W</id>
+					<description lang="und">Holographic</description>
+				</component>
+				<component>
+					<id>choice_5w8sBI8yu0K</id>
+					<description lang="und">Codicil</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="67PE947WnMt" type="module">
+			<name lang="und">Codicil</name>
+			<description lang="und">Codicil</description>
+		</activity>
+		<activity id="5bKzF75xnoS" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5bKzF75xnoS.6q7WAC7qpgb" type="cmi.interaction">
+			<name lang="und">To make any later additions to a will, you must have a codicil prepared by an attorney.</name>
+			<description lang="und">To make any later additions to a will, you must have a codicil prepared by an attorney.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6eDUpPoMacz</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6RcjLH0LKqz</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_6eDUpPoMacz</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6V8SLQwZe5t" type="module">
+			<name lang="und">Thanks for Watching!</name>
+			<description lang="und">Thanks for Watching!</description>
+		</activity>
+		<activity id="6DwVZo2bLLj" type="module">
+			<name lang="und">The End</name>
+			<description lang="und">The End</description>
+		</activity>
+		<activity id="61BHXdIaSjp" type="module">
+			<name lang="und">1</name>
+			<description lang="und">1</description>
+		</activity>
+		<activity id="61BHXdIaSjp.6PhcR3nFHkV" type="cmi.interaction">
+			<name lang="und">Jack and Jill have recently been divorced.  The decree gave the house to Jill.  Since there is no reason for Jack to give any guarantee of title, he will most likely pass his interest in the property with a:</name>
+			<description lang="und">Jack and Jill have recently been divorced.  The decree gave the house to Jill.  Since there is no reason for Jack to give any guarantee of title, he will most likely pass his interest in the property with a:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6eZYNYwX3Kb</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5fUa3MJUmZF</id>
+					<description lang="und">Special Warranty Deed</description>
+				</component>
+				<component>
+					<id>choice_6eZYNYwX3Kb</id>
+					<description lang="und">Quit Claim Deed</description>
+				</component>
+				<component>
+					<id>choice_5oWBNsg9pFg</id>
+					<description lang="und">General Warranty Deed</description>
+				</component>
+				<component>
+					<id>choice_6eOK1ikLpBN</id>
+					<description lang="und">Patent Deed</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6VXX0RU8Q5B" type="module">
+			<name lang="und">2</name>
+			<description lang="und">2</description>
+		</activity>
+		<activity id="6VXX0RU8Q5B.5YoD3Vpwu4y" type="cmi.interaction">
+			<name lang="und">Which of the following deeds would be most desirable as seen from the perspective of the buyer?</name>
+			<description lang="und">Which of the following deeds would be most desirable as seen from the perspective of the buyer?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6HMxlrZyTVX</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_61s3aSE7FoJ</id>
+					<description lang="und">Special Warranty Deed</description>
+				</component>
+				<component>
+					<id>choice_5cbLc7UL9Bj</id>
+					<description lang="und">Quit Claim Deed</description>
+				</component>
+				<component>
+					<id>choice_6HMxlrZyTVX</id>
+					<description lang="und">General Warranty Deed</description>
+				</component>
+				<component>
+					<id>choice_5bl3O8A2Sm8</id>
+					<description lang="und">Bargain and Sale Deed</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6P9PLVb4mYM" type="module">
+			<name lang="und">3</name>
+			<description lang="und">3</description>
+		</activity>
+		<activity id="6P9PLVb4mYM.60PVqnWLoYg" type="cmi.interaction">
+			<name lang="und">When does title actually pass under a deed?</name>
+			<description lang="und">When does title actually pass under a deed?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6aWt9MHHh79</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5WdLeqUX4I4</id>
+					<description lang="und">On the day of the date written on the deed</description>
+				</component>
+				<component>
+					<id>choice_62uAjMPCPSq</id>
+					<description lang="und">On the day the deed is executed or signed</description>
+				</component>
+				<component>
+					<id>choice_6aWt9MHHh79</id>
+					<description lang="und">On the day it is delivered and accepted</description>
+				</component>
+				<component>
+					<id>choice_66xp6cdtGO5</id>
+					<description lang="und">On the day it is acknowledged</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6r97Jp5ezDH" type="module">
+			<name lang="und">4</name>
+			<description lang="und">4</description>
+		</activity>
+		<activity id="6r97Jp5ezDH.6iMFrW8OvKL" type="cmi.interaction">
+			<name lang="und">A deed that the government uses to transfer government owned property to a private individual is known as a:</name>
+			<description lang="und">A deed that the government uses to transfer government owned property to a private individual is known as a:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6SjCN6vj6XY</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6S8aM1M5hwh</id>
+					<description lang="und">Warranty Deed</description>
+				</component>
+				<component>
+					<id>choice_6SjCN6vj6XY</id>
+					<description lang="und">Patent Deed</description>
+				</component>
+				<component>
+					<id>choice_6Y4QbIaIU87</id>
+					<description lang="und">Quit Claim Deed</description>
+				</component>
+				<component>
+					<id>choice_6loYXhJCxvK</id>
+					<description lang="und">Federal Land Deed</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6WDKm2vPcTN" type="module">
+			<name lang="und">5</name>
+			<description lang="und">5</description>
+		</activity>
+		<activity id="6WDKm2vPcTN.6geZ9QGE01L" type="cmi.interaction">
+			<name lang="und">The most common use of a quit claim deed is to:</name>
+			<description lang="und">The most common use of a quit claim deed is to:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_619BEfECfFm</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6aEgNyyANWv</id>
+					<description lang="und">pass full title with all warranties to the grantee in a quick and timely manner.</description>
+				</component>
+				<component>
+					<id>choice_5hwcML04F3U</id>
+					<description lang="und">pass title from the government to a private individual.</description>
+				</component>
+				<component>
+					<id>choice_619BEfECfFm</id>
+					<description lang="und">remove clouds from the title.</description>
+				</component>
+				<component>
+					<id>choice_5om2EPZ9XX0</id>
+					<description lang="und">quit claim to all ownership and all liability for loans and other encumbrances on the title.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6Pr3M6GzXDb" type="module">
+			<name lang="und">6</name>
+			<description lang="und">6</description>
+		</activity>
+		<activity id="6Pr3M6GzXDb.6FM8WaDC0oM" type="cmi.interaction">
+			<name lang="und">A property is sold at an estate sale and title is passed by the executor to the buyer.  The executor’s deed would be most like which of the following?</name>
+			<description lang="und">A property is sold at an estate sale and title is passed by the executor to the buyer.  The executor’s deed would be most like which of the following?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5t1h2cbJp4a</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5t1h2cbJp4a</id>
+					<description lang="und">Special Warranty Deed</description>
+				</component>
+				<component>
+					<id>choice_6Y7NQCRcfGs</id>
+					<description lang="und">General Warranty Deed</description>
+				</component>
+				<component>
+					<id>choice_6GTjFpkVZ7Q</id>
+					<description lang="und">Quit Claim Deed</description>
+				</component>
+				<component>
+					<id>choice_5aDnZEdc0im</id>
+					<description lang="und">Patent Deed</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6VvftIIRVZK" type="module">
+			<name lang="und">7</name>
+			<description lang="und">7</description>
+		</activity>
+		<activity id="6VvftIIRVZK.634sSflXV4W" type="cmi.interaction">
+			<name lang="und">Which of the following describes the Covenant of Quiet Enjoyment?</name>
+			<description lang="und">Which of the following describes the Covenant of Quiet Enjoyment?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5auZskob7fR</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6XFO6w18hY2</id>
+					<description lang="und">Freedom from distressing noise from an adjoining property owner.</description>
+				</component>
+				<component>
+					<id>choice_6D6o7bhez1J</id>
+					<description lang="und">The seller must quietly relinquish possession.</description>
+				</component>
+				<component>
+					<id>choice_5auZskob7fR</id>
+					<description lang="und">The purchaser shall not be disturbed in the peaceful possession of the property.</description>
+				</component>
+				<component>
+					<id>choice_6KHVXkTU4px</id>
+					<description lang="und">All encumbrances have been recorded.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6rMBE8lxe7M" type="module">
+			<name lang="und">8</name>
+			<description lang="und">8</description>
+		</activity>
+		<activity id="6rMBE8lxe7M.5c6AcUvtFFa" type="cmi.interaction">
+			<name lang="und">What clause means "to have and to hold"  or “subject to” and defines the extent of a transfer of real property?</name>
+			<description lang="und">What clause means "to have and to hold"  or “subject to” and defines the extent of a transfer of real property?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5x6wp6BrXPy</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6FFegCu2I2T</id>
+					<description lang="und">Escalator clause</description>
+				</component>
+				<component>
+					<id>choice_5x6wp6BrXPy</id>
+					<description lang="und">Habendum clause</description>
+				</component>
+				<component>
+					<id>choice_5pTBefflRll</id>
+					<description lang="und">Escheat clause</description>
+				</component>
+				<component>
+					<id>choice_5nONOsCIyZ9</id>
+					<description lang="und">Notice of Interest clause</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5xazzvocJ8Y" type="module">
+			<name lang="und">9</name>
+			<description lang="und">9</description>
+		</activity>
+		<activity id="5xazzvocJ8Y.6e2s3tOd4fq" type="cmi.interaction">
+			<name lang="und">Which of the following is NOT necessary to make a deed valid?</name>
+			<description lang="und">Which of the following is NOT necessary to make a deed valid?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5e1mTfxpggP</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5e1mTfxpggP</id>
+					<description lang="und">Date of the transfer of ownership</description>
+				</component>
+				<component>
+					<id>choice_6gVQKkNIFDQ</id>
+					<description lang="und">Property description</description>
+				</component>
+				<component>
+					<id>choice_5ly1rMTUzgM</id>
+					<description lang="und">Signature of the grantor</description>
+				</component>
+				<component>
+					<id>choice_5uAcShiwtTT</id>
+					<description lang="und">Delivery of the deed to the grantee</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6pIxYKwjt0X" type="module">
+			<name lang="und">10</name>
+			<description lang="und">10</description>
+		</activity>
+		<activity id="6pIxYKwjt0X.68S5904Xe8s" type="cmi.interaction">
+			<name lang="und">Which of the following is NOT a valid means of delivering a deed from the grantor to the grantee?</name>
+			<description lang="und">Which of the following is NOT a valid means of delivering a deed from the grantor to the grantee?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5chuhsHMGUQ</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6WX6zqcEdGK</id>
+					<description lang="und">The grantor hands the deed to the grantee.</description>
+				</component>
+				<component>
+					<id>choice_5chuhsHMGUQ</id>
+					<description lang="und">The grantor tells the grantee that the grantee is to have the property after his death.</description>
+				</component>
+				<component>
+					<id>choice_69oajngBaqQ</id>
+					<description lang="und">The grantor gives written, notarized instructions to deliver the deed to the grantee after the death of the grantor.</description>
+				</component>
+				<component>
+					<id>choice_6W6HGno6HXm</id>
+					<description lang="und">The grantor records the deed at the county recorders office in the name of the grantee.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5redhlV62bo" type="module">
+			<name lang="und">11</name>
+			<description lang="und">11</description>
+		</activity>
+		<activity id="5redhlV62bo.6KfQ4pj2kyZ" type="cmi.interaction">
+			<name lang="und">A handwritten will is:</name>
+			<description lang="und">A handwritten will is:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_66JZ5CQBUcr</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6Gck4YSC090</id>
+					<description lang="und">a nuncupative will</description>
+				</component>
+				<component>
+					<id>choice_66JZ5CQBUcr</id>
+					<description lang="und">a holographic will</description>
+				</component>
+				<component>
+					<id>choice_5ZVTsAGOeEZ</id>
+					<description lang="und">a bequest</description>
+				</component>
+				<component>
+					<id>choice_68LFp3zp3Tc</id>
+					<description lang="und">invalid</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6dt6jCfA3iN" type="module">
+			<name lang="und">12</name>
+			<description lang="und">12</description>
+		</activity>
+		<activity id="6dt6jCfA3iN.6ctJjAiUIGn" type="cmi.interaction">
+			<name lang="und">A person appointed by the court to carry out the terms of a will is called a(n):</name>
+			<description lang="und">A person appointed by the court to carry out the terms of a will is called a(n):</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_64c8d4Ataqy</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5ac17acT60c</id>
+					<description lang="und">Testator</description>
+				</component>
+				<component>
+					<id>choice_6HfqTx7j1VH</id>
+					<description lang="und">Executor or Executrix</description>
+				</component>
+				<component>
+					<id>choice_64c8d4Ataqy</id>
+					<description lang="und">Administrator</description>
+				</component>
+				<component>
+					<id>choice_6jnup2jMnyg</id>
+					<description lang="und">Devisor</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5kxckBSq5kd" type="module">
+			<name lang="und">13</name>
+			<description lang="und">13</description>
+		</activity>
+		<activity id="5kxckBSq5kd.65AQ3y9kFJB" type="cmi.interaction">
+			<name lang="und">If a person dies intestate, his estate would be distributed according to the law of:</name>
+			<description lang="und">If a person dies intestate, his estate would be distributed according to the law of:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6cVcfQDVG4u</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_62A5g4EatVo</id>
+					<description lang="und">Holographic </description>
+				</component>
+				<component>
+					<id>choice_6gorkuct5HX</id>
+					<description lang="und">Devise</description>
+				</component>
+				<component>
+					<id>choice_5gZMYWBI96J</id>
+					<description lang="und">Codicil</description>
+				</component>
+				<component>
+					<id>choice_6cVcfQDVG4u</id>
+					<description lang="und">Descent</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6XvSkHlUIOd" type="module">
+			<name lang="und">14</name>
+			<description lang="und">14</description>
+		</activity>
+		<activity id="6XvSkHlUIOd.5j6agq5aQpO" type="cmi.interaction">
+			<name lang="und">Which of the following choices is an example of involuntary alienation?</name>
+			<description lang="und">Which of the following choices is an example of involuntary alienation?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5dTFI2336PT</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5lR0R8DtS9W</id>
+					<description lang="und">Property left in a will</description>
+				</component>
+				<component>
+					<id>choice_6lT5XrX0Oq7</id>
+					<description lang="und">Selling the property</description>
+				</component>
+				<component>
+					<id>choice_67QpBLFOmwe</id>
+					<description lang="und">Giving the property to a relative</description>
+				</component>
+				<component>
+					<id>choice_5dTFI2336PT</id>
+					<description lang="und">a tax sale</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5l6D7Ph4oB4" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+	</activities>
+</tincan>

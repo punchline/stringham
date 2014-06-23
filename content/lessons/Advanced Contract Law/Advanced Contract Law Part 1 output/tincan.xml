@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Advanced Contract Law Part 1" type="course">
+			<name lang="und">Advanced Contract Law Part 1</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5ziMYhN5Vep" type="objective">
+			<name lang="und">Results</name>
+			<description lang="und">Results</description>
+		</activity>
+		<activity id="6OCyvJOoTkp" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="6p8TBBHFPxn" type="module">
+			<name lang="und">What roles do Real Estate Agents play?</name>
+			<description lang="und">What roles do Real Estate Agents play?</description>
+		</activity>
+		<activity id="6468bYVVmpn" type="module">
+			<name lang="und">Marketer</name>
+			<description lang="und">Marketer</description>
+		</activity>
+		<activity id="5pQkic4ijhZ" type="module">
+			<name lang="und">Meeting with Clients</name>
+			<description lang="und">Meeting with Clients</description>
+		</activity>
+		<activity id="6HmgkkuPAT2" type="module">
+			<name lang="und">Contracts Review</name>
+			<description lang="und">Contracts Review</description>
+		</activity>
+		<activity id="6jowOp6JlJC" type="module">
+			<name lang="und">Real Estate Purchase Contract</name>
+			<description lang="und">Real Estate Purchase Contract</description>
+		</activity>
+		<activity id="65S18oauRsl" type="module">
+			<name lang="und">Real Estate Purchase Contract For Residential Construction</name>
+			<description lang="und">Real Estate Purchase Contract For Residential Construction</description>
+		</activity>
+		<activity id="5WcLiQ7GqOn" type="module">
+			<name lang="und">Lease Agreement with Option for Purchase</name>
+			<description lang="und">Lease Agreement with Option for Purchase</description>
+		</activity>
+		<activity id="6hW0MFbzniI" type="module">
+			<name lang="und">Real Estate Purchase Contract Land</name>
+			<description lang="und">Real Estate Purchase Contract Land</description>
+		</activity>
+		<activity id="5lwVNZJKzxV" type="module">
+			<name lang="und">REPC Commercial</name>
+			<description lang="und">REPC Commercial</description>
+		</activity>
+		<activity id="6bvF16Gn0C1" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="6bvF16Gn0C1.5pBMUOoLflN" type="cmi.interaction">
+			<name lang="und">You should use the residential REPC even if the occupancy permit has NOT been issued for a new construction home.</name>
+			<description lang="und">You should use the residential REPC even if the occupancy permit has NOT been issued for a new construction home.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5e4qgxRbDSb</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6jQX0VbCCRY</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5e4qgxRbDSb</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6TKmMJ4HlId" type="module">
+			<name lang="und">Tender</name>
+			<description lang="und">Tender</description>
+		</activity>
+		<activity id="6mQqeupJp17" type="module">
+			<name lang="und">Definition: Tender</name>
+			<description lang="und">Definition: Tender</description>
+		</activity>
+		<activity id="6D1LxB1kNxc" type="module">
+			<name lang="und">Who is the Offeror?</name>
+			<description lang="und">Who is the Offeror?</description>
+		</activity>
+		<activity id="64U3sxPyAFx" type="module">
+			<name lang="und">What are the Offeree's Choices?</name>
+			<description lang="und">What are the Offeree's Choices?</description>
+		</activity>
+		<activity id="5a699VBjUPv" type="module">
+			<name lang="und">Counter</name>
+			<description lang="und">Counter</description>
+		</activity>
+		<activity id="6PxxJmwqjmM" type="module">
+			<name lang="und">Who is the Offeror now</name>
+			<description lang="und">Who is the Offeror now</description>
+		</activity>
+		<activity id="5hbjkXxwJfB" type="module">
+			<name lang="und">How long?</name>
+			<description lang="und">How long?</description>
+		</activity>
+		<activity id="5z7QkmWs91E" type="module">
+			<name lang="und">Mutual Agreement</name>
+			<description lang="und">Mutual Agreement</description>
+		</activity>
+		<activity id="6b8VimJI0Gr" type="module">
+			<name lang="und">Definition: Mutual Agreement</name>
+			<description lang="und">Definition: Mutual Agreement</description>
+		</activity>
+		<activity id="62O5ycJqqbS" type="module">
+			<name lang="und">Acceptance</name>
+			<description lang="und">Acceptance</description>
+		</activity>
+		<activity id="5jruqR3sKYw" type="module">
+			<name lang="und">Signatures</name>
+			<description lang="und">Signatures</description>
+		</activity>
+		<activity id="62g7gZyBrUB" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="62g7gZyBrUB.65W3gd0Hgqe" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_69Ax75p2Wx1</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_69Ax75p2Wx1</id>
+					<description lang="und">The essential element of a contract achieved through the offer and acceptance process.</description>
+				</component>
+				<component>
+					<id>choice_63ZNDeoM6W9</id>
+					<description lang="und">Another term for the process of making or presenting an offer.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5htyxdYKaex" type="module">
+			<name lang="und">Vocabulary Review</name>
+			<description lang="und">Vocabulary Review</description>
+		</activity>
+		<activity id="5htyxdYKaex.5lmnyouMRA9" type="cmi.interaction">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6cr6JvNRYbp</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_65RPSqq8gLF</id>
+					<description lang="und">The essential element of a contract achieved through the offer and acceptance process.</description>
+				</component>
+				<component>
+					<id>choice_6cr6JvNRYbp</id>
+					<description lang="und">Another term for the process of making or presenting an offer.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6kMB3Mgh2ea" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6kMB3Mgh2ea.5Ul6niCR8Cw" type="cmi.interaction">
+			<name lang="und">Under which situation is a seller an offeror?</name>
+			<description lang="und">Under which situation is a seller an offeror?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6A2z57fBQYx</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5nSreepWXoj</id>
+					<description lang="und">Any time they tender an offer to a buyer.</description>
+				</component>
+				<component>
+					<id>choice_6A2z57fBQYx</id>
+					<description lang="und">In a counter offer situation.</description>
+				</component>
+				<component>
+					<id>choice_66tlObGVzqd</id>
+					<description lang="und">Seller's are offeree's never offeror's.</description>
+				</component>
+				<component>
+					<id>choice_5eIvGD6dJmn</id>
+					<description lang="und">When they accept an offer.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6BVF1SM4Bm2" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6BVF1SM4Bm2.6HMIvGC3ijX" type="cmi.interaction">
+			<name lang="und">Which section of the REPC defines acceptance?</name>
+			<description lang="und">Which section of the REPC defines acceptance?</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5V7iwtWwb76</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5mrm4uGh6iO</id>
+					<description lang="und">21</description>
+				</component>
+				<component>
+					<id>choice_6fihaJzqPdb</id>
+					<description lang="und">22</description>
+				</component>
+				<component>
+					<id>choice_5V7iwtWwb76</id>
+					<description lang="und">23</description>
+				</component>
+				<component>
+					<id>choice_5bjuDMccj6g</id>
+					<description lang="und">24</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6Pujh91FZZP" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="6Pujh91FZZP.6Aqindrk7lk" type="cmi.interaction">
+			<name lang="und">Section 25 of the REPC defines the time for response.</name>
+			<description lang="und">Section 25 of the REPC defines the time for response.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6IISL5OcPDk</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6IISL5OcPDk</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5cJ70Lw1Fwm</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="65XuJLd8KzS" type="module">
+			<name lang="und">Results Slide</name>
+			<description lang="und">Results Slide</description>
+		</activity>
+		<activity id="6Iw8B4WEB8B" type="module">
+			<name lang="und">Move on to the next part</name>
+			<description lang="und">Move on to the next part</description>
+		</activity>
+	</activities>
+</tincan>

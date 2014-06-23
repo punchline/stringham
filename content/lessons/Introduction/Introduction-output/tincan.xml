@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Introduction" type="course">
+			<name lang="und">Introduction</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="5ZG5ECTNnTo" type="module">
+			<name lang="und">Introduction</name>
+			<description lang="und">Introduction</description>
+		</activity>
+		<activity id="5sI2PJQLg8z" type="module">
+			<name lang="und">Mission Statement</name>
+			<description lang="und">Mission Statement</description>
+		</activity>
+		<activity id="6I5NvkDnWjN" type="module">
+			<name lang="und">Four Key Objectives</name>
+			<description lang="und">Four Key Objectives</description>
+		</activity>
+		<activity id="5iXF8n1bA6N" type="module">
+			<name lang="und">QUIZ: MISSION STATEMENT</name>
+			<description lang="und">QUIZ: MISSION STATEMENT</description>
+		</activity>
+		<activity id="5iXF8n1bA6N.6VBAwwd2SzP" type="cmi.interaction">
+			<name lang="und">Drag and Drop</name>
+			<description lang="und">Drag and Drop</description>
+			<interactionType>matching</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>statement_6moM8T5IuZA[.]choice_6HUd7iq8EDc</correctResponsePattern>
+				<correctResponsePattern>statement_6moM8T5IuZA[.]choice_5pdHgg6qJzS</correctResponsePattern>
+				<correctResponsePattern>statement_6moM8T5IuZA[.]choice_67HNXutiFc9</correctResponsePattern>
+				<correctResponsePattern>statement_6moM8T5IuZA[.]choice_6mFpRqsyOfW</correctResponsePattern>
+				<correctResponsePattern>statement_6moM8T5IuZA[.]choice_5XReC0uvukS</correctResponsePattern>
+				<correctResponsePattern>statement_6moM8T5IuZA[.]choice_67sMml0oh2j</correctResponsePattern>
+			</correctResponsePatterns>
+			<source>
+				<component>
+					<id>statement_6moM8T5IuZA</id>
+					<description lang="und">Briefcase - Group</description>
+				</component>
+			</source>
+			<target>
+				<component>
+					<id>choice_6HUd7iq8EDc</id>
+					<description lang="und">Folded Corner 1 - Well-Managed Facilities</description>
+				</component>
+				<component>
+					<id>choice_5pdHgg6qJzS</id>
+					<description lang="und">Folded Corner 2 - Integrated Technology</description>
+				</component>
+				<component>
+					<id>choice_67HNXutiFc9</id>
+					<description lang="und">Folded Corner 3 - Integrity</description>
+				</component>
+				<component>
+					<id>choice_6Uy78DyZe3s</id>
+					<description lang="und">Folded Corner 4 - Inconsistency</description>
+				</component>
+				<component>
+					<id>choice_6mFpRqsyOfW</id>
+					<description lang="und">Folded Corner 5 - Up-to-date Materials </description>
+				</component>
+				<component>
+					<id>choice_5XReC0uvukS</id>
+					<description lang="und">Folded Corner 6 - Convenient Schedules</description>
+				</component>
+				<component>
+					<id>choice_67sMml0oh2j</id>
+					<description lang="und">Folded Corner 7 - Superior Instruction</description>
+				</component>
+				<component>
+					<id>choice_6JQMBXEphsa</id>
+					<description lang="und">Folded Corner 8 - Poor Customer Service</description>
+				</component>
+			</target>
+		</activity>
+		<activity id="6aiVMl8Ij0N" type="module">
+			<name lang="und">Pick Many</name>
+			<description lang="und">Pick Many</description>
+		</activity>
+		<activity id="6aiVMl8Ij0N.6XwyiiPGHK2" type="cmi.interaction">
+			<name lang="und">Pick Many</name>
+			<description lang="und">Pick Many</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5hp9Haq8QgQ</correctResponsePattern>
+				<correctResponsePattern>choice_64BWuxRhoaU</correctResponsePattern>
+				<correctResponsePattern>choice_6CJlezA5htX</correctResponsePattern>
+				<correctResponsePattern>choice_6EGBUWWKK9z</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5hp9Haq8QgQ</id>
+					<description lang="und">Picture 2</description>
+				</component>
+				<component>
+					<id>choice_64BWuxRhoaU</id>
+					<description lang="und">Picture 3</description>
+				</component>
+				<component>
+					<id>choice_6CJlezA5htX</id>
+					<description lang="und">Picture 4</description>
+				</component>
+				<component>
+					<id>choice_6VCKiqL90QO</id>
+					<description lang="und">Picture 5</description>
+				</component>
+				<component>
+					<id>choice_6EGBUWWKK9z</id>
+					<description lang="und">Picture 6</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6J2HQGzmcwJ" type="module">
+			<name lang="und">What We Offer</name>
+			<description lang="und">What We Offer</description>
+		</activity>
+		<activity id="5YNFuiEXUnY" type="module">
+			<name lang="und">QUIZ: Classes Offered</name>
+			<description lang="und">QUIZ: Classes Offered</description>
+		</activity>
+		<activity id="5YNFuiEXUnY.6UoYRJndv5i" type="cmi.interaction">
+			<name lang="und">Here at Stringham Schools we offer a variety of classes for you to choose from. Which of the following classes could you take from us? 
+Select all answers that apply.</name>
+			<description lang="und">Here at Stringham Schools we offer a variety of classes for you to choose from. Which of the following classes could you take from us? 
+Select all answers that apply.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5pzKuvMdsBQ</correctResponsePattern>
+				<correctResponsePattern>choice_6RJGKnb5LYC</correctResponsePattern>
+				<correctResponsePattern>choice_5nqcX3Zh2vk</correctResponsePattern>
+				<correctResponsePattern>choice_620eKywvuSZ</correctResponsePattern>
+				<correctResponsePattern>choice_5gf2nWPRWPT</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5pzKuvMdsBQ</id>
+					<description lang="und">Broker</description>
+				</component>
+				<component>
+					<id>choice_6RJGKnb5LYC</id>
+					<description lang="und">Mortgage</description>
+				</component>
+				<component>
+					<id>choice_5nqcX3Zh2vk</id>
+					<description lang="und">Continuing Education</description>
+				</component>
+				<component>
+					<id>choice_620eKywvuSZ</id>
+					<description lang="und">Contractor</description>
+				</component>
+				<component>
+					<id>choice_5gf2nWPRWPT</id>
+					<description lang="und">Real Estate Sales</description>
+				</component>
+				<component>
+					<id>choice_6q89Z5c4gRI</id>
+					<description lang="und">Phlebotomy</description>
+				</component>
+				<component>
+					<id>choice_5oF8yIUIdkP</id>
+					<description lang="und">Cosmetology</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5x2u6bNHSzd" type="module">
+			<name lang="und">Four Easy Steps</name>
+			<description lang="und">Four Easy Steps</description>
+		</activity>
+		<activity id="63ur72sPHnt" type="module">
+			<name lang="und">QUIZ: MAXIMUM CREDIT HOURS</name>
+			<description lang="und">QUIZ: MAXIMUM CREDIT HOURS</description>
+		</activity>
+		<activity id="63ur72sPHnt.5qCYwmRh42P" type="cmi.interaction">
+			<name lang="und">Pick One</name>
+			<description lang="und">Pick One</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6XsXZExQny7</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6renuTmgbCL</id>
+					<description lang="und">Group 6</description>
+				</component>
+				<component>
+					<id>choice_6XsXZExQny7</id>
+					<description lang="und">Group 5</description>
+				</component>
+				<component>
+					<id>choice_6l6n3VrPRyZ</id>
+					<description lang="und">Group 4</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6eMaGRTfvpJ" type="module">
+			<name lang="und">Multiple Choice</name>
+			<description lang="und">Multiple Choice</description>
+		</activity>
+		<activity id="6eMaGRTfvpJ.5nAxCovS7lA" type="cmi.interaction">
+			<name lang="und">To complete your course here at Stringham Schools, you need to do each section in a specific order. Listed below are each of the sections. Drag and drop them into their correct order, then hit Submit.</name>
+			<description lang="und">To complete your course here at Stringham Schools, you need to do each section in a specific order. Listed below are each of the sections. Drag and drop them into their correct order, then hit Submit.</description>
+			<interactionType>sequencing</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5ssWYYoiXgQ</correctResponsePattern>
+				<correctResponsePattern>choice_6VEL9bQXfVB</correctResponsePattern>
+				<correctResponsePattern>choice_60wtF3QvnvM</correctResponsePattern>
+				<correctResponsePattern>choice_6ExFCy2VdiB</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5ssWYYoiXgQ</id>
+					<description lang="und">Complete all classes</description>
+				</component>
+				<component>
+					<id>choice_6VEL9bQXfVB</id>
+					<description lang="und">Complete the course reviews</description>
+				</component>
+				<component>
+					<id>choice_60wtF3QvnvM</id>
+					<description lang="und">Pass school exams with a 75% or better</description>
+				</component>
+				<component>
+					<id>choice_6ExFCy2VdiB</id>
+					<description lang="und">Take the State Test Prep class</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5pFaelZBOXS" type="module">
+			<name lang="und">Keep in Mind...</name>
+			<description lang="und">Keep in Mind...</description>
+		</activity>
+		<activity id="5goXgJiM3tc" type="module">
+			<name lang="und">Lifetime Tuition</name>
+			<description lang="und">Lifetime Tuition</description>
+		</activity>
+		<activity id="5VkO28Mpqsz" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="5VkO28Mpqsz.6EEVnvbiW7b" type="cmi.interaction">
+			<name lang="und">The Classes I took in February of 2010 are still valid and I do not need to retake them.</name>
+			<description lang="und">The Classes I took in February of 2010 are still valid and I do not need to retake them.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_61t1NYfCKWU</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_61M9IBGdDMc</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_61t1NYfCKWU</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6cErDI13MqI" type="module">
+			<name lang="und">True or False</name>
+			<description lang="und">True or False</description>
+		</activity>
+		<activity id="6cErDI13MqI.6c2WUzGONgY" type="cmi.interaction">
+			<name lang="und">The entire 120 hour course I am about to start can be completed in 96 hours if I work really hard.</name>
+			<description lang="und">The entire 120 hour course I am about to start can be completed in 96 hours if I work really hard.</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5xxwVLD1WWM</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_6EL9AQDbdLz</id>
+					<description lang="und">True</description>
+				</component>
+				<component>
+					<id>choice_5xxwVLD1WWM</id>
+					<description lang="und">False</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5by05vay2rf" type="module">
+			<name lang="und">Online Support</name>
+			<description lang="und">Online Support</description>
+		</activity>
+		<activity id="6dLhKcMQWVX" type="module">
+			<name lang="und">End - Thanks!</name>
+			<description lang="und">End - Thanks!</description>
+		</activity>
+	</activities>
+</tincan>
