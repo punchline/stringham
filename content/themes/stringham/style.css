@@ -526,7 +526,7 @@ body.nooverflow {
 	background-color: #fff;
 }
 .powerwidget-placeholder {
-	background: url(../images/bg-stripped.png);
+	background: url(images/bg-stripped.png);
 }
 /* Clearfix */
 .powerwidget:before,
@@ -830,50 +830,50 @@ ul.popover-tooltip-example li {
  * Bootstrap Jumbotron
  * ======================================================================== */
 .jumbotron {
-	background: url(../images/gallery/1.png);
+	background: url(images/gallery/1.png);
 	border-radius: 3px;
 	background-size: 30%;
 	padding: 20px;
 	color: #fff;
 }
 .jumbotron0 {
-	background: url(../images/gallery/0.jpg);
+	background: url(images/gallery/0.jpg);
 }
 .jumbotron1 {
-	background: url(../images/gallery/1.png);
+	background: url(images/gallery/1.png);
 }
 .jumbotron2 {
-	background: url(../images/gallery/2.png);
+	background: url(images/gallery/2.png);
 }
 .jumbotron3 {
-	background: url(../images/gallery/3.png);
+	background: url(images/gallery/3.png);
 }
 .jumbotron4 {
-	background: url(../images/gallery/4.png);
+	background: url(images/gallery/4.png);
 }
 .jumbotron5 {
-	background: url(../images/gallery/5.png);
+	background: url(images/gallery/5.png);
 }
 .jumbotron6 {
-	background: url(../images/gallery/6.png);
+	background: url(images/gallery/6.png);
 }
 .jumbotron7 {
-	background: url(../images/gallery/7.png);
+	background: url(images/gallery/7.png);
 }
 .jumbotron8 {
-	background: url(../images/gallery/8.png);
+	background: url(images/gallery/8.png);
 }
 .jumbotron9 {
-	background: url(../images/gallery/9.png);
+	background: url(images/gallery/9.png);
 }
 .jumbotron10 {
-	background: url(../images/gallery/10.png);
+	background: url(images/gallery/10.png);
 }
 .jumbotron11 {
-	background: url(../images/gallery/11.png);
+	background: url(images/gallery/11.png);
 }
 .jumbotron12 {
-	background: url(../images/gallery/12.png);
+	background: url(images/gallery/12.png);
 }
 .jumbotron h1 {
 	font-weight: 300;
@@ -950,24 +950,24 @@ ul.popover-tooltip-example li {
 	border-top-right-radius: 3px;
 }
 .carousel-inner .item1 {
-	background: #00abab url(../images/gallery/11.png);
+	background: #00abab url(images/gallery/11.png);
 }
 .carousel-inner .item2 {
-	background: #f87aa0 url(../images/gallery/5.png);
+	background: #f87aa0 url(images/gallery/5.png);
 }
 .carousel-inner .item3 {
-	background: #f0ad4e url(../images/gallery/9.png);
+	background: #f0ad4e url(images/gallery/9.png);
 }
 .carousel-inner .item4 {
-	background: #f0ad4e url(../images/gallery/6.png);
+	background: #f0ad4e url(images/gallery/6.png);
 	background-size: 60%;
 }
 .carousel-inner .item5 {
-	background: #f0ad4e url(../images/gallery/7.png);
+	background: #f0ad4e url(images/gallery/7.png);
 	background-size: 60%;
 }
 .carousel-inner .item6 {
-	background: #f0ad4e url(../images/gallery/3.png);
+	background: #f0ad4e url(images/gallery/3.png);
 	background-size: 60%;
 }
 .carousel-control.left {
@@ -4700,7 +4700,7 @@ div.ColVis_catcher {
 .irs-line-right,
 .irs-diapason,
 .irs-slider {
-	background: url(../images/sprite-skin-orb.png) repeat-x;
+	background: url(images/sprite-skin-orb.png) repeat-x;
 }
 .irs {
 	height: 40px;
@@ -4988,7 +4988,7 @@ div.ColVis_catcher {
 	margin: 5px 0;
 	padding: 0;
 	min-height: 30px;
-	background: #fff url(../images/bg-stripped.png);
+	background: #fff url(images/bg-stripped.png);
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
@@ -7921,7 +7921,7 @@ x:-o-prefocus, .gal-overlay img {
 	bottom: 0;
 	left: 0;
 	padding: 0;
-	background-image: url(../images/gallery/1.png);
+	background-image: url(images/gallery/1.png);
 	/* try 2.png,3.png...12.png */
 	background-size: 30%;
 }
@@ -7929,7 +7929,7 @@ x:-o-prefocus, .gal-overlay img {
 	width: 100%;
 	padding: 20px;
 	height: 245px;
-	background-image: url(../images/gallery/1.png);
+	background-image: url(images/gallery/1.png);
 	/* try 2.png,3.png...12.png */
 	background-size: 30%;
 }
