@@ -62,40 +62,6 @@
 </div>
 <!-- /.modal --> 
 
-<!--Scripts--> 
-<!--JQuery--> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/jquery/jquery.min.js"></script> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/jquery/jquery-ui.min.js"></script> 
-
-<!--Fullscreen--> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/fullscreen/screenfull.min.js"></script> 
-
-<!--NanoScroller--> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/nanoscroller/jquery.nanoscroller.min.js"></script> 
-
-<!--Sparkline--> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/sparkline/jquery.sparkline.min.js"></script> 
-
-<!--Horizontal Dropdown--> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/horisontal/cbpHorizontalSlideOutMenu.js"></script> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/classie/classie.js"></script> 
-
-<!--PowerWidgets--> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/powerwidgets/powerwidgets.min.js"></script> 
-
-<!--Bootstrap--> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/bootstrap/bootstrap.min.js"></script> 
-
-<!--ToDo--> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendors/todos/todos.js"></script> 
-
-<!--Main App--> 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/scripts.js"></script>
-
-
-
-<!--/Scripts-->
-
 <?php wp_footer(); ?>
 </body>
 </html>

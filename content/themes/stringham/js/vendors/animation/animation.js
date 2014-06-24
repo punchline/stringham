@@ -8,7 +8,7 @@
  * ======================================================================== */
 
 
-+function ($) {
++function (jQuery) {
  'use strict';
 
   // MODAL CLASS DEFINITION
@@ -16,15 +16,15 @@
 
   var Modal = function (element, options) {
     this.options   = options
-    this.$element  = $(element)
-    this.$backdrop =
+    this.jQueryelement  = jQuery(element)
+    this.jQuerybackdrop =
     this.isShown   = null
 
     if (this.options.remote) {
-      this.$element
+      this.jQueryelement
         .find('.modal-content')
-        .load(this.options.remote, $.proxy(function () {
-          this.$element.trigger('loaded.bs.modal')
+        .load(this.options.remote, jQuery.proxy(function () {
+          this.jQueryelement.trigger('loaded.bs.modal')
         }, this))
     }
   }
@@ -41,9 +41,9 @@
 
   Modal.prototype.show = function (_relatedTarget) {
     var that = this
-    var e    = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
+    var e    = jQuery.Event('show.bs.modal', { relatedTarget: _relatedTarget })
 
-    this.$element.trigger(e)
+    this.jQueryelement.trigger(e)
 
     if (this.isShown || e.isDefaultPrevented()) return
 
@@ -51,25 +51,25 @@
 
     this.escape()
 
-    this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
+    this.jQueryelement.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', jQuery.proxy(this.hide, this))
 
     this.backdrop(function () {
-      // var transition = $.support.transition && that.$element.hasClass('fade')
-      var transition = $.support.transition && that.$element.hasClass(that.options.easein);
+      // var transition = jQuery.support.transition && that.jQueryelement.hasClass('fade')
+      var transition = jQuery.support.transition && that.jQueryelement.hasClass(that.options.easein);
 
-      if (!that.$element.parent().length) {
-        that.$element.appendTo(document.body) // don't move modals dom position
+      if (!that.jQueryelement.parent().length) {
+        that.jQueryelement.appendTo(document.body) // don't move modals dom position
       }
 
-      that.$element
+      that.jQueryelement
         .show()
         .scrollTop(0)
 
       if (transition) {
-        that.$element[0].offsetWidth // force reflow
+        that.jQueryelement[0].offsetWidth // force reflow
       }
 
-      that.$element
+      that.jQueryelement
         // .addClass('in')
         .removeClass(that.options.easeout)
         .addClass('animated' + ' ' + that.options.easein)
@@ -77,15 +77,15 @@
 
       that.enforceFocus()
 
-      var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
+      var e = jQuery.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
 
       transition ?
-        that.$element.find('.modal-dialog') // wait for modal to slide in
-          .one($.support.transition.end, function () {
-            that.$element.focus().trigger(e)
+        that.jQueryelement.find('.modal-dialog') // wait for modal to slide in
+          .one(jQuery.support.transition.end, function () {
+            that.jQueryelement.focus().trigger(e)
           })
           .emulateTransitionEnd(300) :
-        that.$element.focus().trigger(e)
+        that.jQueryelement.focus().trigger(e)
     })
   }
 function eventsList(element) {
@@ -94,13 +94,13 @@ function eventsList(element) {
            // events = element.data('events');
             //if (events !== undefined) return events;
 
-            events = $.data(element, 'events');
+            events = jQuery.data(element, 'events');
             if (events !== undefined) return true;
 
-            events = $._data(element, 'events');
+            events = jQuery._data(element, 'events');
             if (events !== undefined) return true;
 
-           // events = $._data(element[0], 'events');
+           // events = jQuery._data(element[0], 'events');
            // if (events !== undefined) return events;
 
             return false;
@@ -118,9 +118,9 @@ function eventsList(element) {
   	if ({}.toString.call(e).slice(8,-1)=="HTMLAnchorElement") return
 if (e) e.preventDefault()
 	
-    e = $.Event('hide.bs.modal')
+    e = jQuery.Event('hide.bs.modal')
 
-    this.$element.trigger(e)
+    this.jQueryelement.trigger(e)
 
     if (!this.isShown || e.isDefaultPrevented()) return
 
@@ -128,88 +128,88 @@ if (e) e.preventDefault()
 
     this.escape()
 
-    $(document).off('focusin.bs.modal')
-    this.$element
+    jQuery(document).off('focusin.bs.modal')
+    this.jQueryelement
       .removeClass('in ' + this.options.easein)
       .addClass('' + ' ' + this.options.easeout)
       .attr('aria-hidden', true)
       .off('click.dismiss.bs.modal')
 
-    $.support.transition?
-      this.$element
-        .one($.support.transition.end, $.proxy(this.hideModal, this))
+    jQuery.support.transition?
+      this.jQueryelement
+        .one(jQuery.support.transition.end, jQuery.proxy(this.hideModal, this))
         .emulateTransitionEnd(300) :
       this.hideModal()
   }
 
   Modal.prototype.enforceFocus = function () {
-    $(document)
+    jQuery(document)
       .off('focusin.bs.modal') // guard against infinite focus loop
-      .on('focusin.bs.modal', $.proxy(function (e) {
-        if (this.$element[0] !== e.target && !this.$element.has(e.target).length) {
-          this.$element.focus()
+      .on('focusin.bs.modal', jQuery.proxy(function (e) {
+        if (this.jQueryelement[0] !== e.target && !this.jQueryelement.has(e.target).length) {
+          this.jQueryelement.focus()
         }
       }, this))
   }
 
   Modal.prototype.escape = function () {
     if (this.isShown && this.options.keyboard) {
-      this.$element.on('keyup.dismiss.bs.modal', $.proxy(function (e) {
+      this.jQueryelement.on('keyup.dismiss.bs.modal', jQuery.proxy(function (e) {
         e.which == 27 && this.hide()
       }, this))
     } else if (!this.isShown) {
-      this.$element.off('keyup.dismiss.bs.modal')
+      this.jQueryelement.off('keyup.dismiss.bs.modal')
     }
   }
 
   Modal.prototype.hideModal = function () {
     var that = this
-    this.$element.hide()
+    this.jQueryelement.hide()
     this.backdrop(function () {
       that.removeBackdrop()
-      that.$element.trigger('hidden.bs.modal')
+      that.jQueryelement.trigger('hidden.bs.modal')
     })
   }
 
   Modal.prototype.removeBackdrop = function () {
-    this.$backdrop && this.$backdrop.remove()
-    this.$backdrop = null
+    this.jQuerybackdrop && this.jQuerybackdrop.remove()
+    this.jQuerybackdrop = null
   }
 
   Modal.prototype.backdrop = function (callback) {
-    var animate = this.$element.hasClass('fade') ? 'fade' : ''
+    var animate = this.jQueryelement.hasClass('fade') ? 'fade' : ''
 
     if (this.isShown && this.options.backdrop) {
-      var doAnimate = $.support.transition && animate
+      var doAnimate = jQuery.support.transition && animate
 
-      this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
+      this.jQuerybackdrop = jQuery('<div class="modal-backdrop ' + animate + '" />')
         .appendTo(document.body)
 
-      this.$element.on('click.dismiss.bs.modal', $.proxy(function (e) {
+      this.jQueryelement.on('click.dismiss.bs.modal', jQuery.proxy(function (e) {
         if (e.target !== e.currentTarget) return
         this.options.backdrop == 'static'
-          ? this.$element[0].focus.call(this.$element[0])
+          ? this.jQueryelement[0].focus.call(this.jQueryelement[0])
           : this.hide.call(this)
       }, this))
 
-      if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
+      if (doAnimate) this.jQuerybackdrop[0].offsetWidth // force reflow
 
-      this.$backdrop.addClass('in')
+      this.jQuerybackdrop.addClass('in')
 
       if (!callback) return
 
       doAnimate ?
-        this.$backdrop
-          .one($.support.transition.end, callback)
+        this.jQuerybackdrop
+          .one(jQuery.support.transition.end, callback)
           .emulateTransitionEnd(150) :
         callback()
 
-    } else if (!this.isShown && this.$backdrop) {
-      this.$backdrop.removeClass('in')
+    } else if (!this.isShown && this.jQuerybackdrop) {
+      this.jQuerybackdrop.removeClass('in')
 
-      $.support.transition && this.$element.hasClass('fade') ?
-        this.$backdrop
-          .one($.support.transition.end, callback)
+      jQuery.support.transition && this.jQueryelement.hasClass('fade') ?
+        this.jQuerybackdrop
+          .one(jQuery.support.transition.end, callback)
           .emulateTransitionEnd(150) :
         callback()
 
@@ -222,28 +222,28 @@ if (e) e.preventDefault()
   // MODAL PLUGIN DEFINITION
   // =======================
 
-  var old = $.fn.modal
+  var old = jQuery.fn.modal
 
-  $.fn.modal = function (option, _relatedTarget) {
+  jQuery.fn.modal = function (option, _relatedTarget) {
     return this.each(function () {
-      var $this   = $(this)
-      var data    = $this.data('bs.modal')
-      var options = $.extend({}, Modal.DEFAULTS, $this.data(), typeof option == 'object' && option)
+      var jQuerythis   = jQuery(this)
+      var data    = jQuerythis.data('bs.modal')
+      var options = jQuery.extend({}, Modal.DEFAULTS, jQuerythis.data(), typeof option == 'object' && option)
 
-      if (!data) $this.data('bs.modal', (data = new Modal(this, options)))
+      if (!data) jQuerythis.data('bs.modal', (data = new Modal(this, options)))
       if (typeof option == 'string') data[option](_relatedTarget)
       else if (options.show) data.show(_relatedTarget)
     })
   }
 
-  $.fn.modal.Constructor = Modal
+  jQuery.fn.modal.Constructor = Modal
 
 
   // MODAL NO CONFLICT
   // =================
 
-  $.fn.modal.noConflict = function () {
-    $.fn.modal = old
+  jQuery.fn.modal.noConflict = function () {
+    jQuery.fn.modal = old
     return this
   }
 
@@ -251,43 +251,43 @@ if (e) e.preventDefault()
   // MODAL DATA-API
   // ==============
 
-  $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
-    var $this   = $(this)
-    var href    = $this.attr('href')
-    var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
-    var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
+  jQuery(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
+    var jQuerythis   = jQuery(this)
+    var href    = jQuerythis.attr('href')
+    var jQuerytarget = jQuery(jQuerythis.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+jQuery)/, ''))) //strip for ie7
+    var option  = jQuerytarget.data('bs.modal') ? 'toggle' : jQuery.extend({ remote: !/#/.test(href) && href }, jQuerytarget.data(), jQuerythis.data())
 
-    if ($this.is('a')) e.preventDefault()
+    if (jQuerythis.is('a')) e.preventDefault()
 
-    $target
+    jQuerytarget
       .modal(option, this)
       .one('hide', function () {
-        $this.is(':visible') && $this.focus()
+        jQuerythis.is(':visible') && jQuerythis.focus()
       })
   })
 
-  $(document)
-    .on('show.bs.modal', '.modal', function () { $(document.body).addClass('modal-open') })
-    .on('hidden.bs.modal', '.modal', function () { $(document.body).removeClass('modal-open') })
+  jQuery(document)
+    .on('show.bs.modal', '.modal', function () { jQuery(document.body).addClass('modal-open') })
+    .on('hidden.bs.modal', '.modal', function () { jQuery(document.body).removeClass('modal-open') })
 
 }(jQuery);
 
-$(function() {
+jQuery(function() {
 
     // the global default ease in animation of the tab and popover
     var _easeIn = 'fadeInLeft';
     var _previewTabContent;
     var _previeweaseIn;
 
-    enhanceTab($('#myTab1 a'), $('#tab-content1'));
-    // enhanceTab($('#myTab2 a'), $('#tab-content2'));
+    enhanceTab(jQuery('#myTab1 a'), jQuery('#tab-content1'));
+    // enhanceTab(jQuery('#myTab2 a'), jQuery('#tab-content2'));
 
     // add the animation to the tab
     function enhanceTab(tab, tabContent, easein){
       tab.click(function (e) {
           e.preventDefault();
-          $(this).tab('show');
-          var _existeaseIn = $(this).data('easein');
+          jQuery(this).tab('show');
+          var _existeaseIn = jQuery(this).data('easein');
           if(_previewTabContent) _previewTabContent.removeClass(_previeweaseIn);
           if(_existeaseIn){
               tabContent.find('div.active').addClass('animated '+ _existeaseIn);
@@ -307,12 +307,12 @@ $(function() {
     }
 
     // add the animation to the popover
-    $("a[rel=popover]").popover().click(function(e) {
+    jQuery("a[rel=popover]").popover().click(function(e) {
         e.preventDefault();
-        if($(this).data('easein')!=undefined){
-		     $(this).next(".popover").removeClass($(this).data('easein')).addClass('animated ' + $(this).data('easein'));
+        if(jQuery(this).data('easein')!=undefined){
+		     jQuery(this).next(".popover").removeClass(jQuery(this).data('easein')).addClass('animated ' + jQuery(this).data('easein'));
         } else{
-          $(this).next(".popover").addClass('animated ' + _easeIn);
+          jQuery(this).next(".popover").addClass('animated ' + _easeIn);
         } 
     })
 });

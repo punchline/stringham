@@ -92,11 +92,10 @@ add_action( 'widgets_init', 'stringham_widgets_init' );
  * Enqueue scripts and styles.
  */
 function stringham_scripts() {
-	wp_enqueue_style( 'stringham-style', get_stylesheet_uri() );
-	
+
 	/* Bootstrap Javascript Files */
-	wp_register_script( 'bootstrap-js', get_stylesheet_directory_uri() . '/js/vendors/bootstrap/bootstrap.min.js', array(), '3.1.1', TRUE );
-	wp_register_script( 'bootstrap-modal', get_stylesheet_directory_uri() . '/js/vendors/animation/animation.js', array('bootstrap-js'), '3.1.1', TRUE );
+	wp_register_script( 'bootstrap-js', get_stylesheet_directory_uri() . '/js/vendors/bootstrap/bootstrap.min.js', array('jquery'), '3.1.1', TRUE );
+	wp_register_script( 'bootstrap-modal', get_stylesheet_directory_uri() . '/js/vendors/animation/animation.js', array('bootstrap-js', 'jquery'), '3.1.1', TRUE );
 	wp_register_script( 'bootstrap-dropdown', get_stylesheet_directory_uri() . '/js/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js', array('bootstrap.js'), '', TRUE );
 	wp_register_script( 'bootstrap-progress-bar', get_stylesheet_directory_uri() . '/js/vendors/bootstrap-progress-bar/bootstrap-progress-bar.js', array('bootstrap.js'), '', TRUE );
 	
@@ -169,10 +168,6 @@ function stringham_scripts() {
 	// https://github.com/sindresorhus/screenfull.js
 	wp_register_script( 'fullscreen-js', get_stylesheet_directory_uri() . '/js/vendors/fullscreen/screenfull.min.js', array(''), '1.1.1', TRUE );
 	
-	// Horisontal.JS
-	// http://tympanus.net/codrops/2013/05/17/horizontal-slide-out-menu/
-	wp_register_script( 'horisontal-js', get_stylesheet_directory_uri() . '/js/vendors/horisontal/cbpHorizontalSlideOutMenu.js', array('jQuery'), '1.0.0', TRUE );
-	
 	// IonRangeSlider.JS
 	// https://github.com/IonDen/ion.rangeSlider
 	// http://ionden.com/a/plugins/ion.rangeSlider/en.html
@@ -236,7 +231,22 @@ function stringham_scripts() {
 	wp_register_script( 'typehead-js-js', get_stylesheet_directory_uri() . '/js/vendors/x-editable/typeaheadjs.js', array(''), '1.5.0', TRUE );
 	/* End X-Editable JavaScript Files */
 	
-	
+	if ( !is_admin() ) {
+		// Enqueued on every page
+		wp_enqueue_style( 'stringham-style', get_stylesheet_uri() );
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'jquery-ui-core' );
+		wp_enqueue_script( 'jquery-form' );
+		wp_enqueue_script( 'fullscreen-js' );
+		wp_enqueue_script( 'classie-js' );
+		wp_enqueue_script( 'powerwidgets-js' );
+		wp_enqueue_script( 'bootstrap-js' );
+		wp_enqueue_script( 'bootstrap-modal' );
+		wp_enqueue_script( 'validate-js' );
+		wp_enqueue_script( 'touch-punch-js' );
+		wp_enqueue_script( 'bootstrap-modal' );
+		wp_enqueue_script( 'main-js', get_stylesheet_directory_uri() . 'js/scripts.js', array('jquery', 'fullscreen-js', 'bootstrap-js', 'bootstrap-modal', 'touch-punch-js'), '1.0', TRUE );
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
