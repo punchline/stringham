@@ -8,17 +8,15 @@
  */
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'stringham' ); ?></h1>
-	</header><!-- .page-header -->
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="page-header">
+		<?php _e( 'Nothing Found', 'stringham' ); ?>
+	</div><!-- .entry-header -->
 
-	<div class="page-content">
-		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'stringham' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
-
-		<?php elseif ( is_search() ) : ?>
+	<!-- Widget Row Start grid -->
+	<div class="row" id="powerwidgets">
+	  <div class="col-md-12 bootstrap-grid"> 
+		<?php if ( is_search() ) : ?>
 
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'stringham' ); ?></p>
 			<?php get_search_form(); ?>
@@ -29,5 +27,7 @@
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+	  </div>
+	  <!-- /Inner Row Col-md-12 --> 
+	</div><!-- .entry-content -->
+</article><!-- #post-## -->

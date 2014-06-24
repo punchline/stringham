@@ -24,7 +24,7 @@
 	<!--Smooth Scroll-->
 	<div class="smooth-overflow">
 		<!--Navigation-->
-		<nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="index.html"><span class="text-blue">ORB</span></a> 
+		<nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="<?php echo home_url(); ?>"><span class="text-blue">ORB</span></a> 
       
 			<!--Search-->
 			<div class="site-search">
@@ -186,154 +186,9 @@
 		<!--MainWrapper-->
 		<div class="main-wrap"> 
 		
-			<!--OffCanvas Menu -->
-			<aside class="user-menu"> 
-			
-				<!-- Tabs -->
-				<div class="tabs-offcanvas">
-					<ul class="nav nav-tabs nav-justified">
-						<li class="active">
-							<a href="#userbar-one" data-toggle="tab">Main</a>
-						</li>
-						<li>
-							<a href="#userbar-two" data-toggle="tab">Users</a>
-						</li>
-						<li>
-							<a href="#userbar-three" data-toggle="tab">ToDo</a>
-						</li>
-					</ul>
-					<div class="tab-content"> 
-					
-						<!--User Primary Panel-->
-						<div class="tab-pane active" id="userbar-one">
-							<div class="main-info">
-								<div class="user-img"><img src="http://placehold.it/150x150" alt="User Picture" /></div>
-								<h1>Anton Durant <small>Administrator</small></h1>
-							</div>
-							<div class="list-group"> <a href="#" class="list-group-item"><i class="fa fa-user"></i>Profile</a> <a href="#" class="list-group-item"><i class="fa fa-cog"></i>Settings</a> <a href="#" class="list-group-item"><i class="fa fa-flask"></i>Projects<span class="badge">2</span></a>
-								<div class="empthy"></div>
-								<a href="#" class="list-group-item"><i class="fa fa-refresh"></i>Updates<span class="badge">5</span></a>
-								<a href="#" class="list-group-item"><i class="fa fa-comment"></i>Messages<span class="badge">12</span></a>
-								<a href="#" class="list-group-item"><i class="fa fa-comments"></i> Comments<span class="badge">45</span></a>
-								<div class="empthy"></div>
-								<a href="#" data-toggle="modal" class="list-group-item lockme"><i class="fa fa-lock"></i> Lock</a>
-								<a data-toggle="modal" href="#" class="list-group-item goaway"><i class="fa fa-power-off"></i> Sign Out</a>
-							</div>
-						</div>
-							
-						<!--User Chat Panel-->
-						<div class="tab-pane" id="userbar-two">
-							<div class="chat-users-menu"> 
-								<!--Adding Some Scroll-->
-								<div class="nano">
-									<div class="nano-content">
-										<div class="buttons">
-											<div class="btn-group btn-group-xs">
-												<button type="button" class="btn btn-default">Friends</button>
-												<button type="button" class="btn btn-default">Work</button>
-												<button type="button" class="btn btn-default">Girls</button>
-											</div>
-										</div>
-										<ul>
-											<li><a href="#"><span class="chat-name">Gluck Dorris</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span><span class="badge">5</span></a></li>
-											<li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-default">Offline</span></a></li>
-											<li><a href="#"><span class="chat-name">Mr. Joker</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Chewbacca</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">The Piggy</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Anton Durant</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-default">Offline</span></a></li>
-											<li><a href="#"><span class="chat-name">Spiderman</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-											<li><a href="#"><span class="chat-name">Muchu</span><span class="user-img"><img src="http://placehold.it/150x150" alt="User"/></span><span class="label label-success">Online</span></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-							
-							<!--User Tasks Panel-->
-						<div class="tab-pane" id="userbar-three">
-							<div class="nano"> 
-								<!--Adding Some Scroll-->
-								<div class="nano-content">
-									<div class="small-todos">
-										<div class="input-group input-group-sm">
-											<input id="new-todo" placeholder="Add ToDo" type="text" class="form-control">
-											<span class="input-group-btn">
-											<button id="add-todo" class="btn btn-default" type="button"><i class="fa fa-plus-circle"></i></button>
-											</span>
-										</div>
-										<section id="task-list">
-											<ul id="todo-list">
-											</ul>
-										</section>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /tabs --> 
-			
-			</aside>
-			<!-- /Offcanvas user menu--> 
+			<?php get_sidebar('right'); ?>
       
-			<!--Main Menu-->
-			<div class="responsive-admin-menu">
-				<div class="responsive-menu">ORB
-					<div class="menuicon"><i class="fa fa-angle-down"></i></div>
-				</div>
-				<ul id="menu">
-					<li>
-						<a href="#" title="Dashboard" data-id="dash-sub"><i class="entypo-briefcase"></i><span> Dashboard</span></a>
-					</li>
-					<li>
-						<a href="admin-inbox.html" title="Inbox"><i class="entypo-inbox"></i><span> Inbox <span class="badge">32</span></span></a>
-					</li>
-					<li>
-						<a href="#" title="Courses"><i class="entypo-keyboard"></i><span> My Courses</span></a>
-					</li>
-					<li>
-						<a href="#" class="submenu" data-id="tables-sub" title="My Profile"><i class="entypo-user"></i><span> My Profile</span></a> 
-						<!-- My Profile Sub-Menu -->
-						<ul id="tables-sub" class="accordion">
-							<li>
-								<a href="admin-tables.html" title="Profile"><i class="entypo-user"></i><span> Profile</span></a>
-							</li>
-							<li>
-								<a href="admin-datatables.html" title="Achievements"><i class="entypo-trophy"></i><span> Achievements</span></a>
-							</li>
-							<li>
-								<a href="#" title="Account"><i class="entypo-list"></i><span> My Account</span></a>
-							</li>
-							<li>
-								<a href="#" title="Progress"><i class="entypo-rocket"></i><span> My Progress</span></a>
-							</li>
-							<li>
-								<a href="#" title="Points"><i class="entypo-star"></i><span> My Points</span></a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="#" title="Online Resources"><i class="fa fa-th"></i><span> Online Resources</span></a> 
-					</li>
-					<li>
-						 <a href="#" title="Purchase"><i class="entypo-basket"></i><span> Pruchase</span></a> 
-					</li>
-					<li> 
-						<a href="#" title="Games"><i class="entypo-paper-plane"></i><span> Stringham Games</span></a> 
-					</li>
-				</div>
-			<!--/MainMenu-->
+			<?php get_sidebar('left'); ?>
       
 				<!--Content Wrapper-->
 				<div class="content-wrapper"> 
