@@ -7,20 +7,26 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	<div class="page-header">
+		<?php the_title( '<h1>', '</h1>' ); ?>
+	</div><!-- .entry-header -->
 
-	<div class="entry-content">
+	<!-- Widget Row Start grid -->
+	<div class="row" id="powerwidgets">
+	  <div class="col-md-12 bootstrap-grid"> 
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'stringham' ),
-				'after'  => '</div>',
-			) );
-		?>
+	  </div>
+	  <!-- /Inner Row Col-md-12 --> 
 	</div><!-- .entry-content -->
+	
 	<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', 'stringham' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+
+
+
+
+
+    
+    
