@@ -112,28 +112,31 @@ function stringham_scripts() {
 	//https://github.com/desandro/classie
 	wp_register_script( 'classie-js', get_stylesheet_directory_uri() . '/js/vendors/classie/classie.js', array(), '1.0.1', TRUE );
 	
-	/* Datatables Javascript Files */
+	/* Datatables Javascript Files  */
+	// http://datatables.net/
+	// https://github.com/DataTables/ColVis
 	wp_register_script( 'colvis', get_stylesheet_directory_uri() . '/js/vendors/datatables/colvis.extra.js', array(), '1.1.2', TRUE );
 	wp_register_script( 'data-tables', get_stylesheet_directory_uri() . '/js/vendors/datatables/dataTables.colVis.js', array(), '1.1.0', TRUE );
 	wp_register_script( 'data-tables-bootstrap', get_stylesheet_directory_uri() . '/js/vendors/datatables/jquery.dataTables-bootstrap.js', array(''), '', TRUE );
 	wp_register_script( 'data-tables-min', get_stylesheet_directory_uri() . '/js/vendors/datatables/jquery.dataTables.min.js', array(''), '1.9.4', TRUE );
-	
 	/* End Datatable Files */
 	
 	//Easing.JS
-	//http://gsgd.co.uk/sandbox/jquery/easing/
+	// http://gsgd.co.uk/sandbox/jquery/easing/
 	wp_register_script( 'easing-js', get_stylesheet_directory_uri() . '/js/vendors/easing/jquery.easing.1.3.min.js', array(''), '1.3', TRUE );
 	
 	//EasyPie.JS
-	//https://github.com/rendro/easy-pie-chart
+	// https://github.com/rendro/easy-pie-chart
 	wp_register_script( 'easy-pie-js', get_stylesheet_directory_uri() . '/js/vendors/easypie/jquery.easypiechart.min.js', array(''), '2.1.5', TRUE );
 	
 	//FitVids.JS
-	//https://github.com/davatron5000/FitVids.js
+	// https://github.com/davatron5000/FitVids.js
 	wp_register_script( 'fit-vids-js', get_stylesheet_directory_uri() . '/js/vendors/fitvids/jquery.fitvids.js', array(''), '1.1', TRUE );
 	
 	
-	/* FlotChart JavaScript Files https://github.com/flot/flot/blob/master/API.md */
+	/* FlotChart JavaScript Files */
+	// https://github.com/flot/flot/blob/master/API.md
+	// http://www.flotcharts.org/
 	wp_register_script( 'flot-tooltip-js', get_stylesheet_directory_uri() . '/js/vendors/flotchart/jquery.flot-tooltip.js', array(''), '0.4.4', TRUE );
 	wp_register_script( 'flot-axis-labels-js', get_stylesheet_directory_uri() . '/js/vendors/flotchart/jquery.flot.axislabels.js', array(''), '2010', TRUE );
 	wp_register_script( 'flot-categories-js', get_stylesheet_directory_uri() . '/js/vendors/flotchart/jquery.flot.categories.min.js', array(''), '2013', TRUE );
@@ -146,75 +149,58 @@ function stringham_scripts() {
 	
 	/* End FlotChart JavaScript Files */
 	
-	/* Forms JavaScript Files http://jquery.malsup.com/form/ */
-	wp_register_script( 'form-js', get_stylesheet_directory_uri() . '/js/vendors/forms/jquery.form.min.js', array(''), '20130711', TRUE );
+	/* Forms JavaScript Files */
+	// http://digitalbush.com/projects/masked-input-plugin/
 	wp_register_script( 'masked-input-js', get_stylesheet_directory_uri() . '/js/vendors/forms/jquery.maskedinput.min.js', array(''), '1.3.1', TRUE );
-	wp_register_script( 'placeholder-js', get_stylesheet_directory_uri() . '/js/vendors/forms/jquery.placeholder.min.js', array(''), '0.2.4', TRUE );
+	// https://github.com/jzaefferer/jquery-validation
+	// http://jqueryvalidation.org/
 	wp_register_script( 'validate-js', get_stylesheet_directory_uri() . '/js/vendors/forms/jquery.validate.min.js', array(''), '1.11.0', TRUE );
 	
 	/* End Form Javascript Files */
 	
-	/* Full Calendar JavaScript Files http://arshaw.com/fullcalendar/ (June 24, 2014 --- There is a version 2.0.1 available) */
-	wp_register_script( 'full-calendar-js', get_stylesheet_directory_uri() . '/js/vendors/fullcalendar/fullcalendar.min.js', array(''), '1.6.4', TRUE );
+	/* Full Calendar JavaScript Files */
+	// http://arshaw.com/fullcalendar/
+	wp_register_script( 'full-calendar-js', get_stylesheet_directory_uri() . '/js/vendors/fullcalendar/fullcalendar.min.js', array(''), '2.0.1', TRUE );
 	wp_register_script( 'gcal-js', get_stylesheet_directory_uri() . '/js/vendors/fullcalendar/gcal.js', array(''), '1.6.4', TRUE );
 	
 	/* End Full Calendar JavaScript Files */
 	
-	//FullScreen.JS
-	//https://github.com/sindresorhus/screenfull.js
+	// FullScreen.JS
+	// https://github.com/sindresorhus/screenfull.js
 	wp_register_script( 'fullscreen-js', get_stylesheet_directory_uri() . '/js/vendors/fullscreen/screenfull.min.js', array(''), '1.1.1', TRUE );
 	
-	/* Gmap JavaScript Files */
-	wp_register_script( 'gmap-js', get_stylesheet_directory_uri() . '/js/vendors/gmap/jquery.gmap.js', array('jquery.min.js'), '2.1.5', TRUE );
-	wp_register_script( 'gmap-min-js', get_stylesheet_directory_uri() . '/js/vendors/gmap/jquery.gmap.min.js', array('jquery.min.js'), '2.1.5', TRUE );
-	
-	/* End Gmap JavaScript Files */
-	
-	//Horisontal.JS
-	//http://tympanus.net/codrops/2013/05/17/horizontal-slide-out-menu/
+	// Horisontal.JS
+	// http://tympanus.net/codrops/2013/05/17/horizontal-slide-out-menu/
 	wp_register_script( 'horisontal-js', get_stylesheet_directory_uri() . '/js/vendors/horisontal/cbpHorizontalSlideOutMenu.js', array('jQuery'), '1.0.0', TRUE );
 	
-	//IonRangeSlider.JS
-	//https://github.com/IonDen/ion.rangeSlider
+	// IonRangeSlider.JS
+	// https://github.com/IonDen/ion.rangeSlider
+	// http://ionden.com/a/plugins/ion.rangeSlider/en.html
 	wp_register_script( 'range-slider-js', get_stylesheet_directory_uri() . '/js/vendors/ionrangeslider/ion.rangeSlider.min.js', array('jQuery'), '1.9.1', TRUE );
 	
-	/* jQuery JavaScript Files */
-	wp_register_script( 'jquery-js', get_stylesheet_directory_uri() . '/js/vendors/jquery/jquery.min.js', array(''), '1.11.0', TRUE );
-	wp_register_script( 'jquery-ui-js', get_stylesheet_directory_uri() . '/js/vendors/jquery/jquery-ui.min.js', array(''), '1.10.4', TRUE );
-	
-	/* End jQuery JavaScript Files */
-	
-	//jQuerySteps.JS
-	//https://github.com/rstaib/jquery-steps/wiki
+	// jQuerySteps.JS
+	// https://github.com/rstaib/jquery-steps/wiki
 	wp_register_script( 'jquery-steps-js', get_stylesheet_directory_uri() . '/js/vendors/jquery-steps/jquery.steps.min.js', array(''), '1.0.4', TRUE );
 	
-	//JustGauge.JS
-	//http://justgage.com/
+	// JustGauge.JS
+	// http://justgage.com/
 	wp_register_script( 'just-gauge-js', get_stylesheet_directory_uri() . '/js/vendors/just-gauge/justgage.1.0.1.min.js', array(''), '1.0.1', TRUE );
 	
-	//Knob.JS
-	//https://github.com/aterrien/jQuery-Knob
+	// Knob.JS
+	// https://github.com/aterrien/jQuery-Knob
 	wp_register_script( 'knob-js', get_stylesheet_directory_uri() . '/js/vendors/knob/jquery.knob.js', array(''), '1.2.8', TRUE );
 	
-	//Modernizr.JS
-	//http://modernizr.com/docs/
+	// Modernizr.JS
+	// http://modernizr.com/docs/
 	wp_register_script( 'modernizr-js', get_stylesheet_directory_uri() . '/js/vendors/modernizr/modernizr.custom.js', array(''), '2.6.2', TRUE );
 	
-	//Morris.JS
-	//https://github.com/morrisjs/morris.js/
+	// Morris.JS
+	// https://github.com/morrisjs/morris.js/
 	wp_register_script( 'morris-min-js', get_stylesheet_directory_uri() . '/js/vendors/morris/morris.min.js', array(''), '0.5.1', TRUE );
 	
-	//NanoScroller.JS
-	//https://github.com/jamesflorentino/nanoScrollerJS
-	wp_register_script( 'nano-scroller-js', get_stylesheet_directory_uri() . '/js/vendors/nanoscroller/jquery.nanoscroller.min.js', array(''), '0.8.0', TRUE );
-	
-	//Nestable-Lists.JS
-	//https://github.com/dbushell/Nestable
+	// Nestable-Lists.JS
+	// https://github.com/dbushell/Nestable
 	wp_register_script( 'nestable-lists-js', get_stylesheet_directory_uri() . '/js/vendors/nestable-lists/jquery.nestable.js', array(''), '2012', TRUE );
-	
-	//Nicescroll.JS
-	//https://github.com/inuyaksa/jquery.nicescroll
-	wp_register_script( 'nicescroll-js', get_stylesheet_directory_uri() . '/js/vendors/nicescroll/jquery.nicescroll.min.js', array(''), '3.2.0', TRUE );
 	
 	/* PowerWidgets JavaScript Files */
 	wp_register_script( 'powerwidgets-js', get_stylesheet_directory_uri() . '/js/vendors/powerwidgets/powerwidgets.js', array(''), '2014', TRUE );
@@ -222,39 +208,21 @@ function stringham_scripts() {
 	
 	/* End PowerWidgets JavaScript Files */
 	
-	//Raphael.JS
-	//http://raphaeljs.com/reference.html
+	// Raphael.JS
+	// http://raphaeljs.com/reference.html
 	wp_register_script( 'raphael-js', get_stylesheet_directory_uri() . '/js/vendors/raphael/raphael-min.js', array(''), '2.1.2', TRUE );
 	
-	//Skycons.JS
-	//https://github.com/darkskyapp/skycons
-	wp_register_script( 'skycons-js', get_stylesheet_directory_uri() . '/js/vendors/skycons/skycons.js', array(''), '', TRUE );
-	
-	//SparkLine.JS
-	//http://omnipotent.net/jquery.sparkline/#s-docs
+	// SparkLine.JS
+	// http://omnipotent.net/jquery.sparkline/#s-docs
 	wp_register_script( 'sparkline-js', get_stylesheet_directory_uri() . '/js/vendors/sparkline/jquery.sparkline.min.js', array(''), '2.1.2', TRUE );
 	
-	//Summernote.JS
-	//https://github.com/HackerWins/summernote
+	// Summernote.JS
+	// https://github.com/HackerWins/summernote
 	wp_register_script( 'summernote-js', get_stylesheet_directory_uri() . '/js/vendors/summernote/summernote.min.js', array(''), '', TRUE );
 	
-	//Todos.JS
-	//http://backbonejs.org/docs/todos.html
-	wp_register_script( 'todos-js', get_stylesheet_directory_uri() . '/js/vendors/todos/todos.js', array(''), '', TRUE );
-	
-	//TouchPunch.JS
-	//https://github.com/furf/jquery-ui-touch-punch/
+	// TouchPunch.JS
+	// https://github.com/furf/jquery-ui-touch-punch/
 	wp_register_script( 'touch-punch-js', get_stylesheet_directory_uri() . '/js/vendors/touch-punch/jquery.ui.touch-punch.min.js', array(''), '', TRUE );
-	
-	/* VectorMap JavaScript Files http://jvectormap.com/documentation/ */
-	wp_register_script( 'europe-js', get_stylesheet_directory_uri() . '/js/vendors/vector-map/jquery.vmap.europe.js', array(''), '', TRUE );
-	wp_register_script( 'vmap-min-js', get_stylesheet_directory_uri() . '/js/vendors/vector-map/jquery.vmap.min.js', array(''), '', TRUE );
-	wp_register_script( 'russia-js', get_stylesheet_directory_uri() . '/js/vendors/vector-map/jquery.vmap.russia.js', array(''), '', TRUE );
-	wp_register_script( 'sample-data-js', get_stylesheet_directory_uri() . '/js/vendors/vector-map/jquery.vmap.sampledata.js', array(''), '', TRUE );
-	wp_register_script( 'usa-js', get_stylesheet_directory_uri() . '/js/vendors/vector-map/jquery.vmap.usa.js', array(''), '', TRUE );
-	wp_register_script( 'world-js', get_stylesheet_directory_uri() . '/js/vendors/vector-map/jquery.vmap.world.js', array(''), '', TRUE );
-	
-	/* End VectorMap JavaScript Files */
 	
 	/* X-Editable JavaScript Files */
 	wp_register_script( 'address-js', get_stylesheet_directory_uri() . '/js/vendors/x-editable/address.js', array(''), '', TRUE );
@@ -266,7 +234,6 @@ function stringham_scripts() {
 	wp_register_script( 'select2-js', get_stylesheet_directory_uri() . '/js/vendors/x-editable/select2.js', array(''), '3.4.4', TRUE );
 	wp_register_script( 'typehead-js', get_stylesheet_directory_uri() . '/js/vendors/x-editable/typeahead.js', array(''), '0.9.3', TRUE );
 	wp_register_script( 'typehead-js-js', get_stylesheet_directory_uri() . '/js/vendors/x-editable/typeaheadjs.js', array(''), '1.5.0', TRUE );
-	
 	/* End X-Editable JavaScript Files */
 	
 	
