@@ -6596,7 +6596,6 @@ x:-o-prefocus, .gal-overlay img {
 	display: block;
 	width: 60%;
 	color: #fff;
-	top: 20px;
 	margin-left: -30%;
 	z-index: 5;
 	text-align: center;
@@ -6621,6 +6620,8 @@ x:-o-prefocus, .gal-overlay img {
 	border-radius: 50%;
 	box-shadow: 0 0 0 7px #fff;
 }
+.main-info span{font-size: .75em;}
+
 .user-profile {
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
@@ -8690,3 +8691,6 @@ code {
 .css .nt+.nt {
 	color: #999;
 }
+
+.game-image{text-align: center;}
+.game-image img, .badge-body img, .dash-class-body img{width: 100%;}

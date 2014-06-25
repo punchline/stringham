@@ -245,6 +245,181 @@
             }, 400, 'linear');
         }
         //----------------------------------------------------------------------
+        
+        
+    // =========================================================================
+    // FlotChart Stuff
+    // =========================================================================
 
+
+ //Example #1 - Chart With Graph Controls
+        var d1 = [];
+        var i;
+        var plot;
+        for (i = 0; i <= 10; i += 1) {
+            d1.push([i, parseInt(Math.random() * 30)]);
+        }
+
+        var d2 = [];
+        for (i = 0; i <= 10; i += 1) {
+            d2.push([i, parseInt(Math.random() * 30)]);
+        }
+
+        var d3 = [];
+        for (i = 0; i <= 10; i += 1) {
+            d3.push([i, parseInt(Math.random() * 30)]);
+        }
+
+        var stack, bars, lines, steps;
+
+        stack = 0;
+        bars = false;
+        lines = true;
+        steps = false;
+
+     function plotWithOptions() {
+
+
+            if ($("#placeholder").length) {
+                $.plot("#placeholder", [d1, d2, d3], {
+                    colors: ["#5bc0de", "#82b964", "#f4cc13"],
+
+                    grid: {
+                        hoverable: false,
+                        clickable: false,
+                        borderWidth: 0,
+                        backgroundColor: "transparent"
+                    },
+
+                    yaxis: {
+                        font: {
+                            color: '#555',
+                            family: 'Open Sans, sans-serif',
+                            size: 11
+                        },
+                        tickColor: "transparent"
+                    },
+                    xaxis: {
+                        font: {
+                            color: '#555',
+                            family: 'Open Sans, sans-serif',
+                            size: 11
+                        },
+                        tickColor: "rgba(0,0,0,0.1)"
+                    },
+
+                    series: {
+                        lines: {
+                            show: lines,
+                            lineWidth: 12,
+                            color: '#fff',
+                            fill: false,
+                            steps: steps
+                            
+                        },
+
+                        bars: {
+                            show: bars,
+                            barWidth: 0.5,
+                            fill: 1,
+                            lineWidth: 0
+                        }
+                    }
+                });
+            }
+        }
+        plotWithOptions();
+
+       /* $(".btn-group button").click(function (e) {
+            e.preventDefault();
+            bars = $(this).text().indexOf("Bars") != -1;
+            lines = $(this).text().indexOf("Lines") != -1;
+            steps = $(this).text().indexOf("steps") != -1;
+            plotWithOptions();
+        });*/
+        
+        
+        //Example #2 - Stacked Graph
+
+        if ($("#placeholder2").length) {
+
+            var dates2 = [
+                ["Jan", 56],
+                ["Feb", 67],
+                ["Mar", 42],
+                ["Apr", 87],
+                ["May", 53],
+                ["June", 38],
+                ["July", 49],
+                ["Aug", 32],
+                ["Sep", 33],
+                ["Oct", 34],
+                ["Nov", 41],
+                ["Dec", 14]
+            ];
+
+            var dates1 = [
+                ["Jan", 189],
+                ["Feb", 244],
+                ["Mar", 293],
+                ["Apr", 192],
+                ["May", 265],
+                ["June", 167],
+                ["July", 231],
+                ["Aug", 169],
+                ["Sep", 163],
+                ["Oct", 168],
+                ["Nov", 152],
+                ["Dec", 52]
+            ];
+
+
+            jQuery.plot("#placeholder2", [{
+                data: dates1,
+                label: "Earnings"
+            }, {
+                data: dates2,
+                label: "Buys"
+            }], {
+                colors: ["#5bc0de", "#f87aa0"],
+                grid: {
+                    hoverable: true,
+                    clickable: false,
+                    borderWidth: 0,
+                    backgroundColor: "transparent"
+                },
+                legend: {
+
+                    labelBoxBorderColor: false,
+                },
+                series: {
+                    bars: {
+                        show: true,
+                        barWidth: 0.9,
+                        fill: 1,
+                        lineWidth: 0,
+                        align: "center"
+                    }
+                },
+                xaxis: {
+                    font: {
+                        color: '#555',
+                        family: 'Open Sans, sans-serif',
+                        size: 11
+                    },
+                    mode: "categories",
+                    tickLength: 0
+                },
+                yaxis: {
+                    font: {
+                        color: '#333',
+                        family: 'Open Sans, sans-serif',
+                        size: 11
+                    }
+                }
+            });
+
+        }
+        
 
 })(jQuery);

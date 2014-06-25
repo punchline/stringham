@@ -61,7 +61,6 @@
   <!-- /.modal-dialog --> 
 </div>
 <!-- /.modal --> 
-
 <?php wp_footer(); ?>
 </body>
 </html>

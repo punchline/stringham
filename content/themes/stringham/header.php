@@ -23,7 +23,7 @@
 	<!--Smooth Scroll-->
 	<div class="smooth-overflow">
 		<!--Navigation-->
-		<nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="<?php echo home_url(); ?>"><span class="text-blue">ORB</span></a> 
+		<nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/logo.png"/></a> 
       
 			<!--Search-->
 			<div class="site-search">
