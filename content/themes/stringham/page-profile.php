@@ -11,7 +11,6 @@ Template Name: Profile
  * @package Stringham
  */
 
-opcache_reset();
 
 get_header(); 
 
