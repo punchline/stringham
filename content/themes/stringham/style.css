@@ -934,10 +934,10 @@ ul.popover-tooltip-example li {
 .panel-group .panel-heading + .panel-collapse .panel-body {
 	border-top: 0;
 }
-.panel-heading small {
+.myProfile-heading small, .panel-heading small {
 	font-weight: 400;
 }
-.panel-heading small:before {
+.myProfile-heading small:before, .panel-heading small:before {
 	font-weight: 400;
 	content: "\0000a0 \7c \0000a0";
 }
@@ -8693,4 +8693,6 @@ code {
 }
 
 .game-image{text-align: center;}
-.game-image img, .badge-body img, .dash-class-body img{width: 100%;}
+.game-image img, .badge-body img, .dash-class-body img, .unlockedBadges img, .unlockedAchievements img, .lockedBadges img, .lockedAchievements img{width: 100%;}
+.lockedAchievements .row{margin-bottom: 30px;}
+.bottomProfileBtns{width: 340px; margin: 0 auto; padding: 20px 0 10px;}

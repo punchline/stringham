@@ -11,7 +11,11 @@ Template Name: Dashboard
  * @package Stringham
  */
 
-get_header(); ?>
+opcache_reset();
+get_header(); 
+
+$user = wp_get_current_user();
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -24,16 +28,16 @@ get_header(); ?>
 					<div class="row" id="powerwidgets">
 					  <div class="col-md-12 bootstrap-grid"> 
 						<div class="callout callout-info">
-		                  <h4>Gramps, you now have 2 new quizzes available</h4>
+		                  <h4><?php echo get_user_name($user->ID); ?> you now have 2 new quizzes available</h4>
 		                  <p>Taking quizzes will help you get prepared to take your state exams. The more quizzes you take the better equipped you will be to pass the exam on your first try.</p>
 		                </div>
 		                 
 						<div class="user-profile">
 							<div class="main-info">
 							<div class="user-img"><img src="http://placehold.it/150x150" alt="User Picture" /></div>
-								<h1>Miguel "Gramps" Sharpley</h1>
+								<h1><?php echo get_user_name($user->ID); ?></h1>
 								<p>Real Estate Genius</p>
-								<span>Points: 450.920</span> 
+								<span>Points: <?php echo get_user_meta($user->ID, '_badgeos_points', true); ?></span> 
 							</div>
 							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 								<div class="carousel-inner">
