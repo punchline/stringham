@@ -44,7 +44,7 @@
 			</ul>
 		</li>
 		<li>
-			<a href="<?php echo home_url(); ?>" title="Online Resources"><i class="fa fa-th"></i><span> Online Resources</span></a> 
+			<a href="<?php echo home_url('online-resources'); ?>" title="Online Resources"><i class="fa fa-th"></i><span> Online Resources</span></a> 
 		</li>
 		<li>
 			 <a href="<?php echo home_url(); ?>" title="Purchase"><i class="entypo-basket"></i><span> Pruchase</span></a> 

@@ -105,7 +105,7 @@ $user = wp_get_current_user();
 						<div class="row">
 							<div class="col-md-4">
 								<!--Panel-->
-								<div class="panel panel-default">
+								<div class="panel panel-cold">
 									<div class="panel-heading">
 										<div class="panel-title pull-left">Continue Your Current Class</div>
 										<div class="pull-right">
@@ -124,7 +124,7 @@ $user = wp_get_current_user();
 							
 							<div class="col-md-4">
 								<!--Panel-->
-								<div class="panel panel-default">
+								<div class="panel panel-cold">
 									<div class="panel-heading">
 										<div class="panel-title pull-left">Suggested Next Class</div>
 										<div class="pull-right">
@@ -143,7 +143,7 @@ $user = wp_get_current_user();
 							
 							<div class="col-md-4">
 								<!--Panel-->
-								<div class="panel panel-default">
+								<div class="panel panel-cold">
 									<div class="panel-heading">
 										<div class="panel-title pull-left">Suggested Next Class</div>
 										<div class="pull-right">
@@ -217,7 +217,7 @@ $user = wp_get_current_user();
 		               <div class="row">
 			               <div class="col-md-6">
 			                   <!--Panel-->
-				               <div class="panel panel-default">
+				               <div class="panel panel-cold">
 					               <div class="panel-heading">
 						               <div class="panel-title pull-left">Games</div>
 						               <div class="pull-right">
@@ -250,7 +250,7 @@ $user = wp_get_current_user();
 			               
 			               <div class="col-md-6">
 			                   <!--Panel-->
-				               <div class="panel panel-default">
+				               <div class="panel panel-cold">
 					               <div class="panel-heading">
 						               <div class="panel-title pull-left">Download Our Study Aid App</div>
 						               <div class="pull-right">

@@ -903,6 +903,8 @@ ul.popover-tooltip-example li {
 	border-top-right-radius: 3px;
 	border-top-left-radius: 3px;
 }
+
+.pandel-cold > .panel-heading,
 .panel-danger > .panel-heading,
 .panel-success > .panel-heading,
 .panel-info > .panel-heading,
@@ -1257,6 +1259,12 @@ a.list-group-item-success,
 .panel-success > .panel-heading,
 .label-success {
 	background-color: #82b964;
+	color: #fff;
+}
+
+
+.panel-cold > .panel-heading{
+	background: #595f66;;
 	color: #fff;
 }
 .table > thead > tr > td.info,
@@ -8699,6 +8707,9 @@ code {
 .game-image img, .badge-body img, .dash-class-body img, .unlockedBadges img, .unlockedAchievements img, .lockedBadges img, .lockedAchievements img{width: 100%;}
 .lockedAchievements .row{margin-bottom: 30px;}
 .bottomProfileBtns{width: 340px; margin: 0 auto; padding: 20px 0 10px;}
+
+.resource-body ol li:before, .resource-body .nestable4 li .dd-handle{display: none !important;}
+.resource-body .nestable4 .dd-list ol.completed li{text-decoration: none;}
 
 /** =============== Course Page Styles ============== **/
 .course-image{width: 55%; float: left; margin-right: 2%;}
