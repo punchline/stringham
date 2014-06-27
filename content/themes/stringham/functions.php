@@ -232,7 +232,7 @@ function stringham_scripts() {
 	/* End X-Editable JavaScript Files */
 	
 	// temporary
-	wp_register_script( 'scripts-js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), null, TRUE );
+	wp_register_script( 'scripts-js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '1.0', TRUE );
 	
 	if ( !is_admin() ) 
 	{
@@ -308,3 +308,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * User functionality.
  */
 require get_template_directory() . '/inc/users.php';
+
+/**
+ * Resource Custom Post Type.
+ */
+require get_template_directory() . '/inc/resources.php';

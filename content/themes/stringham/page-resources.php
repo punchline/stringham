@@ -11,6 +11,7 @@ Template Name: Resources
  * @package Stringham
  */
 
+
 get_header(); 
 
 $user = wp_get_current_user();
@@ -20,190 +21,76 @@ $user = wp_get_current_user();
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-			
-			
-			
 				<div class="row">
-					<div class="col-md-6">
-						<!--Panel-->
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								<div class="panel-title pull-left">Finance Links <small>Specific Details</small></div>
-								<div class="pull-right">
-									<a href="#" data-toggle="modal" data-target="#panel-question" class="btn-question"><i class="fa fa-question-circle"></i></a> <a href="#" class="btn-minmax"><i class="fa fa-chevron-circle-up"></i></a> <a href="#" class="btn-close"><i class="fa fa-times-circle"></i></a>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-body resource-body">
-								<div class="dd nestable4" id="nestable4">
-									<ol class="dd-list">
-										<li class="dd-item task-item" data-id="13"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>
-											<div class="dd-handle task-handle"></div>
-											<div class="task-content header">My Favorite Links</div>
-											<ol class="dd-list important">
-												<li class="dd-item task-item" data-id="16">
+					<?php
+						// retrieve top level 'resource_category' taxonomy terms
+						$args = array('parent'=>0);
+						$resource_categories = get_terms( 'resource_category', $args );
+						$cat_total = count($resource_categories);
+						
+						foreach( $resource_categories as $rCount => $rc ):
+							if( $rCount > ($cat_total/2) ) echo '</div><!-- /.row --><div class="row">';	// put half of the category sections in the left, half in the right
+					?>
+							<div class="col-md-6">
+								<!--Panel-->
+								<div class="panel panel-info">
+									<div class="panel-heading">
+										<div class="panel-title pull-left"><?php echo $rc->name; ?> <small>Specific Details</small></div>
+										<div class="pull-right">
+											<a href="#" data-toggle="modal" data-target="#panel-question" class="btn-question">
+												<i class="fa fa-question-circle"></i></a> <a href="#" class="btn-minmax"><i class="fa fa-chevron-circle-up"></i>
+											</a> 
+											<a href="#" class="btn-close">
+												<i class="fa fa-times-circle"></i>
+											</a>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="panel-body resource-body">
+										<div class="dd nestable4" id="nestable4">
+											<ol class="dd-list">
+												<?php
+													// loop through subcategories of current top level category
+													$args = array('parent'=>$rc->term_id);
+													$subcats = get_terms( 'resource_category', $args );
+													foreach($subcats as $sCount => $sc):
+												?>
+												<li class="dd-item task-item" data-id="15"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>
 													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
+													<div class="task-content header"><?php echo $sc->name; ?></div>
+													<ol class="dd-list completed">
+														<?php
+															// get all resource CPTs in subcategory, and display each one
+															$resources = get_posts( array(
+																'posts_per_page' => -1,
+																'post_type' => 'stringham_resource',
+																'resource_category' => $sc->name
+															) );
+															foreach($resources as $resource):
+																$url = get_post_meta($resource->ID, 'url', true);
+														?>
+														<li class="dd-item task-item" data-id="16">
+															<div class="dd-handle task-handle"></div>
+															<div class="task-content">
+																<h4><a href="<?php echo $url; ?>" target="_blank"><span class="task"><?php echo $resource->post_title; ?></span></a></h4>
+																<p class="desc"><?php echo $resource->post_excerpt; ?></p>
+																<small><a href="#" title="law-link"><?php echo $url; ?></a></small>
+															</div>
+														</li>
+														<?php endforeach; ?>
+													</ol>
 												</li>
-												<li class="dd-item task-item" data-id="17">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-												<li class="dd-item task-item" data-id="18">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
+												<?php endforeach; ?>
 											</ol>
-										</li>
-										<li class="dd-item task-item" data-id="14"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>
-											<div class="dd-handle task-handle"></div>
-											<div class="task-content header">Links For Next Year</div>
-											<ol class="dd-list new">
-												<li class="dd-item task-item" data-id="16">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-												<li class="dd-item task-item" data-id="17">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-												<li class="dd-item task-item" data-id="18">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-											</ol>
-										</li>
-										<li class="dd-item task-item" data-id="15"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>
-											<div class="dd-handle task-handle"></div>
-											<div class="task-content header">Other Subcategory For Personal Use</div>
-											<ol class="dd-list completed">
-												<li class="dd-item task-item" data-id="16">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-												<li class="dd-item task-item" data-id="17">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-											</ol>
-										</li>
-									</ol>
-								</div><!--/nestable-->
-							</div>
-						</div><!--/Panel-->
-					</div><!--/col-md-6-->
-					
-					<div class="col-md-6">
-					<!--Panel-->
-						<div class="panel panel-warning">
-							<div class="panel-heading">
-								<div class="panel-title pull-left">Law Links <small>Subtitle of some kind</small></div>
-								<div class="pull-right">
-									<a href="#" data-toggle="modal" data-target="#panel-question" class="btn-question"><i class="fa fa-question-circle"></i></a> <a href="#" class="btn-minmax"><i class="fa fa-chevron-circle-up"></i></a> <a href="#" class="btn-close"><i class="fa fa-times-circle"></i></a>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-body resource-body">
-								<div class="dd nestable4" id="nestable5">
-									<ol class="dd-list">
-										<li class="dd-item task-item" data-id="14"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>
-											<div class="dd-handle task-handle"></div>
-											<div class="task-content header">Federal Law</div>
-											<ol class="dd-list new">
-												<li class="dd-item task-item" data-id="16">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-												<li class="dd-item task-item" data-id="17">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-												<li class="dd-item task-item" data-id="18">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-											</ol>
-										</li>
-										<li class="dd-item task-item" data-id="15"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>
-											<div class="dd-handle task-handle"></div>
-											<div class="task-content header">Federal Law</div>
-											<ol class="dd-list completed">
-												<li class="dd-item task-item" data-id="16">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-												<li class="dd-item task-item" data-id="17">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li><li class="dd-item task-item" data-id="17">
-													<div class="dd-handle task-handle"></div>
-													<div class="task-content">
-														<h4><span class="task">Law Link Title</span></h4>
-														<p class="desc">Short description explaining the link</p>
-														<small><a href="#" title="law-link">http://www.importantlink.com</a></small>
-													</div>
-												</li>
-											</ol>
-										</li>
-									</ol>
-								</div><!--/nestable-->
-							</div>
-						</div><!--/Panel-->
-					</div><!--/col-md-6-->
-					
-				</div><!--/row-->
+										</div><!--/nestable-->
+									</div>
+								</div><!--/Panel-->
+							</div><!--/col-md-6-->
+							
+					<?php
+						endforeach;
+					?>
+				</div><!-- /.row -->
                     
             <?php get_content();?>
                     
