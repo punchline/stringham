@@ -11,7 +11,7 @@ Template Name: Profile
  * @package Stringham
  */
 
-
+opcache_reset();
 get_header(); 
 
 $user = wp_get_current_user();
@@ -42,11 +42,11 @@ $user = wp_get_current_user();
                   	
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs">
-						  <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
-						  <li><a href="#achievements" data-toggle="tab">Achievements</a></li>
-						  <li><a href="#account" data-toggle="tab">My Account</a></li>
-						  <li><a href="#progress" data-toggle="tab">My Progress</a></li>
-						  <li><a href="#points" data-toggle="tab">My Points</a></li>						  
+						  <li class="active"><a href="#profile" id="profile-tab-link" data-toggle="tab">Profile</a></li>
+						  <li><a href="#achievements" id="achievements-tab-link" data-toggle="tab">Achievements</a></li>
+						  <li><a href="#account" id="account-tab-link" data-toggle="tab">My Account</a></li>
+						  <li><a href="#progress" id="progress-tab-link" data-toggle="tab">My Progress</a></li>
+						  <li><a href="#points" id="points-tab-link" data-toggle="tab">My Points</a></li>						  
 						</ul>
 						
 						<!-- Tab panes -->

@@ -20,26 +20,26 @@
 			<a href="<?php echo home_url('inbox'); ?>" title="Inbox"><i class="entypo-inbox"></i><span> Inbox <span class="badge">32</span></span></a>
 		</li>
 		<li>
-			<a href="<?php echo home_url(); ?>" title="Courses"><i class="entypo-keyboard"></i><span> My Courses</span></a>
+			<a href="<?php echo home_url('my-courses'); ?>" title="Courses"><i class="entypo-keyboard"></i><span> My Courses</span></a>
 		</li>
 		<li>
 			<a href="<?php echo home_url(); ?>" class="submenu" data-id="tables-sub" title="My Profile"><i class="entypo-user"></i><span> My Profile</span></a> 
 			<!-- My Profile Sub-Menu -->
 			<ul id="tables-sub" class="accordion">
 				<li>
-					<a href="<?php echo home_url(); ?>" title="Profile"><i class="entypo-user"></i><span> Profile</span></a>
+					<a href="<?php echo home_url('profile'); ?>" title="Profile"><i class="entypo-user"></i><span> Profile</span></a>
 				</li>
 				<li>
-					<a href="<?php echo home_url(); ?>" title="Achievements"><i class="entypo-trophy"></i><span> Achievements</span></a>
+					<a href="<?php echo home_url('profile/#achievements'); ?>" title="Achievements"><i class="entypo-trophy"></i><span> Achievements</span></a>
 				</li>
 				<li>
-					<a href="<?php echo home_url(); ?>" title="Account"><i class="entypo-list"></i><span> My Account</span></a>
+					<a href="<?php echo home_url('profile/#account'); ?>" title="Account"><i class="entypo-list"></i><span> My Account</span></a>
 				</li>
 				<li>
-					<a href="<?php echo home_url(); ?>" title="Progress"><i class="entypo-rocket"></i><span> My Progress</span></a>
+					<a href="<?php echo home_url('profile/#progress'); ?>" title="Progress"><i class="entypo-rocket"></i><span> My Progress</span></a>
 				</li>
 				<li>
-					<a href="<?php echo home_url(); ?>" title="Points"><i class="entypo-star"></i><span> My Points</span></a>
+					<a href="<?php echo home_url('profile/#points'); ?>" title="Points"><i class="entypo-star"></i><span> My Points</span></a>
 				</li>
 			</ul>
 		</li>

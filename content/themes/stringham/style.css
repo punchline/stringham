@@ -165,7 +165,7 @@ a {
 a:hover,
 a:focus {
 	color: #3e6f82;
-	text-decoration: underline;
+	text-decoration: none;
 }
 .page-header {
 	margin-top: 10px;
@@ -252,6 +252,7 @@ p a {
 /*Button as a - not! :) */
 a.btn {
 	text-decoration: none;
+	color: inherit;
 }
 .label {
 	text-transform: uppercase;
@@ -8692,7 +8693,21 @@ code {
 	color: #999;
 }
 
+
+/** ============== Pnch Styles ====================== **/
 .game-image{text-align: center;}
 .game-image img, .badge-body img, .dash-class-body img, .unlockedBadges img, .unlockedAchievements img, .lockedBadges img, .lockedAchievements img{width: 100%;}
 .lockedAchievements .row{margin-bottom: 30px;}
 .bottomProfileBtns{width: 340px; margin: 0 auto; padding: 20px 0 10px;}
+
+/** =============== Course Page Styles ============== **/
+.course-image{width: 55%; float: left; margin-right: 2%;}
+.course-image img{width: 100%; height: 200px;}
+.course-description a{text-decoration: none;}
+.course-description{margin-bottom: 30px;}
+.course-progress{width: 35%; float: left; margin-left: 7%;}
+.course-progress h4{padding-left: 4.5%;}
+.entry-footer, .entry-meta{display: none;}
+h2.ld-entry-title{font-weight: 400;}
+.ld-entry-content{margin-top: 10px; border-bottom: 5px solid #dddddb;}
+.ld-entry-content:last-child{border: none;}

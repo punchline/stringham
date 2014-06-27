@@ -219,7 +219,17 @@
             });
         }, 10);
     });
-
+	if(window.location.hash) {
+	  // Fragment exists
+	   var id = window.location.hash.replace('#','');
+	   var link = document.getElementById(id+'-tab-link');
+	   link.click();
+	   console.log(id);
+	} else {
+	  // Fragment doesn't exist
+	  console.log('no hash found');
+	}
+	
     // ========================================================================
     //	Scroll To Top
     // ========================================================================
