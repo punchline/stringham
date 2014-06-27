@@ -11,8 +11,6 @@ Template Name: Resources
  * @package Stringham
  */
 
-opcache_reset();
-
 get_header(); 
 
 $user = wp_get_current_user();
