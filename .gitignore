@@ -1,3 +1,4 @@
 config/env/mt.php
 config/env/local.php
 .htaccess
+debug.log
