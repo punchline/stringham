@@ -225,10 +225,13 @@
 	   var link = document.getElementById(id+'-tab-link');
 	   link.click();
 	   console.log(id);
-	} else {
-	  // Fragment doesn't exist
-	  console.log('no hash found');
 	}
+	
+	if ($('.nestable').length) {
+        $('.nestable').nestable({
+            group: 1
+        });
+    }
 	
     // ========================================================================
     //	Scroll To Top

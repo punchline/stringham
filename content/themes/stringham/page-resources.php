@@ -11,6 +11,7 @@ Template Name: Resources
  * @package Stringham
  */
 
+opcache_reset();
 
 get_header(); 
 
@@ -22,6 +23,7 @@ $user = wp_get_current_user();
 
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div class="row">
+					<div class="col-md-6">
 					<?php
 						// retrieve top level 'resource_category' taxonomy terms
 						$args = array('parent'=>0);
@@ -29,9 +31,8 @@ $user = wp_get_current_user();
 						$cat_total = count($resource_categories);
 						
 						foreach( $resource_categories as $rCount => $rc ):
-							if( $rCount > ($cat_total/2) ) echo '</div><!-- /.row --><div class="row">';	// put half of the category sections in the left, half in the right
+							if( $rCount >= ($cat_total/2) ) echo '</div><!-- /.col-md-6 --><div class="col-md-6">';	// put half of the category sections in the left, half in the right
 					?>
-							<div class="col-md-6">
 								<!--Panel-->
 								<div class="panel panel-info">
 									<div class="panel-heading">
@@ -55,7 +56,7 @@ $user = wp_get_current_user();
 													$subcats = get_terms( 'resource_category', $args );
 													foreach($subcats as $sCount => $sc):
 												?>
-												<li class="dd-item task-item" data-id="15"><button data-action="collapse" type="button">Collapse</button><button data-action="expand" type="button" style="display: none;">Expand</button>
+												<li class="dd-item task-item" data-id="15">
 													<div class="dd-handle task-handle"></div>
 													<div class="task-content header"><?php echo $sc->name; ?></div>
 													<ol class="dd-list completed">
@@ -85,14 +86,12 @@ $user = wp_get_current_user();
 										</div><!--/nestable-->
 									</div>
 								</div><!--/Panel-->
-							</div><!--/col-md-6-->
-							
 					<?php
 						endforeach;
 					?>
 				</div><!-- /.row -->
                     
-            <?php get_content();?>
+            <?php the_content();?>
                     
 			<?php endwhile; // end of the loop. ?>
 

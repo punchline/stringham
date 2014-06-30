@@ -76,6 +76,7 @@ add_action( 'after_setup_theme', 'stringham_setup' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function stringham_widgets_init() {
+	/*
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'stringham' ),
 		'id'            => 'sidebar-1',
@@ -85,6 +86,7 @@ function stringham_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	*/
 }
 add_action( 'widgets_init', 'stringham_widgets_init' );
 
@@ -236,6 +238,22 @@ function stringham_scripts() {
 	
 	if ( !is_admin() ) 
 	{
+		if ( is_page_template('page-profile.php') )
+		{
+			wp_enqueue_script('flot-min-js');
+			wp_enqueue_script('flot-time-js');
+			wp_enqueue_script('flot-axis-labels-js');
+			wp_enqueue_script('flot-resize-js');
+		}
+	
+		if ( is_page_template('page-dashboard.php') )
+		{
+			wp_enqueue_script('flot-min-js');
+			wp_enqueue_script('flot-time-js');
+			wp_enqueue_script('flot-axis-labels-js');
+			wp_enqueue_script('flot-resize-js');
+		}
+		
 		// Enqueued on every page
 		wp_enqueue_style( 'stringham-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'jquery' );
@@ -252,22 +270,7 @@ function stringham_scripts() {
 		wp_enqueue_script( 'powerwidgets-js' );
 		
 	
-		if ( is_page_template('page-profile.php') )
-			{
-				wp_enqueue_script('flot-min-js');
-				wp_enqueue_script('flot-time-js');
-				wp_enqueue_script('flot-axis-labels-js');
-				wp_enqueue_script('flot-resize-js');
-			}
-	
-	
-		if ( is_page_template('page-dashboard.php') )
-		{
-			wp_enqueue_script('flot-min-js');
-			wp_enqueue_script('flot-time-js');
-			wp_enqueue_script('flot-axis-labels-js');
-			wp_enqueue_script('flot-resize-js');
-		}
+
 		
 		wp_enqueue_script( 'scripts-js' );
 	}

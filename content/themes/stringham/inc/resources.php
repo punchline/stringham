@@ -26,3 +26,4 @@
 		register_post_type('stringham_resource', $args);
 	}
 	
+	// Add Custom Meta Field on Resource Category Taxonomy to handle subtitles
