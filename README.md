@@ -5,11 +5,11 @@ Stringham LMS
 Built using WordPress
 
 ```
-$ git clone https://github.com/punchline/stringham .
+$ git clone https://github.com/punchline/stringham
 $ cd stringham
 $ git submodule init
 $ git submodule update
-$ mv config/env/local-example.php local.php
+$ cp config/env/local-example.php local.php
 ```
 
 You can then take the db.sql file and dump it into a new local mysql database
