@@ -316,3 +316,9 @@ require get_template_directory() . '/inc/users.php';
  * Resource Custom Post Type.
  */
 require get_template_directory() . '/inc/resources.php';
+
+
+/**
+ * Quiz Custom Post Type.
+ */
+require get_template_directory() . '/inc/quiz.php';
