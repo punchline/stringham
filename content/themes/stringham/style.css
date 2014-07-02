@@ -8722,3 +8722,4 @@ code {
 h2.ld-entry-title{font-weight: 400;}
 .ld-entry-content{margin-top: 10px; border-bottom: 5px solid #dddddb;}
 .ld-entry-content:last-child{border: none;}
+#inline-search input:focus{outline: none;}

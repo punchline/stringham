@@ -24,7 +24,7 @@
 			'show_in_nav_menus'	 => false,
 			'show_in_admin_bar'  => false,
 			'taxonomies' 		 => array('quiz_category'),
-			'supports' 			 => array('title')
+			'supports' 			 => array('title', 'editor')
 		);
 		register_post_type('stringham_question', $args);
 		
@@ -37,11 +37,16 @@
 			'public' 			 => true,
 			'show_in_nav_menus'	 => false,
 			'show_in_admin_bar'  => false,
-			'supports' 			 => array('title', 'custom-fields')
+			'has_archive'		 => false,
+			'taxonomies' 		 => array('quiz_category'),
+			'supports' 			 => false,
+			'rewrite'			 => array('slug'=>'quiz_attempt')
 		);
 		register_post_type('stringham_attempt', $args);
 	}
 	
+	
+	/* BEGIN META BOXES */
 	
 	// Add the Meta Box
 	function add_question_meta_box() {
@@ -58,28 +63,52 @@
 	// Field Array
 	$question_meta_fields = array(
     	array(
-	        'label'=> 'Answer #1 (Correct)',
-	        'desc'  => 'The correct answer to the question.',
+	        'label'=> 'Answer #1',
+	        'desc'  => 'An answer to the question.',
 	        'id'    => 'a1',
 	        'type'  => 'text'
 	    ),
 	    array(
 	        'label'=> 'Answer #2',
-	        'desc'  => 'An incorrect answer to the question.',
+	        'desc'  => 'An answer to the question.',
 	        'id'    => 'a2',
 	        'type'  => 'text'
 	    ),
 	    array(
 	        'label'=> 'Answer #3',
-	        'desc'  => 'An incorrect answer to the question.',
+	        'desc'  => 'An answer to the question.',
 	        'id'    => 'a3',
 	        'type'  => 'text'
 	    ),
 	    array(
 	        'label'=> 'Answer #4',
-	        'desc'  => 'An incorrect answer to the question.',
+	        'desc'  => 'An answer to the question.',
 	        'id'    => 'a4',
 	        'type'  => 'text'
+	    ),
+	    array(
+	        'label'=> 'Correct Answer',
+	        'desc'  => 'The correct answer to the question.',
+	        'id'    => 'correct',
+	        'type'  => 'select',
+	        'options' => array (
+	            'Answer 1' => array (
+	                'label' => 'Answer 1',
+	                'value' => 'a1'
+	            ),
+	            'Answer 2' => array (
+	                'label' => 'Answer 2',
+	                'value' => 'a2'
+	            ),
+	            'Answer 3' => array (
+	                'label' => 'Answer 3',
+	                'value' => 'a3'
+	            ),
+	            'Answer 4' => array (
+	                'label' => 'Answer 4',
+	                'value' => 'a4'
+	            ),
+	        )
 	    )
 	);
 	
@@ -159,3 +188,68 @@
 	    } // end foreach
 	}
 	add_action('save_post', 'save_custom_meta');
+	
+	/* END META BOXES */
+	
+	
+	/* AJAX CALLS */
+	
+	/**
+	 * Grades answers to a quiz and saves them as a stringham_attempt
+	 *
+	 * @author 	Mike Payne <mike@punchlinead.com>
+	 * @author 	Brandon Warner <brandon@punchlinead.com>
+	 *
+	 * @action	grade_quiz
+	 * @q-{question_id}		answer to question_id 
+	 *
+	 */
+	add_action('wp_ajax_grade_quiz', 'pnch_grade_quiz');
+	function pnch_grade_quiz(){
+
+		$user = wp_get_current_user();
+		
+		$answers = array();
+		$score = 0;		
+		foreach($_POST as $question => $answer){
+			if( 0 !== strpos($question, 'q-') ) continue; // if $_POST key does not begin with 'q-', skip and move onto the next one
+			
+			$question_id = substr($question, 2);
+		
+			$answers[$question_id] = $answer; // add question to answers array
+			
+			// compare to correct answer
+			$correct_answer = get_post_meta($question_id, 'correct', true);
+			if($answer == $correct_answer)
+			{
+				// question answered correctly
+				$score++;
+			}
+			
+		}
+	
+		$score = round(($score / count($answers)*100));
+		
+		// Create post object
+		$args = array(
+		  'post_status'   => 'publish',
+		  'post_author'   => $user->ID,
+		  'post_type'	  => 'stringham_attempt'
+		);
+		
+		// Insert the post into the database
+		$post_id = wp_insert_post( $args );
+		if ( is_wp_error( $post_id ) ) 
+		{
+		   wp_send_json_error($post_id->get_error_message());
+		}
+		
+		// add category of quiz
+		wp_set_object_terms( $post_id, $_POST['quiz_category'], 'quiz_category' );
+		
+		// add post meta for score and answers
+		update_post_meta( $post_id, 'answers', $answers);
+		update_post_meta( $post_id, 'score', $score);
+		
+		wp_send_json_success( get_permalink($post_id) );
+	}
