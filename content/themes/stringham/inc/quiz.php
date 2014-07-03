@@ -205,6 +205,7 @@
 	 *
 	 */
 	add_action('wp_ajax_grade_quiz', 'pnch_grade_quiz');
+	add_action('wp_ajax_nopriv_grade_quiz', 'pnch_reject_ajax');
 	function pnch_grade_quiz(){
 
 		$user = wp_get_current_user();
@@ -230,18 +231,30 @@
 	
 		$score = round(($score / count($answers)*100));
 		
-		// Create post object
-		$args = array(
-		  'post_status'   => 'publish',
-		  'post_author'   => $user->ID,
-		  'post_type'	  => 'stringham_attempt'
-		);
-		
-		// Insert the post into the database
-		$post_id = wp_insert_post( $args );
-		if ( is_wp_error( $post_id ) ) 
+		if('' != $_POST['post_id'])
 		{
-		   wp_send_json_error($post_id->get_error_message());
+			// post already exists
+			$post_id = $_POST['post_id'];
+			wp_update_post(array(
+				'ID'           => $post_id,
+				'post_status'  => 'publish'
+			));
+		}
+		else
+		{
+			// Create post object
+			$args = array(
+			  'post_status'   => 'publish',
+			  'post_author'   => $user->ID,
+			  'post_type'	  => 'stringham_attempt'
+			);
+			
+			// Insert the post into the database
+			$post_id = wp_insert_post( $args );
+			if ( is_wp_error( $post_id ) ) 
+			{
+			   wp_send_json_error($post_id->get_error_message());
+			}
 		}
 		
 		// add category of quiz
@@ -252,4 +265,52 @@
 		update_post_meta( $post_id, 'score', $score);
 		
 		wp_send_json_success( get_permalink($post_id) );
+	}	
+	
+	
+	/**
+	 * Saves answers to a drafted stringham_attempt
+	 *
+	 * @author 	Mike Payne <mike@punchlinead.com>
+	 * @author 	Brandon Warner <brandon@punchlinead.com>
+	 *
+	 * @action	draft_quiz
+	 * @q-{question_id}		answer to question_id 
+	 *
+	 */
+	add_action('wp_ajax_draft_quiz', 'pnch_draft_quiz');
+	add_action('wp_ajax_nopriv_draft_quiz', 'pnch_reject_ajax');
+	function pnch_draft_quiz(){
+		
+		$user = wp_get_current_user();
+		
+		if (''==$_POST['post_id'])
+		{
+			// Create post object
+			$args = array(
+			  'post_status'   => 'draft',
+			  'post_author'   => $user->ID,
+			  'post_type'	  => 'stringham_attempt'
+			);
+			
+			// Insert the post into the database
+			$post_id = wp_insert_post( $args );
+			if ( is_wp_error( $post_id ) ) 
+			{
+			   wp_send_json_error($post_id->get_error_message());
+			}
+		
+		}
+		else
+		{
+			$post_id = $_POST['post_id'];
+		}
+		
+		// add category of quiz
+		wp_set_object_terms( $post_id, $_POST['quiz_category'], 'quiz_category' );
+		
+		// save answers so far
+		$answers = $_POST['answers'];
+		update_post_meta( $post_id, 'answers', $answers );
+		wp_send_json_success( $post_id );
 	}
