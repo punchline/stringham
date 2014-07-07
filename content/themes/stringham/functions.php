@@ -233,7 +233,7 @@ function stringham_scripts() {
 	wp_register_script( 'typehead-js-js', get_stylesheet_directory_uri() . '/js/vendors/x-editable/typeaheadjs.js', array(), '1.5.0', TRUE );
 	/* End X-Editable JavaScript Files */
 	
-	// temporary
+	// Scripts.js
 	wp_register_script( 'scripts-js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '1.0', TRUE );
 	
 	if ( !is_admin() ) 
