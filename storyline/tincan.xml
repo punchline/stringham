@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tincan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://projecttincan.com/tincan.xsd">
+	<activities>
+		<activity id="Advanced Appraisal Part 1" type="course">
+			<name lang="und">Advanced Appraisal Part 1</name>
+			<description lang="und" />
+			<launch lang="und">story.html</launch>
+		</activity>
+		<activity id="6SIvFvOLAr4" type="module">
+			<name lang="und">Title</name>
+			<description lang="und">Title</description>
+		</activity>
+		<activity id="63rC5uL5Ybs" type="module">
+			<name lang="und">Three Types of Property</name>
+			<description lang="und">Three Types of Property</description>
+		</activity>
+		<activity id="6Q1p1GYVDvw" type="module">
+			<name lang="und">Appraisal Approaches/Formulas</name>
+			<description lang="und">Appraisal Approaches/Formulas</description>
+		</activity>
+		<activity id="6fjVqHak60J" type="module">
+			<name lang="und">Amenities</name>
+			<description lang="und">Amenities</description>
+		</activity>
+		<activity id="5trUMtZRpiq" type="module">
+			<name lang="und">Market Data or Comparison Approach</name>
+			<description lang="und">Market Data or Comparison Approach</description>
+		</activity>
+		<activity id="6dxoRSbBgXQ" type="module">
+			<name lang="und">Market Data or Comparison Approach</name>
+			<description lang="und">Market Data or Comparison Approach</description>
+		</activity>
+		<activity id="6dxoRSbBgXQ.6Otlr6aB5pf" type="cmi.interaction">
+			<name lang="und">When using the comparison approach, the task of the appraiser is to:</name>
+			<description lang="und">When using the comparison approach, the task of the appraiser is to:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_6448lGBBCDH</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5XcyNur2b9d</id>
+					<description lang="und">Make the comparables like the subject property</description>
+				</component>
+				<component>
+					<id>choice_6448lGBBCDH</id>
+					<description lang="und">Make the subject property like the comparables</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="6CxNtoPxxFs" type="module">
+			<name lang="und">Comparable 1</name>
+			<description lang="und">Comparable 1</description>
+		</activity>
+		<activity id="69pU47w3jtJ" type="module">
+			<name lang="und">Comparable 2</name>
+			<description lang="und">Comparable 2</description>
+		</activity>
+		<activity id="6RoAvb9EHlu" type="module">
+			<name lang="und">Average</name>
+			<description lang="und">Average</description>
+		</activity>
+		<activity id="65Nvh8nRy4I" type="module">
+			<name lang="und">Final Reconciliation</name>
+			<description lang="und">Final Reconciliation</description>
+		</activity>
+		<activity id="5dTsTA7o26O" type="module">
+			<name lang="und">When using the comparison approach, the task of the appraiser is to:</name>
+			<description lang="und">When using the comparison approach, the task of the appraiser is to:</description>
+		</activity>
+		<activity id="5dTsTA7o26O.6TWXlzR5ePL" type="cmi.interaction">
+			<name lang="und">When using the comparison approach, the task of the appraiser is to:</name>
+			<description lang="und">When using the comparison approach, the task of the appraiser is to:</description>
+			<interactionType>choice</interactionType>
+			<correctResponsePatterns>
+				<correctResponsePattern>choice_5be5guJvUmQ</correctResponsePattern>
+			</correctResponsePatterns>
+			<choices>
+				<component>
+					<id>choice_5gdiLoNNvYu</id>
+					<description lang="und">Make the subject property like the comparables.</description>
+				</component>
+				<component>
+					<id>choice_5be5guJvUmQ</id>
+					<description lang="und">Make the comparables like the subject property.</description>
+				</component>
+			</choices>
+		</activity>
+		<activity id="5t9Ehfz7CLS" type="module">
+			<name lang="und">Good Work!</name>
+			<description lang="und">Good Work!</description>
+		</activity>
+	</activities>
+</tincan>
