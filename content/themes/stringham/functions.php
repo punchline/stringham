@@ -283,6 +283,15 @@ function stringham_scripts() {
 add_action( 'wp_enqueue_scripts', 'stringham_scripts' );
 
 /**
+ * Send JSON error to end user when logged out
+ *
+ * Use this function to reject logged out users
+ */
+function pnch_reject_ajax(){
+	wp_send_json_error('Please log in before attempting to use the site.');
+}
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
