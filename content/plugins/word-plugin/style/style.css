@@ -1,0 +1,245 @@
+/******************************
+ * POSTER STYLE CONFIGURATION *
+ ******************************/
+
+/* POSTER COLOR */
+#html5-poster-generator-frame,
+#html5-poster-generator-container {
+    border-color: #000;
+}
+
+/* BORDER AROUND THE IMAGE  */
+#html5-poster-generator-container {
+    background: #fff;
+}
+
+/*  FONT COLOR */
+#html5-poster-generator-input-wrapper input.title,
+#html5-poster-generator-input-wrapper input.message {
+    color: #fff !important;
+}
+
+/* FONT SIZE */
+#html5-poster-generator-input-wrapper input.title {
+    font-size: 50px !important;
+}
+
+#html5-poster-generator-input-wrapper input.message {
+    font-size: 15px !important;
+}
+
+/**************************************
+ * PLEASE DON'T TOUCH THE CODE BELLOW *
+ * UNLESS YOU KNOW WHAT YOU ARE DOING *
+ **************************************/
+#html5-poster-generator-frame,
+#html5-poster-generator-container,
+#html5-poster-generator-input-wrapper input.title,
+#html5-poster-generator-input-wrapper input.message {
+    -webkit-box-sizing: content-box !important;
+       -moz-box-sizing: content-box !important;
+            box-sizing: content-box !important;
+}
+
+#html5-poster-generator-frame {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0;
+    border-width: 3px;
+    border-style: solid;
+    margin: 2px;
+    background: #fff;
+}
+
+#html5-poster-generator-container {
+    border-width: 50px;
+    border-style: solid;
+    border-top-width: 40px;
+    border-bottom: none;
+    position: relative;
+    margin: 10px auto;
+}
+
+#html5-selector {
+    background: green;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    cursor: move;
+}
+
+#html5-poster-generator-image {
+    position: absolute;
+    max-height: none;
+    max-width: none;
+}
+
+/* RESET INPUT STYLE */
+#html5-poster-generator-input-wrapper input.title,
+#html5-poster-generator-input-wrapper input.message {
+    text-align: center;
+    border: none !important;
+    background: transparent!important;
+    width: 200%;
+    margin: 0;
+    margin-left: -50%;
+    outline: none !important;
+    padding: 0;
+    height: auto;
+    line-height: 1em !important;
+    -webkit-box-shadow: none!important;
+       -moz-box-shadow: none!important;
+            box-shadow: none!important;
+}
+
+#html5-poster-generator-input-wrapper {
+    padding-bottom: 30px;
+}
+
+#html5-poster-generator-selectors {
+    text-align: justify;
+    display: block;
+    margin: 20px 0;
+}
+
+#html5-poster-generator-orientation {
+    margin: 10px 0;
+    text-align: right;
+}
+
+#html5-poster-generator-selectors .option {
+    display: inline-block;
+    height: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-right: 20px;
+}
+
+#html5-poster-generator-selectors .option label {
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 3px;
+    text-transform: capitalize;
+}
+
+#html5-poster-generator-selectors .option select {
+    display: inline-block;
+    height: 20px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555555;
+    background: white;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    vertical-align: middle;
+
+    height: 30px;
+    /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+    *margin-top: 4px;
+    /* For IE7, add top margin to align select with labels */
+
+    line-height: 30px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    outline: none;
+}
+
+#html5-poster-generator-selectors .option.category {
+    width: 150px;
+}
+
+#html5-poster-generator-selectors .option.font-family {
+    width: 150px;
+}
+
+#html5-poster-generator-vertical {
+    background: url(../images/vertical.png) bottom no-repeat;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-indent: 10000px;
+    float: right;
+    outline: none;
+    overflow: hidden;
+}
+
+#html5-poster-generator-horizontal {
+    background: url(../images/horizontal.png) 0 3px no-repeat;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-indent: 10000px;
+    float: right;
+    outline: none;
+    overflow: hidden;
+}
+
+#html5-poster-generator-file-input {
+    display: inline-block;
+    width: 70%;
+    height: 30px;
+}
+
+#html5-poster-generator-input-wrapper input.title.placeholder,
+#html5-poster-generator-input-wrapper input.message.placeholder {
+    color: #aaa!important;
+}
+
+#html5-poster-generator-file-input-wrap label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.html5-poster-generator-alert {
+    margin: 2px 0 20px 0;
+    padding: .5em 1.5em;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+
+.html5-poster-generator-alert.hidden {
+    display: none;
+}
+
+.html5-poster-generator-alert p {
+    margin: 0;
+    padding: 0;
+}
+
+.html5-poster-generator-alert.error {
+    background: #f2dede;
+    color: #b94a48;
+    border: 1px solid #eed3d7;
+}
+
+.html5-poster-generator-alert.success {
+    color: #468847;
+    background: #dff0d8;
+    border: 1px solid #d6e9c6;
+}
+
+#container > div#html5-poster-generator-no-canvas,
+div#html5-poster-generator-no-canvas {
+    display: none !important;
+}
+
+#html5-poster-generator-no-canvas p {
+    margin: 10px 0;
+}
+
+body.no-canvas #html5-poster-generator-no-canvas {
+    display: block;
+}

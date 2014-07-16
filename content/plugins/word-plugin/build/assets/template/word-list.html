@@ -1,0 +1,4 @@
+<% _.each(words, function(word) { %>
+<span id="html5-wordsearch-<%= uid %>-<%= word.replace(/ /g, "-").toLowerCase() %>"><%= word %>
+</span>
+<% }); %>
