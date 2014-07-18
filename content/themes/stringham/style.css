@@ -8723,3 +8723,43 @@ h2.ld-entry-title{font-weight: 400;}
 .ld-entry-content{margin-top: 10px; border-bottom: 5px solid #dddddb;}
 .ld-entry-content:last-child{border: none;}
 #inline-search input:focus{outline: none;}
+
+
+
+/** ================== Lie Detector =================== **/
+
+span#counter{
+	position: absolute;
+	z-index: 1;
+	top: 64px;
+	margin-left: 245px;
+	color: rgb(255,29,46);
+	font-size: 4em;
+}
+
+.lie-buttons{
+	background: #A1A3A7;
+	width: 575px;
+	height: 300px;
+	margin-left: 100px;
+}
+
+.redLight{
+	background: rgba(255,29,46,.7);
+	width: 47px;
+	height: 47px;
+	border-radius: 45px;
+	position: absolute;
+	margin-top: 77px;
+	margin-left: 592px;
+}
+
+.greenLight{
+	background: rgba(88,124,36,.7);
+	width: 47px;
+	height: 47px;
+	border-radius: 45px;
+	position: absolute;
+	margin-top: 77px;
+	margin-left: 55px;
+}
