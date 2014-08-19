@@ -1,6 +1,6 @@
 <?php
 
-define('WP_HOME', 'http://localhost:8888/stringham');
+define('WP_HOME', 'http://localhost/stringham');
 define('WP_SITEURL', WP_HOME.'/wordpress');
 
 define('WP_CONTENT_DIR', APP_ROOT.'/content');
