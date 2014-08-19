@@ -22,7 +22,7 @@ $user = wp_get_current_user();
 					<div class="col-md-12">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
-								<div class="panel-title pull-left">Quiz Title Here</div>
+								<div class="panel-title pull-left"><?php echo ucwords(str_replace('-',' ', $_GET['category'])); ?> Quiz</div>
 								<div class="pull-right"> 
 									<a href="#" data-toggle="modal" data-target="#panel-question" class="btn-question"></a> 
 									<a href="#" class="btn-minmax">
@@ -44,7 +44,7 @@ $user = wp_get_current_user();
 										if(!empty($quiz))
 										{
 											$quiz = $quiz[0];
-											// user has drafted a quiz before	
+											// user has drafted a quiz before
 											$questions = get_post_meta($quiz->ID, 'answers', true);
 											
 											foreach($questions as $q){
@@ -74,9 +74,7 @@ $user = wp_get_current_user();
 										else
 										{
 											// user has no saved quizes, generate a new one
-										
-
-											$category = 'general-1';
+											$category = $_GET['category'];
 											
 											$questions = get_posts(array(
 												'posts_per_page' => 20,
@@ -84,26 +82,30 @@ $user = wp_get_current_user();
 												'quiz_category' => $category,
 												'orderby' => 'rand'
 											));
-											
-											foreach($questions as $question ){
-												echo '<div>';
-												echo '<h3 class="question-title" id="question-'.$question->ID.'">';
-												echo $question->post_title;
-												echo '</h3>';
-												
-												$answers = array();
-												for ($i = 1; $i < 5; $i++){
-													$value = get_post_meta($question->ID, 'a'.$i, true);
-													$answers[] = array('value'=>$value, 'id'=>'a'.$i);
-												}
-												
-												shuffle($answers);
-												
-												foreach($answers as $answer){
-													echo "<input type='radio' name='q-{$question->ID}' value='{$answer['id']}'> {$answer['value']}<br/>";
+																						
+											if(!empty($questions))
+											{
+												foreach($questions as $question ){
+													echo '<div>';
+													echo '<h3 class="question-title" id="question-'.$question->ID.'">';
+													echo $question->post_title;
+													echo '</h3>';
 													
+													$answers = array();
+													for ($i = 1; $i < 5; $i++){
+														$value = get_post_meta($question->ID, 'a'.$i, true);
+														$answers[] = array('value'=>$value, 'id'=>'a'.$i);
+													}
+													
+													shuffle($answers);
+													
+													foreach($answers as $answer){
+														if($answer['value'] == '' ) continue;
+														echo "<input type='radio' name='q-{$question->ID}' value='{$answer['id']}'> {$answer['value']}<br/>";
+														
+													}
+													echo '</div><br/><br/>';
 												}
-												echo '</div><br/><br/>';
 											}
 										}
 									?>
