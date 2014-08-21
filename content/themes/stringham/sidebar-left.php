@@ -8,7 +8,7 @@
 
 <!--Main Menu-->
 <div class="responsive-admin-menu">
-	<div class="responsive-menu">ORB
+	<div class="responsive-menu"><img src="<?php echo get_template_directory_uri();?>/images/white-logo.png"/ >
 		<div class="menuicon"><i class="fa fa-angle-down"></i></div>
 	</div>
 	

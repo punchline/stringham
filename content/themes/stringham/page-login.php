@@ -3,8 +3,6 @@
  Template Name: Login
 */
 
-opcache_reset();
-
 get_header('login'); ?>
 
 	<div id="primary" class="content-area">
