@@ -20,7 +20,7 @@
 			<a href="<?php echo home_url('inbox'); ?>" title="Inbox"><i class="entypo-inbox"></i><span> Inbox <span class="badge">32</span></span></a>
 		</li>
 		<li>
-			<a href="<?php echo home_url('my-courses'); ?>" title="Courses"><i class="entypo-keyboard"></i><span> My Courses</span></a>
+			<a href="<?php echo home_url('courses'); ?>" title="Courses"><i class="entypo-keyboard"></i><span> My Courses</span></a>
 		</li>
 		<li>
 			<a href="<?php echo home_url(); ?>" class="submenu" data-id="tables-sub" title="My Profile"><i class="entypo-user"></i><span> My Profile</span></a> 
@@ -50,7 +50,7 @@
 			 <a href="<?php echo home_url(); ?>" title="Purchase"><i class="entypo-basket"></i><span> Purchase</span></a> 
 		</li>
 		<li> 
-			<a href="<?php echo home_url(); ?>" title="Games"><i class="fa fa-gamepad"></i><span> Stringham Games</span></a> 
+			<a href="<?php echo home_url('games'); ?>" title="Games"><i class="fa fa-gamepad"></i><span> Stringham Games</span></a> 
 		</li>
 	</ul>
 </div>
