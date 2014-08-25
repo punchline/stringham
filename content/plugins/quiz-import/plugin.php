@@ -6,6 +6,8 @@
  * Author: Brandon Warner
  */
  
+ini_set('auto_detect_line_endings', true);
+
 function pnch_quiz_import_activate() {
 	// Activation code here...
 	$path = plugin_dir_path( __FILE__ );
@@ -33,20 +35,40 @@ function pnch_quiz_import_activate() {
 	  	}
 		
 	  	// open file and read each question line by line
-	  	$questions = fopen($path.'/quizzes/'.$file,"r");
-	  	$i = 0;
+	  	
+	  	/*
 		while(! feof($questions))
 		{
 			$question = fgetcsv($questions);
 			$q = $question[0];
-			if($q == 'QUESTION') continue;
+			
+			if($q == 'QUESTION') continue;	
+			
+			
 			$id = create_quiz_question($question, $term);
 			fwrite($logfile, "$id ");
 			$i++;
 		}
+	  	*/
 	  	
-		fwrite($logfile, "$cat_name $term $i\n");
-		fclose($questions);
+	  	$row = 1;
+		if (($handle = fopen($path.'/quizzes/'.$file, "r")) !== FALSE) {
+		    while (($question = fgetcsv($handle, 1000, ",")) !== FALSE) {
+		    
+			    $q = $question[0];
+				
+				if($q == 'QUESTION') continue;	
+				
+				
+				$id = create_quiz_question($question, $term);
+				fwrite($logfile, "$id ");
+				$i++;
+
+		    }
+		    
+		    fclose($handle);
+		}
+		
 	}
 	
 	fclose($logfile);

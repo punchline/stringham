@@ -331,3 +331,10 @@ require get_template_directory() . '/inc/resources.php';
  * Quiz Custom Post Type.
  */
 require get_template_directory() . '/inc/quiz.php';
+
+/**
+ * Word Search Custom Post Type.
+ */
+require get_template_directory() . '/inc/word-search.php';
+
+

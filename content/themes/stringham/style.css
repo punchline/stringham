@@ -159,7 +159,7 @@ h3,
 	letter-spacing: -1px;
 }
 a {
-	color: #3b8dbd;
+	color: #429bb5;
 	text-decoration: none;
 }
 a:hover,
@@ -1101,7 +1101,7 @@ ul.popover-tooltip-example li {
 /*Nav-Tabs Green*/
 .tabs-green .tab-content > .tab-pane,
 .tabs-green .nav-tabs > li > a:hover {
-	background: #82b964;
+	background: #429bb5;
 	color: #fff;
 	border-color: #82b964;
 }
@@ -1231,7 +1231,7 @@ ul.popover-tooltip-example li {
 .alert-primary,
 .progress-bar,
 .panel-primary > .panel-heading {
-	background-color: #3b8dbd;
+	background-color: #429bb5;
 	color: #fff;
 }
 .table > thead > tr > td.success,
@@ -1264,7 +1264,7 @@ a.list-group-item-success,
 
 
 .panel-cold > .panel-heading{
-	background: #595f66;;
+	background: #2c3e50;;
 	color: #fff;
 }
 .table > thead > tr > td.info,
@@ -1425,7 +1425,7 @@ a.thumbnail.active,
 a.list-group-item.active,
 a.list-group-item.active:hover,
 a.list-group-item.active:focus {
-	background-color: #3b8dbd;
+	background-color: #429bb5;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -1552,7 +1552,7 @@ fieldset[disabled] .btn-danger.active {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-	border-color: #3b8dbd;
+	border-color: #429bb5;
 }
 /* ========================================================================
  * Bootstrap List Groups
@@ -8095,7 +8095,7 @@ x:-o-prefocus, .gal-overlay img {
 }
 .powerwidget-as-portlet-dark-blue,
 .powerwidget-as-portlet-dark-blue .inner-spacer {
-	background: #3b8dbd;
+	background: #429bb5;
 	color: #fff;
 }
 .powerwidget-as-portlet-green,
@@ -8176,7 +8176,7 @@ x:-o-prefocus, .gal-overlay img {
 .dark-blue-btn,
 .bg-dark-blue,
 .powerwidget.dark-blue {
-	background-color: #3b8dbd;
+	background-color: #429bb5;
 }
 .green-btn,
 .bg-green,
@@ -8255,7 +8255,7 @@ x:-o-prefocus, .gal-overlay img {
 	color: #5bc0de;
 }
 .text-dark-blue {
-	color: #3b8dbd;
+	color: #429bb5;
 }
 .text-green {
 	color: #82b964;

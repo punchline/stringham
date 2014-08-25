@@ -7,7 +7,7 @@
  * @package Stringham
  */
  
- if( !is_user_logged_in() ) wp_redirect( home_url('login') );
+ //if( !is_user_logged_in() ) wp_redirect( home_url('login') );
  
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

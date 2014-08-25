@@ -6,7 +6,7 @@ class WordsearchGameCreator {
     {
         $this->errors = new WP_Error();
 
-        $this->success_message = '';
+        $this->success_message = 'you win, hooray.....';
 
         add_action('wp_enqueue_scripts', array($this, 'enqueue_style'));
         add_shortcode('wordsearch_game', array($this, 'insert_shortcode_content'));
@@ -26,7 +26,30 @@ class WordsearchGameCreator {
                     __('Please register to play this game', 'wordsearch_game') . '</p>';
 
         $this->enqueue_scripts();
-        $content = strip_tags($content);
+        //$content = strip_tags($content);
+        $category = $this->category;
+        
+        $tax_query = array(array(
+        	'taxonomy' => 'quiz_category',
+			'field'    => 'slug',
+			'terms'    => $category
+        ));
+        
+        $count = $this->count;
+        $args = array(
+        	'post_type' => 'vocabulary_word',
+        	'tax_query' => $tax_query,
+        	'numberposts' => $count
+        );
+        $posts = get_posts($args);
+                
+        $content = '';
+        
+        foreach($posts as $post){
+        	$word = $post->post_title;
+        	$definition = $post->post_content;
+        	$content .= $word. ' | ' .$definition . "\n";
+        }
         
         return "<script type='text/word' id='wordlist'>{$content}</script>".
                 "<wordsearch></wordsearch>";
@@ -36,10 +59,14 @@ class WordsearchGameCreator {
         extract(shortcode_atts(array(
             'width'    => '400',
             'height' => '600',
+            'category' => '',
+            'count' => 10
         ), $attrs));
 
         $this->width = $width;
         $this->height = $height;
+        $this->category = $category;
+        $this->count = $count;
     }
 
     private function enqueue_scripts()
