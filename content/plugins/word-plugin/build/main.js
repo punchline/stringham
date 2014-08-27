@@ -1357,7 +1357,7 @@ EventEmitter.prototype.setMaxListeners = function(e) {
             });
         return f
     }), define("vendor/require-plugins/text!assets/template/custom-template.html", [], function() {
-        return '<div class="html5-wordsearch-game-options">\n<ul>\n    <li><b id="html5-wordsearch-timer-<%= uid %>" class="html5-wordsearch-timer button">00:00:00</b></li>\n    <li><b id="html5-wordsearch-score-<%= uid %>" class="html5-wordsearch-score button"><%= _[\'You have %d points\'] %></b></li>\n    <li><a href="#" id="show-help-<%= uid %>" class="button help left" title="<%= _[\'Help\'] %>"><%= _[\'Help\'] %></a></li>\n    <li><a href="#" id="restart-<%= uid %>" class="button right" title="<%= _[\'Restart\'] %>"><%= _[\'Restart\'] %></a></li>\n    <li><a href="#" id="download-puzzle" class="button" title=""><span>&#x21e9;</span> <%= _[\'Download\'] %></a></li>\n</ul>\n</div>\n<div id="soup-<%= uid %>" class="html5-wordsearch-soup"></div>\n'
+        return '<div class="html5-wordsearch-game-options">\n<ul>\n    <li><b id="html5-wordsearch-timer-<%= uid %>" class="html5-wordsearch-timer button">00:00:00</b></li>\n    <li><b id="html5-wordsearch-score-<%= uid %>" class="html5-wordsearch-score button"><%= _[\'You have %d points\'] %></b></li>\n    <li><a href="#" data-toggle="modal" data-target="#help-box" id="show-help-<%= uid %>" class="button help left" title="<%= _[\'Help\'] %>"><%= _[\'Help\'] %></a></li>\n    <li><a href="#" id="restart-<%= uid %>" class="button right" title="<%= _[\'Restart\'] %>"><%= _[\'Restart\'] %></a></li>\n    <li><a href="#" id="download-puzzle" class="button" title=""><span>&#x21e9;</span> <%= _[\'Download\'] %></a></li>\n</ul>\n</div>\n<div id="soup-<%= uid %>" class="html5-wordsearch-soup"></div>\n'
     }), define("modules/CustomUI", ["./UI", "text!../assets/template/custom-template.html", "i18n!../nls/wordsearch", "./Utils", "underscore"], function(e, t, n, r) {
         function s(t) {
             var s = document.createElement("div"),
@@ -1882,10 +1882,11 @@ EventEmitter.prototype.setMaxListeners = function(e) {
         }
 
         function c() {
-            this.timer.stop(), this.ui.Modal.open("congratulation", {
-                time: this.timer.time(),
-                score: this.timer.getScore()
-            })
+            this.timer.stop(),  
+            time= this.timer.time(),
+            score= this.timer.getScore(),
+            jQuery('#congrats-banner').removeClass('hidden');
+            //this.ui.Modal.open("congratulation", {})
         }
 
         function h(e, t) {
