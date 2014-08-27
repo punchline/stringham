@@ -1,0 +1,91 @@
+
+	/**************************************************************/
+	/* 1 line 					  											  */
+	/**************************************************************/
+				
+	ul.vt-skin-gray li.vt-line-1 div.vt-header
+	{
+		background:#B6B6B6;
+	}
+	
+	ul.vt-skin-gray li.vt-line-1 div.vt-header-arrow
+	{
+		border-left-color:#B6B6B6;
+	}
+	
+	ul.vt-skin-gray li.vt-line-1:hover
+	{
+		outline-color:#B6B6B6;
+	}
+		
+	/*****************************************************************/
+	/* 2 line 						  										  */
+	/*****************************************************************/
+		
+	ul.vt-skin-gray li.vt-line-2 div.vt-header
+	{
+		background:#8B8686;
+	}
+	
+	ul.vt-skin-gray li.vt-line-2 div.vt-header-arrow
+	{
+		border-left-color:#8B8686;
+	}		
+	
+	ul.vt-skin-gray li.vt-line-2:hover
+	{
+		outline-color:#8B8686;
+	}
+		
+	/*****************************************************************/
+	/* 3 line 						  										  	  */
+	/*****************************************************************/		
+		
+	ul.vt-skin-gray li.vt-line-3 div.vt-header
+	{
+		background:#686060;
+	}
+	
+	ul.vt-skin-gray li.vt-line-3 div.vt-header-arrow
+	{
+		border-left-color:#686060;
+	}	
+	
+	ul.vt-skin-gray li.vt-line-3:hover
+	{
+		outline-color:#686060;
+	}
+		
+	/*****************************************************************/
+	/* 4 line		 				  										  	  */
+	/*****************************************************************/				
+		
+	ul.vt-skin-gray li.vt-line-4 div.vt-header
+	{
+		background:#3F3B3B;
+	}
+	
+	ul.vt-skin-gray li.vt-line-4 div.vt-header-arrow
+	{
+		border-left-color:#3F3B3B;
+	}	
+	
+	ul.vt-skin-gray li.vt-line-4:hover
+	{
+		outline-color:#3F3B3B;
+	}
+	
+	/*****************************************************************/
+	/* Line hover		 				  										  	  */
+	/*****************************************************************/	
+	
+	ul.vt-skin-gray li.vt-line:hover
+	{
+		background:#F4F3F3;	
+	}
+	
+	ul.vt-skin-gray li.vt-line:hover div.vt-content ul.vt-features li
+	{
+		background-image:url('../img/tick_1.png') !important;
+	}
+	

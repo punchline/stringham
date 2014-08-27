@@ -1,0 +1,91 @@
+
+	/**************************************************************/
+	/* 1 line 					  											  */
+	/**************************************************************/
+				
+	ul.vt-skin-red li.vt-line-1 div.vt-header
+	{
+		background:#E28879;
+	}
+	
+	ul.vt-skin-red li.vt-line-1 div.vt-header-arrow
+	{
+		border-left-color:#E28879;
+	}
+	
+	ul.vt-skin-red li.vt-line-1:hover
+	{
+		outline-color:#E28879;
+	}
+		
+	/*****************************************************************/
+	/* 2 line 						  										  */
+	/*****************************************************************/
+		
+	ul.vt-skin-red li.vt-line-2 div.vt-header
+	{
+		background:#D74E4E;
+	}
+	
+	ul.vt-skin-red li.vt-line-2 div.vt-header-arrow
+	{
+		border-left-color:#D74E4E;
+	}		
+	
+	ul.vt-skin-red li.vt-line-2:hover
+	{
+		outline-color:#D74E4E;
+	}
+		
+	/*****************************************************************/
+	/* 3 line 						  										  	  */
+	/*****************************************************************/		
+		
+	ul.vt-skin-red li.vt-line-3 div.vt-header
+	{
+		background:#BC2D2D;
+	}
+	
+	ul.vt-skin-red li.vt-line-3 div.vt-header-arrow
+	{
+		border-left-color:#BC2D2D;
+	}	
+	
+	ul.vt-skin-red li.vt-line-3:hover
+	{
+		outline-color:#BC2D2D;
+	}
+		
+	/*****************************************************************/
+	/* 4 line		 				  										  	  */
+	/*****************************************************************/				
+		
+	ul.vt-skin-red li.vt-line-4 div.vt-header
+	{
+		background:#830C14;
+	}
+	
+	ul.vt-skin-red li.vt-line-4 div.vt-header-arrow
+	{
+		border-left-color:#830C14;
+	}	
+	
+	ul.vt-skin-red li.vt-line-4:hover
+	{
+		outline-color:#830C14;
+	}
+	
+	/*****************************************************************/
+	/* Line hover		 				  										  	  */
+	/*****************************************************************/	
+	
+	ul.vt-skin-red li.vt-line:hover
+	{
+		background:#FBEEEE;	
+	}
+	
+	ul.vt-skin-red li.vt-line:hover div.vt-content ul.vt-features li
+	{
+		background-image:url('../img/tick_2.png') !important;
+	}
+	

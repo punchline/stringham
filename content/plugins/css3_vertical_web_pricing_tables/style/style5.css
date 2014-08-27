@@ -1,0 +1,91 @@
+
+	/**************************************************************/
+	/* 1 line 					  											  */
+	/**************************************************************/
+				
+	ul.vt-skin-violet li.vt-line-1 div.vt-header
+	{
+		background:#D198A7;
+	}
+	
+	ul.vt-skin-violet li.vt-line-1 div.vt-header-arrow
+	{
+		border-left-color:#D198A7;
+	}
+	
+	ul.vt-skin-violet li.vt-line-1:hover
+	{
+		outline-color:#D198A7;
+	}
+		
+	/*****************************************************************/
+	/* 2 line 						  										  */
+	/*****************************************************************/
+		
+	ul.vt-skin-violet li.vt-line-2 div.vt-header
+	{
+		background:#BF6482;
+	}
+	
+	ul.vt-skin-violet li.vt-line-2 div.vt-header-arrow
+	{
+		border-left-color:#BF6482;
+	}		
+	
+	ul.vt-skin-violet li.vt-line-2:hover
+	{
+		outline-color:#BF6482;
+	}
+		
+	/*****************************************************************/
+	/* 3 line 						  										  	  */
+	/*****************************************************************/		
+		
+	ul.vt-skin-violet li.vt-line-3 div.vt-header
+	{
+		background:#A03D6E;
+	}
+	
+	ul.vt-skin-violet li.vt-line-3 div.vt-header-arrow
+	{
+		border-left-color:#A03D6E;
+	}	
+	
+	ul.vt-skin-violet li.vt-line-3:hover
+	{
+		outline-color:#A03D6E;
+	}
+		
+	/*****************************************************************/
+	/* 4 line		 				  										  	  */
+	/*****************************************************************/				
+		
+	ul.vt-skin-violet li.vt-line-4 div.vt-header
+	{
+		background:#6F1F54;
+	}
+	
+	ul.vt-skin-violet li.vt-line-4 div.vt-header-arrow
+	{
+		border-left-color:#6F1F54;
+	}	
+	
+	ul.vt-skin-violet li.vt-line-4:hover
+	{
+		outline-color:#6F1F54;
+	}
+	
+	/*****************************************************************/
+	/* Line hover		 				  										  	  */
+	/*****************************************************************/	
+	
+	ul.vt-skin-violet li.vt-line:hover
+	{
+		background:#F9F0F3;	
+	}
+	
+	ul.vt-skin-violet li.vt-line:hover div.vt-content ul.vt-features li
+	{
+		background-image:url('../img/tick_5.png') !important;
+	}
+	

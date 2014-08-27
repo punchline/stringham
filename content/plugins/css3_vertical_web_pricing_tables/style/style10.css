@@ -1,0 +1,82 @@
+
+	/**************************************************************/
+	/* 1 line 					  											  */
+	/**************************************************************/
+				
+	ul.vt-skin-black li.vt-line-1 div.vt-header
+	{
+		background:#555555;
+	}
+	
+	ul.vt-skin-black li.vt-line-1 div.vt-header-arrow
+	{
+		border-left-color:#555555;
+	}
+
+	/*****************************************************************/
+	/* 2 line 						  										  */
+	/*****************************************************************/
+		
+	ul.vt-skin-black li.vt-line-2 div.vt-header
+	{
+		background:#434343;
+	}
+	
+	ul.vt-skin-black li.vt-line-2 div.vt-header-arrow
+	{
+		border-left-color:#434343;
+	}		
+
+	/*****************************************************************/
+	/* 3 line 						  										  	  */
+	/*****************************************************************/		
+		
+	ul.vt-skin-black li.vt-line-3 div.vt-header
+	{
+		background:#555555;
+	}
+	
+	ul.vt-skin-black li.vt-line-3 div.vt-header-arrow
+	{
+		border-left-color:#555555;
+	}	
+
+	/*****************************************************************/
+	/* 4 line		 				  										  	  */
+	/*****************************************************************/				
+		
+	ul.vt-skin-black li.vt-line-4 div.vt-header
+	{
+		background:#434343;
+	}
+	
+	ul.vt-skin-black li.vt-line-4 div.vt-header-arrow
+	{
+		border-left-color:#434343;
+	}	
+
+	/*****************************************************************/
+	/* Line hover		 				  										  	  */
+	/*****************************************************************/	
+	
+	ul.vt-skin-black li.vt-line:hover div.vt-header
+	{
+		background:#369DD2;
+	}
+	
+	ul.vt-skin-black li.vt-line:hover div.vt-header-arrow
+	{
+		border-left-color:#369DD2;
+	}
+	
+	ul.vt-skin-black li.vt-line:hover
+	{
+		background:#EBF5FB;	
+		outline-color:#369DD2;
+	}
+	
+	ul.vt-skin-black li.vt-line:hover div.vt-content ul.vt-features li
+	{
+		background-image:url('../img/tick_3.png') !important;
+	}
+	
