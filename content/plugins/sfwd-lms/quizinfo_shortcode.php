@@ -47,6 +47,19 @@ function quizinfo($attr) {
 		case "pass":
 			$selected_quizinfo['pass'] = !empty($selected_quizinfo['pass'])? __("Yes","learndash"):__("No","learndash");
 			break;
+
+		case "quiz_title":
+			$quiz_post = get_post($quiz);
+			if(!empty($quiz_post->post_title))
+			$selected_quizinfo['quiz_title'] = $quiz_post->post_title;
+			break;
+		
+		case "course_title":
+			$course_id = learndash_get_setting($quiz, "course");
+			$course = get_post($course_id);
+			if(!empty($course->post_title))
+			$selected_quizinfo['course_title'] = $course->post_title;
+			break;
 			
 		case "timespent":
 			$selected_quizinfo['timespent'] = isset($selected_quizinfo['timespent'])? learndash_seconds_to_time($selected_quizinfo['timespent']):"";

@@ -414,7 +414,8 @@ Viewer.prototype.pageInitialize = function()
     $("#showAllStatements").hide();
     $("#noStatementsMessage").hide();
     
-    $('#refreshStatements').click(function(){
+    $('#refreshStatements').click(function(e){
+        e.preventDefault();
         $("#statementsLoading").show();
         $("#showAllStatements").hide();
         $("#noStatementsMessage").hide();
@@ -426,7 +427,8 @@ Viewer.prototype.pageInitialize = function()
         ADL.Viewer.getMoreStatements();
     });
     
-    $("#showAdvancedOptions").click(function(){
+    $("#showAdvancedOptions").click(function(e){
+        e.preventDefault();
         $("#advancedSearchTable").toggle('slow', function(){
             var visible = $("#advancedSearchTable").is(":visible");
             var text = (visible ? "Hide" : "Show") + " Advanced Options";
@@ -434,7 +436,8 @@ Viewer.prototype.pageInitialize = function()
         });
     });
     
-    $("#showQuery").click(function(){
+    $("#showQuery").click(function(e){
+        e.preventDefault();
         $("#XAPIQuery").toggle('slow', function(){
             var visible = $("#XAPIQuery").is(":visible");
             var text = (visible ? "Hide" : "Show") + " XAPI Query";

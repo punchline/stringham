@@ -1030,12 +1030,12 @@ msgstr ""
 
 #: sfwd_lms.php:348
 #@ learndash
-msgid "sets order of courses. Possible values: <b>DESC</b>, <b>ASC</b>. Example: <b>[ld_course_list order=\"ASC\"]</b> shows courses in assending order."
+msgid "sets order of courses. Possible values: <b>DESC</b>, <b>ASC</b>. Example: <b>[ld_course_list order=\"ASC\"]</b> shows courses in ascending order."
 msgstr ""
 
 #: sfwd_lms.php:349
 #@ learndash
-msgid "sets what the list of ordered by. Example: <b>[ld_course_list order=\"ASC\" orderby=\"title\"]</b> shows courses in assending order by title."
+msgid "sets what the list of ordered by. Example: <b>[ld_course_list order=\"ASC\" orderby=\"title\"]</b> shows courses in ascending order by title."
 msgstr ""
 
 #: sfwd_lms.php:350
@@ -1669,22 +1669,22 @@ msgstr ""
 #: sfwd_lms.php:925
 #: sfwd_lms.php:949
 #@ learndash
-msgid "-- Select A Certificate --"
+msgid "-- Select a Certificate --"
 msgstr "Selecione um certificado"
 
 #: sfwd_lms.php:936
 #@ learndash
-msgid "-- Select A Lesson or Topic --"
+msgid "-- Select a Lesson or Topic --"
 msgstr "Select a Lesson or Topic"
 
 #: sfwd_lms.php:961
 #@ learndash
-msgid "-- Select A Lesson --"
+msgid "-- Select a Lesson --"
 msgstr "Selecione uma Lição"
 
 #: sfwd_lms.php:979
 #@ learndash
-msgid "-- Select A Course --"
+msgid "-- Select a Course --"
 msgstr "Selecione um Curso"
 
 #: sfwd_lms.php:1060

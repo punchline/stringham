@@ -1,14 +1,14 @@
 <?php
 /**
  * @package GrassBlade 
- * @version 1.1.0.1
+ * @version 1.3.1.1
  */
 /*
 Plugin Name: GrassBlade - xAPI Companion
 Plugin URI: http://www.nextsoftwaresolutions.com
 Description: GrassBlade - xAPI Companion is a support tool for Experience API (xAPI) or Tin Can API. You can upload and launch Tin Can content published using Articulate, iSpring, DominKnow, Lectora and more. Can send tracking statements to the LRS on Page View. And, show statements in its Statement Viewer, and much more. 
 Author: Next Software Solutions Pvt Ltd
-Version: 1.1.0.1
+Version: 1.3.1.1
 Author URI: https://www.nextsoftwaresolutions.com
 */
 define("GRASSBLADE_ADDON_DIR", dirname(__FILE__)."/addons");
@@ -16,32 +16,34 @@ include(GRASSBLADE_ADDON_DIR."/grassblade_addons.php");
 require_once(GRASSBLADE_ADDON_DIR."/nss_xapi.class.php");
 require_once(GRASSBLADE_ADDON_DIR."/nss_xapi_verbs.class.php");
 $GrassBladeAddons = new GrassBladeAddons();
+$GrassBladeAddons->IncludeFunctionFiles();
 define('GRASSBLADE_ICON15', get_bloginfo('wpurl')."/wp-content/plugins/grassblade/img/button-15.png");
-define('GB_DEBUG', true);
+//define('GB_DEBUG', true);
 
 function grassblade($attr) {
-		$grassblade_tincan_width = get_option( 'grassblade_tincan_width');
-		$grassblade_tincan_height = get_option( 'grassblade_tincan_height');
-		$grassblade_tincan_width = empty($grassblade_tincan_width)? "940px":intVal($grassblade_tincan_width).(strpos($grassblade_tincan_width, "%")? "%":"px");
-		$grassblade_tincan_height = empty($grassblade_tincan_height)? "640px":intVal($grassblade_tincan_height).(strpos($grassblade_tincan_height, "%")? "%":"px");
+	 $grassblade_settings = grassblade_settings();
 		
 	 $shortcode_atts = shortcode_atts ( array(
 	 		'id' => 0,
 			'version' => '1.0',
 			'extra' => '',
 			'target' => 'iframe',
-			'width' => $grassblade_tincan_width,
-			'height' => $grassblade_tincan_height,
+			'width' => $grassblade_settings["width"],
+			'height' => $grassblade_settings["height"],
 			'endpoint' => '',
 			'auth' => '',
 			'user' => '',
 			'pass' => '',
 			'src' => '',
+			'video'	=> '',
+			'activity_name' => '',
 			'text' => 'Launch',
 			'guest' => false,
 			'activity_id' => '',
 			'registration' => ''
 			), $attr);
+
+	$shortcode_atts = apply_filters("grassblade_shortcode_atts", $shortcode_atts, $attr);
 
 	extract($shortcode_atts);
 
@@ -49,22 +51,26 @@ function grassblade($attr) {
 		$xapi_content = new grassblade_xapi_content();
 		$params = $xapi_content->get_shortcode($id, true);
 		$shortcode_params = shortcode_atts ($params, $attr);
+		if(empty($shortcode_params["title"])) {
+			$xapi_content_post = get_post($id);
+			$shortcode_params["title"] = @$xapi_content_post->post_title;
+		}
 		unset($shortcode_params["id"]);
 		return grassblade($shortcode_params);
 	}
 		
     	// Read in existing option value from database
 	if(empty($endpoint))
-    	$endpoint = get_option( 'grassblade_tincan_endpoint' );
+    	$endpoint = $grassblade_settings["endpoint"];
 
 	if(empty($user))
-    	$user = get_option('grassblade_tincan_user');
+    	$user = $grassblade_settings["user"];
 
 	if(empty($pass))
-    	$pass = get_option('grassblade_tincan_password');
+    	$pass = $grassblade_settings["password"];
 	
 	if($guest === false)
-	$grassblade_tincan_track_guest = get_option('grassblade_tincan_track_guest');
+	$grassblade_tincan_track_guest = $grassblade_settings["track_guest"];
 	else
 	$grassblade_tincan_track_guest = $guest;
 	
@@ -73,25 +79,27 @@ function grassblade($attr) {
 	if(empty($actor))
 	return  __( 'Please login.', 'grassblade' );
 	
-	$actor = "actor=".rawurlencode(json_encode($actor));
+	$actor = rawurlencode(json_encode($actor));
 	
 	
 	if(!empty($auth))
-	$auth = "auth=".rawurlencode($auth);
+	$auth = rawurlencode($auth);
 	else
-	$auth = "auth=".rawurlencode("Basic ".base64_encode($user.":".$pass));
+	$auth = rawurlencode("Basic ".base64_encode($user.":".$pass));
 
-	$endpoint = 'endpoint='.rawurlencode($endpoint);
+	$endpoint = rawurlencode($endpoint);
 	
 	if(!empty($activity_id))
 	$activity = 'activity_id='.rawurlencode($activity_id);
-	
+	else
+	$activity = '';
+		
 	if(empty($registration))
-	$registration = "registration=36fc1ee0-2849-4bb9-b697-71cd4cad1b6e";//.grassblade_gen_uuid();
+	$registration = "36fc1ee0-2849-4bb9-b697-71cd4cad1b6e";//.grassblade_gen_uuid();
 	else if($registration == "auto")
-	$registration = "registration=".grassblade_gen_uuid();
+	$registration = grassblade_gen_uuid();
 	else if($registration != 0)
-	$registration = "registration=".$registration;
+	$registration = $registration;
 	
 	//$content_endpoint = "content_endpoint=".rawurlencode(dirname($src).'/');
 	//$content_token = "content_token=".grassblade_gen_uuid();
@@ -101,22 +109,31 @@ function grassblade($attr) {
 		//Don't change SRC. Supporting Non xAPI Content.
 	}
 	else if(strpos($src,"?") !== false)
-		$src = $src."&".$actor."&".$auth."&".$endpoint."&".$activity."&".$registration;//."&".$content_endpoint."&".$content_token;
+		$src = $src."&actor=".$actor."&auth=".$auth."&endpoint=".$endpoint."&registration=".$registration."&".$activity;//."&".$content_endpoint."&".$content_token;
 	else
-		$src = $src."?".$actor."&".$auth."&".$endpoint."&".$activity."&".$registration;//."&".$content_endpoint."&".$content_token;
+		$src = $src."?actor=".$actor."&auth=".$auth."&endpoint=".$endpoint."&registration=".$registration."&".$activity;//."&".$content_endpoint."&".$content_token;
 	
 	if($target == 'iframe')
-	return "<iframe class='grassblade_iframe' frameBorder='0' src='$src' width='$width' height='$height'></iframe>";
+	$return = "<iframe class='grassblade_iframe' frameBorder='0' src='$src' width='$width' height='$height'></iframe>";
 	else if($target == '_blank')
-	return "<a class='grassblade_launch_link' href='$src' target='_blank'>$text</a>";
+	$return = "<a class='grassblade_launch_link' href='$src' target='_blank'>$text</a>";
 	else if($target == '_self')
-	return "<a class='grassblade_launch_link' href='$src' target='_self'>$text</a>";
+	$return = "<a class='grassblade_launch_link' href='$src' target='_self'>$text</a>";
 	else if($target == 'lightbox')
 	{
-		return grassblade_lightbox($src, $text,$width, $height);
+		$return = grassblade_lightbox($src, $text,$width, $height);
 	}
 	else //if($target == 'url')
-	return $src;
+	$return = $src;
+
+	$params = array(
+			"src" 	=> $src,
+			"actor" => $actor,
+			"auth"	=> $auth,
+			"activity_id"	=> $activity_id,
+			"registration"	=> $registration
+		);
+	return apply_filters("grassblade_shortcode_return", $return, $params, $shortcode_atts, $attr);
 }
 	function grassblade_scripts() {
 		wp_enqueue_script(
@@ -181,9 +198,12 @@ function grassblade_getdomain()
 	else
 	return $domain;
 }
-function grassblade_getactor($guest = false, $version = "1.0")
+function grassblade_getactor($guest = false, $version = "1.0", $user = null)
 {
-	$current_user = wp_get_current_user();
+	if(!empty($user->ID))
+		$current_user = $user;
+	else
+		$current_user = wp_get_current_user();
 
 	if(empty($current_user->ID))
 	{
@@ -235,135 +255,236 @@ function get_user_by_grassblade_email($email) {
 
 	return get_user_by("email", $email);
 }
-add_action('admin_menu', 'grassblade_menu', 0);
-function grassblade_menu() {
-    add_menu_page("GrassBlade", "GrassBlade", "manage_options", "grassblade-lrs-settings", null, GRASSBLADE_ICON15, null);
-    add_submenu_page("grassblade-lrs-settings", "GrassBlade Settings", "GrassBlade Settings",'manage_options','grassblade-lrs-settings', 'grassblade_menu_page');
-	
-}
-function grassblade_settings() {
-	$grassblade_tincan_endpoint = get_option( 'grassblade_tincan_endpoint' );
-    if(empty($grassblade_tincan_endpoint)) 
-    $grassblade_tincan_endpoint = "";
-    $grassblade_tincan_user = get_option('grassblade_tincan_user');
-    $grassblade_tincan_password = get_option('grassblade_tincan_password');
-    $grassblade_tincan_version = get_option('grassblade_tincan_version');
-    $grassblade_tincan_track_guest = get_option('grassblade_tincan_track_guest');
-    $grassblade_tincan_width = get_option('grassblade_tincan_width');
-    $grassblade_tincan_height = get_option('grassblade_tincan_height');
-	$grassblade_dropbox_app_key = get_option('grassblade_dropbox_app_key');
-    
-	$grassblade_tincan_width = empty($grassblade_tincan_width)? "940px":intVal($grassblade_tincan_width).(strpos($grassblade_tincan_width, "%")? "%":"px");
-	$grassblade_tincan_height = empty($grassblade_tincan_height)? "640px":intVal($grassblade_tincan_height).(strpos($grassblade_tincan_height, "%")? "%":"px");
 
-	return array(
-			"grassblade_tincan_endpoint" => $grassblade_tincan_endpoint,
-			"grassblade_tincan_user" => $grassblade_tincan_user,
-			"grassblade_tincan_password" => $grassblade_tincan_password,
-			"grassblade_tincan_version" => $grassblade_tincan_version,
-			"grassblade_tincan_track_guest" => $grassblade_tincan_track_guest,
-			"grassblade_tincan_width" => $grassblade_tincan_width,
-			"grassblade_tincan_height" => $grassblade_tincan_height,
-			"grassblade_dropbox_app_key" => $grassblade_dropbox_app_key
-		);
+function grassblade_settings() {
+	global $grassblade_xapi_companion;
+	return $grassblade_xapi_companion->get_params();
 }
-function grassblade_menu_page() {
+class grassblade_xapi_companion {
+	public $debug = false;
+	function __construct() {
+	}
+	function run() {
+		add_action('admin_menu', array($this, 'admin_menu'), 0);
+	}
+	function define_fields() {
+		if(!empty($this->fields))
+			return $this->fields;
+		// define the product metadata fields used by this plugin
+		$versions = array(
+					'0.95' => '0.95',
+					'0.9' => '0.9',
+					'1.0' => '1.0',
+					'none' => 'Not XAPI'
+				);
+
+		$domain = grassblade_getdomain();
+		$this->fields = array(
+			array( 'id' => "lrs_settings", 'label' => __("LRS Settings", "grassblade"), "type" => "html", "subtype" => "field_group_start"),
+			array( 'id' => 'endpoint', 'label' => __( 'Endpoint URL', 'grassblade' ), 'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true , 'help' => __( 'provided by your LRS, check FAQ below for details', 'grassblade')),
+			array( 'id' => 'user', 'label' => __( 'API User', 'grassblade' ), 'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => __( 'provided by your LRS, check FAQ below for details', 'grassblade')),
+			array( 'id' => 'password', 'label' => __( 'API Password', 'grassblade' ),  'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => __( 'provided by your LRS, check FAQ below for details', 'grassblade')),
+			array( 'id' => "lrs_settings_end", "type" => "html", "subtype" => "field_group_end"),
+			array( 'id' => "content_settings", 'label' => __("Content Settings", "grassblade"), "type" => "html", "subtype" => "field_group_start"),
+			array( 'id' => 'width', 'label' => __( 'Width', 'grassblade' ),  'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => __('Default width of iframe/lightbox in which content is launched', 'grassblade')),
+			array( 'id' => 'height', 'label' => __( 'Height', 'grassblade' ), 'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => __('Default height of iframe/lightbox in which content is launched', 'grassblade')),
+			array( 'id' => 'version', 'label' => __( 'Version', 'grassblade' ),   'placeholder' => '', 'type' => 'select', 'values'=> $versions, 'never_hide' => true ,'help' => __( 'Default xAPI (Tin Can) version of content. Generally depends on your Authoring Tool.', 'grassblade')),
+			array( 'id' => 'track_guest', 'label' => __( 'Track Guest Users', 'grassblade' ),  'placeholder' => '', 'type' => 'checkbox', 'values'=> '', 'never_hide' => true ,'help' => sprintf(__(' Check  to track guest users (Tracked as <b>{"name":"Guest XXX.XXX.XXX.XXX", "actor":{"mbox": "mailto:guest-XXX.XXX.XXX.XXX@%s"}</b>) where <i>XXX.XXX.XXX.XXX</i> is users IP. Not Logged In users will be able to access content, and their page views will also be tracked', 'grassblade'), $domain)),
+			array( 'id' => "content_settings_end", "type" => "html", "subtype" => "field_group_end"),
+			array( 'id' => "upload_settings", 'label' => __("Upload Settings", "grassblade"), "type" => "html", "subtype" => "field_group_start"),
+			array( 'id' => 'dropbox_app_key', 'label' => __( 'Dropbox APP Key', 'grassblade' ),  'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => __( 'Required only if you want to upload xAPI Content from Dropbox, Work well with large file.', 'grassblade'). " (<a href='http://www.nextsoftwaresolutions.com/direct-upload-of-tin-can-api-content-from-dropbox-to-wordpress-using-grassblade-xapi-companion/'  target='_blank'>".__('Get your Dropbox App Key, takes less than minutes','grassblade')."</a>)" ),
+			array( 'id' => "upload_settings_end", "type" => "html", "subtype" => "field_group_end"),
+		);
+		$this->fields = apply_filters("grassblade_settings_fields", $this->fields);
+	}
+	function form() {
+			global $post;
+			$data = $this->get_params();
+			
+			$this->define_fields();
+		?>
+			<div id="grassblade_xapi_settings_form"><table width="100%">
+			<?php
+				foreach ($this->fields as $field) {
+					if($field["type"] == "html" && @$field["subtype"] == "field_group_start") {
+						echo "<tr><td colspan='2'  class='grassblade_field_group'>";
+						echo "<div class='grassblade_field_group_label'><div class='dashicons dashicons-arrow-down-alt2'></div><span>".$field["label"]."</span></div>";
+						echo "<div class='grassblade_field_group_fields' ><table width='100%'>";
+						continue;
+					}
+					if($field["type"] == "html" && @$field["subtype"] == "field_group_end") {
+						echo "</table></div></td></tr>";
+						continue;
+					}
+
+					$value = isset($data[$field['id']])? $data[$field['id']]:'';
+					echo '<tr id="field-'.$field['id'].'"><td width="20%" valign="top"><label for="'.$field['id'].'">'.$field['label'].'</label></td><td width="100%">';
+					switch ($field['type']) {
+						case 'html' :
+							echo $field["html"];
+						break;
+						case 'text' :
+							echo '<input  style="width:80%" type="text"  id="'.$field['id'].'" name="'.$field['id'].'" value="'.$value.'" placeholder="'.$field['placeholder'].'"/>';
+						break;
+						case 'file' :
+							echo '<input  style="width:80%" type="file"  id="'.$field['id'].'" name="'.$field['id'].'" value="'.$value.'" placeholder="'.$field['placeholder'].'"/>';
+						break;
+						case 'number' :
+							echo '<input  style="width:80%" type="number" id="'.$field['id'].'" name="'.$field['id'].'" value="'.$value.'" placeholder="'.$field['placeholder'].'"/>';
+						break;
+						case 'textarea' :
+							echo '<textarea   style="width:80%"  id="'.$field['id'].'" name="'.$field['id'].'" placeholder="'.$field['placeholder'].'">'.$value.'</textarea>';
+						break;
+						case 'checkbox' :
+							$checked = !empty($value) ? ' checked=checked' : '';
+							echo '<input type="checkbox" id="'.$field['id'].'" name="'.$field['id'].'" value="1"'.$checked.'>';
+						break;
+						case 'select' :
+							echo '<select id="'.$field['id'].'" name="'.$field['id'].'">';
+							foreach ($field['values'] as $k => $v) :
+								$selected = ($value == $k && $value != '') ? ' selected="selected"' : '';
+								echo '<option value="'.$k.'"'.$selected.'>'.$v.'</option>';
+							endforeach;
+							echo '</select>';
+						break;
+						case 'select-multiple':
+						
+							echo '<select id="'.$field['id'].'" name="'.$field['id'].'[]" multiple="multiple">';
+
+							foreach ($field['values'] as $k => $v) :
+								if(!is_array($value)) $value = (array) $value;
+								$selected = (in_array($k, $value)) ? ' selected="selected"' : '';
+								echo '<option value="'.$k.'"'.$selected.'>'.$v.'</option>';
+							endforeach;
+							echo '</select>';
+
+					}
+					if(!empty($field['help'])) {
+						echo '<br><small>'.$field['help'].'</small><br><br>';
+						echo '</td></tr>';
+					}
+				}
+				?>
+				</table>
+				<br>
+			</div>
+		<?php
+	
+	}
+	function set_params($id = null, $value = null) {
+		if(!empty($id) && !is_null($value)) {
+			update_option("grassblade_tincan_".$id, $value);
+			return;
+		}
+		if( !isset($_POST[ "update_GrassBladeSettings" ]) )
+			return;
+    	
+    	$grassblade_settings_old = $this->get_params();
+
+		$this->define_fields();
+		foreach ($this->fields as $field) {
+			if($field["type"] == "html") 
+				continue;
+			switch ($field["id"]) {
+				case 'track_guest':
+					$value = (isset($_POST[$field["id"]]) && !empty($_POST[$field["id"]]))? 1:0;
+					break;
+				case 'width':
+				case 'height':
+        			$value = intVal(@$_POST[$field["id"]]).(strpos(@$_POST[$field["id"]], "%")? "%":"px");
+
+				default:
+					$value = trim(@$_POST[$field["id"]]);
+					break;
+			}
+			update_option("grassblade_tincan_".$field["id"], $value);
+		}
+    	$grassblade_settings_new = $this->get_params();
+    	do_action("grassblade_settings_update", $grassblade_settings_old, $grassblade_settings_new);
+	}
+	function get_params($id = null) {
+		if(!empty($id)) {
+			return $this->maybe_migrate_field($id, get_option("grassblade_tincan_".$id));
+		}
+
+		$this->define_fields();
+		$data = array();
+		foreach ($this->fields as $key => $field) {
+			if($field["type"] == "html") 
+				continue;
+			$data[$field["id"]] = $this->maybe_migrate_field($field["id"], get_option("grassblade_tincan_".$field["id"]));
+
+			if($field["id"] == "width") {
+				$data[$field["id"]] = empty($data[$field["id"]])? "940px":intVal($data[$field["id"]]).(strpos($data[$field["id"]], "%")? "%":"px");
+			}
+			else if($field["id"] == "height") {
+				$data[$field["id"]] = empty($data[$field["id"]])? "640px":intVal($data[$field["id"]]).(strpos($data[$field["id"]], "%")? "%":"px");
+			}
+		}
+		return $data;
+	}
+	function maybe_migrate_field($field, $data) {
+		if(!empty($data))
+			return $data;
+
+		if($field == "dropbox_app_key") {
+			$dropbox_app_key = get_option("grassblade_dropbox_app_key");
+			if(!empty($dropbox_app_key)) {
+				update_option("grassblade_tincan_dropbox_app_key", $dropbox_app_key);
+			//	delete_option("grassblade_dropbox_app_key");
+			}
+			return $dropbox_app_key;
+		}
+	}
+	function admin_menu() {
+	    add_menu_page("GrassBlade", "GrassBlade", "manage_options", "grassblade-lrs-settings", null, GRASSBLADE_ICON15, null);
+	    add_submenu_page("grassblade-lrs-settings", __("GrassBlade Settings", "grassblade"), __("GrassBlade Settings", "grassblade"),'manage_options','grassblade-lrs-settings', array($this, 'menu_page') );
+	}
+function menu_page() {
     //must check that the user has the required capability 
     if (!current_user_can('manage_options'))
     {
       wp_die( __('You do not have sufficient permissions to access this page.','grassblade') );
     }
 
-    // Read in existing option value from database
-    $grassblade_tincan_endpoint = get_option( 'grassblade_tincan_endpoint' );
-    if(empty($grassblade_tincan_endpoint)) 
-    $grassblade_tincan_endpoint = "";
-    $grassblade_tincan_user = get_option('grassblade_tincan_user');
-    $grassblade_tincan_password = get_option('grassblade_tincan_password');
-    $grassblade_tincan_version = get_option('grassblade_tincan_version');
-    $grassblade_tincan_track_guest = get_option('grassblade_tincan_track_guest');
-    $grassblade_tincan_width = get_option('grassblade_tincan_width');
-    $grassblade_tincan_height = get_option('grassblade_tincan_height');
-	$grassblade_dropbox_app_key = get_option('grassblade_dropbox_app_key');
-    
-	$grassblade_tincan_width = empty($grassblade_tincan_width)? "940px":intVal($grassblade_tincan_width).(strpos($grassblade_tincan_width, "%")? "%":"px");
-	$grassblade_tincan_height = empty($grassblade_tincan_height)? "640px":intVal($grassblade_tincan_height).(strpos($grassblade_tincan_height, "%")? "%":"px");
-	
-    // See if the user has posted us some information
-    // If they did, this hidden field will be set to 'Y'
     if( isset($_POST[ "update_GrassBladeSettings" ]) ) {
-        // Read their posted value
-        $grassblade_tincan_endpoint = trim($_POST['grassblade_tincan_endpoint']);
-        $grassblade_tincan_user = trim($_POST['grassblade_tincan_user']);
-        $grassblade_tincan_password = trim($_POST['grassblade_tincan_password']);
-        $grassblade_tincan_version = trim($_POST['grassblade_tincan_version']);
-		$grassblade_tincan_track_guest = (isset($_POST['grassblade_tincan_track_guest']) && !empty($_POST['grassblade_tincan_track_guest']))? 1:0;
-        $grassblade_tincan_width = intVal($_POST['grassblade_tincan_width']).(strpos($_POST['grassblade_tincan_width'], "%")? "%":"px");
-        $grassblade_tincan_height = intVal($_POST['grassblade_tincan_height']).(strpos($_POST['grassblade_tincan_height'], "%")? "%":"px");
-		$grassblade_dropbox_app_key = trim($_POST['grassblade_dropbox_app_key']);
-		
-
-        // Save the posted value in the database
-        update_option( 'grassblade_tincan_endpoint', $grassblade_tincan_endpoint);
-        update_option( 'grassblade_tincan_user', $grassblade_tincan_user);
-        update_option( 'grassblade_tincan_password', $grassblade_tincan_password);
-        update_option( 'grassblade_tincan_track_guest', $grassblade_tincan_track_guest);
-        update_option( 'grassblade_tincan_width', $grassblade_tincan_width);
-        update_option( 'grassblade_tincan_height', $grassblade_tincan_height);
-        update_option( 'grassblade_tincan_version', $grassblade_tincan_version);
-		update_option( 'grassblade_dropbox_app_key', $grassblade_dropbox_app_key);
-
+    	$this->set_params();
         // Put an settings updated message on the screen
-
 ?>
 <div class="updated"><p><strong><?php _e('settings saved.', 'grassblade' ); ?></strong></p></div>
 <?php
 
     }
+
 ?>
 <div class=wrap>
 <form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
 <h2><img style="top: 6px; position: relative;" src="<?php echo plugins_url('img/icon_30x30.png', __FILE__); ?>"/>
 <?php _e('GrassBlade Settings', 'grassblade'); ?></h2>
-<h3><?php _e('Endpoint URL', 'grassblade'); ?> <small class="description"> <?php _e('(provided by your LRS, check FAQ below for details)', 'grassblade'); ?></small> :</h3>
-<input name="grassblade_tincan_endpoint" style="min-width:30%" value="<?php echo   _e(apply_filters('format_to_edit',$grassblade_tincan_endpoint), 'grassblade') ?>" />
 
-<h3><?php _e('User', 'grassblade'); ?> <small class="description"> <?php _e('(provided by your LRS, check FAQ below for details)', 'grassblade'); ?></small> :</h3>
-<input name="grassblade_tincan_user" style="min-width:30%" value="<?php echo   _e(apply_filters('format_to_edit',$grassblade_tincan_user), 'grassblade') ?>" />
-<h3><?php _e('Password', 'grassblade'); ?> <small class="description"> <?php echo _e('(provided by your LRS, check FAQ below for details)', 'grassblade'); ?></small> :</h3>
-<input name="grassblade_tincan_password" style="min-width:30%" value="<?php echo   _e(apply_filters('format_to_edit',$grassblade_tincan_password), 'grassblade') ?>" />
-<h3><?php _e('Version', 'grassblade'); ?> <small class="description"> <?php _e('(Default xAPI (Tin Can) version of content)', 'grassblade'); ?></small> :</h3>
-<select name="grassblade_tincan_version" style="min-width:30%">
-	<option value="1.0" <?php if($grassblade_tincan_version == "1.0") echo "SELECTED"; ?>>1.0</option>
-	<option value="0.95" <?php if($grassblade_tincan_version == "0.95") echo "SELECTED"; ?>>0.95</option>
-	<option value="0.90" <?php if($grassblade_tincan_version == "0.90") echo "SELECTED"; ?>>0.90</option>
-</select>
-<h3><?php _e('Track Guest Users', 'grassblade'); ?> <small class="description"> <?php _e('(Not Logged In users will be able to access content, and their page views will also be tracked)','grassblade'); ?></small> :</h3>
-<input name="grassblade_tincan_track_guest" style="min-width:5px" type="checkbox" <?php if($grassblade_tincan_track_guest) echo "CHECKED";?> /><?php $domain = grassblade_getdomain();  echo sprintf(__(' Check  to track guest users (Tracked as <b>{"name":"Guest XXX.XXX.XXX.XXX", "actor":{"mbox": "mailto:guest-XXX.XXX.XXX.XXX@%s"}</b>) where <i>XXX.XXX.XXX.XXX</i> is users IP.', 'grassblade'), $domain); ?>
-<h3><?php _e('Width', 'grassblade'); ?> <small class="description"><?php _e('(Default width of iframe in which content is launched)','grassblade') ?></small> :</h3>
-<input name="grassblade_tincan_width" style="min-width:30%" value="<?php echo   _e(apply_filters('format_to_edit',$grassblade_tincan_width), 'grassblade') ?>" />
-<h3><?php _e('Height', 'grassblade'); ?> <small class="description"><?php _e('(Default height of iframe in which content is launched)','grassblade') ?></small> :</h3>
-<input name="grassblade_tincan_height" style="min-width:30%" value="<?php echo   _e(apply_filters('format_to_edit',$grassblade_tincan_height), 'grassblade') ?>" />
-<h3><?php _e('Dropbox App Key', 'grassblade'); ?> <small class="description"><?php _e('(Required only if you want to upload xAPI Content from Dropbox, Work well with large file.)','grassblade');?></small> :</h3>
-<input name="grassblade_dropbox_app_key" style="min-width:30%" value="<?php echo   _e(apply_filters('format_to_edit',$grassblade_dropbox_app_key), 'grassblade') ?>" /> (<?php echo "<a href='http://www.nextsoftwaresolutions.com/direct-upload-of-tin-can-api-content-from-dropbox-to-wordpress-using-grassblade-xapi-companion/'  target='_blank'>".__('Get your Dropbox App Key, takes less than minutes','grassblade')."</a>";  ?>)
-
-<div class="submit">
-<input type="submit" name="update_GrassBladeSettings" value="<?php _e('Update Settings', 'grassblade') ?>" /></div>
+<div id="grassblade_settings_form">
+	<?php
+	   echo $this->form();
+	?>
+	<input type="submit" class="button-primary" name="update_GrassBladeSettings" value="<?php _e('Update Settings', 'grassblade') ?>" />
+	<?php _e('Don\'t have an LRS? ','grassblade') ?> <a href='http://www.nextsoftwaresolutions.com/learning-record-store' target="_blank"><?php _e(' Find an LRS','grassblade'); ?></a>
+</div>
 </form>
-<?php _e('Don\'t have an LRS? ','grassblade') ?> <a href='http://www.nextsoftwaresolutions.com/learning-record-store' target="_blank"><?php _e(' Find an LRS','grassblade'); ?></a>
 <br><br>
 <?php include(dirname(__FILE__)."/help.php"); ?>
 </div>
 <?php
 }
 
+}
+global $grassblade_xapi_companion;
+$grassblade_xapi_companion = new grassblade_xapi_companion();
+$grassblade_xapi_companion->run();
+
 function grassblade_connect() {
-	$grassblade_tincan_endpoint = get_option( 'grassblade_tincan_endpoint' );
-	$grassblade_tincan_user = get_option('grassblade_tincan_user');
-	$grassblade_tincan_password = get_option('grassblade_tincan_password');
-	$grassblade_tincan_track_guest = get_option('grassblade_tincan_track_guest');		
+	$grassblade_settings = grassblade_settings();	
 	global $xapi, $xapi_verbs;
-	$xapi = new NSS_XAPI($grassblade_tincan_endpoint, $grassblade_tincan_user, $grassblade_tincan_password);
+	$xapi = new NSS_XAPI($grassblade_settings["endpoint"], $grassblade_settings["user"], $grassblade_settings["password"]);
 	$xapi_verbs = new NSS_XAPI_Verbs();
 }
 grassblade_connect();
@@ -480,21 +601,21 @@ function nss_plugin_updater_activate_grassblade()
 	if(!class_exists('nss_plugin_updater'))
 	require_once ('wp_autoupdate.php');
 	
-	$nss_plugin_updater_plugin_remote_path = 'http://www.nextsoftwaresolutions.com/';
+	$nss_plugin_updater_plugin_remote_path = 'http://license.nextsoftwaresolutions.com/';
 	$nss_plugin_updater_plugin_slug = plugin_basename(__FILE__);
 
 	new nss_plugin_updater ($nss_plugin_updater_plugin_remote_path, $nss_plugin_updater_plugin_slug);
 }
 	
 /*** WYSIWYG Button ***/
-add_action('init', 'add_grassblade_button');  
+/*add_action('init', 'add_grassblade_button');  
 function add_grassblade_button() {
    if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') )  
    {  
      add_filter('mce_external_plugins', 'add_grassblade_plugin');  
      add_filter('mce_buttons', 'register_grassblade_button');  
    } 
-}
+}*/
 
 function grassblade_debug($msg) {
 	$original_log_errors = ini_get('log_errors');
@@ -522,15 +643,15 @@ function grassblade_send_statements($statements) {
 	return $xapi->SendStatements($statements);
 }
 
-function register_grassblade_button($buttons) {
+/*function register_grassblade_button($buttons) {
    array_push($buttons, "grassblade");  
    return $buttons;
-}
+}*/
 
-function add_grassblade_plugin($plugin_array) {  
+/*function add_grassblade_plugin($plugin_array) {  
    $plugin_array['grassblade'] = get_bloginfo('wpurl').'/wp-content/plugins/grassblade/js/grassblade_button.min.js';  
    return $plugin_array;  
-}  
+} */ 
 function grassblade_add_to_content_box() {
 	$post_types = get_post_types();
 	foreach ($post_types as $post_type) {
@@ -676,13 +797,25 @@ function file_get_contents_curl($url) {
         curl_close($ch);
         return $data;
 }
-function sanitize_filename($file) {
-	return preg_replace("([^\w\s\d\-_~,;:\[\]\(\].]|[\.]{2,})", '', $file);
+function grassblade_sanitize_filename($file) {
+	return preg_replace('/[^A-Za-z0-9\-\_]/', '', $file);
 }
 add_action( 'add_meta_boxes', 'grassblade_add_to_content_box');
 add_filter( 'the_content', 'grassblade_add_to_content_post', 1, 10);
 add_action( 'save_post', 'grassblade_add_to_content_save');
+add_action( 'admin_notices', 'grassblade_admin_notice_handler');
+// Display any errors
+function grassblade_admin_notice_handler() {
 
+	$errors = get_option('grassblade_admin_errors');
+
+	if($errors) {
+		echo '<div class="error"><p>' . $errors . '</p></div>';
+		 update_option('grassblade_admin_errors', false);
+	}   
+
+}
+function grassblade_admin_notice($message, $type = "error") {
+	update_option('grassblade_admin_errors', $message);	
+}
 /*** WYSIWYG Button ***/
-$GrassBladeAddons->IncludeFunctionFiles();
-

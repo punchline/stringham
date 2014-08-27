@@ -4,12 +4,12 @@ class WpProQuiz_View_GobalSettings extends WpProQuiz_View_View {
 	public function show() {
 ?>		
 <div class="wrap wpProQuiz_globalSettings">
-	<h2 style="margin-bottom: 10px;"><?php _e('Global settings', 'wp-pro-quiz'); ?></h2>
+	<h2 style="margin-bottom: 10px;"><?php _e('Quiz Options', 'wp-pro-quiz'); ?></h2>
 	
-	<a class="button-secondary" href="admin.php?page=ldAdvQuiz"><?php _e('back to overview', 'wp-pro-quiz'); ?></a>
+	<a class="button-secondary" style="display:none" href="admin.php?page=ldAdvQuiz"><?php _e('back to overview', 'wp-pro-quiz'); ?></a>
 	
 	<div class="wpProQuiz_tab_wrapper" style="padding: 10px 0px;">
-		<a class="button-primary" href="#" data-tab="#globalContent"><?php _e('Global settings', 'wp-pro-quiz'); ?></a>
+		<a class="button-primary" href="#" data-tab="#globalContent"><?php _e('Quiz Options', 'wp-pro-quiz'); ?></a>
 		<a class="button-secondary" href="#" data-tab="#emailSettingsTab"><?php _e('E-Mail settings', 'wp-pro-quiz'); ?></a>
 		<a class="button-secondary" href="#" data-tab="#problemContent"><?php _e('Settings in case of problems', 'wp-pro-quiz'); ?></a>
 	</div>
@@ -477,7 +477,7 @@ class WpProQuiz_View_GobalSettings extends WpProQuiz_View_View {
 								</legend>
 								<input type="submit" name="databaseFix" class="button-primary" value="<?php _e('Repair database', 'wp-pro-quiz');?>">
 								<p class="description">
-									<?php _e('No date will be deleted. Only LDAdvQuiz tables will be repaired.', 'wp-pro-quiz'); ?>
+									<?php _e('No data will be deleted. Only LDAdvQuiz tables will be repaired.', 'wp-pro-quiz'); ?>
 								</p>
 							</fieldset>
 						</td>

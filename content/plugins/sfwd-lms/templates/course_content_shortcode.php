@@ -16,8 +16,6 @@
 		$course_status 	: Course Status
 		$has_access 	: User has access to course or is enrolled.
 		$has_course_content		: Course has course content
-		$slug 			: Course Slug
-		$terms 			: Terms associated with the course
 		$lessons 		: Lessons Array
 		$quizzes 		: Quizzes Array
 		$lesson_progression_enabled 	: (true/false)
@@ -28,7 +26,7 @@
 		(
 		    [course_materials] => material text
 		    [course_price] => 1
-		    [course_join] => on
+		    [course_price_type] => paynow
 		    [course_access_list] => 1,2,3,5,3,9,4
 		    [course_lesson_orderby] => 
 		    [course_lesson_order] => ASC

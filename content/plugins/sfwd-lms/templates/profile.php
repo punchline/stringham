@@ -29,7 +29,7 @@
 	</div>
 	<div class="learndash_profile_heading no_radius clear_both">
 			<span><?php _e("Registered Courses", "learndash"); ?></span>
-			<span class="right"><?php _e("Status", "learndash"); ?></span>
+			<span class="ld_profile_status"><?php _e("Status", "learndash"); ?></span>
 	</div>
 	<div id="course_list">
 		<?php 
@@ -74,7 +74,7 @@
 							 	<div class="quiz_title"><a href="<?php echo $quiz_link; ?>"><?php echo $quiz_title; ?></a></div>
 							 	<div class="certificate"><?php if(!empty($certificateLink)) {?> <a href="<?php echo $certificateLink; ?>" target="_blank"><div class="certificate_icon"></div></a><?php } else{ echo '-';	}?></div>
 								<div class="scores"><?php echo round($quiz_attempt["percentage"],2); ?>%</div>
-								<div class="quiz_date"><?php echo date( "d-M-Y", $quiz_attempt['time'] ) ?></div>
+								<div class="quiz_date"><?php echo date_i18n( "d-M-Y", $quiz_attempt['time'] ) ?></div>
 							 </div>
 						<?php }
 						} ?>

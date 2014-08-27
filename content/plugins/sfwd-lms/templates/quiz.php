@@ -20,6 +20,9 @@
 		$attempts_left 	: (true/false)
 		$attempts_count : (integer) No of attempts already made
 		$quiz_settings 	: (array)
+
+		To get lesson/topic post object under which the quiz is added:
+		$lesson_post = !empty($quiz_settings["lesson"])? get_post($quiz_settings["lesson"]):null;
 	*/
 
 	if(!empty($lesson_progression_enabled) && !is_quiz_accessable(null, $post)) {

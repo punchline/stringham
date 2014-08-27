@@ -10,7 +10,6 @@ class grassblade_xapi_content {
 		add_action( 'add_meta_boxes', array($this, 'gb_xapi_content_box') );
 		add_action( 'save_post', array($this, 'gb_xapi_content_box_save' ));
 		add_action('post_edit_form_tag', array($this, 'grassblade_xapi_post_edit_form_tag'));
-		add_action( 'admin_notices', array($this, 'grassblade_admin_notice_handler' ));
 		add_action( 'the_content', array($this, 'add_xapi_shortcode' ));
 	}
 	
@@ -217,7 +216,22 @@ class grassblade_xapi_content {
 		ini_set('log_errors', $original_log_errors);
 		ini_set('error_log', $original_error_log);		
 	}
-	
+	function upload_limit() {
+		$upload_size_unit = $max_upload_size = wp_max_upload_size();
+        $sizes = array( 'KB', 'MB', 'GB' );
+
+        for ( $u = -1; $upload_size_unit > 1024 && $u < count( $sizes ) - 1; $u++ ) {
+                $upload_size_unit /= 1024;
+        }
+
+        if ( $u < 0 ) {
+                $upload_size_unit = 0;
+                $u = 0;
+        } else {
+                $upload_size_unit = (int) $upload_size_unit;
+        }
+        return $upload_size_unit.$sizes[$u];
+	}
 		/**
 		* defines the fields used in the plugin
 		*
@@ -226,15 +240,17 @@ class grassblade_xapi_content {
 		*/
 	function define_fields() {
 	
-		$grassblade_tincan_endpoint = get_option( 'grassblade_tincan_endpoint');
-		$grassblade_tincan_user = get_option( 'grassblade_tincan_user');
-		$grassblade_tincan_password = get_option( 'grassblade_tincan_password');
-		$grassblade_tincan_width = get_option( 'grassblade_tincan_width');
-		$grassblade_tincan_height = get_option( 'grassblade_tincan_height');
-		$grassblade_tincan_version = get_option( 'grassblade_tincan_version');
-		$grassblade_tincan_width = empty($grassblade_tincan_width)? "940px":intVal($grassblade_tincan_width).(strpos($grassblade_tincan_width, "%")? "%":"px");
-		$grassblade_tincan_height = empty($grassblade_tincan_height)? "640px":intVal($grassblade_tincan_height).(strpos($grassblade_tincan_height, "%")? "%":"px");
-		$grassblade_tincan_guest = get_option( 'grassblade_tincan_guest');	
+		$grassblade_settings = grassblade_settings();
+
+	    $grassblade_tincan_endpoint = $grassblade_settings["endpoint"];
+	    $grassblade_tincan_user = $grassblade_settings["user"];
+	    $grassblade_tincan_password = $grassblade_settings["password"];
+		$grassblade_tincan_track_guest = $grassblade_settings["track_guest"];
+
+		$grassblade_tincan_width = $grassblade_settings["width"];
+		$grassblade_tincan_height = $grassblade_settings["height"];
+		$grassblade_tincan_version = $grassblade_settings["version"];
+		//$grassblade_tincan_guest = get_option( 'grassblade_tincan_guest');	
 
 		// define the product metadata fields used by this plugin
 		$versions = array(
@@ -255,9 +271,14 @@ class grassblade_xapi_content {
 					'1' => 'Allow Guests',
 					'0' => 'Require Login',
 				);
+
+		$upload_limit = $this->upload_limit();
 		$this->fields = array(
-			array( 'id' => 'src', 'label' => __( 'Content Url', 'grassblade' ), 'title' => __( 'Content Url', 'grassblade' ), 'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => __( '(Set the content launch url, or uploading a content will automatically generate it. Needs to be a valid URL. Required)', 'grassblade')),
-			array( 'id' => 'xapi_content', 'label' => __( 'Upload Content', 'grassblade' ), 'title' => __( 'Content Url', 'grassblade' ), 'placeholder' => '', 'type' => 'file', 'values'=> '', 'never_hide' => true ,'help' => __( '(Set the content launch url, or uploading a content will automatically generate it. Needs to be a valid URL. Required)', 'grassblade').$this->dropbox_chooser().'<br>'),
+			array( 'id' => 'selector', 'label' => '', 'title' => '', 'html' => $this->content_selector(), 'placeholder' => '', 'type' => 'html', 'values'=> '', 'never_hide' => true ,'help' => ''),
+			array( 'id' => 'src', 'label' => __( 'Content Url', 'grassblade' ), 'title' => __( 'Content Url', 'grassblade' ), 'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => __( 'Set the content launch url, or uploading a content will automatically generate it. Needs to be a valid URL. Required', 'grassblade')),
+			array( 'id' => 'xapi_content', 'label' => __( 'Upload Content', 'grassblade' ), 'title' => __( 'Content Url', 'grassblade' ), 'placeholder' => '', 'type' => 'file', 'values'=> '', 'never_hide' => true ,'help' => sprintf(__( 'Your current server upload limit: %s %s', 'grassblade'), $upload_limit, "<a href='http://www.nextsoftwaresolutions.com/increasing-file-upload-limit/' target='_blank'>".__("Help?", "grassblade")."</a>" )),
+			array( 'id' => 'dropbox', 'label' => __( 'DropBox Upload', 'grassblade' ), 'title' => __( 'DropBox Upload', 'grassblade' ), 'placeholder' => '', 'type' => 'html', 'html' => $this->dropbox_chooser(), 'values'=> '', 'never_hide' => true ,'help' => __( 'Upload the file to your server from your Dropbox.', 'grassblade')),
+			array( 'id' => 'video', 'label' => __( 'Video URL', 'grassblade' ), 'title' => __( 'Video URL', 'grassblade' ), 'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => 'YouTube or Vimeo URL'),
 			array( 'id' => 'activity_id', 'label' => __( 'Activity ID', 'grassblade' ), 'title' => __( 'A Unique URL', 'grassblade' ), 'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => '('.sprintf(__('Set your own activity id, or %s to generate it.  Needs to be a unique URL. Required.', 'grassblade'), '<a href="#" onClick="document.getElementById(\'activity_id\').value = jQuery(\'#sample-permalink\').text()? jQuery(\'#sample-permalink\').text():\'[GENERATE]\'; if(jQuery(\'#activity_id\').val() == \'[GENERATE]\') jQuery(\'#activity_id\').attr(\'readonly\', \'readonly\'); return false;">'.__('click here', 'grassblade').'</a>').')'),
 			array( 'id' => 'version', 'label' => __( 'Version', 'grassblade' ), 'title' => __( 'Version', 'grassblade' ), 'placeholder' => '', 'type' => 'select', 'values'=> $versions, 'never_hide' => true ,'help' => __( 'Set the version of xAPI the content uses. ', 'grassblade'). __( 'Global', 'grassblade').": ".$versions[$grassblade_tincan_version]),
 			array( 'id' => 'target', 'label' => __( 'Where to launch this content?', 'grassblade' ), 'title' => __( 'Where to launch this content?', 'grassblade' ), 'placeholder' => 'Width', 'type' => 'select', 'values'=> $target, 'never_hide' => true ,'help' => __( 'Default: In Page', 'grassblade')),
@@ -270,22 +291,33 @@ class grassblade_xapi_content {
 			array( 'id' => 'registration', 'label' => __( 'Optional. Registration', 'grassblade' ), 'title' => __( 'Registration', 'grassblade' ), 'placeholder' => '', 'type' => 'text', 'values'=> '', 'never_hide' => true ,'help' => __( 'Defaults to "36fc1ee0-2849-4bb9-b697-71cd4cad1b6e", type in the UUID for a specifc fixed UUID. Or "auto" if you want a unique UUID generated for a group of activities for every launch. Hence every attempt is assumed to be unique, as long as the page is refreshed before re-launch.', 'grassblade')),
 			array( 'id' => 'guest', 'label' => __( 'Guest Access', 'grassblade' ), 'title' => __( 'Guest Access', 'grassblade' ), 'placeholder' => '', 'type' => 'select', 'values'=> $guest, 'never_hide' => true ,'help' => __( 'Allow not logged in user to access content. Optional.', 'grassblade')),
 			array( 'id' => 'show_here', 'label' => __( 'I want to show the content on this page.', 'grassblade' ), 'title' => __( 'I want to show the content on this page.', 'grassblade' ), 'placeholder' => '', 'type' => 'checkbox', 'values'=> '', 'never_hide' => true ,'help' => __( 'Check to show the content on this page. Click View above to see.', 'grassblade')),
-			array( 'id' => 'completion_tracking', 'label' => __( 'Completion Tracking', 'grassblade' ), 'title' => __( 'Completion Trigger', 'grassblade' ), 'placeholder' => '', 'type' => 'checkbox', 'values'=> '', 'never_hide' => true ,'help' => sprintf(__( 'Enable to allow completion tracking. You need to use the metabox dropdown to add content, add use %s. ', 'grassblade'), "<a href='http://www.nextsoftwaresolutions.com/grassblade-lrs-experience-api/' target='_blank'>GrassBlade LRS</a>"). "(<a href='http://www.nextsoftwaresolutions.com/using-grassblade-completion-tracking-with-learndash/'>".__("How?")."</a>)"),
+			array( 'id' => 'completion_tracking', 'label' => __( 'Completion Tracking', 'grassblade' ), 'title' => __( 'Completion Trigger', 'grassblade' ), 'placeholder' => '', 'type' => 'checkbox', 'values'=> '', 'never_hide' => true ,'help' => sprintf(__( 'Enable to allow completion tracking. You need to use the metabox dropdown to add content, and use %s. ', 'grassblade'), "<a href='http://www.nextsoftwaresolutions.com/grassblade-lrs-experience-api/' target='_blank'>GrassBlade LRS</a>"). "(<a href='http://www.nextsoftwaresolutions.com/using-grassblade-completion-tracking-with-learndash/' target='_blank'>".__("How?")."</a>)"),
 			
 		);
 	}
 	function dropbox_chooser() {
-		$grassblade_dropbox_app_key = get_option('grassblade_dropbox_app_key');
+		$grassblade_settings = grassblade_settings();
+		$grassblade_dropbox_app_key = $grassblade_settings['dropbox_app_key'];
 		
 		if(empty($grassblade_dropbox_app_key))
-		return '';
+		return sprintf(__("Please %s to configure your Dropbox App Key"), "<a href='".admin_url("admin.php?page=grassblade-lrs-settings")."' target='_blank'>".__("click here")."</a>");
 		else
-		return ' <br>OR, <script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropins.js" id="dropboxjs" data-app-key="'.$grassblade_dropbox_app_key.'"></script>
+		return '<script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropins.js" id="dropboxjs" data-app-key="'.$grassblade_dropbox_app_key.'"></script>
 		<input type="dropbox-chooser" name="dropbox-file" style="visibility: hidden;" data-link-type="direct"/>
 		';
 	}
-
+	function content_selector() {
+		return '<h2 class="nav-tab-wrapper gb-content-selector">
+			<a class="nav-tab nav-tab-content-url" href="#" >Content URL</a>
+			<a class="nav-tab nav-tab-video" href="#" >Video</a>			
+			<a class="nav-tab nav-tab-upload" href="#" >Upload</a>			
+			<a class="nav-tab nav-tab-dropbox" href="#" >Dropbox</a>
+		</h2>';
+	}
 	function form() {
+			if(isset($_GET["test"]))
+				update_option('grassblade_admin_errors', 'Upload Test: '.$this->upload_tests());
+
 			global $post;
 			$data = $this->get_params($post->ID);//get_post_meta( $post->ID, 'xapi_content', true );
 			
@@ -297,6 +329,9 @@ class grassblade_xapi_content {
 					$value = isset($data[$field['id']])? $data[$field['id']]:'';
 					echo '<tr id="field-'.$field['id'].'"><td width="20%" valign="top"><label for="'.$field['id'].'">'.$field['label'].'</label></td><td width="100%">';
 					switch ($field['type']) {
+						case 'html' :
+							echo $field["html"];
+						break;
 						case 'text' :
 							echo '<input  style="width:80%" type="text"  id="'.$field['id'].'" name="'.$field['id'].'" value="'.$value.'" placeholder="'.$field['placeholder'].'"/>';
 						break;
@@ -316,7 +351,7 @@ class grassblade_xapi_content {
 						case 'select' :
 							echo '<select id="'.$field['id'].'" name="'.$field['id'].'">';
 							foreach ($field['values'] as $k => $v) :
-								$selected = ($value == $k) ? ' selected="selected"' : '';
+								$selected = ($value == $k && $value != '') ? ' selected="selected"' : '';
 								echo '<option value="'.$k.'"'.$selected.'>'.$v.'</option>';
 							endforeach;
 							echo '</select>';
@@ -333,8 +368,10 @@ class grassblade_xapi_content {
 							echo '</select>';
 
 					}
-					echo '<br><small>'.$field['help'].'</small><br><br>';
-					echo '</td></tr>';
+					if(!empty($field['help'])) {
+						echo '<br><small>'.$field['help'].'</small><br><br>';
+						echo '</td></tr>';
+					}
 				}
 				?>
 				</table>
@@ -359,20 +396,24 @@ class grassblade_xapi_content {
 		if(isset($params['activity_id']))
 		update_post_meta( $post_id, 'xapi_activity_id', $params['activity_id']);
 	}
-	function get_params($post_id) {
+	static function get_params($post_id) {
 		$xapi_content = get_post_meta( $post_id, 'xapi_content', true);
+		$object_context = (isset($this) && get_class($this) == __CLASS__);
 		if(!isset($xapi_content['version'])){  //For Version older than V0.5
 			$xapi_content['version'] = get_post_meta( $post_id, 'xapi_version', true);
 			if(!empty($xapi_content['notxapi'])){
 				$xapi_content['version'] = "none";
 				unset($xapi_content['notxapi']);
 			}
-			$this->set_params( $post_id, $xapi_content);
-			delete_post_meta( $post_id, 'xapi_version');
+			if($object_context) {
+				$this->set_params( $post_id, $xapi_content);
+				delete_post_meta( $post_id, 'xapi_version');
+			}
 		}
 		if(isset($xapi_content['launch_url'])){
 			$xapi_content['src'] = $xapi_content['launch_url'];
 			unset($xapi_content['launch_url']);
+			if($object_context)
 			$this->set_params( $post_id, $xapi_content);
 		}
 		$xapi_content['activity_id'] = isset($xapi_content['activity_id'])? $xapi_content['activity_id']:"";
@@ -380,12 +421,17 @@ class grassblade_xapi_content {
 	}
 	function get_shortcode($post_id, $return_params = false) {
 		$xapi_content = $this->get_params($post_id);
+		if(empty($xapi_content["activity_name"])) {
+			$xapi_content_post = get_post($post_id);
+			$xapi_content["activity_name"] = @$xapi_content_post->post_title;
+		}
+
 		$params = array();
 		if((!isset($xapi_content['version']) || $xapi_content['version'] != "none")) {
 				
 			$shortcode = "[grassblade ";
 			foreach($xapi_content as $k=>$v) {
-				if($v != '' && in_array($k, array("width", "height", "target", "version", "src", "text", "guest","src","endpoint","user","pass","auth","registration", "activity_id"))) {
+				if($v != '' && in_array($k, array("width", "height", "target", "video","activity_name", "version", "src", "text", "guest","src","endpoint","user","pass","auth","registration", "activity_id", "youtube_id"))) {
 					$shortcode .= $k.'="'.$v.'" ';
 					$params[$k] = $v;
 				}
@@ -397,7 +443,7 @@ class grassblade_xapi_content {
 			$src = $xapi_content['src'];
 			$shortcode = "[grassblade ";
 			foreach($xapi_content as $k=>$v) {
-				if($v != '' && in_array($k, array("width", "height", "target", "version", "src", "text", "guest"))) {
+				if($v != '' && in_array($k, array("width", "height", "target", "video", "activity_name","version", "src", "text", "guest", "youtube_id"))) {
 					$shortcode .= $k.'="'.$v.'" ';
 					$params[$k] = $v;
 				}
@@ -416,11 +462,13 @@ class grassblade_xapi_content {
 		
 		//$this->dropbox_chooser();
 		$html = '';
-		if(!empty($xapi_content['src'])) {
-			$src = grassblade(array("target" => "url") + $xapi_content);
+		if(!empty($xapi_content['src']) || !empty($xapi_content['video'])) {
+			//$src = grassblade(array("target" => "url") + $xapi_content);
 			$preview = get_permalink($post->ID);
 			$preview .= strpos($preview, "?")? "&xapi_preview=true":"?xapi_preview=true";
 			$html .= '<div><a class="button button-primary button-large" href="'.$preview.'" target="_blank">'.__("Preview", "grassblade").'</a></div>';
+			$html .= "<br><b>".__('Add this xAPI Content using the dropdown, or use the following shortcode in your content:', 'grassblade').'</b><br>';
+			$html .= '<input style="" value="[grassblade id='.$post->ID.']" /><br><br><br>';
 		}
 		else
 		{
@@ -428,41 +476,26 @@ class grassblade_xapi_content {
 		
 		}
 		
-		if(!empty($xapi_content['src']))
-		{
-			$html .= "<br><b>".__('Add this xAPI Content using the dropdown, or use the following shortcode in your content:', 'grassblade').'</b><br>';
-			$html .= '<input style="" value="[grassblade id='.$post->ID.']" /><br><br><br>';
-		}
-		
-
-		/*$html .= '<p class="description">';  
-		$html .= 'Upload your xAPI Content package here.';  
-		$html .= '</p>';  
-		$html .= '<input id="xapi_content" name="xapi_content" size="25" type="file" >';  */
 		echo $html; 
 		echo $this->form();
 		echo '<input type="submit" name="publish" id="publish" class="button button-primary button-large" value="'.__("Update", "grassblade").'"/><br><br>';
 		echo "<div id='grassblade_statementviewer'>".do_shortcode("[grassblade_statementviewer activityid='".$xapi_content['activity_id']."']")."</div>";
 
-		if($xapi_content['version'] != "none" && $xapi_content['version'] != "0.9"  && $post->post_status != "auto-draft" && !filter_var($xapi_content['activity_id'], FILTER_VALIDATE_URL)) {
-			echo "<script>alert('".__("Activity ID is not a valid URL", "grassblade")."');</script>";
+		if($xapi_content['version'] != "none" && $xapi_content['version'] != "0.9"  && $post->post_status != "auto-draft" && !strpos($xapi_content['activity_id'], "://")) {
+			echo "<script>alert('".strpos("://", $xapi_content['activity_id']).__(" Activity ID is not a valid URI", "grassblade")."');</script>";
 		}
 	}
 
 	function save_dropbox_file() {
 			if(!empty($_POST['dropbox-file'])) {
 				$url = $_POST['dropbox-file'];
-				$filename = sanitize_filename(basename($url)); 
-				add_filter('upload_dir', array($this, 'grassblade_upload_dir'));
+				$filename = grassblade_sanitize_filename(basename($url)); 
+				//add_filter('upload_dir', array($this, 'grassblade_upload_dir'));
 				$upload = wp_upload_dir();
-				remove_filter('upload_dir', array($this, 'grassblade_upload_dir'));
-				/*grassblade_debug($_POST);
-				grassblade_debug($upload);
-				grassblade_debug($file);
-				grassblade_debug($url);*/
 				$file = $upload['path']."/".$filename;
 				set_time_limit(0); // unlimited max execution time
 				$return = $this->cURLdownload($url, $file); 
+				//remove_filter('upload_dir', array($this, 'grassblade_upload_dir'));
 				if($return === true)
 				{
 					$upload['file'] = realpath($file);
@@ -478,6 +511,8 @@ class grassblade_xapi_content {
 	}
 	function cURLdownload($url, $file)
 	{
+	  if(!function_exists("curl_init"))
+	  	return "FAIL: curl_init() not available.";
 	  $ch = curl_init();
 	  
 	  if($ch)
@@ -547,17 +582,19 @@ class grassblade_xapi_content {
 			$upload = wp_upload_dir();
 			$xapi_content = get_post_meta( $post_id, 'xapi_content', true );
 			$upload = $upload + $xapi_content;
+			unset($upload["error"]);
+			unset($data["error"]);
 			grassblade_debug($upload);
-			add_filter('sanitize_file_name', 'sanitize_filename', 10);
+			//add_filter('sanitize_file_name', 'grassblade_sanitize_filename', 10);
 			if(!empty($_FILES['xapi_content']['name']))
 			$upload = wp_handle_upload($_FILES['xapi_content'], array('test_form' => FALSE));
 			else
 			$upload = $this->save_dropbox_file();
-			remove_filter('sanitize_file_name', 'sanitize_filename', 10);
+			//remove_filter('sanitize_file_name', 'grassblade_sanitize_filename', 10);
 
 			grassblade_debug($upload);
 			$this->debug($upload);
-			if (!empty($upload) && !is_wp_error($upload)) {
+			if (!empty($upload) && !is_wp_error($upload) && empty($upload["error"])) {
 				$this->debug("No upload error");
 				$upload = array_merge($data, $upload);
 				// no errors, do what you like
@@ -638,10 +675,51 @@ class grassblade_xapi_content {
 				$this->set_params( $post_id, $upload);
 				//update_post_meta( $post_id, 'xapi_content', $upload );
 			}
-			else
-			update_option('grassblade_admin_errors', 'Upload Error: '.$upload->get_error_message());
 			remove_filter('upload_dir', array($this, 'grassblade_upload_dir'));
+
+			if(!empty($upload["error"]))
+			update_option('grassblade_admin_errors', 'Upload Error: '.$upload["error"].$this->upload_tests());
+			else if(is_wp_error($upload))
+			update_option('grassblade_admin_errors', 'Upload Error: '.$upload->get_error_message().$this->upload_tests());
 		}
+	}
+	function upload_tests() {
+		add_filter('upload_dir', array($this, 'grassblade_upload_dir'));
+		$upload = wp_upload_dir();
+		$info = "<br><br><b><u>Running exhaustive Tests.</u></b><br><b>Upload Folder Path:</b> ".$upload["path"]."<br>";
+		$folder_exists = file_exists($upload["path"]);
+		$info .= "<b>Folder Exists?</b> ".( $folder_exists? "Yes":"No" )."<br>";
+		if(empty($folder_exists)) {
+			$mkdir = mkdir($upload["path"]);
+			$folder_exists = file_exists($upload["path"]);
+			$info .= "<b>Creating Folder:</b> ".( $folder_exists? "Success":"Failed. Need enough Permissions to create folders. Create folder <i>".$upload["path"]."</i> with 744, 774 or 777 permission, whichever works, or contact your server admin." )."<br>";
+		}
+		$info .= "<b>Upload Folder Permission:</b> ".decoct(fileperms($upload["path"]) & 0777)."<br>";
+		$copy_file = $upload["path"]."/test.zip";
+		copy(dirname(__FILE__)."/test.zip", $copy_file);
+		$copy = file_exists($copy_file);
+		$info .= "<b>Copy a file to Folder Path:</b> ".((!empty($copy))? "Passed":"Failed. Change permissions on <i>".$upload["path"]."</i> to 744, 774 or 777, whichever works, or contact your server admin.")."<br>";
+		
+		if(!file_exists($upload["path"]."/test_folder/")) {
+			$mkdir = mkdir($upload["path"]."/test_folder/");
+			$folder_exists = file_exists($upload["path"]."/test_folder/");
+			rmdir($upload["path"]."/test_folder/");
+			$info .= "<b>Creating test Folder:</b> ".( $folder_exists? "Success":"Failed. Need enough Permissions to create folders. Change folder permission for <i>".$upload["path"]."</i> to 755, 775 or 777, whichever works, or contact your server admin." )."<br>";
+		}
+		if($copy) {
+			$unzip = unzip_file($upload["path"]."/test.zip", $upload["path"]);
+
+			if($unzip === true) {
+				unlink($copy_file);
+				unlink($upload["path"]."/empty");
+				$info .= "<b>Unzip test file: Success";
+			}
+			else
+				$info .= "<b>Unzip test file: Failed. Need enough permissions to unzip files. Change folder permission for <i>".$upload["path"]."</i> to 744, 774 or 777, whichever works, or contact your server admin. <br>";
+
+		}
+		remove_filter('upload_dir', array($this, 'grassblade_upload_dir'));	
+		return $info;
 	}
 	function grassblade_get_tincanxml($dir) {
 		$tincanxml_file = $dir.DIRECTORY_SEPARATOR."tincan.xml";
@@ -670,25 +748,16 @@ class grassblade_xapi_content {
 		$unzip = unzip_file($upload['file'], $to);
 		
 		if(is_wp_error($unzip))
-		update_option('grassblade_admin_errors', 'Error: '.$unzip->get_error_message());
-		else
-		return array('path' => $to, 'url' => $url);
+		update_option('grassblade_admin_errors', 'Error: '.$unzip->get_error_message().$this->upload_tests());
+		else {
+			unlink($upload['file']);
+			return array('path' => $to, 'url' => $url);
+		}
 	}
 	function grassblade_xapi_post_edit_form_tag() {
 		echo ' enctype="multipart/form-data"';
 	}
 
-	// Display any errors
-	function grassblade_admin_notice_handler() {
-
-		$errors = get_option('grassblade_admin_errors');
-
-		if($errors) {
-			echo '<div class="error"><p>' . $errors . '</p></div>';
-			 update_option('grassblade_admin_errors', false);
-		}   
-
-	}
 	static function is_completion_tracking_enabled($content_id) {
 		$completion = get_post_meta($content_id, "xapi_content", true);
 		return !empty($completion["completion_tracking"]);

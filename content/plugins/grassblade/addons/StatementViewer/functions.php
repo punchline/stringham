@@ -36,11 +36,16 @@ function grassblade_statementviewer($attr)
 	wp_enqueue_script('jquery-ui');
 	wp_enqueue_script('jquery-ui-datepicker');
 	//wp_enqueue_script('jquery-ui', plugins_url( 'scripts/jquery-ui-1.8.17.custom.min.js' , __FILE__ ));            
+	$grassblade_settings = grassblade_settings();
+
+    $grassblade_tincan_endpoint = !empty($endpoint)? $endpoint:$grassblade_settings["endpoint"];
+    $grassblade_tincan_user = !empty($endpoint)? $user:$grassblade_settings["user"];
+    $grassblade_tincan_password = !empty($endpoint)? $pass:$grassblade_settings["password"];
 	
-    $grassblade_tincan_endpoint = !empty($endpoint)? $endpoint:get_option( 'grassblade_tincan_endpoint' );
-    $grassblade_tincan_user = !empty($endpoint)? $user:get_option('grassblade_tincan_user');
-    $grassblade_tincan_password = !empty($endpoint)? $pass:get_option('grassblade_tincan_password');
-	
+    if (empty($grassblade_tincan_endpoint) || empty($grassblade_tincan_user) || empty($grassblade_tincan_password)) {
+    	return "";
+    }
+
 	$GrassBladeConfig = array(
 							'endpoint' => $grassblade_tincan_endpoint,
 							'user' =>  $grassblade_tincan_user,

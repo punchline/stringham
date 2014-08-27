@@ -192,7 +192,8 @@ class nss_plugin_updater_sfwd_lms
     }	
 	
 	function nss_plugin_license_menu() {
-		add_submenu_page("options-general.php", $this->get_plugin_data()->Name." License", $this->get_plugin_data()->Name." License",'manage_options','nss_plugin_license-'.$this->code.'-settings', array(&$this, 'nss_plugin_license_menupage'));
+		add_submenu_page("learndash-lms-non-existant", $this->get_plugin_data()->Name." License", $this->get_plugin_data()->Name." License",'manage_options','nss_plugin_license-'.$this->code.'-settings', array(&$this, 'nss_plugin_license_menupage'));
+
 	}
 
 	function nss_plugin_license_menupage()

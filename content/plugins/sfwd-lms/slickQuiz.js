@@ -97,7 +97,9 @@
                         var question = questions[i];
 
                         var questionHTML = $('<li class="question" id="question' + (count - 1) + '"></li>');
-                        questionHTML.append('<div class="questionCount">Question <span class="current">' + count + '</span> of <span class="total">' + questionCount + '</span></div>');
+                        //Question <span class="current">' + count + '</span> of <span class="total">' + questionCount + '</span>
+                        var question_x_of_y = LDLMS.lang_question_x_of_y.format('<span class="current">' + count + '</span>', '<span class="total">' + questionCount + '</span>');
+                        questionHTML.append('<div class="questionCount">' + question_x_of_y + '</div>');
                         questionHTML.append('<h3>' + count + '. ' + question.q + '</h3>');
 
                         // Count the number of true values
@@ -334,7 +336,7 @@
                 $(targets.quizLevel + ' span').html(levelText);
 
 				if ( ( parseFloat(score) / parseFloat(questionCount) ) >= parseFloat(plugin.config.certificateThreshold) )
-					$(targets.quizLevel + ' span').append( ' <a href="' + plugin.config.certificateLink + '" target="_blank">Print your certificate!</a>' );
+					$(targets.quizLevel + ' span').append( ' <a href="' + plugin.config.certificateLink + '" target="_blank">' + LDLMS.lang_print_your_certificate + '</a>' );
 		saveUrl = LDLMS.siteurl + '/wp-admin/admin-ajax.php';
 		$.ajax({
                         type:     'POST',
@@ -457,3 +459,15 @@
         });
     }
 })(jQuery);
+
+if (!String.prototype.format) {
+  String.prototype.format = function() {
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function(match, number) { 
+      return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+      ;
+    });
+  };
+}

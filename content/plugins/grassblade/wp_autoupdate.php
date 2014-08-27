@@ -71,7 +71,7 @@ class nss_plugin_updater
 					background-color: yellow;
 				}
 				</style>";
-		$licensepage = get_admin_url(null,'options-general.php?page=nss_plugin_license-'.$this->code.'-settings');
+		$licensepage = get_admin_url(null,'admin.php?page=nss_plugin_license-'.$this->code.'-settings');
 		echo "<p id='nss_plugin_updater_admin_notice'>License of your plugin <b>".$this->get_plugin_data()->Name."</b> is invalid or incomplete. Please click <a href='".$licensepage."'>here</a> and update your license.</p>";			
 	}
 	
@@ -192,7 +192,7 @@ class nss_plugin_updater
     }   
 	
 	function nss_plugin_license_menu() {
-		add_submenu_page("options-general.php", $this->get_plugin_data()->Name." License", $this->get_plugin_data()->Name." License",'manage_options','nss_plugin_license-'.$this->code.'-settings', array(&$this, 'nss_plugin_license_menupage'));
+		add_submenu_page("grassblade-lrs-settings", __("License","grassblade"), "License",'manage_options','nss_plugin_license-'.$this->code.'-settings', array(&$this, 'nss_plugin_license_menupage'));
 	}
 
 	function nss_plugin_license_menupage()
@@ -218,16 +218,23 @@ class nss_plugin_updater
 			// Save the posted value in the database
 			update_option( 'nss_plugin_license_'.$code, $license);
 			update_option( 'nss_plugin_license_email_'.$code, $email);
-			
-			
 
-			// Put an settings updated message on the screen
+            ?>
+            <script> setTimeout("location.reload(true);", 1); </script>
+            <?php
+
+			// Put a settings updated message on the screen
 
 	?>
 	<div class="updated"><p><strong><?php _e('settings saved.', 'nss_plugin_updater' ); ?></strong></p></div>
 	<?php
 
 		}
+        $domain = str_replace(array("http://", "https://"), "", get_bloginfo("url"));
+        $license = get_option('nss_plugin_license_'.$code);
+        $email = get_option('nss_plugin_license_email_'.$code);
+        if(!empty($license) && !empty($email))
+        $license_status = $this->getRemote_license();
 	?>
 	<style>
 	.grayblock {
@@ -239,11 +246,24 @@ class nss_plugin_updater
 	</style>
 	<div class=wrap>
 	<form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
-	<h2>License Settings</h2>
+	<h2><?php echo __("License Settings", "grassblade"); ?></h2>
+    <br>
+    <?php 
+        if(!isset($_POST[ "update_nss_plugin_license_".$code ]) ) {
+            if(empty($license_status) || $license_status == "false" || $license_status == "not_found") { ?>
+        <div class="error"><?php echo sprintf(__("Please enter a valid license or %s one now.", "grassblade"),"<a href='http://www.nextsoftwaresolutions.com/grassblade-xapi-companion/' target='_blank'>".__("buy", "grassblade")."</a>" ); ?></div>
+    <?php } else { ?>
+            <div class="updated"><?php _e("Your license is valid."); ?></div>
+    <?php } 
+        }
+    ?>
+
 	<br>
-	<h3>Email:</h3>
+	<h3><?php _e("Domain", "grassblade"); ?>:</h3>
+    <input name="nss_plugin_license_domain_<?php echo $code; ?>" style="min-width:30%" value="<?php echo $domain; ?>" disabled="disabled"/>
+    <h3><?php _e("Email", "grassblade"); ?>:</h3>
 	<input name="nss_plugin_license_email_<?php echo $code; ?>" style="min-width:30%" value="<?php echo   _e(apply_filters('format_to_edit',$email), 'nss_plugin_updater') ?>" />
-	<h3>License Key:</h3>
+	<h3><?php _e("License Key", "grassblade"); ?>:</h3>
 	<input name="nss_plugin_license_<?php echo $code; ?>" style="min-width:30%" value="<?php echo   _e(apply_filters('format_to_edit',$license), 'nss_plugin_updater') ?>" />
 
 	<div class="submit">

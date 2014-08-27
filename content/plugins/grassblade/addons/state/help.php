@@ -1,39 +1,3 @@
-<script>
-/*function getOffset( el ) {
-    var _x = 0;
-    var _y = 0;
-    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-        _x += el.offsetLeft - el.scrollLeft;
-        _y += el.offsetTop - el.scrollTop;
-        el = el.offsetParent;
-    }
-    return { top: _y - 500, left: _x };
-}*/
-function showHideOptional(id) {
-	var table = document.getElementById(id);
-	var display_status = table.style.display;
-
-	
-	if(display_status == "none")
-	{
-		table.style.display = "block";
-		//window.scrollTo(getOffset(table).left,getOffset(table).top);
-	}
-	else
-		table.style.display = "none";
-		
-	//return false;
-}
-</script>
-<style>
-.infoblocks {
-	background: greenyellow;
-	border: 1px solid black;
-	display: block;
-	padding: 10px 20px;
-}
-
-</style>
 <h2 name="state_faq"><?php _e('State API Shortcodes', 'grassblade'); ?></h2>
 
 <a href="#state_faq" onclick="return showHideOptional('state_whatfor');" name="state_whatfor"><h3><img src="<?php echo get_bloginfo('wpurl')."/wp-content/plugins/grassblade/img/button.png"; ?>"/><span style="margin-left:10px;"><?php _e('What does State API do?', 'grassblade'); ?></span></h3></a>

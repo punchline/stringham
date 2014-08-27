@@ -16,13 +16,9 @@ function get_state($atts) {
 			'set' => false,
 			), $atts);
 	extract($shortcode_atts);
-
-	$grassblade_tincan_endpoint = get_option( 'grassblade_tincan_endpoint' );
-	$grassblade_tincan_user = get_option('grassblade_tincan_user');
-	$grassblade_tincan_password = get_option('grassblade_tincan_password');
-	$grassblade_tincan_track_guest = get_option('grassblade_tincan_track_guest');		
+	$grassblade_settings = grassblade_settings();	
 	
-	$xapi = new NSS_XAPI_STATE($grassblade_tincan_endpoint, $grassblade_tincan_user, $grassblade_tincan_password);
+	$xapi = new NSS_XAPI_STATE($grassblade_settings["endpoint"], $grassblade_settings["user"], $grassblade_settings["password"]);
 	if(empty($activityid) && !empty($_GET['activityid']))
 	$activityid = @$_GET['activityid'];
 	
@@ -46,7 +42,7 @@ function get_state($atts) {
 			$agent = $xapi->set_actor($name, $email);
 		}
 		else
-		$agent = grassblade_getactor($grassblade_tincan_track_guest);
+		$agent = grassblade_getactor($grassblade_settings["track_guest"]);
 	}
 	else
 	$agent = $xapi->set_actor($user->display_name, $user->user_email);

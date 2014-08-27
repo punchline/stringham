@@ -32,7 +32,7 @@ margin-right: 10px;
 .learndash .topic-completed span {
     background: url("images/completed_t.png") no-repeat scroll 0 5px transparent;
     display: inline-block;
-    min-height: 25px;
+    min-height: 28px;
     line-height: 25px;
 	vertical-align: middle;
     padding-left: 20px;	
@@ -40,7 +40,7 @@ margin-right: 10px;
 .learndash_nevigation_lesson_topics_list .topic-completed span {
  background: url("images/completed_t_navigation.png") no-repeat scroll 0 8px transparent;
     display: inline-block;
-   	min-height: 25px;
+   	min-height: 26px;
     line-height: 25px;
 	vertical-align: middle;
     padding-left: 20px;	
@@ -48,7 +48,7 @@ margin-right: 10px;
 .learndash .topic-notcompleted  span {
     background: url("images/notcompleted_t.png") no-repeat scroll 0  5px transparent;
     display: inline-block;
- 	min-height: 25px;
+ 	min-height: 28px;
     line-height: 25px;
     padding-left: 20px;
 	vertical-align: middle;
@@ -56,7 +56,7 @@ margin-right: 10px;
 .learndash_nevigation_lesson_topics_list .topic-notcompleted  span{
  background: url("images/notcompleted_t_navigation.png") no-repeat scroll 0 8px transparent;
     display: inline-block;
-  	min-height: 25px;
+  	min-height: 26px;
     line-height: 25px;
     padding-left: 20px;
 	vertical-align: middle;
@@ -215,7 +215,7 @@ margin-right: 10px;
 	background-position: 50% 10px;
 }
 .learndash_nevigation_lesson_topics_list  .list_arrow.collapse {
-	background-position: 50% 7px;
+	background-position: 50% 5px;
 }
 #learndash_profile .list_arrow.expand {
 	background-position: 50% 30px;
@@ -333,11 +333,12 @@ small.notavailable_message {
     max-width: 30%;
     vertical-align: middle;
 }
-#learndash_lessons .right, #learndash_quizzes .right, #learndash_profile .right {
+#learndash_lessons .right, #learndash_quizzes .right, #learndash_profile .learndash_profile_heading .ld_profile_status {
 	float: right;
 	text-align: center;
 	width: 53px;
 }
+
 .rtl #learndash_lessons .right, .rtl #learndash_quizzes .right, .rtl #learndash_profile .right {
 	float: left;
 }
@@ -401,7 +402,7 @@ small.notavailable_message {
 	margin: 2%;
 }
 #learndash_profile #course_list .right {
-	width: 20% !important;
+/*	width: 20% !important;*/
 	padding: 2%;
 	text-align: center;
 	line-height: 20px;
@@ -428,6 +429,9 @@ small.notavailable_message {
 	display: table;
 	width: 100%;
 	margin-bottom: 0;
+}
+#learndash_lesson_topics_list ul {
+	padding: 0;
 }
 #lessons_list > div,#course_list > div, #quiz_list > div, .learndash_profile_quizzes > div, #learndash_lesson_topics_list ul > li, .learndash_nevigation_lesson_topics_list > div {
 	display: table-row;
@@ -470,6 +474,7 @@ small.notavailable_message {
 #course_navigation .learndash_nevigation_lesson_topics_list ul  li{
 	margin-left: 0;
 	list-style: none;
+	background: none;
 }
 #course_navigation .learndash_nevigation_lesson_topics_list .learndash_topic_dots.type-list ul > li {
 	padding-left: 10px;
@@ -495,10 +500,21 @@ small.notavailable_message {
 	padding-bottom: 10px;
 	padding-left: 2%;
 	display: block;
+
+	padding-right: 75px;
+	/*line-height: 2em;
+	min-height: 75px;*/
+}
+.rtl #lessons_list > div  h4 > a,.rtl #course_list > div  h4 > a,.rtl  #quiz_list > div  h4  > a {
+	padding-left: 75px;
+	padding-right: 2%;
 }
 .single-sfwd-lessons #learndash_lesson_topics_list ul > li > span a, .singular-sfwd-lessons #learndash_lesson_topics_list ul > li > span a {
 	padding-left: 2%;
 	display: block;
+}
+.rtl.single-sfwd-lessons #learndash_lesson_topics_list ul > li > span a, .rtl.singular-sfwd-lessons #learndash_lesson_topics_list ul > li > span a {
+	padding-right: 2%;
 }
 .learndash_topic_dots.type-list a{display: block;}
 .list-count, .widget .list-count {display: none;}
@@ -604,3 +620,4 @@ dd.course_progress div.course_progress_blue {
 .quiz_date {
 	width: 20%;
 }
+#learndash_next_prev_link {margin-top: 10px;}

@@ -79,7 +79,7 @@ function learndash_mark_complete($post) {
 		else
 		if(empty($time)){
 
-			return  "
+			$return = "
 					<form id='sfwd-mark-complete' method='post' action=''>
 					<input type='hidden' value='".$post->ID."' name='post'/>
 					<input type='submit' value='" . __('Mark Complete', 'learndash') . "' name='sfwd_mark_complete'/>
@@ -102,8 +102,8 @@ function learndash_mark_complete($post) {
 					</form>
 					<span id='learndash_timer'></span>
 					";
-		return apply_filters("learndash_mark_complete", $return, $post);
 		}
+		return apply_filters("learndash_mark_complete", $return, $post);
 }
 function learndash_lesson_topics_completed($lesson_id, $mark_lesson_complete = false) {
 	$topics = learndash_get_topic_list($lesson_id);
@@ -188,8 +188,10 @@ function learndash_get_next_lesson_redirect($post = null) {
 			$lesson_id = learndash_get_setting($post, "lesson");
 			$link = get_permalink($lesson_id);
 		}
-		else
-		$link = learndash_next_global_quiz();
+		else {
+			$course_id = learndash_get_course_id($post);
+			$link = learndash_next_global_quiz(true, null, $course_id);
+		}
 	}
 	if(!empty($link))
 	{
@@ -298,7 +300,7 @@ function learndash_process_mark_complete($user_id = null, $postid = null, $onlyc
 			$user_id = $current_user->ID;
 		}
 		else
-		$current_user = get_user_by("ID", $user_id);
+		$current_user = get_user_by("id", $user_id);
 		$post = get_post($postid);
 		
 		if(!$onlycalculate) {
@@ -417,8 +419,8 @@ function learndash_get_course_progress($user_id = null, $postid = null) {
 			
 			$user_id = $current_user->ID;
 		}
-		$lessons = learndash_get_lesson_list($postid);
 		$course_id = learndash_get_course_id($postid);
+		$lessons = learndash_get_lesson_list($course_id);
 		$course_progress = get_user_meta($user_id, '_sfwd-course_progress', true); 
 		$this_post = get_post($postid);
 		if(empty($course_progress))
@@ -532,7 +534,7 @@ function learndash_course_status($id, $user_id = null)
 	
 	if((empty($course_progress[$id]) || empty($course_progress[$id]['lessons']) && !$has_completed_topic) && $quiz_notstarted)
 	return __("Not Started", 'learndash');
-	else if(@$course_progress[$id]['completed'] < @$course_progress[$id]['total'])
+	else if(empty($course_progress[$id]) || @$course_progress[$id]['completed'] < @$course_progress[$id]['total'])
 	return __("In Progress", 'learndash');
 	else
 	return __("Completed", 'learndash');
@@ -666,9 +668,9 @@ function learndash_next_global_quiz($url = true, $user_id = null, $id = null, $e
 			if(!in_array($quiz->ID, $exclude) && learndash_is_quiz_notcomplete($user_id, array($quiz->ID => 1 )) && learndash_can_attempt_again($user_id, $quiz->ID))
 			{
 				if($url)
-				$return =  get_permalink($quiz->ID);
+				return get_permalink($quiz->ID);
 				else
-				$return =  $quiz->ID;
+				return $quiz->ID;
 			}
 		}
 		return $return;

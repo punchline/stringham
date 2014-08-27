@@ -31,7 +31,7 @@ class WpProQuiz_View_Statistics extends WpProQuiz_View_View {
 	<?php if(!$this->quiz->isStatisticsOn()) { ?>
 	<p style="padding: 30px; background: #F7E4E4; border: 1px dotted; width: 300px;">
 		<span style="font-weight: bold; padding-right: 10px;"><?php _e('Stats not enabled', 'wp-pro-quiz'); ?></span>
-		<a class="button-secondary" href="admin.php?page=ldAdvQuiz&action=addEdit&quizId=<?php echo $this->quiz->getId(); ?>"><?php _e('Activate statistics', 'wp-pro-quiz'); ?></a>
+		<a class="button-secondary" href="admin.php?page=ldAdvQuiz&action=addEdit&quizId=<?php echo $this->quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Activate statistics', 'wp-pro-quiz'); ?></a>
 	</p>
 	<?php return; } ?>
 	

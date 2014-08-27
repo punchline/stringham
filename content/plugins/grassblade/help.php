@@ -1,39 +1,3 @@
-<script>
-/*function getOffset( el ) {
-    var _x = 0;
-    var _y = 0;
-    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-        _x += el.offsetLeft - el.scrollLeft;
-        _y += el.offsetTop - el.scrollTop;
-        el = el.offsetParent;
-    }
-    return { top: _y - 500, left: _x };
-}*/
-function showHideOptional(id) {
-	var table = document.getElementById(id);
-	var display_status = table.style.display;
-
-	
-	if(display_status == "none")
-	{
-		table.style.display = "block";
-		//window.scrollTo(getOffset(table).left,getOffset(table).top);
-	}
-	else
-		table.style.display = "none";
-		
-	//return false;
-}
-</script>
-<style>
-.infoblocks {
-	background: greenyellow;
-	border: 1px solid black;
-	display: block;
-	padding: 10px 20px;
-}
-
-</style>
 <h2 name="grassblade_help_faq"><?php _e('Help FAQ', 'grassblade'); ?></h2>
 
 <a href="#grassblade_help_faq" onclick="return showHideOptional('grassblade_whatfor');" name="grassblade_whatfor"><h3><img src="<?php echo get_bloginfo('wpurl')."/wp-content/plugins/grassblade/img/button.png"; ?>"/><span style="margin-left:10px;"><?php _e('What can "GrassBlade xAPI Companion" be used for?', 'grassblade'); ?></span></h3></a>
@@ -51,6 +15,10 @@ function showHideOptional(id) {
 <div id="grassblade_userpass"  class="infoblocks"  style="display:none;">
 <p><?php _e('These details are provided by your LRS. If you are using Scorm Cloud from Rustici or WaxLRS. The following details can help:', 'grassblade'); ?><br>
 <br>
+<b><?php echo sprintf(__('Configuring GrassBlade with %s', 'grassblade'), "<a href='http://www.nextsoftwaresolutions.com/grassblade-lrs-experience-api/' target='_blank'>GrassBlade LRS</a>"); ?></b><br>
+<?php _e('1. Login to the LRS. Go to All Users. Edit a User.', 'grassblade'); ?><br>
+<?php _e('2. Click on Add New Basic AuthToken.', 'grassblade'); ?><br>
+<?php _e('3. You will get the required details on the page.', 'grassblade'); ?><br><br>
 <b><?php _e('Configuring GrassBlade with Scorm Cloud', 'grassblade'); ?></b><br>
 <?php _e('1. Create an application in Scorm Cloud. Get the Application ID and Secret.', 'grassblade'); ?><br>
 <?php _e('2. In GrassBlade Settings you will have to enter the following details:', 'grassblade'); ?><br>
@@ -59,7 +27,7 @@ function showHideOptional(id) {
 <?php _e('<b>Password:</b> <b>&lt;APPLICATION SECRET&gt;</b>', 'grassblade'); ?><br><br>
 
 <?php _e('<b>Configuring GrassBlade with WaxLRS</b>', 'grassblade') ?><br>
-<?php _e('1. Go to Settings.<br> 2. Under "Basic Credentials" click on "New Basic Credentials".<br><b>Endpoint URL:</b> Endpoint as mentioned on the settings page e.g. https://&lt;yourcompany&gt;.waxlrs.com/TCAPI/<br><b>User:</b> <b>&lt;APPLICATIONID&gt;</b><br><b>Password:</b> <b>&lt;APPLICATION SECRET&gt;</b><br><br>', 'grassblade');
+<?php _e('1. Login at https://&lt;yourcompany&gt;.waxlrs.com/ and go to Settings.<br> 2. Under "Basic Credentials" click on "New Basic Credentials".<br><b>Endpoint URL:</b> Endpoint as mentioned on the settings page e.g. https://&lt;yourcompany&gt;.waxlrs.com/TCAPI/<br><b>User:</b> <b>&lt;Login&gt;</b><br><b>Password:</b> <b>&lt;Password&gt;</b><br><br>', 'grassblade');
 ?>
 <br>
 </p>
@@ -69,11 +37,9 @@ function showHideOptional(id) {
 
 <a href="#grassblade_userpass" onclick="return showHideOptional('grassblade_scgen');" name="grassblade_scgen"><h3><img src="<?php echo get_bloginfo('wpurl')."/wp-content/plugins/grassblade/img/button.png"; ?>"/><span style="margin-left:10px;"><?php _e('How do I add a TinCan Content to a page/post/lesson?', 'grassblade'); ?></span></h3></a>
 <div id="grassblade_scgen"  class="infoblocks"  style="display:none;">
-<p><?php _e('There are several ways to do it. <br><br>
+<p><?php _e('There are multiple ways to do it. <br><br>
 1. Upload the Tin Can content from xAPI Content Manager and use the xAPI Content meta box on your edit page. OR, <br>
-2. You can use the shortcode generated on the xAPI Content page. OR, <br>
-3. You can generate shortcode using the GrassBlade Shortcode Generator. Click the button with GrassBlade icon ','grassblade'); ?> <img src="<?php echo get_bloginfo('wpurl')."/wp-content/plugins/grassblade/img/button2.png"; ?>" height="15px"/><?php _e(' on the WYSIWYG editor when creating a page.', 'grassblade'); ?><br><br>
-<img src="<?php echo get_bloginfo('wpurl')."/wp-content/plugins/grassblade/img/GrassBladeWYSIWYG.jpg"; ?>"/>
+2. You can use the shortcode generated on the xAPI Content page.','grassblade'); ?> 
 <br>
 </p>
 </div>

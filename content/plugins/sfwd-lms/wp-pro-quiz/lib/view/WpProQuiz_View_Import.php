@@ -19,7 +19,7 @@ class WpProQuiz_View_Import extends WpProQuiz_View_View {
 </style>
 <div class="wrap wpProQuiz_importOverall">
 	<h2><?php _e('Import', 'wp-pro-quiz'); ?></h2>
-	<p><a class="button-secondary" href="admin.php?page=ldAdvQuiz"><?php _e('back to overview', 'wp-pro-quiz'); ?></a></p>
+	<br>
 	<?php if($this->error) { ?>
 	<div style="padding: 10px; background-color: rgb(255, 199, 199); margin-top: 20px; border: 1px dotted;">
 		<h3 style="margin-top: 0;"><?php _e('Error', 'wp-pro-quiz'); ?></h3>

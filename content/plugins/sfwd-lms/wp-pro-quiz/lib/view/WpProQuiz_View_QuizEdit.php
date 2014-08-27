@@ -6,7 +6,9 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 	 */
 	public $quiz;
 	
-	public function show() {
+	public function show($get = null) {
+		wp_enqueue_script('post');
+		wp_enqueue_media( array( 'post' => @$_GET["post"] ) );
 ?>
 <style>
 .wpProQuiz_quizModus th, .wpProQuiz_quizModus td {
@@ -15,9 +17,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 }
 </style>
 <div class="wrap wpProQuiz_quizEdit">
-	<h2 style="margin-bottom: 10px;"><?php echo $this->header; ?></h2>
-	<form method="post" action="admin.php?page=ldAdvQuiz&action=addEdit&quizId=<?php echo $this->quiz->getId(); ?>">
-		<a style="float: left;" class="button-secondary" href="admin.php?page=ldAdvQuiz"><?php _e('back to overview', 'wp-pro-quiz'); ?></a>
+<?php /*	<form method="post" action="admin.php?page=ldAdvQuiz&action=addEdit&quizId=<?php echo $this->quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>> */ ?>
 		<div style="float: right;">
 			<select name="templateLoadId">
 				<?php 
@@ -30,12 +30,15 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 		</div>
 		<div style="clear: both;"></div>
 		<div id="poststuff">
-			<div class="postbox">
+			<input name="name" id="wpProQuiz_title" type="hidden" class="regular-text" value="<?php echo $this->quiz->getName(); ?>">
+			<?php 
+			/*<div class="postbox">
 				<h3 class="hndle"><?php _e('Quiz title', 'wp-pro-quiz'); ?> <?php _e('(required)', 'wp-pro-quiz'); ?></h3>
 				<div class="inside">
 					<input name="name" id="wpProQuiz_title" type="text" class="regular-text" value="<?php echo $this->quiz->getName(); ?>">
 				</div>
 			</div>
+			*/?>
 			<div class="postbox">
 				<h3 class="hndle"><?php _e('Options', 'wp-pro-quiz'); ?></h3>
 				<div class="wrap">
@@ -327,7 +330,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 																if(in_array($list['id'], $this->prerequisiteQuizList))
 																	continue;
 																
-																	echo '<option value="'.$list['id'].'">'.$list['name'].'</option>';
+																	echo '<option value="'.$list['id'].'" title="'.$list['name'].'">'.$list['name'].'</option>';
 															} ?>
 														</select>
 													</td>
@@ -345,7 +348,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 																if(!in_array($list['id'], $this->prerequisiteQuizList))
 																	continue;
 																
-																	echo '<option value="'.$list['id'].'">'.$list['name'].'</option>';
+																	echo '<option value="'.$list['id'].'" title="'.$list['name'].'">'.$list['name'].'</option>';
 															} ?>
 														</select>
 													</td>
@@ -526,17 +529,34 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 			<?php $this->quizMode(); ?>
 			<?php $this->leaderboardOptions(); ?>
 			<?php $this->form(); ?>
-			<div class="postbox">
+			<?php
+				$quiz_desc = $this->quiz->getText();
+
+				if(!empty($quiz_desc) && $quiz_desc != "AAZZAAZZ" && !empty($get["post_id"])) {
+					$post_id = $get["post_id"];
+					$quiz_post = get_post($post_id);
+					$update_post["ID"] = $post_id;
+					$update_post["post_content"] = $quiz_post->post_content."<br>".$quiz_desc;
+					wp_update_post($update_post);
+					global $wpdb;
+					$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."wp_pro_quiz_master SET text = 'AAZZAAZZ' WHERE id = '%d'", $this->quiz->getId()));
+				}
+			?>
+			<input name="text" type="hidden" value="AAZZAAZZ" />
+			<?php /* <div class="postbox">
 				<h3 class="hndle"><?php _e('Quiz description', 'wp-pro-quiz'); ?> <?php _e('(required)', 'wp-pro-quiz'); ?></h3>
 				<div class="inside">
 					<p class="description">
 						<?php _e('This text will be displayed before start of the quiz.', 'wp-pro-quiz'); ?>
 					</p>
 					<?php
+
 						wp_editor($this->quiz->getText(), "text"); 
 					?>
 				</div>
 			</div>
+			*/
+			?>
 			<div class="postbox">
 				<h3 class="hndle"><?php _e('Results text', 'wp-pro-quiz'); ?> <?php _e('(optional)', 'wp-pro-quiz'); ?></h3>
 				<div class="inside">
@@ -606,9 +626,9 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 					</div>
 				</div>
 			</div>
-		<div style="float: left;">
+		<!--<div style="float: left;">
 			<input type="submit" name="submit" class="button-primary" id="wpProQuiz_save" value="<?php _e('Save', 'wp-pro-quiz'); ?>">
-		</div>
+		</div>-->
 		<div style="float: right;">
 			<input type="text" placeholder="<?php _e('template name', 'wp-pro-quiz'); ?>" class="regular-text" name="templateName" style="border: 1px solid rgb(255, 134, 134);">
 			<select name="templateSaveList">
@@ -624,7 +644,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 		</div>
 		<div style="clear: both;"></div>
 		</div>
-	</form>
+	<?php /* </form> */ ?>
 </div>
 <?php
 	}
@@ -1118,13 +1138,13 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 								</div>
 							</td>
 						</tr>
-						<tr>
+						<tr id="AutomaticallyDisplayLeaderboard">
 							<th scope="row">
 								<?php _e('Automatically display leaderboard in quiz result', 'wp-pro-quiz'); ?>
 							</th>
 							<td>
 								<div style="margin-top: 6px;">
-									<?php _e('Where should leaderboard be displayed:', 'wp-pro-quiz'); ?>
+									<?php _e('Where should leaderboard be displayed:', 'wp-pro-quiz'); ?><br>
 									<label style="margin-right: 5px; margin-left: 5px;">
 										<input type="radio" name="toplistDataShowIn" value="0" <?php echo ($this->quiz->getToplistDataShowIn() == 0) ? 'checked="checked"' : ''; ?>> 
 										<?php _e('don\'t display', 'wp-pro-quiz'); ?>
@@ -1298,7 +1318,7 @@ class WpProQuiz_View_QuizEdit extends WpProQuiz_View_View {
 										<legend class="screen-reader-text">
 											<span><?php _e('Display position', 'wp-pro-quiz'); ?></span>
 										</legend>
-										<?php _e('Where should the fileds be displayed:', 'wp-pro-quiz'); ?> 
+										<?php _e('Where should the fileds be displayed:', 'wp-pro-quiz'); ?><br>
 										<label>
 											<input type="radio" value="<?php echo WpProQuiz_Model_Quiz::QUIZ_FORM_POSITION_START; ?>" name="formShowPosition" <?php $this->checked($this->quiz->getFormShowPosition(), WpProQuiz_Model_Quiz::QUIZ_FORM_POSITION_START); ?>>
 											<?php _e('On the quiz startpage', 'wp-pro-quiz'); ?>

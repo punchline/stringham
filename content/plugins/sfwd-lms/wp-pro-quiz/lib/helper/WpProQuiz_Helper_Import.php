@@ -131,7 +131,10 @@ class WpProQuiz_Helper_Import {
 			}
 			
 			$quizMapper->save($master);
-
+			$user_id = get_current_user_id();
+			$quiz_post_id = wp_insert_post( array( 'post_title' => $master->getName(), 'post_type' => 'sfwd-quiz', 'post_status' => 'publish', 'post_author' => $user_id ) );
+			learndash_update_setting($quiz_post_id, "quiz_pro", $master->getId());
+			
 			if(isset($o['forms']) && isset($o['forms'][$oldId])) {
 				foreach($o['forms'][$oldId] as $form) {
 					/** @var WpProQuiz_Model_Form $form **/

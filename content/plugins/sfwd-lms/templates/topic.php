@@ -86,34 +86,22 @@
 			<?php 	
 		}
 	
-		/* Show Assignments */
-		if(lesson_hasassignments($post)) {
-			if(current_user_can('manage_options')) {
-				?>
-				<br>
-				<div id="learndash_assignments_list">
-					<?php echo learndash_show_assignments_list($post); ?>
-				</div>
-				<br><br>
-				<?php
-			}
-			$assinment_meta = get_post_meta ($post->ID, 'sfwd_lessons-assignment', true);
+		/* Show Lesson Assignments */
+		if(lesson_hasassignments($post)) {		
+			$assignments = learndash_get_user_assignments($post->ID, $user_id);
 			?>
 			<div id='learndash_uploaded_assignments'>
 				<h2><?php _e("Files you have uploaded","learndash"); ?></h2>
 				<table>
 					<?php
-					if(!empty($assinment_meta['assignment'])){
-					foreach($assinment_meta['assignment'] as $k=>$v){
-						if($current_user->user_login == $v['user_name']){
-							if($v['file_link'] != 'not available'){
+					if(!empty($assignments)){
+						foreach($assignments as $assignment){
 								?>
-								<tr><a href="<?php echo $v['file_link']; ?>" target="_blank"><?php echo $v['file_name']; ?></a>
-									<br/>
+								<tr>
+									<td><a href="<?php echo get_post_meta($assignment->ID, "file_link", true); ?>" target="_blank"><?php echo __("Download", "learndash")." ".get_post_meta($assignment->ID, "file_name", true); ?></a></td>
+									<td> <a href="<?php echo get_permalink($assignment->ID); ?>"><?php _e("Comments", "learndash"); ?></a></td>
 								</tr>
 								<?php 
-								}
-							}
 						}
 					}	
 					?>

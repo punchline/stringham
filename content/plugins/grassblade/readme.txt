@@ -33,6 +33,18 @@ GrassBlade - xAPI Companion is a support tool for Experience API (xAPI) or Tin C
 #### Integrates with LearnDash LMS
 
 == Changelog ==
+= 1.3 =
+* Bug fixes
+* Added Video Tracking for YouTube and Vimeo
+* Added content security for static content.
+* Added better error information and suggestions.
+* Added GrassBlade LRS SSO.
+* Removed Shortcode Generator. Shortcode would still work.
+
+= 1.2 =
+* Bug fixes
+* Updated the way completion triggering works
+
 = 1.1 =
 * Added Meta box to easily select and add xAPI Content on any page/post
 * Added completion tracking and mark completion integration with LearnDash Lessons/Topics/Quizzes

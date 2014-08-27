@@ -15,10 +15,10 @@ class WpProQuiz_View_QuestionOverall extends WpProQuiz_View_View {
 <div class="wrap wpProQuiz_questionOverall">
 	<h2>Quiz: <?php echo $this->quiz->getName(); ?></h2>
 	<div id="sortMsg" class="updated" style="display: none;"><p><strong><?php _e('Questions sorted', 'wp-pro-quiz'); ?></strong></p></div>
+	<br>
 	<p>
-		<a class="button-secondary" href="admin.php?page=ldAdvQuiz"><?php _e('back to overview', 'wp-pro-quiz'); ?></a>
 		<?php if(current_user_can('wpProQuiz_edit_quiz')) { ?>
-			<a class="button-secondary" href="admin.php?page=ldAdvQuiz&action=addEdit&quizId=<?php echo $this->quiz->getId(); ?>"><?php _e('Edit quiz', 'wp-pro-quiz'); ?></a> 
+		<a class="button-secondary" href="admin.php?page=ldAdvQuiz&module=question&action=addEdit&quiz_id=<?php echo $this->quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Add question', 'wp-pro-quiz'); ?></a>
 		<?php } ?>
 	</p>
 	<table class="wp-list-table widefat">
@@ -48,11 +48,11 @@ class WpProQuiz_View_QuestionOverall extends WpProQuiz_View_View {
 					<div class="row-actions">
 						<?php if(current_user_can('wpProQuiz_edit_quiz')) { ?>
 						<span>
-							<a href="admin.php?page=ldAdvQuiz&module=question&action=addEdit&quiz_id=<?php echo $this->quiz->getId(); ?>&questionId=<?php echo $question->getId(); ?>"><?php _e('Edit', 'wp-pro-quiz'); ?></a> | 
+							<a href="admin.php?page=ldAdvQuiz&module=question&action=addEdit&quiz_id=<?php echo $this->quiz->getId(); ?>&questionId=<?php echo $question->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Edit', 'wp-pro-quiz'); ?></a> | 
 						</span>
 						<?php } if(current_user_can('wpProQuiz_delete_quiz')) { ?>
 						<span>
-							<a style="color: red;" class="wpProQuiz_delete" href="admin.php?page=ldAdvQuiz&module=question&action=delete&quiz_id=<?php echo $this->quiz->getId(); ?>&id=<?php echo $question->getId(); ?>"><?php _e('Delete', 'wp-pro-quiz'); ?></a> | 
+							<a style="color: red;" class="wpProQuiz_delete" href="admin.php?page=ldAdvQuiz&module=question&action=delete&quiz_id=<?php echo $this->quiz->getId(); ?>&id=<?php echo $question->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Delete', 'wp-pro-quiz'); ?></a> | 
 						</span>
 						<?php } if(current_user_can('wpProQuiz_edit_quiz')) { ?>
 						<span>
@@ -83,7 +83,7 @@ class WpProQuiz_View_QuestionOverall extends WpProQuiz_View_View {
 	</table>
 	<p>
 		<?php if(current_user_can('wpProQuiz_edit_quiz')) { ?>
-		<a class="button-secondary" href="admin.php?page=ldAdvQuiz&module=question&action=addEdit&quiz_id=<?php echo $this->quiz->getId(); ?>"><?php _e('Add question', 'wp-pro-quiz'); ?></a>
+		<a class="button-secondary" href="admin.php?page=ldAdvQuiz&module=question&action=addEdit&quiz_id=<?php echo $this->quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Add question', 'wp-pro-quiz'); ?></a>
 		<a class="button-secondary" href="#" id="wpProQuiz_saveSort"><?php _e('Save order', 'wp-pro-quiz'); ?></a>
 		<a class="button-secondary" href="#" id="wpProQuiz_questionCopy"><?php _e('Copy questions from another Quiz', 'wp-pro-quiz'); ?></a>
 		<?php } ?>

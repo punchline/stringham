@@ -17,8 +17,6 @@
 		$has_access 	: User has access to course or is enrolled.
 		$materials 		: Course Materials
 		$has_course_content		: Course has course content
-		$slug 			: Course Slug
-		$terms 			: Terms associated with the course
 		$lessons 		: Lessons Array
 		$quizzes 		: Quizzes Array
 		$lesson_progression_enabled 	: (true/false)
@@ -30,7 +28,7 @@
 		(
 		    [course_materials] => material text
 		    [course_price] => 1
-		    [course_join] => on
+		    [course_price_type] => paynow
 		    [course_access_list] => 1,2,3,5,3,9,4
 		    [course_lesson_orderby] => 
 		    [course_lesson_order] => ASC
@@ -88,7 +86,7 @@
 			</div>
 			<div id="lessons_list">
 				<?php foreach($lessons as $lesson) { ?>
-				<div id="post-<?php echo $lesson["post"]->ID; ?>" class="<?php echo $lesson["sample"];?>">
+				<div class="post-<?php echo $lesson["post"]->ID; ?> <?php echo $lesson["sample"];?>">
 					<div class="list-count"><?php echo $lesson["sno"]; ?></div>
 					<h4>
 						<a class="<?php echo $lesson["status"]; ?>" href="<?php echo $lesson["permalink"]?>"><?php echo $lesson["post"]->post_title; ?></a>

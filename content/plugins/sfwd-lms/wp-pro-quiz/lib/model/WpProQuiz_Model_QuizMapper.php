@@ -41,7 +41,7 @@ class WpProQuiz_Model_QuizMapper extends WpProQuiz_Model_Mapper
 	public function fetchAll() {
 		$r = array();
 		
-		$results = $this->_wpdb->get_results("SELECT * FROM {$this->_table}", ARRAY_A);
+		$results = $this->_wpdb->get_results("SELECT * FROM {$this->_table} ORDER BY id ASC", ARRAY_A);
 
 		foreach ($results as $row) {
 			
@@ -61,10 +61,17 @@ class WpProQuiz_Model_QuizMapper extends WpProQuiz_Model_Mapper
 		} else {
 			$resultText = $data->getResultText();
 		}
+		$name = $data->getName();
+		if(empty($name))
+			$name = "no title";
+
+		$text = $data->getText();
+		if(empty($text))
+			$text = "AAZZAAZZ";
 		
 		$set = array(
-			'name' => $data->getName(),
-			'text' => $data->getText(),
+			'name' => $name,
+			'text' => $text,
 			'result_text' => $resultText,
 			'title_hidden' => (int)$data->isTitleHidden(),
 			'btn_restart_quiz_hidden' => (int)$data->isBtnRestartQuizHidden(),

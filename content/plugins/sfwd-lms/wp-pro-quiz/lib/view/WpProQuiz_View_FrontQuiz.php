@@ -37,6 +37,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 			if(!$this->quiz->isTitleHidden()) 
 				echo '<h2>', $this->quiz->getName(), '</h2>';
 			
+			LD_QuizPro::showQuizContent($this->quiz->getID());
 			$this->showTimeLimitBox();
 			$this->showCheckPageBox($question_count);
 			$this->showInfoPageBox();
@@ -58,40 +59,99 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 		?>
 		</div>
 		<?php 
+		if($preview)
+		add_action("admin_footer", array($this, "script_preview"));
+		else
+		add_action("wp_footer", array($this, "script"));
+			
+	}
+	public function script_preview() {
+		$this->script(true);
+	}
+	public function script($preview = false) {
+		global $post; 
+		$question_count = count($this->question);
 		
+		$result = $this->quiz->getResultText();
+
+		if(!$this->quiz->isResultGradeEnabled()) {
+			$result = array(
+				'text' => array($result),
+				'prozent' => array(0)
+			);
+		}
+
+		$resultsProzent = json_encode($result['prozent']);
+			
+		ob_start();
+		$quizData = $this->showQuizBox($question_count);
+		ob_get_clean();
+
 		$bo = $this->createOption($preview);
-	
-		?>
-		<script type="text/javascript">
-		function load_wpProQuizFront<?php echo $this->quiz->getId(); ?>() {
-			jQuery('#wpProQuiz_<?php echo $this->quiz->getId(); ?>').wpProQuizFront({
-				quiz: <?php global $post; if(empty($post->ID)) echo '0'; else echo $post->ID; ?>,
-				quizId: <?php echo (int)$this->quiz->getId(); ?>,
-				mode: <?php echo (int)$this->quiz->getQuizModus(); ?>,
-				globalPoints: <?php echo (int)$quizData['globalPoints']; ?>,
-				timelimit: <?php echo (int)$this->quiz->getTimeLimit(); ?>,
-				resultsGrade: <?php echo $resultsProzent; ?>,
-				bo: <?php echo $bo ?>,
-				qpp: <?php echo $this->quiz->getQuestionsPerPage(); ?>,
-				catPoints: <?php echo json_encode($quizData['catPoints']); ?>,
-				formPos: <?php echo (int)$this->quiz->getFormShowPosition(); ?>,
-				lbn: <?php echo json_encode(($this->quiz->isShowReviewQuestion() && !$this->quiz->isQuizSummaryHide()) ? __('Quiz-summary', 'wp-pro-quiz') : __('Finish quiz', 'wp-pro-quiz')); ?>,
-				json: <?php echo json_encode($quizData['json']); ?>
+
+		$quiz_post_id = (empty($post->ID))? '0':$post->ID;
+		echo " <script type='text/javascript'>
+		function load_wpProQuizFront".$this->quiz->getId()."() {
+			jQuery('#wpProQuiz_".$this->quiz->getId()."').wpProQuizFront({
+				quiz: ".$quiz_post_id.",
+				quizId: ".(int)$this->quiz->getId().",
+				mode: ".(int)$this->quiz->getQuizModus().",
+				globalPoints: ".(int)$quizData['globalPoints'].",
+				timelimit: ".(int)$this->quiz->getTimeLimit().",
+				resultsGrade: ".$resultsProzent.",
+				bo: ".$bo.",
+				qpp: ".$this->quiz->getQuestionsPerPage().",
+				catPoints: ".json_encode($quizData['catPoints']).",
+				formPos: ".(int)$this->quiz->getFormShowPosition().",
+				lbn: ".json_encode(($this->quiz->isShowReviewQuestion() && !$this->quiz->isQuizSummaryHide()) ? __('Quiz-summary', 'wp-pro-quiz') : __('Finish quiz', 'wp-pro-quiz')).",
+				json: ".json_encode($quizData['json'])."
 			});
 		}
-		var loaded_wpProQuizFront<?php echo $this->quiz->getId(); ?> = 0;
+		var loaded_wpProQuizFront".$this->quiz->getId()." = 0;
 		jQuery(document).ready(function($) {
-			load_wpProQuizFront<?php echo $this->quiz->getId(); ?>();
-			loaded_wpProQuizFront<?php echo $this->quiz->getId(); ?> = 1;
+			load_wpProQuizFront".$this->quiz->getId()."();
+			loaded_wpProQuizFront".$this->quiz->getId()." = 1;
 		});
 		jQuery(window).load(function($) {
-			if(loaded_wpProQuizFront<?php echo $this->quiz->getId(); ?> == 0)
-			load_wpProQuizFront<?php echo $this->quiz->getId(); ?>();
+			if(loaded_wpProQuizFront".$this->quiz->getId()." == 0)
+			load_wpProQuizFront".$this->quiz->getId()."();
 		});
-		</script>
-		<?php 
+		</script> ";
 	}
-	
+	public function max_question_script() {
+		$question_count = count($this->question);
+
+		$result = $this->quiz->getResultText();
+		
+		if(!$this->quiz->isResultGradeEnabled()) {
+			$result = array(
+					'text' => array($result),
+					'prozent' => array(0)
+			);
+		}
+		
+		$resultsProzent = json_encode($result['prozent']);
+
+		$bo = $this->createOption(false);
+		global $post;
+		$quiz_post_id = (empty($post->ID))? '0':$post->ID;
+
+		echo "<script type='text/javascript'>
+		jQuery(document).ready(function($) {
+			$('#wpProQuiz_". $this->quiz->getId()."').wpProQuizFront({
+				quiz: ".$quiz_post_id.",			
+				quizId: ". (int)$this->quiz->getId().",
+				mode: ". (int)$this->quiz->getQuizModus().",
+				timelimit: ". (int)$this->quiz->getTimeLimit().",
+				resultsGrade: ". $resultsProzent.",
+				bo: ". $bo .",
+				qpp: ". $this->quiz->getQuestionsPerPage().",
+				formPos: ". (int)$this->quiz->getFormShowPosition().",
+				lbn: ". json_encode(($this->quiz->isShowReviewQuestion() && !$this->quiz->isQuizSummaryHide()) ? __('Quiz-summary', 'wp-pro-quiz') : __('Finish quiz', 'wp-pro-quiz'))."
+			});
+		});
+		</script>";
+	}
 	private function createOption($preview) {
 		$bo = 0;
 
@@ -136,6 +196,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 			if(!$this->quiz->isTitleHidden()) 
 				echo '<h2>', $this->quiz->getName(), '</h2>';
 			
+			LD_QuizPro::showQuizContent($this->quiz->getID());
 			$this->showTimeLimitBox();
 			$this->showCheckPageBox($question_count);
 			$this->showInfoPageBox();
@@ -154,26 +215,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 		?>
 		</div>
 		<?php 
-		
-		$bo = $this->createOption(false);
-	
-		?>
-		<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$('#wpProQuiz_<?php echo $this->quiz->getId(); ?>').wpProQuizFront({
-				quiz: <?php global $post; if(empty($post->ID)) echo '0'; else echo $post->ID; ?>,			
-				quizId: <?php echo (int)$this->quiz->getId(); ?>,
-				mode: <?php echo (int)$this->quiz->getQuizModus(); ?>,
-				timelimit: <?php echo (int)$this->quiz->getTimeLimit(); ?>,
-				resultsGrade: <?php echo $resultsProzent; ?>,
-				bo: <?php echo $bo ?>,
-				qpp: <?php echo $this->quiz->getQuestionsPerPage(); ?>,
-				formPos: <?php echo (int)$this->quiz->getFormShowPosition(); ?>,
-				lbn: <?php echo json_encode(($this->quiz->isShowReviewQuestion() && !$this->quiz->isQuizSummaryHide()) ? __('Quiz-summary', 'wp-pro-quiz') : __('Finish quiz', 'wp-pro-quiz')); ?>
-			});
-		});
-		</script>	
-		<?php 
+		add_action("wp_footer", array($this, "max_question_script"));
 	}
 	
 	public function getQuizData() {
@@ -506,9 +548,6 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 	private function showStartQuizBox() {
 	?>
 		<div class="wpProQuiz_text">
-			<p>
-				<?php echo do_shortcode(apply_filters('comment_text', $this->quiz->getText())); ?>
-			</p>
 			
 			<?php 
 				if($this->quiz->isFormActivated() && $this->quiz->getFormShowPosition() == WpProQuiz_Model_Quiz::QUIZ_FORM_POSITION_START)

@@ -6,9 +6,53 @@ class LD_QuizPro {
 	function __construct() {
 		add_action("wp_head", array($this, 'certificate_details'));
 		add_action("wp_pro_quiz_completed_quiz", array($this, 'wp_pro_quiz_completed'));
+		add_action( 'save_post',array($this, 'edit_process'), 2000);
+		add_action( 'plugins_loaded',array($this, 'quiz_edit_redirect'), 1);
 		//add_action("the_content", array($this, 'certificate_link'));
 	}
-		function debug($msg) {
+	function quiz_edit_redirect() {
+		//Redirection from Advanced Quiz Edit or Add link to Quiz Edit or Add link
+		if(!empty($_GET["page"]) && $_GET["page"] == "ldAdvQuiz" && empty($_GET["module"]) && !empty($_GET["action"]) && $_GET["action"] == "addEdit") {
+			if(!empty($_GET["post_id"])) {
+				header("Location: ".admin_url("post.php?action=edit&post=".$_GET["post_id"]));
+				exit;
+			}
+			else if(!empty($_GET["quizId"]))
+			{
+				$post_id = learndash_get_quiz_id_by_pro_quiz_id($_GET["quizId"]);
+
+				if(!empty($post_id))
+				header("Location: ".admin_url("post.php?action=edit&post=".$post_id));
+				else
+				header("Location: ".admin_url("edit.php?post_type=sfwd-quiz"));
+
+				exit;
+			}
+
+			header("Location: ".admin_url("post-new.php?post_type=sfwd-quiz"));
+			exit;
+		}		
+	}
+	static function showQuizContent($pro_quiz_id) {
+		global $post;
+		if(empty($post) || $post->post_type == "sfwd-quiz")
+			return "";
+		echo LD_QuizPro::get_description($pro_quiz_id);
+	}
+
+	static function get_description($pro_quiz_id) {
+		$post_id = learndash_get_quiz_id_by_pro_quiz_id($pro_quiz_id);
+		if(empty($post_id))
+			return "";
+
+		$quiz = get_post($post_id);
+		if(empty($quiz->post_content))
+			return "";
+		$content = apply_filters('the_content', $quiz->post_content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		return "<div class='wpProQuiz_description'>".$content."</div>";
+	}
+	function debug($msg) {
 		$original_log_errors = ini_get('log_errors');
 		$original_error_log = ini_get('error_log');
 		ini_set('log_errors', true);
@@ -80,10 +124,9 @@ class LD_QuizPro {
 		$courseid = learndash_get_course_id($ld_quiz_id);
 		$quizdata['course'] = get_post($courseid);		
 		$quizdata['questions'] = $questions;
-		do_action("learndash_quiz_completed", $quizdata); //Hook for completed quiz
 
-		update_user_meta( $user_id, '_sfwd-quizzes', $usermeta );
-				
+		update_user_meta( $user_id, '_sfwd-quizzes', $usermeta );				
+		do_action("learndash_quiz_completed", $quizdata, $current_user); //Hook for completed quiz
 	}
 	function get_ld_quiz_id($pro_quizid) {
 		$quizzes = SFWD_SlickQuiz::get_all_quizzes();
@@ -100,7 +143,7 @@ class LD_QuizPro {
 		$list = array();
 		if(!empty($quizzes))
 		foreach($quizzes as $q) {
-			$list[$q->getId()] = $q->getName();
+			$list[$q->getId()] = $q->getId()." - ".$q->getName();
 		}
 		return $list;
 	}
@@ -132,6 +175,67 @@ class LD_QuizPro {
 			$ret = $content.$ret;
 			return $ret;
 		}
+
+	static function edithtml() { 
+			global $pagenow, $post;
+			$_post = array('1');
+			if(!empty($_GET["templateLoadId"]))
+				$_post = $_GET;
+
+			if($pagenow == "post-new.php" && @$_GET["post_type"] == "sfwd-quiz"  || $pagenow == "post.php" && !empty($_GET["post"]) && @get_post($_GET["post"])->post_type == "sfwd-quiz") {
+				$quizId = 0;
+				if(!empty($_GET["post"])) {
+					$quizId = intval(learndash_get_setting($_GET['post'], "quiz_pro", true));
+					if(apply_filters("learndash_disable_advance_quiz", false, get_post($_GET["post"])))
+						return '';
+				}
+				$pro_quiz = new WpProQuiz_Controller_Quiz();
+				ob_start();
+				$pro_quiz->route(array("action" => "addEdit", "quizId" => $quizId, "post_id" => @$_GET['post']), $_post);
+				$return = ob_get_clean();
+				//file_put_contents(dirname(__FILE__)."/test.txt", $return);
+				return $return;
+			}
+		}
+
+	static function edit_process($post_id) {//echo "<pre>";print_r($_POST);exit;
+
+			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+				return;
+
+			if(empty($post_id) || empty($_POST['post_type']))
+				return "";
+
+			// Check permissions
+			if ( 'page' == $_POST['post_type'] ) 
+			{
+				if ( !current_user_can( 'edit_page', $post_id ) )
+					return;
+			}
+			else
+			{
+				if ( !current_user_can( 'edit_post', $post_id ) )
+					return;
+			}
+			//echo "<pre>";print_r($_POST);exit;
+			$post = get_post($post_id);
+			if('sfwd-quiz' != $post->post_type || empty($_POST["form"]) || !empty($_POST["disable_advance_quiz_save"]) || apply_filters("learndash_disable_advance_quiz", false, $post))
+				return;
+
+			$quizId = intval(learndash_get_setting($post_id, "quiz_pro", true));
+			$pro_quiz = new WpProQuiz_Controller_Quiz();
+			ob_start();
+			$pro_quiz->route(array("action" => "addEdit", "quizId" => $quizId, "post_id" => $post_id));
+			ob_get_clean();
+
+			if(!empty($_POST["templateLoad"]) && !empty($_POST['templateLoadId'])) {
+				$url = admin_url("post.php?post=".$post_id."&action=edit")."&templateLoad=".rawurlencode($_POST["templateLoad"])."&templateLoadId=".$_POST["templateLoadId"];
+				//echo $url;exit;
+				wp_redirect($url);
+				exit;
+			}
+		}
+
 	}
 
 

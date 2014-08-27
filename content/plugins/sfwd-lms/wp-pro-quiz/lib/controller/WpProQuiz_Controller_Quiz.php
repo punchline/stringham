@@ -2,35 +2,43 @@
 class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller {
 	private $view;
 		
-	public function route() {
-		$action = isset($_GET['action']) ? $_GET['action'] : 'show';
+	public function route($get = null, $post = null) {
+		if(empty($get))
+			$get = $_GET;
+		$action = isset($get['action']) ? $get['action'] : 'show';
 		
 		switch ($action) {
 			case 'show':
 				$this->showAction();
 				break;
 			case 'addEdit':
-				$this->addEditQuiz();
+				$this->addEditQuiz($get, $post);
 				break;
 // 			case 'add':
 // 				$this->createAction();
 // 				break;
 // 			case 'edit':
 // 				if(isset($_GET['id']))
-// 					$this->editAction($_GET['id']);
+// 					$this->editAction($get['id']);
 // 				break;
 			case 'delete':
-				if(isset($_GET['id']))
-					$this->deleteAction($_GET['id']);
+				if(isset($get['id']))
+					$this->deleteAction($get['id']);
 				break;
 			case 'reset_lock':
-				$this->resetLock($_GET['id']);
+				$this->resetLock($get['id']);
 				break;
 		}
 	}
 	
-	private function addEditQuiz() {
-		$quizId = isset($_GET['quizId']) ? (int)$_GET['quizId'] : 0;
+	private function addEditQuiz($get = null, $post = null) {	
+
+		if(empty($get))
+			$get = $_GET;
+		if(!empty($post))
+			$this->_post = $post;
+		
+		$quizId = isset($get['quizId']) ? (int)$get['quizId'] : 0;
 		
 		if($quizId) {
 			if(!current_user_can('wpProQuiz_edit_quiz')) {
@@ -51,13 +59,16 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller {
 		$forms = null;
 		$prerequisiteQuizList = array();
 		
-		
+		if(!empty($get["post_id"])) {
+			$quiz_post = get_post($get["post_id"]);
+			$this->_post["name"] = $quiz_post->post_title;
+		}
+
 		if($quizId && $quizMapper->exists($quizId) == 0) {
 			WpProQuiz_View_View::admin_notices(__('Quiz not found', 'wp-pro-quiz'), 'error');
 			
 			return;
 		}
-		
 		if(isset($this->_post['template']) || (isset($this->_post['templateLoad']) && isset($this->_post['templateLoadId']))) {
 			if(isset($this->_post['template']))
 				$template = $this->saveTemplate();
@@ -69,12 +80,18 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller {
 			if($data !== null) {
 				$quiz = $data['quiz'];
 				$quiz->setId($quizId);
+				$quiz->setName($this->_post["name"]);
+				$quiz->setText("AAZZAAZZ");
+				$quizMapper->save($quiz);
+				if(empty($quizId) && !empty($get["post_id"])) {
+					learndash_update_setting($get["post_id"], "quiz_pro", $quiz->getId());
+				}
+				$quizId = $quiz->getId();
 				
 				$forms = $data['forms'];
 				$prerequisiteQuizList = $data['prerequisiteQuizList'];
 			}
-		} else if(isset($this->_post['submit'])) {
-				
+		} else if(isset($this->_post['form'])) {
 			if(isset($this->_post['resultGradeEnabled'])) {
 				$this->_post['result_text'] = $this->filterResultTextGrade($this->_post);
 			}
@@ -88,10 +105,13 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller {
 				else
 					WpProQuiz_View_View::admin_notices(__('quiz created', 'wp-pro-quiz'), 'info');
 		
+				$quiz->setText("AAZZAAZZ");
 				$quizMapper->save($quiz);
-				
+				if(empty($quizId) && !empty($get["post_id"])) {
+					learndash_update_setting($get["post_id"], "quiz_pro", $quiz->getId());
+				}
 				$quizId = $quiz->getId();
-				
+
 				$prerequisiteMapper->delete($quizId);
 					
 				if($quiz->isPrerequisite() && !empty($this->_post['prerequisiteList'])) {
@@ -101,6 +121,7 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller {
 		
 				if(!$this->formHandler($quiz->getId(), $this->_post)) {
 					$quiz->setFormActivated(false);
+					$quiz->setText("AAZZAAZZ");
 					$quizMapper->save($quiz);
 				}
 				
@@ -127,7 +148,7 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller {
 		
 		$this->view->header = $quizId ? __('Edit quiz', 'wp-pro-quiz') : __('Create quiz', 'wp-pro-quiz');
 
-		$this->view->show();
+		$this->view->show($get);
 	}
 	
 	public function checkLock() {
@@ -788,8 +809,17 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller {
 
 			if($userEmail['html'])
 				add_filter('wp_mail_content_type', array($this, 'htmlEmailContent'));
-			
-			wp_mail($user->user_email, $userEmail['subject'], $msg, $headers);
+
+			$email_params = array(
+							"email" => $user->user_email,
+							"subject" => $userEmail['subject'],
+							"msg" => $msg,
+							"headers" => $headers
+						);
+
+			$email_params = apply_filters("learndash_quiz_email", $email_params, $quiz);
+
+			wp_mail($email_params["email"], $email_params["subject"], $email_params["msg"], $email_params["headers"]);
 			
 			if($userEmail['html'])
 				remove_filter('wp_mail_content_type', array($this, 'htmlEmailContent'));
@@ -809,7 +839,17 @@ class WpProQuiz_Controller_Quiz extends WpProQuiz_Controller_Controller {
 			if(isset($adminEmail['html']) && $adminEmail['html'])
 				add_filter('wp_mail_content_type', array($this, 'htmlEmailContent'));
 			
-			wp_mail($adminEmail['to'], $adminEmail['subject'], $msg, $headers);
+			$email_params = array(
+							"email" => $adminEmail['to'],
+							"subject" => $adminEmail['subject'],
+							"msg" => $msg,
+							"headers" => $headers
+						);
+
+			$email_params = apply_filters("learndash_quiz_email_admin", $email_params, $quiz);
+
+			wp_mail($email_params["email"], $email_params["subject"], $email_params["msg"], $email_params["headers"]);
+			//wp_mail($adminEmail['to'], $adminEmail['subject'], $msg, $headers);
 			
 			if(isset($adminEmail['html']) && $adminEmail['html'])
 				remove_filter('wp_mail_content_type', array($this, 'htmlEmailContent'));

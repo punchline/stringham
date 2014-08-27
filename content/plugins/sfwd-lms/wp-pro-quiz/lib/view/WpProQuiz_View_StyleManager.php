@@ -8,7 +8,7 @@ class WpProQuiz_View_StyleManager extends WpProQuiz_View_View {
 
 <div class="wrap">
 	<h2 style="margin-bottom: 10px;"><?php echo $this->header; ?></h2>
-	<a class="button-secondary" href="admin.php?page=ldAdvQuiz"><?php _e('back to overview', 'wp-pro-quiz'); ?></a>
+
 	<form method="post">
 		<div id="poststuff">
 			<div class="postbox">

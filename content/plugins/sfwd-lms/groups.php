@@ -63,10 +63,10 @@ function learndash_group_emails(){
 		);
 		$args = array(
 			'labels'        => $labels,
-			'description'   => 'Holds LearnDash user Groups',
+			'description'   => __('Holds LearnDash user Groups', 'learndash'),
 			'public'        => false,
 			'menu_position' => 10,
-			'show_in_menu'	=> 'users.php',
+			'show_in_menu'	=> false,
 			'supports'      => array( 'title', 'editor'), //, 'custom-fields', 'author'
 			'has_archive'   => false,
 			'exclude_from_search' => true,
@@ -257,7 +257,7 @@ function learndash_groups_page_box( $post ) {
 				<a href="#" onClick="SelectRemoveRows(document.getElementById('learndash_group_leaders')); SelectAll(document.getElementById('learndash_group_leaders')); return false;"><img src="<?php echo plugins_url("images/arrow_left.png", __FILE__); ?>" /></a>
 			</td>
 			<td class="td_learndash_group_users_search">		
-			<b>Selected:</b><br>
+			<b><?php _e("Selected:", "learndash"); ?></b><br>
 			<select multiple="multiple" id="learndash_group_leaders" name="learndash_group_leaders[]"  class="learndash_group_leaders">
 				<?php 
 						foreach($all_group_leaders as $user) {
@@ -282,12 +282,12 @@ function learndash_groups_page_box( $post ) {
 	<h2><?php _e("Assign Users", 'learndash' ); ?> </h2>
 	
 	
-	<label for="search_group">Search Users: 
+	<label for="search_group"><?php _e("Search Users:", "learndash"); ?>
 		<input type="text" id="search_group" onChange="group_user_search();" onKeyUp="group_user_search();" onKeyPress="if(event.keyCode == 13) return false;" />
 	</label>
 
 	<br/><br/>
-	<b>Instructions: </b> Hold CNTRL to select muliple users for this group, <br>and click the arrow to move to selected list of users.
+	<?php _e("<b>Instructions: </b> Hold CNTRL to select muliple users for this group, <br>and click the arrow to move to selected list of users.", "learndash"); ?>
 	
 	<br/>
 		<table>
@@ -317,7 +317,7 @@ function learndash_groups_page_box( $post ) {
 				<a href="#" onClick="SelectRemoveRows(document.getElementById('learndash_group_users')); SelectAll(document.getElementById('learndash_group_users')); return false;"><img src="<?php echo plugins_url("images/arrow_left.png", __FILE__); ?>" /></a>
 			</td>
 			<td class="td_learndash_group_users_search">
-				<b>Selected:</b><br>
+				<b><?php _e("Selected:", "learndash"); ?></b><br>
 				<select multiple="multiple" id="learndash_group_users" name="learndash_group_users[]" class="learndash_group_users">
 					<?php foreach($users as $user) { 
 						$name = $user->display_name.'('.$user->user_login.')';
@@ -366,7 +366,9 @@ function learndash_groups_save_postdata( $post_id ) {
     if ( !current_user_can( 'edit_post', $post_id ) )
         return;
   }
-
+  
+  if ( 'groups' != $_POST['post_type'] )
+  	return;
   // OK, we're authenticated: we need to find and save the data
 
 	global $wpdb;
@@ -529,7 +531,7 @@ function learndash_get_administrators_group_ids($user_id) {
 	if(is_numeric($user_id)) {
 		$col = $wpdb->get_col("SELECT meta_value FROM $wpdb->usermeta WHERE meta_key LIKE 'learndash_group_leaders_%' AND user_id = '$user_id'");
 		$ids = implode(",", $col);
-		if(!empty($ids)) {
+		if(!empty($col) && !empty($col[0])) {
 			$col = $wpdb->get_col("SELECT ID FROM $wpdb->posts WHERE post_status = 'publish' AND ID IN (".implode(",", $col).")");
 			return $col;	
 		}
@@ -542,7 +544,7 @@ function learndash_get_users_group_ids($user_id) {
 	if(is_numeric($user_id)) {
 		$col = $wpdb->get_col("SELECT meta_value FROM $wpdb->usermeta WHERE meta_key LIKE 'learndash_group_users_%' AND user_id = '$user_id'");
 		$ids = implode(",", $col);
-		if(!empty($ids)) {
+		if(!empty($col) && !empty($col[0])) {
 			$col = $wpdb->get_col("SELECT ID FROM $wpdb->posts WHERE post_status = 'publish' AND ID IN (".implode(",", $col).")");
 			return $col;	
 		}
@@ -642,7 +644,7 @@ function learndash_group_admin_menu_page()
 			<!-- Email Group feature below the Group Table (on the Group Leader page) -->
 			<div id="learndash_groups_page_box">
 			<br><br>
-			<h2> Email Users </h2>
+			<h2><?php _e("Email Users", "learndash"); ?></h2>
 			<br/>
 			<label for="email"><b><?php _e('Email Subject:', 'learndash'); ?></b><br/>
 			
@@ -770,4 +772,16 @@ function learndash_delete_group($pid) {
 	$wpdb->delete($wpdb->usermeta, array("meta_key" => "learndash_group_leaders_".$pid, "meta_value" => $pid));
   }
   return true;
+}
+
+function ld_update_group_access($user_id, $group_id, $remove = false) {
+	if($remove) {
+			delete_user_meta($user_id, "learndash_group_users_".$group_id);
+			do_action("ld_removed_group_access", $user_id, $group_id);
+	}
+	else
+	{
+			update_user_meta($user_id, "learndash_group_users_".$group_id, $group_id);		
+			do_action("ld_added_group_access", $user_id, $group_id);
+	}
 }

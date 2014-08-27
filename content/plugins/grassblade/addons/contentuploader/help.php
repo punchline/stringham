@@ -1,40 +1,3 @@
-<script>
-/*function getOffset( el ) {
-    var _x = 0;
-    var _y = 0;
-    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-        _x += el.offsetLeft - el.scrollLeft;
-        _y += el.offsetTop - el.scrollTop;
-        el = el.offsetParent;
-    }
-    return { top: _y, left: _x };
-}*/
-function showHideOptional(id) {
-	var table = document.getElementById(id);
-	var display_status = table.style.display;
-
-	
-	if(display_status == "none")
-	{
-		table.style.display = "block";
-		//window.scrollTo(getOffset(table).left,getOffset(table).top);
-	}
-	else
-		table.style.display = "none";
-		
-	//return false;
-}
-</script>
-
-<style>
-.infoblocks {
-	background: greenyellow;
-	border: 1px solid black;
-	display: block;
-	padding: 10px 20px;
-}
-
-</style>
 <h2 name="xapi_content"><?php _e('xAPI Content Manager','grassblade'); ?></h2>
 
 <a href="#xapi_content" onclick="return showHideOptional('grassblade_cu_howto');"><h3><img src="<?php echo get_bloginfo('wpurl')."/wp-content/plugins/grassblade/img/button.png"; ?>"/><span style="margin-left:10px;"><?php _e('How to upload an xAPI (Tin Can) content package from Articualate or other provider?','grassblade'); ?></span></h3></a>
@@ -60,5 +23,13 @@ Make sure you are using the right version. e.g. For a 0.90 Articulate Content yo
 <p>
 <?php echo sprintf(__('Completion Tracking helps in getting content completion information back from the LRS and integrating with other actions. Currently its most relavent to xAPI Content posted on LearnDash lessons, topics, or quizzes. It currently works only with %s installed on the same database. If there are more ideas or requirements for other integrations please contact us.','grassblade'), '<a href="https://www.nextsoftwaresolutions.com/grassblade-lrs-experience-api/" target="_blank">GrassBlade LRS</a>'); ?>
 
+</p>
+</div>
+<a href="#xapi_uploadlimit" onclick="return showHideOptional('grassblade_xapi_uploadlimit');"><h3><img src="<?php echo get_bloginfo('wpurl')."/wp-content/plugins/grassblade/img/button.png"; ?>"/><span style="margin-left:10px;"><?php _e('What to do if my filesize is larger than server upload limit?','grassblade'); ?></span></h3></a>
+<div id="grassblade_xapi_uploadlimit"  class="infoblocks"  style="display:none;">
+<p>
+<?php _e("You have two options:", "grassblade"); ?><br>
+<a href='http://www.nextsoftwaresolutions.com/direct-upload-of-tin-can-api-content-from-dropbox-to-wordpress-using-grassblade-xapi-companion/' target='_blank'><?php echo __("1. Use dropbox upload method", "grassblade"); ?></a><br>
+<a href='http://www.nextsoftwaresolutions.com/increasing-file-upload-limit/' target='_blank'><?php echo __("2. Increase the file upload limit.", "grassblade"); ?></a><br>
 </p>
 </div>

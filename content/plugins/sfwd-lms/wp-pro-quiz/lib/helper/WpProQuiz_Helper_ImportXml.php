@@ -19,7 +19,11 @@ class WpProQuiz_Helper_ImportXml {
 		
 		return true;
 	}
-	
+	public function setString($str) {
+		$this->_content = $str;
+		
+		return $this->checkCode();
+	}
 	private function checkCode() {
 		$xml = @simplexml_load_string($this->_content);
 
@@ -97,6 +101,10 @@ class WpProQuiz_Helper_ImportXml {
 			
 			$quizMapper->save($quiz);
 			
+			$user_id = get_current_user_id();
+			$quiz_post_id = wp_insert_post( array( 'post_title' => $quiz->getName(), 'post_type' => 'sfwd-quiz', 'post_status' => 'publish', 'post_author' => $user_id ) );
+			learndash_update_setting($quiz_post_id, "quiz_pro", $quiz->getId());
+			
 			if(isset($data['forms']) && isset($data['forms'][$oldId])) {
 				$sort = 0;
 				
@@ -139,7 +147,71 @@ class WpProQuiz_Helper_ImportXml {
 		
 		return true;
 	}
-	
+	public function saveImportSingle() {
+		$quizMapper = new WpProQuiz_Model_QuizMapper();
+		$questionMapper = new WpProQuiz_Model_QuestionMapper();
+		$categoryMapper = new WpProQuiz_Model_CategoryMapper();
+		$formMapper = new WpProQuiz_Model_FormMapper();
+		
+		$data = $this->getImportData();
+		$categoryArray = $categoryMapper->getCategoryArrayForImport();
+		
+		foreach($data['master'] as $quiz) {
+			if(get_class($quiz) !== 'WpProQuiz_Model_Quiz')
+				continue;
+			
+			$oldId = $quiz->getId();
+			
+			if($oldId != 0)
+				continue;
+			
+			$quiz->setId(0);
+			
+			$quizMapper->save($quiz);
+			
+			if(isset($data['forms']) && isset($data['forms'][$oldId])) {
+				$sort = 0;
+				
+				foreach($data['forms'][$oldId] as $form) {
+					$form->setQuizId($quiz->getId());
+					$form->setSort($sort++);
+				}
+				
+				$formMapper->update($data['forms'][$oldId]);
+			}
+			
+			$sort = 0;
+			
+			foreach($data['question'][$oldId] as $question) {
+			
+				if(get_class($question) !== 'WpProQuiz_Model_Question')
+					continue;
+						
+				$question->setQuizId($quiz->getId());
+				$question->setId(0);
+				$question->setSort($sort++);
+				$question->setCategoryId(0);
+				if(trim($question->getCategoryName()) != '') {
+					if(isset($categoryArray[strtolower($question->getCategoryName())])) {
+						$question->setCategoryId($categoryArray[strtolower($question->getCategoryName())]);
+					} else {
+						$categoryModel = new WpProQuiz_Model_Category();
+						$categoryModel->setCategoryName($question->getCategoryName());
+						$categoryMapper->save($categoryModel);
+						
+						$question->setCategoryId($categoryModel->getCategoryId());
+						
+						$categoryArray[strtolower($question->getCategoryName())] = $categoryModel->getCategoryId();
+					}
+				}
+				
+				$questionMapper->save($question);
+			}
+			return $quiz->getId();
+		}
+		
+		return 0;
+	}
 	public function getError() {
 		return $this->_error;
 	}

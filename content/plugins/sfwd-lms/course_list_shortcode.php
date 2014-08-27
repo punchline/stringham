@@ -22,6 +22,9 @@ function ld_course_list($attr) {
 			'order' => 'DESC',
 			'orderby' => 'ID',
 			'mycourses' => false,
+			'meta_key' => '',
+			'meta_value'	=> '',
+			'meta_compare'	=> '',
 			'tag' => '',
 			'tag_id' => 0,
 			'tag__and' => '',
@@ -37,14 +40,22 @@ function ld_course_list($attr) {
 			'array'	=> false,
 			), $attr);
 	extract($shortcode_atts);
-	ob_start();
-	$filter = array( 'post_type' => $post_type, 'posts_per_page' => $num, 'order' => $order , 'orderby' => $orderby );
+	$filter = array( 'post_type' => $post_type, 'post_status' => $post_status,  'posts_per_page' => $num, 'order' => $order , 'orderby' => $orderby );
 	
 	if(!empty($tag))
 	$filter['tag'] = $tag;
 	
 	if(!empty($tag_id))
 	$filter['tag_id'] = $tag;
+	
+	if(!empty($meta_key))
+	$filter['meta_key'] = $meta_key;
+	
+	if(!empty($meta_value))
+	$filter['meta_value'] = $meta_value;
+	
+	if(!empty($meta_compare))
+	$filter['meta_compare'] = $meta_compare;
 	
 	if(!empty($tag__and))
 	$filter['tag__and'] = explode(",", $tag__and);
@@ -80,12 +91,14 @@ function ld_course_list($attr) {
 		return get_posts($filter);
 
 	$loop = new WP_Query( $filter );
-	
+
+	$level = ob_get_level();
+	ob_start();	
 	while ( $loop->have_posts() ) : $loop->the_post();
 		if(!$mycourses  || sfwd_lms_has_access(get_the_ID()))
 		echo SFWD_LMS::get_template('course_list_template', array());
 	endwhile; 
-	$output = ob_get_clean();
+	$output = learndash_ob_get_clean($level);
 	wp_reset_query(); 
 	return $output;
 }
@@ -101,9 +114,15 @@ function ld_quiz_list($attr) {
 	$attr['mycourses'] = false;
 	return ld_course_list($attr);
 }
+function ld_topic_list($attr) {
+	$attr['post_type'] = 'sfwd-topic';
+	$attr['mycourses'] = false;
+	return ld_course_list($attr);
+}
 add_shortcode("ld_course_list", "ld_course_list");
 add_shortcode("ld_lesson_list", "ld_lesson_list");
 add_shortcode("ld_quiz_list", "ld_quiz_list");
+add_shortcode("ld_topic_list", "ld_topic_list");
 
 function ld_course_check_user_access($course_id, $user_id = null) {
 	return sfwd_lms_has_access($course_id, $user_id);

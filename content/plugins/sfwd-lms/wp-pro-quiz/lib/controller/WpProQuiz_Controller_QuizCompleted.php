@@ -148,8 +148,16 @@ class WpProQuiz_Controller_QuizCompleted {
 
 			if($userEmail['html'])
 				add_filter('wp_mail_content_type', array($this, 'htmlEmailContent'));
-			
-			wp_mail($user->user_email, $userEmail['subject'], $msg, $headers);
+			$email_params = array(
+							"email" => $user->user_email,
+							"subject" => $userEmail['subject'],
+							"msg" => $msg,
+							"headers" => $headers
+						);
+
+			$email_params = apply_filters("learndash_quiz_completed_email", $email_params, $quiz);
+
+			wp_mail($email_params["email"], $email_params["subject"], $email_params["msg"], $email_params["headers"]);
 			
 			if($userEmail['html'])
 				remove_filter('wp_mail_content_type', array($this, 'htmlEmailContent'));
@@ -169,7 +177,17 @@ class WpProQuiz_Controller_QuizCompleted {
 			if(isset($adminEmail['html']) && $adminEmail['html'])
 				add_filter('wp_mail_content_type', array($this, 'htmlEmailContent'));
 			
-			wp_mail($adminEmail['to'], $adminEmail['subject'], $msg, $headers);
+			$email_params = array(
+							"email" => $adminEmail['to'],
+							"subject" => $adminEmail['subject'],
+							"msg" => $msg,
+							"headers" => $headers
+						);
+
+			$email_params = apply_filters("learndash_quiz_completed_email_admin", $email_params, $quiz);
+
+			wp_mail($email_params["email"], $email_params["subject"], $email_params["msg"], $email_params["headers"]);
+			//wp_mail($adminEmail['to'], $adminEmail['subject'], $msg, $headers);
 			
 			if(isset($adminEmail['html']) && $adminEmail['html'])
 				remove_filter('wp_mail_content_type', array($this, 'htmlEmailContent'));

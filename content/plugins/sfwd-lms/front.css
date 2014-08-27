@@ -126,3 +126,7 @@ ul.responses li.correct p span {
     text-align:right; 
     display:block;
  }
+
+ .wpProQuiz_cloze > input[type=text] {
+    max-width: 99%;
+ }

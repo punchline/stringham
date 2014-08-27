@@ -956,7 +956,7 @@ msgstr "beperkt het aantal getoonde modules. Voorbeeld: <b>[ld_course_list num=\
 
 #@ learndash
 
-msgid "sets order of courses. Possible values: <b>DESC</b>, <b>ASC</b>. Example: <b>[ld_course_list order=\"ASC\"]</b> shows courses in assending order."
+msgid "sets order of courses. Possible values: <b>DESC</b>, <b>ASC</b>. Example: <b>[ld_course_list order=\"ASC\"]</b> shows courses in ascending order."
 
 msgstr "bepaalt de volgorde van de modules. Mogelijkheden: <b>DESC</b>, <b>ASC</b>. Voorbeeld: <b>[ld_course_list order=\"ASC\"]</b> toont de modules in een oplopende volgorde."
 
@@ -966,7 +966,7 @@ msgstr "bepaalt de volgorde van de modules. Mogelijkheden: <b>DESC</b>, <b>ASC</
 
 #@ learndash
 
-msgid "sets what the list of ordered by. Example: <b>[ld_course_list order=\"ASC\" orderby=\"title\"]</b> shows courses in assending order by title."
+msgid "sets what the list of ordered by. Example: <b>[ld_course_list order=\"ASC\" orderby=\"title\"]</b> shows courses in ascending order by title."
 
 msgstr "toont een lijst door wie wat besteld is. Voorbeeld:<b>DESC</b>, <b>ASC</b>. Voorbeeld: <b>[ld_course_list order=\"ASC\"]</b> toont de modules in een oplopende volgorde."
 
@@ -2102,7 +2102,7 @@ msgstr "Exporteer &raquo;"
 
 #@ learndash
 
-msgid "-- Select A Certificate --"
+msgid "-- Select a Certificate --"
 
 msgstr "--Selecteer een certificaat--"
 
@@ -2112,7 +2112,7 @@ msgstr "--Selecteer een certificaat--"
 
 #@ learndash
 
-msgid "-- Select A Lesson --"
+msgid "-- Select a Lesson --"
 
 msgstr "--Selecteer een hoofdstuk--"
 
@@ -3220,7 +3220,7 @@ msgstr ""
 
 #@ learndash
 
-msgid "-- Select A Course --"
+msgid "-- Select a Course --"
 
 msgstr ""
 

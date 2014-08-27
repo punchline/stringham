@@ -73,16 +73,12 @@ class LearnDash_Course_Navigation_Widget extends WP_Widget {
 		extract($args);
 		$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
 
-		$coursenavigation = learndash_course_navigation($course_id);
-		
-		if(empty($coursenavigation))
-		return;
-		
+				
 		echo $before_widget;
-		;
+		
 		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } 
 		
-		echo $coursenavigation;
+		learndash_course_navigation($course_id);
 		echo $after_widget;
 	}
 
@@ -103,31 +99,67 @@ class LearnDash_Course_Navigation_Widget extends WP_Widget {
 		<?php
 	}
 }
-
 function learndash_course_navigation($course_id) {
 	$course = get_post($course_id);
 	
 	if(empty($course->ID) || $course_id != $course->ID)
 	return;
 	
-	$terms = wp_get_post_terms( $course_id, 'courses' );
-	$slug = $terms[0]->slug;
-	
-	if(empty($slug))
-	return;
-	
-			$course = get_post($course_id);
-			$course_settings = learndash_get_setting($course);
-			$lessons = learndash_get_course_lessons_list($course);
-	
-	return SFWD_LMS::get_template('course_navigation_widget', array(
+	$course = get_post($course_id);
+	if(empty($course->ID) || $course->post_type != "sfwd-courses")
+		return;
+
+	$course_settings = learndash_get_setting($course);
+	$lessons = learndash_get_course_lessons_list($course);
+
+	include(SFWD_LMS::get_template('course_navigation_widget', array(
 				'course_id' => $course_id,
 				'course' => $course,
 				'lessons' => $lessons,
-			)); 
+			), null, true)); 
 }
 add_action('widgets_init', create_function('', 'return register_widget("LearnDash_Course_Navigation_Widget");'));
 
+function learndash_course_navigation_admin($course_id) {
+	$course = get_post($course_id);
+	
+	if(empty($course->ID) || $course_id != $course->ID)
+	return;
+	
+	$course = get_post($course_id);
+	if(empty($course->ID) || $course->post_type != "sfwd-courses")
+		return;
+
+	$course_settings = learndash_get_setting($course);
+	$lessons = learndash_get_course_lessons_list($course);
+
+	include(SFWD_LMS::get_template('course_navigation_admin', array(
+				'course_id' => $course_id,
+				'course' => $course,
+				'lessons' => $lessons,
+			), null, true)); 
+}
+add_action( 'add_meta_boxes', 'learndash_course_navigation_admin_box');
+function learndash_course_navigation_admin_box() {
+	$post_types = array("sfwd-courses", "sfwd-lessons", "sfwd-quiz", "sfwd-topic");
+	foreach ($post_types as $post_type) {
+		add_meta_box( 
+			'learndash_course_navigation_admin_meta',
+			__( 'Associated Content', 'learndash' ),
+			'learndash_course_navigation_admin_box_content',
+			$post_type,
+			'side',
+			'high'
+		);
+	}
+}
+function learndash_course_navigation_admin_box_content() {
+	$course_id = learndash_get_course_id(@$_GET['post']);
+
+	if(empty($course_id))
+	return;
+	learndash_course_navigation_admin($course_id);
+}
 function learndash_course_info($user_id){
 	return SFWD_LMS::get_course_info($user_id);
 }

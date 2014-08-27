@@ -85,8 +85,9 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 		        	"order"				=> '',
 		        	"orderby"			=> '',
 		        	"meta_key"			=> '',
-					"taxonomy"			=> 'courses',
-					"tax_field"			=> 'slug',
+		        	"meta_value"		=> '',
+					"taxonomy"			=> '',
+					"tax_field"			=> '',
 					"tax_terms"			=> '',
 					"topic_list_type"	=> "",
 					"return"			=> "text", /* text or array */
@@ -97,14 +98,14 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 						if ( $v === '' ) unset( $atts[$k] );
 				$filter = shortcode_atts( $args, $atts);
 		        extract( shortcode_atts( $args, $atts) );		
-		        global $paged, $post;
+		        global $paged;
 
 		        $posts = new WP_Query();
 				
 		        if( $pagination == 'true' ) $query .= '&paged=' . $paged;
 		        if( !empty( $category   ) ) $query .= '&category_name=' . $category;
 
-				foreach ( Array('post_type', 'order', 'orderby', 'meta_key', 'query') as $field)
+				foreach ( Array('post_type', 'order', 'orderby', 'meta_key','meta_value', 'query') as $field)
 					if ( !empty( $$field ) ) $query .= "&$field=" . $$field;
 				
 				$query = wp_parse_args( $query, $filter );
@@ -114,13 +115,12 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 					);
 
 				}
-				$posts->query( $query );
-				//echo "<pre>";
-				//print_r($posts);
-		        $buf = '';
+				$posts = get_posts($query);
+		    	$buf = '';
 				$sno = 1;
-		        while ( $posts->have_posts() ) : $posts->the_post();	/*** run shortcodes in loop               ***/
-		                        $id = $post->ID;              			/*** allow use of id variable in template ***/
+		        foreach ( $posts as $post ) {
+		        			//	$posts->the_post();	// run shortcodes in loop               
+		                        $id = $post->ID;              			// allow use of id variable in template 
 								$class = '';
 								$status = '';
 								$sample = '';
@@ -129,13 +129,13 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 								if($post->post_type == 'sfwd-quiz')
 								{
 									$sample = (learndash_is_sample($post))? 'is_sample': 'is_not_sample';
-									$id .= '" class="'.$sample.'"';
+									$id .= ' class="'.$sample.'"';
 									$status = (learndash_is_quiz_notcomplete(null, array($post->ID => 1 )))? 'notcompleted':'completed';
 								}
 								else if($post->post_type == 'sfwd-lessons')
 								{
 									$sample = (learndash_is_sample($post))? 'is_sample': 'is_not_sample';
-									$id .= '" class="'.$sample.'"';									
+									$id .= ' class="'.$sample.'"';									
 									
 									if(!learndash_is_lesson_notcomplete(null, array($post->ID => 1 ))) {
 									$status = 'completed';
@@ -158,6 +158,9 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 								if(isset($_GET['test']))
 								echo "<br>".$post_type.":".$post->post_type.":".$post->ID.":".$status;
 							
+								if($meta_key != "course_id")
+								$show_content = true;
+								else
 								$show_content = SFWD_CPT::show_content($post);
 
 								if($show_content) {
@@ -175,8 +178,9 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 									else	
 									{
 										$show_content = str_replace("{learndash_completed_class}", 'class="'.$status.'"', $content );
+										$show_content = str_replace("[the_title]", $post->post_title, $show_content );
+										$show_content = str_replace("[the_permalink]", get_permalink($post->ID), $show_content );
 										$show_content = str_replace("{sub_title}", $sub_title, $show_content );
-										//$show_content = apply_filters( 'sfwd_cpt_loop', $show_content );
 										$show_content = str_replace( '$id', "$id", $show_content );
 										$show_content = str_replace( '[sno]', $sno, $show_content );
 				                        $buf .= do_shortcode ( $show_content );
@@ -184,7 +188,7 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 								}
 								if(!empty($show_content)) 
 								$sno++;
-		        endwhile;
+		        }
 		        if ( $pagination == 'true' )
 					$buf .= '<div class="navigation">
 			          <div class="alignleft">' . get_previous_posts_link('« Previous') . '</div>
@@ -196,7 +200,7 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 		static function show_content($post) {
 			if($post->post_type == "sfwd-quiz")
 			{
-				$lesson_id = learndash_get_setting($post, "lesson") ;									
+				$lesson_id = learndash_get_setting($post, "lesson") ;								
 				return empty($lesson_id);
 			}
 			else
@@ -209,6 +213,8 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 				'taxonomy' => '',
 				'tax_field' => '',
 				'tax_terms' => '',
+				'meta_key'	=> '',
+				'meta_value'	=> '',
 				'order' => 'DESC',
 				'orderby' => 'date',
 				'wrapper' => 'div',
@@ -220,12 +226,12 @@ if ( !class_exists( 'SFWD_CPT' ) ) {
 			$save_tags = $shortcode_tags;
 
 			add_shortcode( 'loop', Array( $this, 'loop_shortcode' ) );
-			add_shortcode( 'the_title', 'get_the_title' );
-			add_shortcode( 'the_permalink', 'get_permalink' );
-			add_shortcode( 'the_excerpt', 'get_the_excerpt' );
-			add_shortcode( 'the_content', 'get_the_content' );		
+			//add_shortcode( 'the_title', 'get_the_title' );
+			//add_shortcode( 'the_permalink', 'get_permalink' );
+			//add_shortcode( 'the_excerpt', 'get_the_excerpt' );
+			//add_shortcode( 'the_content', 'get_the_content' );		
 										
-			$template = "[loop post_type='$post_type' posts_per_page='$posts_per_page' order='$order' orderby='$orderby' taxonomy='$taxonomy' tax_field='$tax_field' tax_terms='$tax_terms' topic_list_type='".$topic_list_type."']"
+			$template = "[loop post_type='$post_type' posts_per_page='$posts_per_page' meta_key='{$meta_key}' meta_value='{$meta_value}' order='$order' orderby='$orderby' taxonomy='$taxonomy' tax_field='$tax_field' tax_terms='$tax_terms' topic_list_type='".$topic_list_type."']"
 								  . "<$wrapper id=post-\$id><$title><a {learndash_completed_class} href='[the_permalink]'>[the_title]</a>{sub_title}</$title>"
 								  . "</$wrapper>[/loop]";
 			// <div class='entry-content'>[the_content]</div>
@@ -335,22 +341,14 @@ if ( !class_exists( 'SFWD_CPT_Widget' ) ) {
 			if(empty($course->ID) || $course_id != $course->ID)
 			return "";
 			
-			$terms = wp_get_post_terms( $course_id, 'courses' );
-			$slug = $terms[0]->slug;
-			
-			if(empty($slug))
-			return;
 			$html = '';
-			//$html = "<div id='course_lessons_list'>";
-			//$html .= "<a id='course_navigation_course_link' href='".get_permalink($course_id)."'>".$course->post_title."</a>";
 			$course_lesson_orderby = learndash_get_setting($course_id, 'course_lesson_orderby');
 			$course_lesson_order = learndash_get_setting($course_id, 'course_lesson_order');
 			$lessons = sfwd_lms_get_post_options( 'sfwd-lessons' );							
 			$orderby = (empty($course_lesson_orderby))? $lessons['orderby']:$course_lesson_orderby;
 			$order = (empty($course_lesson_order))? $lessons['order']:$course_lesson_order;
-			$lessons = wptexturize(do_shortcode("[sfwd-lessons tax_terms='{$slug}' order='{$order}' orderby='{$orderby}' posts_per_page='{$lessons['posts_per_page']}' wrapper='li']"));
+			$lessons = wptexturize(do_shortcode("[sfwd-lessons meta_key='course_id' meta_value='{$course_id}' order='{$order}' orderby='{$orderby}' posts_per_page='{$lessons['posts_per_page']}' wrapper='li']"));
 			$html .= $lessons;
-			//$html .= "</div>";
 			return $html;
 		}
 		public function update( $new_instance, $old_instance ) {

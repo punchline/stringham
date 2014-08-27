@@ -42,9 +42,12 @@ function grassblade_pageviews_menupage()
     }
 
      // Read in existing option value from database
-    $grassblade_tincan_endpoint = get_option( 'grassblade_tincan_endpoint' );
-    $grassblade_tincan_user = get_option('grassblade_tincan_user');
-    $grassblade_tincan_password = get_option('grassblade_tincan_password');
+	$grassblade_settings = grassblade_settings();
+
+    $grassblade_tincan_endpoint = $grassblade_settings["endpoint"];
+    $grassblade_tincan_user = $grassblade_settings["user"];
+    $grassblade_tincan_password = $grassblade_settings["password"];
+	$grassblade_tincan_track_guest = $grassblade_settings["track_guest"];
     
 	$grassblade_pageviews_all = get_option('grassblade_pageviews_all');
 	$grassblade_pageviews_usecatagories = get_option('grassblade_pageviews_usecatagories');
@@ -188,13 +191,16 @@ function check_pageview()
 	$grassblade_pageviews_usetags = get_option('grassblade_pageviews_usetags');
     $grassblade_pageviews_tags = get_option('grassblade_pageviews_tags');
 	
-    $grassblade_tincan_endpoint = get_option( 'grassblade_tincan_endpoint' );
-    $grassblade_tincan_user = get_option('grassblade_tincan_user');
-    $grassblade_tincan_password = get_option('grassblade_tincan_password');
-	$grassblade_tincan_track_guest = get_option('grassblade_tincan_track_guest');
+	$grassblade_settings = grassblade_settings();
+
+    $grassblade_tincan_endpoint = $grassblade_settings["endpoint"];
+    $grassblade_tincan_user = $grassblade_settings["user"];
+    $grassblade_tincan_password = $grassblade_settings["password"];
+	$grassblade_tincan_track_guest = $grassblade_settings["track_guest"];
 	$actor = grassblade_getactor($grassblade_tincan_track_guest, "0.95");
 	//$title = trim(get_bloginfo('name')." ".wp_title('', false));
-	$title = apply_filters("gb_pageviews_title", trim(wp_title('', false)), $post);
+	$title = trim(wp_title('|', false, 'right'));
+	$title = apply_filters("gb_pageviews_title", $title, $post);
 
 	if(empty($actor))
 	return;
@@ -251,7 +257,7 @@ function check_pageview()
 		if(empty($pv))
 		{	return;}
 	}
-	$grassblade_tincan_version = get_option('grassblade_tincan_version');
+	$grassblade_tincan_version = $grassblade_settings["version"];
 	if($grassblade_tincan_version >= "1.0")
 		$version = "1.0.0";
 	else

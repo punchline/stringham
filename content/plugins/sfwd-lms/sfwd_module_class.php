@@ -289,7 +289,7 @@ if ( !class_exists( 'Semper_Fi_Module' ) ) {
 		
 		/** crude approximization of whether current user is an admin */
 		function is_admin() {
-			return current_user_can('level_8');
+			return current_user_can('manage_options');
 		}
 		
 		/**
@@ -316,11 +316,36 @@ if ( !class_exists( 'Semper_Fi_Module' ) ) {
 					$this->script_data['pointers'] = $this->pointers;
 				}
 			}
+			$this->script_data['learndash_categories_lang'] = __("LearnDash Categories", "learndash");
+			$this->script_data['loading_lang'] = __("Loading...", "learndash");
+			$this->script_data['select_a_lesson_lang'] = __('-- Select a Lesson --', 'learndash');
+			$this->script_data['select_a_lesson_or_topic_lang'] = __('-- Select a Lesson or Topic --', 'learndash');
+			$this->script_data['advanced_quiz_preview_link'] = admin_url("admin.php?page=ldAdvQuiz&module=preview&id=");
+			global $post;
+			if($post->post_type == "sfwd-quiz")
+			$this->script_data['quiz_pro'] = intval(learndash_get_setting($post->ID, "quiz_pro"));
+			
+
 			wp_enqueue_script( 'sfwd-module-script', $this->plugin_path['url'] . 'sfwd_module.js' );
 			$data = Array();
 			if ( !empty( $this->script_data ) ) $data = $this->script_data;
 			$data = Array( 'json' => json_encode( $data ) );
 			wp_localize_script( 'sfwd-module-script', 'sfwd_data', $data );
+
+
+			$filepath = locate_template(array("learndash/learndash_template_script.js"));
+			if($filepath && file_exists($filepath)) {
+				wp_enqueue_script( 'sfwd_template_js', get_stylesheet_directory_uri()."/learndash/learndash_template_script.js");
+			}
+			else
+			{
+				$filepath = locate_template("learndash_template_script.js");
+				if($filepath &&  file_exists($filepath)) {
+					wp_enqueue_script( 'sfwd_template_js', get_stylesheet_directory_uri()."/learndash_template_script.js");
+				}
+				else if(file_exists(dirname(__FILE__) .'/templates/learndash_template_script.js'))
+				wp_enqueue_script( 'sfwd_template_js', plugins_url( 'templates/learndash_template_script.js', __FILE__ ) );
+			}
 		}
 		
 		/**
@@ -370,7 +395,7 @@ if ( !class_exists( 'Semper_Fi_Module' ) ) {
 			else
 				$name = $this->name;
 			if ( $this->locations === null ) {
-				$hookname = add_submenu_page( $parent_slug, $name, $name, 'manage_options', plugin_basename( $this->file ), Array( $this, 'display_settings_page' ) );
+				$hookname = add_submenu_page( $parent_slug, $name, $name, 'manage_options', str_replace(array("/", "?", "="), "_", plugin_basename( $this->file )), Array( $this, 'display_settings_page' ) );
 				add_action( "load-{$hookname}", Array( $this, 'add_page_hooks' ) );
 				return true;
 			}
@@ -381,7 +406,8 @@ if ( !class_exists( 'Semper_Fi_Module' ) ) {
 							$name = $this->menu_name;
 						else
 							$name = $this->name;
-						$hookname = add_submenu_page( $parent_slug, $name, $name, 'manage_options', plugin_basename( $this->file ), Array( $this, 'display_settings_page' ) );
+
+						$hookname = add_submenu_page( $parent_slug, $name, $name, 'manage_options', str_replace(array("/", "?", "="), "_", plugin_basename( $this->file )), Array( $this, 'display_settings_page' ) );
 					} else {
 						if ( !empty( $v['menu_name'] ) )
 							$name = $v['menu_name'];
@@ -603,7 +629,7 @@ if ( !class_exists( 'Semper_Fi_Module' ) ) {
 						if ( !empty( $arg_keys[$s] ) ) $args[$s] = $settings[$s];
 				} else $args = $settings;
 				foreach ( $args as $name => $opts ) {
-					$attr_list = Array( 'class', 'style', 'readonly', 'disabled', 'size' );
+					$attr_list = Array( 'class', 'style', 'readonly', 'disabled', 'size', 'placeholder' );
 					if ( $opts['type'] == 'textarea' ) $attr_list = array_merge( $attr_list, Array('rows', 'cols') );
 					$attr = '';
 					foreach ( $attr_list as $a )

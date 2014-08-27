@@ -58,7 +58,7 @@
 	</div> <!-- Closing <div class='learndash_nevigation_lesson_topics_list'> -->
 	<?php if($post->ID != $course->ID) { ?> 
 	<div class="widget_course_return">
-		Return to <a href="<?php echo get_permalink($course_id); ?>">
+		<?php _e("Return to", "learndash"); ?> <a href="<?php echo get_permalink($course_id); ?>">
 			<?php echo $course->post_title;?>
 		</a>
 	</div>

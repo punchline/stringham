@@ -147,12 +147,13 @@ class WpProQuiz_Controller_Admin {
 	}
 	
 	public function register_page() {
-		$page = add_menu_page(
+		/*$page = add_menu_page(
 					__('Advanced Quiz', 'wp-pro-quiz'),
 					__('Advanced Quiz', 'wp-pro-quiz'),
 					'wpProQuiz_show',
 					'ldAdvQuiz',
-					array($this, 'route'));
+					array($this, 'route'));*/
+	    $page = add_submenu_page("learndash-lms-non-existant", __('Advanced Quiz', 'wp-pro-quiz'), __('Advanced Quiz', 'wp-pro-quiz'), "wpProQuiz_show", "ldAdvQuiz", array($this, 'route'));
 
 		add_action('admin_print_scripts-'.$page, array($this, 'enqueueScript'));
 	}

@@ -29,7 +29,7 @@ class WpProQuiz_View_QuizOverall extends WpProQuiz_View_View {
 }
 </style>
 <div class="wrap wpProQuiz_quizOverall" style="position: relative;">
-	<h2><?php _e('Quiz overview', 'wp-pro-quiz'); ?></h2>
+	<h2><?php _e('Import/Export Associated Settings', 'learndash'); ?></h2>
 	<div class="updated" style="display: none;">
 		<h3><?php _e('In case of problems', 'wp-pro-quiz'); ?></h3>
 		<p>
@@ -44,9 +44,6 @@ class WpProQuiz_View_QuizOverall extends WpProQuiz_View_View {
 	</div>
 	<div style="margin: 8px 0px;">
 		<a class="button-primary" style="font-weight: bold; display: none;" href="admin.php?page=ldAdvQuiz&module=styleManager"><?php _e('Style Manager', 'wp-pro-quiz'); ?></a>
-		<?php if(current_user_can('wpProQuiz_change_settings')) { ?>
-		<a class="button-primary" style="font-weight: bold;" href="admin.php?page=ldAdvQuiz&module=globalSettings"><?php _e('Global settings', 'wp-pro-quiz'); ?></a>
-		<?php } ?>
 	</div>
 	
 	<table class="wp-list-table widefat">
@@ -68,31 +65,31 @@ class WpProQuiz_View_QuizOverall extends WpProQuiz_View_View {
 				<th class="wpProQuiz_exportCheck"><input type="checkbox" name="exportItems" value="<?php echo $quiz->getId(); ?>"></th>
 				<td><?php echo $quiz->getId(); ?></td>
 				<td class="wpProQuiz_quizName">
-					<strong><a href="admin.php?page=ldAdvQuiz&module=question&quiz_id=<?php echo $quiz->getId(); ?>"><?php echo $quiz->getName(); ?></a></strong>
+					<strong><?php echo $quiz->getName(); ?></strong>
 					<div class="row-actions">
 						<span>
-							<a href="admin.php?page=ldAdvQuiz&module=question&quiz_id=<?php echo $quiz->getId(); ?>"><?php _e('Questions', 'wp-pro-quiz'); ?></a> | 
+							<a href="admin.php?page=ldAdvQuiz&module=question&quiz_id=<?php echo $quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Questions', 'wp-pro-quiz'); ?></a> | 
 						</span>
 						
-						<?php if(current_user_can('wpProQuiz_edit_quiz')) { ?>
+						<?php if(0 && current_user_can('wpProQuiz_edit_quiz')) { ?>
 						<span>
-							<a href="admin.php?page=ldAdvQuiz&action=addEdit&quizId=<?php echo $quiz->getId(); ?>"><?php _e('Edit', 'wp-pro-quiz'); ?></a> | 
+							<a href="admin.php?page=ldAdvQuiz&action=addEdit&quizId=<?php echo $quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Edit', 'wp-pro-quiz'); ?></a> | 
 						</span> 
 						<?php } if(current_user_can('wpProQuiz_delete_quiz')) { ?>
 						<span>
-							<a style="color: red;" class="wpProQuiz_delete" href="admin.php?page=ldAdvQuiz&action=delete&id=<?php echo $quiz->getId(); ?>"><?php _e('Delete', 'wp-pro-quiz'); ?></a> | 
+							<a style="color: red;" class="wpProQuiz_delete" href="admin.php?page=ldAdvQuiz&action=delete&id=<?php echo $quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Delete', 'wp-pro-quiz'); ?></a> | 
 						</span>
 						<?php } ?>
 						<span>
-							<a class="wpProQuiz_prview" href="admin.php?page=ldAdvQuiz&module=preview&id=<?php echo $quiz->getId(); ?>"><?php _e('Preview', 'wp-pro-quiz'); ?></a> | 
+							<a class="wpProQuiz_prview" href="admin.php?page=ldAdvQuiz&module=preview&id=<?php echo $quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Preview', 'wp-pro-quiz'); ?></a> | 
 						</span>
 						<?php if(current_user_can('wpProQuiz_show_statistics')) { ?>
 						<span>
-							<a href="admin.php?page=ldAdvQuiz&module=statistics&id=<?php echo $quiz->getId(); ?>"><?php _e('Statistics', 'wp-pro-quiz'); ?></a> | 
+							<a href="admin.php?page=ldAdvQuiz&module=statistics&id=<?php echo $quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Statistics', 'wp-pro-quiz'); ?></a> | 
 						</span>
 						<?php } if(current_user_can('wpProQuiz_toplist_edit')) { ?>
 						<span>
-							<a href="admin.php?page=ldAdvQuiz&module=toplist&id=<?php echo $quiz->getId(); ?>"><?php _e('Leaderboard', 'wp-pro-quiz'); ?></a>
+							<a href="admin.php?page=ldAdvQuiz&module=toplist&id=<?php echo $quiz->getId(); ?>&post_id=<?php echo @$_GET['post_id']; ?>"><?php _e('Leaderboard', 'wp-pro-quiz'); ?></a>
 						</span>
 						<?php } ?>
 					</div>
@@ -113,9 +110,7 @@ class WpProQuiz_View_QuizOverall extends WpProQuiz_View_View {
 		</tbody>
 	</table>
 	<p>
-		<?php if(current_user_can('wpProQuiz_add_quiz')) { ?>
-		<a class="button-secondary" href="admin.php?page=ldAdvQuiz&action=addEdit"><?php echo __('Add quiz', 'wp-pro-quiz'); ?></a>
-		<?php } if(current_user_can('wpProQuiz_import')) { ?>
+		<?php  if(current_user_can('wpProQuiz_import')) { ?>
 		<a class="button-secondary wpProQuiz_import" href="#"><?php echo __('Import', 'wp-pro-quiz'); ?></a>
 		<?php } if(current_user_can('wpProQuiz_export') && count($this->quiz)) { ?>
 		<a class="button-secondary wpProQuiz_export" href="#"><?php echo __('Export', 'wp-pro-quiz'); ?></a>

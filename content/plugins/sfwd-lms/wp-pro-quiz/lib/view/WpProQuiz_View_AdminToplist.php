@@ -5,7 +5,7 @@ class WpProQuiz_View_AdminToplist extends WpProQuiz_View_View {
 ?>
 <div class="wrap wpProQuiz_toplist">
 	<h2><?php _e('Leaderboard', 'wp-pro-quiz'); echo ': ', $this->quiz->getName(); ?></h2>
-	<a class="button-secondary" href="admin.php?page=ldAdvQuiz"><?php _e('back to overview', 'wp-pro-quiz'); ?></a>
+
 	<div id="poststuff">
 		<div class="postbox">
 			<h3 class="hndle"><?php _e('Filter', 'wp-pro-quiz'); ?></h3>
