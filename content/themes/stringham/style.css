@@ -1258,7 +1258,7 @@ a.list-group-item-success,
 .progress-bar-success,
 .panel-success > .panel-heading,
 .label-success {
-	background-color: #82b964;
+	background-color: #70BED8; 
 	color: #fff;
 }
 
@@ -1315,7 +1315,7 @@ a.list-group-item-warning,
 .alert-warning,
 .progress-bar-warning,
 .panel-warning > .panel-heading {
-	background-color: #f0ad4e;
+	background-color: #2D4057;
 	color: #fff;
 }
 .table > thead > tr > td.danger,
@@ -1469,7 +1469,7 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-	background-color: #82b964;
+	background-color: #429bb5;
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -1497,7 +1497,7 @@ fieldset[disabled] .btn-warning:active,
 .btn-warning.disabled.active,
 .btn-warning[disabled].active,
 fieldset[disabled] .btn-warning.active {
-	background-color: #f0ad4e;
+	background-color: #6dbc4c;
 }
 .btn-info,
 .label-info,
@@ -3145,7 +3145,7 @@ fieldset[disabled] .form-control {
 	box-shadow: none;
 }
 .has-success .input-group-addon {
-	color: #82b964;
+	color: #2c3e50;
 	background-color: #dff0d8;
 	border-color: #82b964;
 }

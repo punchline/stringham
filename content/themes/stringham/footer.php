@@ -24,35 +24,23 @@
 <!-- /scroll top -->
 
 
-<!--Sign Out Dialog Modal-->
-<div class="modal" id="signout">
+<!--Help Modal-->
+<div class="modal" id="help-box">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <i class="fa fa-lock"></i> </div>
-      <div class="modal-body text-center">Are You Sure Want To Sign Out?</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="yesigo">Ok</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <div class="modal-body text-center"><h2>How to Play!</h2>
+      <ul>
+	      <li>Find and mark all the words inside the box before your points fall to zero.</li>
+	      <li>The words may be horizontally, vertically, diagonally, and even backwards</li>
+	      <li>If you give up searching for a word, use the button next to the word.</li>    
+      </ul>
+      
       </div>
-    </div>
-    <!-- /.modal-content --> 
-  </div>
-  <!-- /.modal-dialog --> 
-</div>
-<!-- /.modal --> 
-
-<!--Lock Screen Dialog Modal-->
-<div class="modal" id="lockscreen">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <i class="fa fa-lock"></i> </div>
-      <div class="modal-body text-center">Are You Sure Want To Lock Screen?</div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="yesilock">Ok</button>
+        <h4>Good Luck!</h4>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

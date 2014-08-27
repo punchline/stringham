@@ -26,8 +26,6 @@
 					<a href="#" class="list-group-item"><i class="fa fa-refresh"></i>Updates<span class="badge">5</span></a>
 					<a href="#" class="list-group-item"><i class="fa fa-comment"></i>Messages<span class="badge">12</span></a>
 					<a href="#" class="list-group-item"><i class="fa fa-comments"></i> Comments<span class="badge">45</span></a>
-					<div class="empthy"></div>
-					<a href="#" data-toggle="modal" class="list-group-item lockme"><i class="fa fa-lock"></i> Lock</a>
 					<a data-toggle="modal" href="<?php echo wp_logout_url(); ?>" class="list-group-item goaway"><i class="fa fa-power-off"></i> Sign Out</a>
 				</div>
 			</div>

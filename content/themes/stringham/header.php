@@ -94,9 +94,6 @@
 					</div>
 				</div>
         
-		        <!--Lock Screen--> 
-		        <a href="#" data-toggle="modal" class="btn btn-default hidden-xs pull-right lockme"> <i class="entypo-lock"></i> </a> 
-        
 		        <!--Notifications Dropdown-->
         
 				<div class="btn-group">

@@ -22,6 +22,7 @@ $user = wp_get_current_user();
 					<div class="col-md-12">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
+							
 								<div class="panel-title pull-left"><?php echo ucwords(str_replace('-',' ', $_GET['category'])); ?> Quiz</div>
 								<div class="pull-right"> 
 									<a href="#" data-toggle="modal" data-target="#panel-question" class="btn-question"></a> 
@@ -34,12 +35,18 @@ $user = wp_get_current_user();
 							<div class="panel-body badge-body">
 								<form id="quiz_questions" action="<?php echo admin_url('admin-ajax.php'); ?>" method="post">	
 									<?php
-										$quiz = get_posts(array(
+										$args = array(
 											'posts_per_page' => 1,
 											'post_type' => 'stringham_attempt',
 											'post_status' => 'draft',
 											'author' => $user->ID 
-										));
+										);
+										if( $_GET['category'] != '' )
+										{
+											
+										}
+										
+										$quiz = get_posts($args);
 										
 										if(!empty($quiz))
 										{
@@ -79,7 +86,7 @@ $user = wp_get_current_user();
 											$questions = get_posts(array(
 												'posts_per_page' => 20,
 												'post_type'	=> 'stringham_question',
-												'quiz_category' => $category,
+												'quiz_category' => array($category),
 												'orderby' => 'rand'
 											));
 																						

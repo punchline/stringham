@@ -236,6 +236,10 @@ function stringham_scripts() {
 	// Scripts.js
 	wp_register_script( 'scripts-js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '1.0', TRUE );
 	
+	wp_register_style('pnch-styles', get_stylesheet_directory_uri() . '/style-custom.css', array() );
+	wp_enqueue_style('pnch-styles');
+	
+	
 	if ( !is_admin() ) 
 	{
 		if ( is_page_template('page-profile.php') )

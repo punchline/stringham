@@ -4,7 +4,12 @@
     "use strict";
 
     jQuery(document).ready(function ($) {
-
+    
+    	$('#stupid').on('click', function(){
+	    	$('#help').toggleClass('modal-hidden');
+    	});
+	    
+	    
 
         // ========================================================================
         //	Togglers
@@ -305,7 +310,7 @@
 
             if ($("#placeholder").length) {
                 $.plot("#placeholder", [d1, d2, d3], {
-                    colors: ["#5bc0de", "#82b964", "#f4cc13"],
+                    colors: ["#429bb5", "#6dbc4c", "#656565"],
 
                     grid: {
                         hoverable: false,

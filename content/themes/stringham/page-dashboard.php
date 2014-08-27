@@ -44,7 +44,15 @@ $user = wp_get_current_user();
 								</div>
 							</div>
 						</div>
+<--!adding row by jon-->						
+						<div class="row" style="margin-top:20px;">
+							<div class="col-md-6">
+								
+							</div>
+							
+						</div><!-- / User Profile Row -->
 
+						
 						<div class="row" style="margin-top: 20px;">
 							<div class="col-md-6"> 
 								<!--Panel-->
@@ -145,14 +153,26 @@ $user = wp_get_current_user();
 								<!--Panel-->
 								<div class="panel panel-cold">
 									<div class="panel-heading">
-										<div class="panel-title pull-left">Suggested Next Class</div>
+										<div class="panel-title pull-left">Take A Pop Quiz</div>
 										<div class="pull-right">
 											<a href="#" data-toggle="modal" data-target="#panel-question" class="btn-question"><i class="fa fa-question-circle"></i></a> <a href="#" class="btn-minmax"><i class="fa fa-chevron-circle-up"></i></a> <a href="#" class="btn-close"><i class="fa fa-times-circle"></i></a>
 										</div>
 										<div class="clearfix"></div>
 									</div>
 									<div class="panel-body dash-class-body">
-										<img src="http://dummyimage.com/345x345/000/000"/> <!--video place holder-->
+										<ul id="quiz-category-links">
+											<li><a href="<?php echo home_url('pop-quiz/?category=general-1')?>">General Quiz</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/?category=federal-laws')?>">Federal Laws</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/?category=contract-laws')?>">Contract Laws</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/?category=law-of-agency')?>">Law Of Agency</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/?category=utah-law')?>">Utah Law</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/?category=property-management')?>">Property Management</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/?category=real-estate-finacne')?>">Real Estate Finance</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/?category=settlement')?>">Settlement</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/?category=valuation-appraisal')?>">Valuation & Appraisal</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/?category=math')?>">Math</a></li>
+											<li><a href="<?php echo home_url('pop-quiz/')?>">Random</a></li>
+										</ul>
 									</div>
 									<div class="btn-group btn-group-justified">
 										<button type="button" class="btn btn-success" style="width:100%;">See All Classes</button>
@@ -217,7 +237,7 @@ $user = wp_get_current_user();
 		               <div class="row">
 			               <div class="col-md-6">
 			                   <!--Panel-->
-				               <div class="panel panel-cold">
+				               <div class="panel panel-primary">
 					               <div class="panel-heading">
 						               <div class="panel-title pull-left">Games</div>
 						               <div class="pull-right">
@@ -227,19 +247,19 @@ $user = wp_get_current_user();
 					               </div>
 					               <div class="panel-body">
 						               <div class="col-md-4 game-image">
-							               <img src="http://dummyimage.com/100x100/000/000" /><br/>
-							               <span class="game-title">Real Estate Crossword</span><br/>
+							               <a href="<?php echo home_url('games/word-search')?>"><img src="<?php echo get_template_directory_uri();?>/images/wordsearch2.jpg" /><br/></a>
+							               <span class="game-title">Real Estate Wordsearch</span><br/>
 							               <span class="game-rating"></span><br/>
-							               <span class="game-points">Points: 750</span>
+							               <span class="game-points">Points: <!--dynamic points--></span>
 						               </div>
 						               <div class="col-md-4 game-image">
-							               <img src="http://dummyimage.com/100x100/000/000" /><br/>
-							               <span class="game-title">Law Trivia</span><br/>
+							               <a href="<?php echo home_url('games/lie-detector')?>"><img src="<?php echo get_template_directory_uri();?>/images/lie-detector-front.png" /><br/></a>
+							               <span class="game-title">Lie Detector</span><br/>
 							               <span class="game-rating"></span><br/>
-							               <span class="game-points">Points: 150,000,000</span>
+							               <span class="game-points">Points: <!--dynamic points--></span>
 						               </div>
 						               <div class="col-md-4 game-image">
-						               	<img src="http://dummyimage.com/100x100/000/000" /><br/>
+						               	<a href="#"><img src="http://dummyimage.com/100x100/000/000" /><br/></a>
 						               	<span class="game-title">7 Words Appraisal</span><br/>
 						               	<span class="game-rating"></span><br/>
 						               	<span class="game-points">Points: 85,450</span>
@@ -250,7 +270,7 @@ $user = wp_get_current_user();
 			               
 			               <div class="col-md-6">
 			                   <!--Panel-->
-				               <div class="panel panel-cold">
+				               <div class="panel panel-primary">
 					               <div class="panel-heading">
 						               <div class="panel-title pull-left">Download Our Study Aid App</div>
 						               <div class="pull-right">
@@ -259,7 +279,7 @@ $user = wp_get_current_user();
 						               <div class="clearfix"></div>
 					               </div>
 					               <div class="panel-body">
-						               <img src="http://dummyimage.com/575x212/000/000" style="width:100%;" />
+						               <img src="<?php echo get_template_directory_uri();?>/images/knowitall-ad.png" style="width:100%;" />
 					               </div>
 				               </div><!--/Panel-->
 			               </div><!--/col-md-6-->

@@ -32,6 +32,14 @@
 		        <!--Fullscreen Trigger-->
 		        <button type="button" class="btn btn-default hidden-xs pull-right" id="toggle-fullscreen"> <i class=" entypo-popup"></i> </button>
         	</div>
+        	
+        	<ul id="logged-out-menu">
+	        	<li><a href="<?php echo home_url('shop');?>">Shop</a></li>
+	        	<li><a href="<?php echo home_url('product-category/course');?>">Courses</a></li>
+	        	<li><a href="<?php echo home_url('product-category/book');?>">Course Material</a></li>
+	        	<li><a href="<?php echo home_url();?>">Home</a></li>
+        	</ul>
+        	
         </nav>
         <!--/Navigation--> 
     
@@ -39,5 +47,5 @@
 		<div class="main-wrap"> 
       
 				<!--Content Wrapper-->
-				<div class="content-wrapper main-content-toggle-left"> 
+				<div class="content-wrapper main-content-toggle-left logged-out-content"> 
 					
