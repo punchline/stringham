@@ -25,10 +25,6 @@ $user = wp_get_current_user();
 							
 								<div class="panel-title pull-left"><?php echo ucwords(str_replace('-',' ', $_GET['category'])); ?> Quiz</div>
 								<div class="pull-right"> 
-									<a href="#" data-toggle="modal" data-target="#panel-question" class="btn-question"></a> 
-									<a href="#" class="btn-minmax">
-										<i class="fa fa-chevron-circle-up"></i>
-									</a>
 								</div>
 								<div class="clearfix"></div>
 							</div>
