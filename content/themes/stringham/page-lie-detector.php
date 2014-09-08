@@ -23,48 +23,57 @@ $user = wp_get_current_user();
 			
 			<?php get_template_part( 'content', 'page' ); ?>
 			
-				<div class="row lie-container">
+				<div class="row noMargin">
 				
-					<div class="lie-detector">
-					
-						<div class="col-md-9" style="position: relative;">
-							<div class="lie-timer">
-							<div class="greenLight"></div><div class="green-black"></div>
-							<div class="redLight"></div><div class="red-black"></div>
-								<span id="counter"></span>
-							</div>					
-						</div>
+					<div class="lie-container">
+						<div class="row">
 						
-						
-						<div class="col-md-9 lie-questions">
-							<h2 id="questionTitle">True or False:</h2>
-						</div>
-						
-						<div class="col-md-9">
-							<div class="progress">
-			                  <div class="progress-bar progress-bar-success" style="width: 60%;"></div>
-			                </div>
-			            </div>
-						
-						<div class="col-md-3 lie-buttons">
-						
-							<div class="begin">
-								<button id="startGame" class="btn btn-large">Ready?</button>
-								<button id="restart" class="btn btn-large">Restart?</button>
+							<div style="position: relative; z-index: 50;">
+								<div class="lie-timer">
+								
+								<div class="greenLight"></div>
+								<div class="green-black"></div>
+								
+								<div class="redLight"></div>
+								<div class="red-black"></div>
+									<span id="counter"></span>
+								</div>					
 							</div>
-						
 							
 							
-							<div id="trueButton"><h3>True</h3><button id="answerTrue" class="btn btn-large"></button><small class="hide-mobile">Keyboard: T</small></div>
+							<div class="col-md-12 lie-questions">
+								<p id="questionTitle"></p>
+								<div class="col-md-12 progress noPadding">
+				                  <div id="lieProgress" class="progress-bar progress-bar-success" style="width: 60%;"></div>
+				                 </div>
+							</div>
 							
-							<div id="quitButton"><button id="quitGame" class="btn btn-large">Quit</button><small class="hide-mobile">Keyboard: Q</small></div>
-						
-							<div id="falseButton"><h3>False</h3><button id="answerFalse" class="btn btn-large"></button><small class="hide-mobile">Keyboard: F</small></div>
 							
 							
-							<div id="testResults"></div>
-							
+							<div class="col-md-12">
+								<div class="lie-buttons">
+									<div class="begin">
+										<button id="startGame" class="btn btn-large">Ready?</button>
+										<div id="testResults"></div>
+										<button id="restart" class="btn btn-large">Restart?</button>
+									</div>
+								
+									<div id="trueButton"><h3>True</h3><button id="answerTrue" class="btn btn-large"></button><small class="hide-mobile">Keyboard: T</small></div>
+									
+									<!--<div id="movingBallG"><div class="movingBallLineG"></div><div id="movingBallG_1" class="movingBallG"></div></div>-->
+									
+									<div id="quitButton"><button id="quitGame" class="btn btn-large">Quit</button><small class="hide-mobile">Keyboard: Q</small></div>
+								
+									<div id="falseButton"><h3>False</h3><button id="answerFalse" class="btn btn-large"></button><small class="hide-mobile">Keyboard: F</small></div>
+								
+								</div>
+								
+								
+							</div>
 						</div>
+					</div>
+					<div class="hide-mobile lie-poster">
+						<img src="<?php echo get_stylesheet_directory_uri();?>/images/lie-detector-front.png"/>
 					</div>
 				</div><!--/row-->
                     
@@ -76,7 +85,7 @@ $user = wp_get_current_user();
 	
 	<script type="text/javascript">
 		jQuery(document).ready(function($){
-			$('.greenLight, .redLight, #restart').hide();
+			$('.greenLight, .redLight, #restart, .progress').hide();
 			$('.green-black, .red-black').show();
 			
 			var iCounter = 0,
@@ -98,10 +107,12 @@ $user = wp_get_current_user();
 			};
 			
 			correctAnswer = function(){
-				$('.greenLight').show().delay(200).fadeOut();
-				$('.green-black').hide().delay(201).fadeIn();
+				$('.greenLight').show().fadeOut(400);
+				$('.green-black').hide().fadeIn(200);
 				
 				++iCorrect;
+				
+				var progressText = $('#lieProgress').html(iCorrect+'/20');
 				
 				$('.progress-bar').css({
 					width: function(){
@@ -121,8 +132,8 @@ $user = wp_get_current_user();
 			};
 			
 			incorrectAnswer = function(){
-				$('.redLight').show().delay(200).fadeOut();
-				$('.red-black').hide().delay(201).fadeIn();
+				$('.redLight').show().fadeOut(400);
+				$('.red-black').hide().fadeIn(200);
 				
 				var m = 0;
 				var s = 100;
@@ -171,7 +182,7 @@ $user = wp_get_current_user();
 					iQuestion = 0;
 				}
 				
-				$('#questionTitle').html( questions[iQuestion].question );
+				$('#questionTitle').html('TRUE or FALSE :  '+ questions[iQuestion].question );
 			};
 			
 			startGame = function(){
@@ -179,7 +190,7 @@ $user = wp_get_current_user();
 				
 				$('#startGame').css('display', 'none');
 				
-				$('#questionTitle, #trueButton, #quitButton, #falseButton, #answerTrue, #quitGame, #answerFalse').show();
+				$('#questionTitle, #trueButton, #quitButton, #falseButton, #answerTrue, #quitGame, #answerFalse, .progress, #movingBallG').show();
 				$('#restart').hide();
 				
 				scoreTimer = setInterval(function() {
@@ -196,7 +207,7 @@ $user = wp_get_current_user();
 			finishGame = function(){
 				clearInterval(scoreTimer);	//stop the clock!
 				
-				$('#testResults').html('Congrantulations, you finished in ' + eDisplay.innerHTML + ' and ' + iTotalQuestions + ' questions!');
+				$('#testResults').html('Congratulations, you finished in ' + eDisplay.innerHTML + ' and ' + iTotalQuestions + ' questions!');
 					
 				iCounter = 0;
 				iCorrect = 0;
@@ -204,7 +215,7 @@ $user = wp_get_current_user();
 							
 				// clear the question
 				// clear the board
-				$('#questionTitle, #trueButton, #falseButton, #quitButton, #answerTrue, #quitGame, #answerFalse').hide();
+				$('#questionTitle, #trueButton, #falseButton, #quitButton, #answerTrue, #quitGame, #answerFalse, .progress, #movingBallG').hide();
 				
 				$('#restart').show();
 				
@@ -219,29 +230,31 @@ $user = wp_get_current_user();
 			
 			var questions = [
 				{
-					question: "Is Mike awesome?",
+					question: "The first principle of appraising is: The Highest and Best Use.",
 					answer: "t"
 				},
 				{
-					question: "Do dogs rule?",
+					question: "What you sell it for is the Cost",
+					answer: "f"
+				},
+				{
+					question: "The higher the cap rate the lower the value.",
 					answer: "t"
 				},
 				{
-					question: "Do cats drool?",
-					answer: "t"
-				},
-				{
-					question: "Tienes un grande gato en tus pantalones?",
+					question: "The higher the cap rate the lower the risk.",
 					answer: "f"
 				}
 			];
 			
 			$('#startGame').on('click', function(){
 				startGame();
+				loadNewQuestion();
 			});
 			
 			$('#restart').on('click', function(){
 				startGame();
+				loadNewQuestion();
 			});
 			
 	     
@@ -251,8 +264,13 @@ $user = wp_get_current_user();
 			$('#answerFalse').on('click', function(){
 				gradeQuestion("f");
 			});
-
+			
+			
 			$('#quitGame').on('click', function(){
+				clearInterval(scoreTimer);	//stop the clock!
+				$('#quitGame').attr('disabled', 'disabled');
+				$('#quitGame').html('Quitting...');
+				$('#quitGame').css('opacity', '0.5');
 				window.location = "<?php echo home_url('/games');?>";
 			});
 			
