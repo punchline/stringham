@@ -57,3 +57,216 @@ ul#quiz-category-links{
 	margin-bottom: 15px;
 	margin-right: 15px;
 }
+
+.main-header .btn-user{ background-color: #2D4057 !important;}
+
+
+
+
+
+.smooth-overflow{
+	background: #2d4057;
+}
+
+.profile-blue{
+	background: #70BED8;
+	color: #ffffff;
+}
+
+.official-title{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.1em;
+	letter-spacing: 2px;
+}
+
+.profile-blue .items-title{font-size: 2em; overflow: visible; margin: 20px 0;}
+.profile-blue h5{font-size: 2em; overflow: visible; margin-bottom: 28px;}
+
+
+.profile-white{
+	color: #70BED8;
+	text-align: center;
+	background-color: #ffffff;
+}
+
+.profile-blue .user-img img{
+	display: inline-block;
+	border-radius: 50%;
+	box-shadow: 0 0 0 7px #fff;
+}
+
+.small-margin{margin-bottom: 0px;}
+	
+.little-left{margin-left: 0px;}
+
+.quiz-scroll{overflow-y:scroll; overflow-x:hidden;}
+
+.tiny-margin{margin-bottom: 0px;}
+
+@media screen and (min-width: 1280px){
+	.smooth-overflow{
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+	
+	.profile-blue{
+		width: 250px !important;
+		padding: 10px 0 10px;
+		-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05); 
+		box-shadow: 0 1px 1px rgba(0,0,0,.05);
+	}	
+	
+	.profile-white .row .col-md-6{padding: 14.5px 0 3.5px; line-height: 20px;}
+	
+	.profile-white .row .col-md-6 span{font-size: 2em;}
+	
+	.profile-white .row .col-md-6 h6{font-weight: 400;}		
+	
+	.profile-blue .user-img img{max-width: 120%;}
+	
+	.profile-blue .items-image{
+		margin: 0 auto;
+		margin-left: 28px;
+	}
+	
+	.profile-white{-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05); box-shadow: 0 1px 1px rgba(0,0,0,.05);}
+		
+	.hide-mobile{display: block;}
+	
+	.show-mobile{display: none;}
+	
+	
+	
+	.profile-white .row{border-bottom: 1px dotted #eeeeee;}
+		
+	.profile-white .row:last-child{border-bottom: 0;}
+	
+	.profile-white .row .col-md-6:nth-child(odd){border-right: 1px dotted #eeeeee;}
+	
+	.quiz-scroll{height: 215px;}
+	
+	
+}
+
+
+
+@media screen and (min-width: 980px) and (max-width: 1279px){
+	
+	.quiz-panel{width: 50% !important;}
+	
+	.continue-class{ width: 50% !important;}
+	
+	.smooth-overflow{
+		max-width: 980px;
+		margin: 0 auto;
+	}
+	
+	.hide-mobile{display: none;}
+	
+	.show-mobile{display: block;}
+	
+	.profile-blue{padding-top:12px;}
+	
+	.profile-blue .items-details{margin-bottom: -8.5px !important;}
+	
+	.profile-blue .items-title{margin: 12px 0 !important;}
+	
+	.profile-white .row .col-md-6{padding: 7px 0 1.5px; line-height: 20px;}
+	
+	.profile-white .row .col-md-6 span{font-size: 2em;}
+	
+	.profile-white .row .col-md-6 h6{font-weight: 400;}
+	
+	.hide-l{display: none;}
+	
+	
+	.profile-white .row{border-bottom: 1px dotted #eeeeee;}
+		
+	.profile-white .row:last-child{border-bottom: 0;}
+	
+	.profile-white .row .col-md-6:nth-child(odd){border-right: 1px dotted #eeeeee;}
+	
+	.quiz-scroll{height: 236px;}
+	
+	
+}
+
+@media screen and (min-width: 767px) and (max-width: 979px){
+	.smooth-overflow{
+		max-width: 767px;
+		margin: 0 auto;
+	}
+	
+	.hide-mobile{display: none;}
+	
+	.show-mobile{display: block;}
+	
+	.hide-m{display: none;}
+	
+	.hide-l{display: none;}
+	
+	
+	.profile-white .row{border-bottom: 1px dotted #eeeeee;}
+		
+	.profile-white .row:last-child{border-bottom: 0;}
+	
+	.profile-white .row .col-md-6{border-right: 1px dotted #eeeeee; padding-top: 10px;}
+	.profile-white .row .col-md-6:nth-child(3), .profile-white .row .col-md-6:nth-child(6), {border-right: 0;}
+	
+	.profile-blue{padding: 11px;}
+	
+	.profile-blue .items-title{margin: 12px 0 !important;}
+	
+	.profile-blue h5{margin-bottom: 0px !important}
+	
+	.small-margin{margin-bottom: 15px;}
+	
+	.little-left{margin-left: 8px;}
+	
+	.quiz-scroll{height: 236px;}
+	
+}
+
+@media screen and (min-width: 400px) and (max-width: 766px){
+	.smooth-overflow{
+		max-width: 420px;
+		margin: 0 auto;
+	}
+	
+	.hide-mobile{display: none;}
+	
+	.show-mobile{display: block;}
+	
+	.hide-s{display: none;}
+	
+	.hide-m{display: none;}
+	
+	.hide-l{display: none;}
+	
+	.profile-white .row{border-bottom: 1px dotted #eeeeee; padding-top: 10px;}
+		
+	.profile-white .row:last-child{border-bottom: 0;}
+	.profile-white .row .col-md-6:nth-child(3), .profile-white .row .col-md-6:nth-child(6), {border-right: 0;}
+	
+	.profile-white .row .col-md-6{border-right: 1px dotted #eeeeee;}
+	
+	.profile-blue{padding-top: 8px;}
+	
+	.profile-blue .user-img img{
+		display: block;
+		margin-left: -90px;
+		float: left;
+	}
+	
+	.profile-blue h5{margin-bottom: 12px;}
+	
+	.profile-blue .items-title{margin: 10px 0 0;}
+
+	.profile-blue .official-title{font-size: .75em; float: right; margin-right: 10px;}
+	
+	.profile-blue .items-details{margin-right: -15px;}
+	
+	.tiny-margin{margin-bottom: 20px;}
+	
+}
