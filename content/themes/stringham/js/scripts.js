@@ -5,11 +5,6 @@
 
     jQuery(document).ready(function ($) {
     
-    	$('#stupid').on('click', function(){
-	    	$('#help').toggleClass('modal-hidden');
-    	});
-	    
-	    
 
         // ========================================================================
         //	Togglers
@@ -278,94 +273,6 @@
     // =========================================================================
     // FlotChart Stuff
     // =========================================================================
-
-
- //Example #1 - Chart With Graph Controls
-        var d1 = [];
-        var i;
-        var plot;
-        for (i = 0; i <= 10; i += 1) {
-            d1.push([i, parseInt(Math.random() * 30)]);
-        }
-
-        var d2 = [];
-        for (i = 0; i <= 10; i += 1) {
-            d2.push([i, parseInt(Math.random() * 30)]);
-        }
-
-        var d3 = [];
-        for (i = 0; i <= 10; i += 1) {
-            d3.push([i, parseInt(Math.random() * 30)]);
-        }
-
-        var stack, bars, lines, steps;
-
-        stack = 0;
-        bars = false;
-        lines = true;
-        steps = false;
-
-     function plotWithOptions() {
-
-
-            if ($("#placeholder").length) {
-                $.plot("#placeholder", [d1, d2, d3], {
-                    colors: ["#429bb5", "#6dbc4c", "#656565"],
-
-                    grid: {
-                        hoverable: false,
-                        clickable: false,
-                        borderWidth: 0,
-                        backgroundColor: "transparent"
-                    },
-
-                    yaxis: {
-                        font: {
-                            color: '#555',
-                            family: 'Open Sans, sans-serif',
-                            size: 11
-                        },
-                        tickColor: "transparent"
-                    },
-                    xaxis: {
-                        font: {
-                            color: '#555',
-                            family: 'Open Sans, sans-serif',
-                            size: 11
-                        },
-                        tickColor: "rgba(0,0,0,0.1)"
-                    },
-
-                    series: {
-                        lines: {
-                            show: lines,
-                            lineWidth: 12,
-                            color: '#fff',
-                            fill: false,
-                            steps: steps
-                            
-                        },
-
-                        bars: {
-                            show: bars,
-                            barWidth: 0.5,
-                            fill: 1,
-                            lineWidth: 0
-                        }
-                    }
-                });
-            }
-        }
-        plotWithOptions();
-
-       /* $(".btn-group button").click(function (e) {
-            e.preventDefault();
-            bars = $(this).text().indexOf("Bars") != -1;
-            lines = $(this).text().indexOf("Lines") != -1;
-            steps = $(this).text().indexOf("steps") != -1;
-            plotWithOptions();
-        });*/
-        
         
         //Example #2 - Stacked Graph
 

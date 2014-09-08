@@ -42,8 +42,6 @@
         
 		        <!--Sidebar Toggler--> 
 		        <a href="#" class="btn btn-default left-toggler"><i class="fa fa-bars"></i></a> 
-		        <!--Right Userbar Toggler--> 
-		        <a href="#" class="btn btn-user right-toggler pull-right"><i class="entypo-vcard"></i> <span class="logged-as hidden-xs">Logged as</span><span class="logged-as-name hidden-xs">Anton Durant</span></a> 
 		        <!--Fullscreen Trigger-->
 		        <button type="button" class="btn btn-default hidden-xs pull-right" id="toggle-fullscreen"> <i class=" entypo-popup"></i> </button>
         
@@ -185,7 +183,7 @@
 		<!--MainWrapper-->
 		<div class="main-wrap"> 
 		
-			<?php get_sidebar('right'); ?>
+			<!--<?php //get_sidebar('right'); ?> Zapped -->
       
 			<?php get_sidebar('left'); ?>
       

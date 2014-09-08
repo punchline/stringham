@@ -147,7 +147,7 @@ function stringham_scripts() {
 	wp_register_script( 'flot-selection-js', get_stylesheet_directory_uri() . '/js/vendors/flotchart/jquery.flot.selection.min.js', array(), '2013', TRUE );
 	wp_register_script( 'flot-stack-js', get_stylesheet_directory_uri() . '/js/vendors/flotchart/jquery.flot.stack.min.js', array(), '2013', TRUE );
 	wp_register_script( 'flot-time-js', get_stylesheet_directory_uri() . '/js/vendors/flotchart/jquery.flot.time.min.js', array(), '2013', TRUE );
-	
+	wp_register_script( 'flot-fillbetween-js', get_stylesheet_directory_uri() . '/js/vendors/flotchart/jquery.flot.fill-between.js', array(), '2013', TRUE );
 	/* End FlotChart JavaScript Files */
 	
 	/* Forms JavaScript Files */
@@ -236,6 +236,9 @@ function stringham_scripts() {
 	// Scripts.js
 	wp_register_script( 'scripts-js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '1.0', TRUE );
 	
+	wp_register_style('jon-styles', get_stylesheet_directory_uri() . '/style-jon.css', array() );
+	wp_enqueue_style('jon-styles');
+	
 	wp_register_style('pnch-styles', get_stylesheet_directory_uri() . '/style-custom.css', array() );
 	wp_enqueue_style('pnch-styles');
 	
@@ -256,6 +259,7 @@ function stringham_scripts() {
 			wp_enqueue_script('flot-time-js');
 			wp_enqueue_script('flot-axis-labels-js');
 			wp_enqueue_script('flot-resize-js');
+			wp_enqueue_script('flot-fillbetween-js');
 		}
 		
 		// Enqueued on every page
