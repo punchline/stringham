@@ -48,7 +48,7 @@ class WordsearchGameCreator {
         foreach($posts as $post){
         	$word = $post->post_title;
         	$definition = $post->post_content;
-        	$content .= $word. ' | ' .$definition . "\n";
+        	$content .= $word. ':' .$definition . "|\n";
         }
         
         return "<script type='text/word' id='wordlist'>{$content}</script>".

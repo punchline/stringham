@@ -173,7 +173,6 @@ body.hide-form #save-score-form {
 .html5-wordsearch .list {
     background: #fff;
     position: absolute;
-    left: 0;
     overflow: auto;
     text-align: center;
 }
